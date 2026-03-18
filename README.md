@@ -12,12 +12,13 @@ Give your AI coding assistant expert-level knowledge of Banuba Video and Photo E
 
 ## Available Skills
 
-| Skill        | Description                                                                       |
-| ------------ | --------------------------------------------------------------------------------- |
-| `build-ve`   | Implement features, write code, and set up Banuba Video Editor projects           |
-| `build-pe`   | Implement features, write code, and set up Banuba Photo Editor projects           |
-| `explain-ve` | Explain how Banuba Video Editor features work — concepts, architecture, workflows |
-| `explain-pe` | Explain how Banuba Photo Editor features work — concepts, architecture, workflows |
+| Skill         | Description                                                                           |
+| ------------- | ------------------------------------------------------------------------------------- |
+| `build-ve`    | Implement features, write code, and set up Banuba Video Editor SDK projects           |
+| `build-pe`    | Implement features, write code, and set up Banuba Photo Editor SDK projects           |
+| `explain-ve`  | Explain how Banuba Video Editor SDK features work — concepts, architecture, workflows |
+| `explain-pe`  | Explain how Banuba Photo Editor SDK features work — concepts, architecture, workflows |
+| `explain-far` | Explain how Banuba Face AR SDK features work — concepts, architecture, workflows      |
 
 The plugin also includes a **builder** agent that autonomously scaffolds complete Banuba Video Editor or Banuba Photo Editor applications — applying starter kit templates, and implementing features end-to-end.
 
@@ -57,8 +58,9 @@ Once installed, invoke skills with slash commands in your AI coding assistant:
 ### Look up documentation
 
 ```
-/banuba:explain-ve installation
-/banuba:explain-pe getting started
+/banuba:explain-ve explain Banuba Video Editor SDK
+/banuba:explain-pe explain Banuba Photo Editor
+/banuba:explain-far explain Banuba Face AR SDK
 ```
 
 ### Build a feature
@@ -71,12 +73,13 @@ Once installed, invoke skills with slash commands in your AI coding assistant:
 ### Explain a concept
 
 ```
-/banuba:explain-ve how to create video editor application
-/banuba:explain-pe add new feature
+/banuba:explain-ve how to create Banuba Video Editor application
+/banuba:explain-pe how to create Banuba Photo Editor application
+/banuba:explain-far how to create effects based on Banuba Face AR SDK
 ```
 
 ## How It Works
 
-Each documentation skill bundles the complete Banuba Video and Photo Editor SDKs guides. Skills read directly from these local files — no external services or MCP servers are required.
+Each documentation skill bundles the complete Banuba Video and Photo Editor SDKs guides and Banuba Face AR SDK guide. Skills read directly from these local files — no external services or MCP servers are required.
 
 The build skill includes starter kit templates for common use cases like video editors or photo editors. It detects your project's type and generates code accordingly.
