@@ -36,7 +36,7 @@ Key features include AI Clipping, Face AR effects, Video Templates, Closed Capti
 
 - User requests: "Build a video editor app", "Integrate Banuba Video Editor SDK", "Create TikTok-like video editor", "Video editing app with AR filters".
 - Platforms: Specify Android, iOS, cross-platform (React Native/Flutter).
-- Always reference full docs from https://docs.banuba.com/ve-pe-sdk/ and provided LLM txt file links.
+- Always reference full docs from https://docs.banuba.com/ve-pe-sdk/ and provided [LLM txt file](https://banuba.com/ve-pe-sdk/llms-full.txt).
 
 **Task**: $ARGUMENTS
 

@@ -34,7 +34,7 @@ This skill provides comprehensive guidance for Claude to implement a fully funct
 
 - User requests: "Build a photo editor app", "Integrate Banuba Photo Editor SDK", "Create TikTok-like photo editor", "Photo editing app with AR filters".
 - Platforms: Specify Android, iOS, cross-platform (React Native/Flutter).
-- Always reference full docs from https://docs.banuba.com/ve-pe-sdk/ and provided LLM txt file links.
+- Always reference full docs from https://docs.banuba.com/ve-pe-sdk/docs/android/requirements-pe or https://docs.banuba.com/ve-pe-sdk/docs/ios/pe-requirements and provided [LLM txt file](https://banuba.com/ve-pe-sdk/llms-full.txt).
 
 **Task**: $ARGUMENTS
 
