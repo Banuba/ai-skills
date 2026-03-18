@@ -147,13 +147,13 @@ Handle delegates for export: `onExportDone`, `onError`.
 
 Use docs links for specifics:
 
-| Feature       | Android Guide                                                                         | iOS Guide                                                                         |
-| :------------ | :------------------------------------------------------------------------------------ | :-------------------------------------------------------------------------------- |
-| Camera UI     | [guide_camera](https://docs.banuba.com/ve-pe-sdk/android/guide_camera.md)             | [guide_camera](https://docs.banuba.com/ve-pe-sdk/ios/guide_camera.md)             |
-| Editor Screen | [guide_editor_v2](https://docs.banuba.com/ve-pe-sdk/android/guide_editor_v2.md)       | [guide_editor_v2](https://docs.banuba.com/ve-pe-sdk/ios/guide_editor_v2.md)       |
-| AR Effects    | [guide_far_arcloud](https://docs.banuba.com/ve-pe-sdk/android/guide_far_arcloud.md)   | [guide_far_arcloud](https://docs.banuba.com/ve-pe-sdk/ios/guide_far_arcloud.md)   |
-| Green Screen  | [guide_green_screen](https://docs.banuba.com/ve-pe-sdk/android/guide_green_screen.md) | [guide_green_screen](https://docs.banuba.com/ve-pe-sdk/ios/guide_green_screen.md) |
-| Export        | [guide_export](https://docs.banuba.com/ve-pe-sdk/android/guide_export.md)             | [guide_export](https://docs.banuba.com/ve-pe-sdk/ios/guide_export.md)             |
+| Feature       | Android Guide                                                                           | iOS Guide                                                                           |
+| :------------ | :-------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------- |
+| Camera UI     | [guide_camera](https://docs.banuba.com/ve-pe-sdk/docs/android/guide_camera)             | [guide_camera](https://docs.banuba.com/ve-pe-sdk/docs/ios/guide_camera)             |
+| Editor Screen | [guide_editor_v2](https://docs.banuba.com/ve-pe-sdk/docs/android/guide_editor_v2)       | [guide_editor_v2](https://docs.banuba.com/ve-pe-sdk/docs/ios/guide_editor_v2)       |
+| AR Effects    | [guide_far_arcloud](https://docs.banuba.com/ve-pe-sdk/docs/android/guide_far_arcloud)   | [guide_far_arcloud](https://docs.banuba.com/ve-pe-sdk/docs/ios/guide_far_arcloud)   |
+| Green Screen  | [guide_green_screen](https://docs.banuba.com/ve-pe-sdk/docs/android/guide_green_screen) | [guide_green_screen](https://docs.banuba.com/ve-pe-sdk/docs/ios/guide_green_screen) |
+| Export        | [guide_export](https://docs.banuba.com/ve-pe-sdk/docs/android/guide_export)             | [guide_export](https://docs.banuba.com/ve-pe-sdk/docs/ios/guide_export)             |
 
 ### 5. Full App Structure
 
