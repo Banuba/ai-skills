@@ -24,17 +24,39 @@ description: |
 argument-hint: "[feature or task]"
 ---
 
+## Version Notice
+
+This skill was generated for [Banuba Photo Editor SDK v1.50.1](https://vebanuba.notion.site/1-50-1-312fdb8b445b8061ac9cc65d882dfe9e) on 2026-03-19. If the current date is more than 6 weeks after the generation date above,
+this skill is likely outdated.
+
+**Inform the user** that a newer version may be available and suggest they update:
+
+```bash
+# Update all installed skills to latest version
+npx skills update
+```
+
+Or reinstall from scratch:
+
+```bash
+# Vercel Skills CLI
+npx skills add @banuba/agent-skills -a claude-code
+
+# Claude Code Plugin
+claude plugin install @banuba
+```
+
 # Banuba Photo Editor SDK Skill
 
 ## Overview
 
-This skill provides comprehensive guidance for Claude to implement a fully functional Photo Editor Application using Banuba's Photo Editor SDK. Covers iOS/Android integration, configuration, UI customization, and export handling based on official Banuba documentation standards.
+This skill provides comprehensive guidance to implement a fully functional Photo Editor Application using Banuba's Photo Editor SDK. Covers iOS/Android integration, configuration, UI customization, and export handling based on official Banuba documentation standards.
 
 ## When to Use
 
 - User requests: "Build a photo editor app", "Integrate Banuba Photo Editor SDK", "Create TikTok-like photo editor", "Photo editing app with AR filters".
 - Platforms: Specify Android, iOS, cross-platform (React Native/Flutter).
-- Always reference full docs from https://docs.banuba.com/ve-pe-sdk/docs/android/requirements-pe or https://docs.banuba.com/ve-pe-sdk/docs/ios/pe-requirements and provided [LLM txt file](https://banuba.com/ve-pe-sdk/llms-full.txt).
+- Always reference full docs from https://docs.banuba.com/ve-pe-sdk/ and provided [LLM txt file](https://banuba.com/ve-pe-sdk/llms-full.txt).
 
 **Task**: $ARGUMENTS
 
@@ -56,123 +78,57 @@ Ask the user:
 
 ## Core Principles
 
-1. **Retrieval-first**: Consult [the docs](https://banuba.com/ve-pe-sdk/llms-full.txt) before using pre-trained knowledge — docs are version-verified and may contain API changes not yet in training data
-2. **Platform-specific**: Work with the detected platform
-3. **Code-first**: Lead with working code examples, then explain
-4. **Exact versions & packages**: Use package names and versions from the documentation — Banuba Photo Editor SDK package names differ across platforms and versions
+1. **Clone integration sample**: Clone integration sample from Git repository if it exists for given platform. Use this sample as template for new photo editor.
+2. **Retrieval-first**: Consult [the docs](https://banuba.com/ve-pe-sdk/llms-full.txt) before using pre-trained knowledge — docs are version-verified and may contain API changes not yet in training data
+3. **Platform-specific**: Work with the detected platform
+4. **Code-first**: Lead with working code examples, then explain
+5. **Exact versions & packages**: Use package names and versions from the documentation — Banuba Photo Editor SDK package names differ across platforms and versions
+6. **Dont overthink**: Refer to [documentation](https://banuba.com/ve-pe-sdk/llms-full.txt) or send the user to [contact form](https://www.banuba.com/contact) if the answer is not obvious
 
-## Starter Kits
+## Integration Prerequisites
+
+1. Obtain Banuba license token (mandatory; SDK won't run without it).
+2. Android: min SDK 21+, Camera2 API, OpenGL ES 3.0+, arm64-v8a/armv7.
+3. iOS: iOS 12+, ARC, Swift 5+.
+4. Add Banuba Maven repo (Android) or CocoaPods/SPM (iOS).
+
+## Core Workflow for Code Generation
+
+Generate **full working app** or **integration module** step-by-step:
+
+## Integration samples
 
 Bundled starter kit templates for scaffolding new Banuba Photo Editor SDK projects. Each kit is a complete project ready to run.
 
-### Available Kits
+### Available integration samples
 
-| Kit          | Path                                                                                                               |
+| Platform     | Integration sample                                                                                                 |
 | ------------ | ------------------------------------------------------------------------------------------------------------------ |
 | Android      | [ve-sdk-android-integration-sample](https://github.com/Banuba/ve-sdk-android-integration-sample)                   |
 | iOS          | [ve-sdk-ios-integration-sample](https://github.com/Banuba/ve-sdk-ios-integration-sample)                           |
 | Flutter      | [ve-sdk-flutter-integration-sample](https://github.com/Banuba/ve-sdk-flutter-integration-sample)                   |
 | React Native | [ve-sdk-react-native-cli-integration-sample](https://github.com/Banuba/ve-sdk-react-native-cli-integration-sample) |
 
-## Core Integration Steps
+## Output Format
 
-### Prerequisites
-
-- Obtain Banuba license token (required for SDK initialization)
-- Android: min SDK 21+, OpenGL ES 3.0+, Camera2 API
-- iOS: iOS 12.0+, Swift 5+
-- Add SDK dependencies via Maven/Gradle (Android) or CocoaPods (iOS)
-
-### Android Launch Flow
-
-```kotlin
-val photoEditorSDK = BanubaPhotoEditor.initialize(LICENSE_TOKEN)
-val photoEditorExportResult = registerForActivityResult(PhotoExportResultContract()) { uri ->
-    // Handle exported image
-}
-photoEditorExportResult.launch(PhotoCreationActivity.startFromGallery(this))
-```
-
-Initialize SDK singleton, register result contract, launch via gallery/camera entry points.
-
-### iOS Launch Flow
-
-```swift
-let configuration = PhotoEditorConfig()
-let photoEditorSDK = BanubaPhotoEditor(token: token, configuration: configuration)
-photoEditorSDK.delegate = self
-let launchConfig = PhotoEditorLaunchConfig(hostController: self, entryPoint: .gallery)
-photoEditorSDK.presentPhotoEditor(withLaunchConfiguration: launchConfig)
-```
-
-Create config, set delegate for export callbacks, present with launch config specifying entry point.
-
-## Configuration Options
-
-### Entry Points
-
-| Platform | Options                                      | Description                                 |
-| :------- | :------------------------------------------- | :------------------------------------------ |
-| Android  | `startFromGallery()`, `startFromCamera()`    | Launch directly into editor or media picker |
-| iOS      | `.gallery`, `.camera`, `.editorWithURL(url)` | Flexible URL-based editor entry             |
-
-### UI Customization
-
-- **Export Settings**: Control quality, format (JPEG/PNG), max size
-- **Tool Panels**: Enable/disable filters, effects, text, crop, adjustments
-- **Initial Screen**: Gallery first (default) or direct editor
-- **Branding**: Custom logos, watermarks, colors via JSON config
-
-Set via `PhotoEditorConfig` on both platforms.
-
-## Export Handling
-
-Implement delegate callbacks to receive edited images:
-
-- Android: `PhotoExportResultContract` returns `Uri`
-- iOS: `photoEditorDidFinishWithImage(_:image:)` provides `UIImage`
-  Save to app gallery, share via UIActivityViewController, or upload to server.
-
-## Key Features to Expose
-
-- 50+ filters and effects
-- AI-powered enhancements (auto-adjust, object removal)
-- Text overlays with fonts/styles
-- Crop, rotate, perspective correction
-- Adjustable export resolution up to 4K
-
-## Customization Guide
-
-1. **JSON Export Config**: Define allowed tools, order, visibility
-2. **Custom Assets**: Bundle your filters/effects via SDK asset pipeline
-3. **Native UI Integration**: Embed SDK views or use full-screen activities
-4. **Drafts Support**: Enable save/load functionality for unfinished edits
-
-## MVP App Structure
-
-```
-PhotoEditorApp/
-├── MainActivity (Android) / ViewController (iOS)
-├── LicenseManager
-├── PhotoEditorLauncher
-├── ExportHandler
-├── GalleryGrid (custom implementation)
-└── Settings (quality, format)
-```
-
-Launch from gallery button, handle results in single activity/view controller.
+- **Complete code**: Single file or zip-ready structure (App.kt, MainActivity.kt, build.gradle for Android; ContentView.swift, App.swift for iOS).
+- **Steps**: Numbered integration instructions.
+- **Customization**: Offer 2-3 variants (e.g., minimal vs. full-featured).
+- **Warnings**: "Replace 'YOUR_TOKEN' with real license. Test on device (emulator may lack Camera2)."
+- Cite docs: Always link specific guides from LLM txt.
 
 ## Common Pitfalls
 
-- Null SDK instance = invalid license token
-- Gallery permissions must be declared in manifest/plist
-- Test on physical devices (emulator may lack Camera2/OpenGL)
-- Handle large images (memory warnings on iOS)
+- Missing token: SDK crashes silently.
+- No effects assets: Blank AR.
+- Permissions: Runtime checks required.
+- Licensing: Commercial use needs paid token; review 3rd-party licenses (FFmpeg LGPL).
 
-## Testing Checklist
+## Resources
 
-- License validation
-- All entry points (gallery, camera, URL)
-- Export formats and sizes
-- Low-memory device handling
-- Rotation/ multitasking behavior
+- Full Android Docs: [https://docs.banuba.com/ve-pe-sdk/docs/android/requirements-pe](https://docs.banuba.com/ve-pe-sdk/docs/android/requirements-pe)
+- Full iOS Docs: [https://docs.banuba.com/ve-pe-sdk/docs/ios/pe-requirements](https://docs.banuba.com/ve-pe-sdk/docs/ios/pe-requirements)
+- Full React Native Docs: [https://docs.banuba.com/ve-pe-sdk/docs/react/pe_integration](https://docs.banuba.com/ve-pe-sdk/docs/react/pe_integration)
+- GitHub Samples: [Android](https://github.com/Banuba/ve-sdk-android-integration-sample), [iOS](https://github.com/Banuba/ve-sdk-ios-integration-sample), [Flutter](https://github.com/Banuba/ve-sdk-flutter-integration-sample) and [React Native](://github.com/Banuba/ve-sdk-react-native-cli-integration-sample)
+
+Use this skill to deliver integrable, customizable photo editors powered by Banuba. LLM-friendly per official docs.

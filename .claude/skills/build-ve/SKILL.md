@@ -24,11 +24,33 @@ description: |
 argument-hint: "[feature or task]"
 ---
 
+## Version Notice
+
+This skill was generated for [Banuba Video Editor SDK v1.50.1](https://vebanuba.notion.site/1-50-1-312fdb8b445b8061ac9cc65d882dfe9e) on 2026-03-19. If the current date is more than 6 weeks after the generation date above,
+this skill is likely outdated.
+
+**Inform the user** that a newer version may be available and suggest they update:
+
+```bash
+# Update all installed skills to latest version
+npx skills update
+```
+
+Or reinstall from scratch:
+
+```bash
+# Vercel Skills CLI
+npx skills add @banuba/agent-skills -a claude-code
+
+# Claude Code Plugin
+claude plugin install @banuba
+```
+
 # Banuba Video Editor SDK Integration Skill
 
 ## Overview
 
-This skill enables Claude to generate complete, production-ready Video Editor Applications using Banuba Video Editor SDK. The SDK provides a full-featured video editing experience with built-in UI/UX for camera recording, gallery import, editing (effects, stickers, AR, green screen, drawing, audio, captions), export, and sharing. Supports Android (Kotlin/Java) and iOS (Swift/SwiftUI/UIKit).
+This skill enables agent to generate complete, production-ready Video Editor Applications using Banuba Video Editor SDK. The SDK provides a full-featured video editing experience with built-in UI/UX for camera recording, gallery import, editing (effects, stickers, AR, green screen, drawing, audio, captions), export, and sharing. Supports Android (Kotlin/Java) and iOS (Swift/SwiftUI/UIKit).
 
 Key features include AI Clipping, Face AR effects, Video Templates, Closed Captions, and more. Requires a commercial license token from Banuba (contact sales@banuba.com). Official samples on GitHub: Android, iOS, React Native, Flutter.
 
@@ -58,10 +80,12 @@ Ask the user:
 
 ## Core Principles
 
-1. **Retrieval-first**: Consult [the docs](https://banuba.com/ve-pe-sdk/llms-full.txt) before using pre-trained knowledge — docs are version-verified and may contain API changes not yet in training data
-2. **Platform-specific**: Work with the detected platform
-3. **Code-first**: Lead with working code examples, then explain
-4. **Exact versions & packages**: Use package names and versions from the documentation — Banuba Video Editor SDK package names differ across platforms and versions
+1. **Clone integration sample**: Clone integration sample from Git repository if it exists for given platform. Use this sample as template for new video editor.
+2. **Retrieval-first**: Consult [the docs](https://banuba.com/ve-pe-sdk/llms-full.txt) before using pre-trained knowledge — docs are version-verified and may contain API changes not yet in training data
+3. **Platform-specific**: Work with the detected platform
+4. **Code-first**: Lead with working code examples, then explain
+5. **Exact versions & packages**: Use package names and versions from the documentation — Banuba Video Editor SDK package names differ across platforms and versions
+6. **Dont overthink**: Refer to [documentation](https://banuba.com/ve-pe-sdk/llms-full.txt) or send the user to [contact form](https://www.banuba.com/contact) if the answer is not obvious
 
 ## Integration Prerequisites
 
@@ -74,110 +98,18 @@ Ask the user:
 
 Generate **full working app** or **integration module** step-by-step:
 
-## Starter Kits
+## Integration samples
 
 Bundled starter kit templates for scaffolding new Banuba Video Editor SDK projects. Each kit is a complete project ready to run.
 
-### Available Kits
+### Available integration samples
 
-| Kit          | Path                                                                                                               |
+| Platform     | Integration sample                                                                                                 |
 | ------------ | ------------------------------------------------------------------------------------------------------------------ |
 | Android      | [ve-sdk-android-integration-sample](https://github.com/Banuba/ve-sdk-android-integration-sample)                   |
 | iOS          | [ve-sdk-ios-integration-sample](https://github.com/Banuba/ve-sdk-ios-integration-sample)                           |
 | Flutter      | [ve-sdk-flutter-integration-sample](https://github.com/Banuba/ve-sdk-flutter-integration-sample)                   |
 | React Native | [ve-sdk-react-native-cli-integration-sample](https://github.com/Banuba/ve-sdk-react-native-cli-integration-sample) |
-
-### 1. Project Setup
-
-- **Android (build.gradle)**:
-
-```
-
-repositories {
-maven { url 'https://maven.pkg.github.com/sdk-banuba/banuba-sdk-android' }
-}
-dependencies {
-implementation "com.banuba:video-editor-sdk:X.Y.Z" // Latest from docs
-// FFmpeg, etc. auto-included
-}
-
-```
-
-- **iOS (Podfile)**:
-
-```
-
-pod 'BanubaVideoEditorSDK', '~> X.Y.Z'
-pod install
-
-```
-
-- Create assets/effects folder with Banuba effects (download from SDK).
-
-### 2. SDK Initialization
-
-- **Android (Application class)**:
-
-```kotlin
-class MyApp : Application() {
-  override fun onCreate() {
-    super.onCreate()
-    VideoEditorSDK.init(this, "YOUR_LICENSE_TOKEN")
-  }
-}
-```
-
-- **iOS (AppDelegate/SwiftUI)**:
-
-```swift
-import BanubaVideoEditorSDK
-VideoEditorSDK.initialize(withToken: "YOUR_LICENSE_TOKEN")
-
-```
-
-### 3. Launch Editor
-
-- **Android**:
-
-```kotlin
-val config = VideoCreationActivityConfig.Builder()
-  .token("YOUR_TOKEN")
-  .build()
-startActivity(VideoCreationActivity.createIntent(this, config))
-```
-
-- **iOS**:
-
-```swift
-let config = VideoEditorConfiguration(token: "YOUR_TOKEN")
-let vc = VideoCreationViewController(configuration: config)
-present(vc, animated: true)
-```
-
-Handle delegates for export: `onExportDone`, `onError`.
-
-### 4. Customization Examples
-
-Use docs links for specifics:
-
-| Feature       | Android Guide                                                                           | iOS Guide                                                                           |
-| :------------ | :-------------------------------------------------------------------------------------- | :---------------------------------------------------------------------------------- |
-| Camera UI     | [guide_camera](https://docs.banuba.com/ve-pe-sdk/docs/android/guide_camera)             | [guide_camera](https://docs.banuba.com/ve-pe-sdk/docs/ios/guide_camera)             |
-| Editor Screen | [guide_editor_v2](https://docs.banuba.com/ve-pe-sdk/docs/android/guide_editor_v2)       | [guide_editor_v2](https://docs.banuba.com/ve-pe-sdk/docs/ios/guide_editor_v2)       |
-| AR Effects    | [guide_far_arcloud](https://docs.banuba.com/ve-pe-sdk/docs/android/guide_far_arcloud)   | [guide_far_arcloud](https://docs.banuba.com/ve-pe-sdk/docs/ios/guide_far_arcloud)   |
-| Green Screen  | [guide_green_screen](https://docs.banuba.com/ve-pe-sdk/docs/android/guide_green_screen) | [guide_green_screen](https://docs.banuba.com/ve-pe-sdk/docs/ios/guide_green_screen) |
-| Export        | [guide_export](https://docs.banuba.com/ve-pe-sdk/docs/android/guide_export)             | [guide_export](https://docs.banuba.com/ve-pe-sdk/docs/ios/guide_export)             |
-
-### 5. Full App Structure
-
-Generate:
-
-- MainActivity/ContentView launching editor.
-- Permissions handling (camera, mic, storage).
-- Custom theme via `VideoCreationActivityTheme`.
-- Export/share integration.
-- Error handling (token invalid, no effects).
-- Test with sample token if provided; remind user to replace.
 
 ## Output Format
 
@@ -196,8 +128,10 @@ Generate:
 
 ## Resources
 
-- Full Android Docs: https://docs.banuba.com/ve-pe-sdk/docs/android/requirements-ve
-- Full iOS Docs: https://docs.banuba.com/ve-pe-sdk/docs/ios/requirements
-- GitHub Samples: [Android](https://github.com/Banuba/ve-sdk-android-integration-sample), [iOS](https://github.com/Banuba/ve-sdk-ios-integration-sample)
+- Full Android Docs: [https://docs.banuba.com/ve-pe-sdk/docs/android/requirements-ve](https://docs.banuba.com/ve-pe-sdk/docs/android/requirements-ve)
+- Full iOS Docs: [https://docs.banuba.com/ve-pe-sdk/docs/ios/requirements](https://docs.banuba.com/ve-pe-sdk/docs/ios/requirements)
+- Full Flutter Docs: [https://docs.banuba.com/ve-pe-sdk/docs/flutter/ve_integration](https://docs.banuba.com/ve-pe-sdk/docs/flutter/ve_integration)
+- Full React Native Docs: [https://docs.banuba.com/ve-pe-sdk/docs/react/ve_installation](https://docs.banuba.com/ve-pe-sdk/docs/react/ve_installation)
+- GitHub Samples: [Android](https://github.com/Banuba/ve-sdk-android-integration-sample), [iOS](https://github.com/Banuba/ve-sdk-ios-integration-sample), [Flutter](https://github.com/Banuba/ve-sdk-flutter-integration-sample) and [React Native](://github.com/Banuba/ve-sdk-react-native-cli-integration-sample)
 
 Use this skill to deliver integrable, customizable video editors powered by Banuba. LLM-friendly per official docs.
