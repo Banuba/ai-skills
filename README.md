@@ -12,13 +12,12 @@ Give your AI coding assistant expert-level knowledge of Banuba Video and Photo E
 
 ## Available Skills
 
-| Skill         | Description                                                                           |
-| ------------- | ------------------------------------------------------------------------------------- |
-| `build-ve`    | Implement features, write code, and set up Banuba Video Editor SDK projects           |
-| `build-pe`    | Implement features, write code, and set up Banuba Photo Editor SDK projects           |
-| `explain-ve`  | Explain how Banuba Video Editor SDK features work — concepts, architecture, workflows |
-| `explain-pe`  | Explain how Banuba Photo Editor SDK features work — concepts, architecture, workflows |
-| `explain-far` | Explain how Banuba Face AR SDK features work — concepts, architecture, workflows      |
+| Skill        | Description                                                                           |
+| ------------ | ------------------------------------------------------------------------------------- |
+| `build-ve`   | Implement features, write code, and set up Banuba Video Editor SDK projects           |
+| `build-pe`   | Implement features, write code, and set up Banuba Photo Editor SDK projects           |
+| `explain-ve` | Explain how Banuba Video Editor SDK features work — concepts, architecture, workflows |
+| `explain-pe` | Explain how Banuba Photo Editor SDK features work — concepts, architecture, workflows |
 
 The plugin also includes a **builder** agent that autonomously scaffolds complete Banuba Video Editor or Banuba Photo Editor applications — applying starter kit templates, and implementing features end-to-end.
 
@@ -60,7 +59,6 @@ Once installed, invoke skills with slash commands in your AI coding assistant:
 ```
 /banuba:explain-ve explain Banuba Video Editor SDK
 /banuba:explain-pe explain Banuba Photo Editor
-/banuba:explain-far explain Banuba Face AR SDK
 ```
 
 ### Build a feature
@@ -75,7 +73,6 @@ Once installed, invoke skills with slash commands in your AI coding assistant:
 ```
 /banuba:explain-ve how to create Banuba Video Editor application
 /banuba:explain-pe how to create Banuba Photo Editor application
-/banuba:explain-far how to create effects based on Banuba Face AR SDK
 ```
 
 ## How It Works

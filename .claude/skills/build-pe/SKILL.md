@@ -61,6 +61,19 @@ Ask the user:
 3. **Code-first**: Lead with working code examples, then explain
 4. **Exact versions & packages**: Use package names and versions from the documentation — Banuba Photo Editor SDK package names differ across platforms and versions
 
+## Starter Kits
+
+Bundled starter kit templates for scaffolding new Banuba Photo Editor SDK projects. Each kit is a complete project ready to run.
+
+### Available Kits
+
+| Kit          | Path                                                                                                               |
+| ------------ | ------------------------------------------------------------------------------------------------------------------ |
+| Android      | [ve-sdk-android-integration-sample](https://github.com/Banuba/ve-sdk-android-integration-sample)                   |
+| iOS          | [ve-sdk-ios-integration-sample](https://github.com/Banuba/ve-sdk-ios-integration-sample)                           |
+| Flutter      | [ve-sdk-flutter-integration-sample](https://github.com/Banuba/ve-sdk-flutter-integration-sample)                   |
+| React Native | [ve-sdk-react-native-cli-integration-sample](https://github.com/Banuba/ve-sdk-react-native-cli-integration-sample) |
+
 ## Core Integration Steps
 
 ### Prerequisites

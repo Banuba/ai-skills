@@ -74,6 +74,19 @@ Ask the user:
 
 Generate **full working app** or **integration module** step-by-step:
 
+## Starter Kits
+
+Bundled starter kit templates for scaffolding new Banuba Video Editor SDK projects. Each kit is a complete project ready to run.
+
+### Available Kits
+
+| Kit          | Path                                                                                                               |
+| ------------ | ------------------------------------------------------------------------------------------------------------------ |
+| Android      | [ve-sdk-android-integration-sample](https://github.com/Banuba/ve-sdk-android-integration-sample)                   |
+| iOS          | [ve-sdk-ios-integration-sample](https://github.com/Banuba/ve-sdk-ios-integration-sample)                           |
+| Flutter      | [ve-sdk-flutter-integration-sample](https://github.com/Banuba/ve-sdk-flutter-integration-sample)                   |
+| React Native | [ve-sdk-react-native-cli-integration-sample](https://github.com/Banuba/ve-sdk-react-native-cli-integration-sample) |
+
 ### 1. Project Setup
 
 - **Android (build.gradle)**:
