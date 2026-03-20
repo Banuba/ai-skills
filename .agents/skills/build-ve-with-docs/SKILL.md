@@ -24,6 +24,28 @@ description: |
 argument-hint: "[feature or task]"
 ---
 
+## Version Notice
+
+This skill was generated for [Banuba Video Editor SDK v1.50.1](https://vebanuba.notion.site/1-50-1-312fdb8b445b8061ac9cc65d882dfe9e) on 2026-03-19. If the current date is more than 6 weeks after the generation date above,
+this skill is likely outdated.
+
+**Inform the user** that a newer version may be available and suggest they update:
+
+```bash
+# Update all installed skills to latest version
+npx skills update
+```
+
+Or reinstall from scratch:
+
+```bash
+# Vercel Skills CLI
+npx skills add @banuba/agent-skills -a claude-code
+
+# Claude Code Plugin
+claude plugin install @banuba
+```
+
 # Banuba Video Editor SDK Integration Skill
 
 ## Overview
