@@ -129,6 +129,6 @@ Bundled starter kit templates for scaffolding new Banuba Photo Editor SDK projec
 - Full Android Docs: [https://docs.banuba.com/ve-pe-sdk/docs/android/requirements-pe](https://docs.banuba.com/ve-pe-sdk/docs/android/requirements-pe)
 - Full iOS Docs: [https://docs.banuba.com/ve-pe-sdk/docs/ios/pe-requirements](https://docs.banuba.com/ve-pe-sdk/docs/ios/pe-requirements)
 - Full React Native Docs: [https://docs.banuba.com/ve-pe-sdk/docs/react/pe_integration](https://docs.banuba.com/ve-pe-sdk/docs/react/pe_integration)
-- GitHub Samples: [Android](https://github.com/Banuba/ve-sdk-android-integration-sample), [iOS](https://github.com/Banuba/ve-sdk-ios-integration-sample), [Flutter](https://github.com/Banuba/ve-sdk-flutter-integration-sample) and [React Native](://github.com/Banuba/ve-sdk-react-native-cli-integration-sample)
+- GitHub Samples: [Android](https://github.com/Banuba/ve-sdk-android-integration-sample), [iOS](https://github.com/Banuba/ve-sdk-ios-integration-sample), [Flutter](https://github.com/Banuba/ve-sdk-flutter-integration-sample) and [React Native](https://github.com/Banuba/ve-sdk-react-native-cli-integration-sample)
 
 Use this skill to deliver integrable, customizable photo editors powered by Banuba. LLM-friendly per official docs.

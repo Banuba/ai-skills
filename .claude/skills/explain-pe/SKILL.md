@@ -43,7 +43,7 @@ detection is ambiguous, ask the user to choose from all available platforms.
 
 ### New project or ambiguous detection
 
-Ask the user:s
+## Ask the user:
 
 1. **Which platform?** Offer all options: iOS, Android, Flutter and React native.
 
@@ -52,12 +52,34 @@ Ask the user:s
 1. **Read llms.txt file**: Download and parse [LLM txt file](https://banuba.com/ve-pe-sdk/llms-full.txt).
 2. **Parse docs**: Load [docs](https://docs.banuba.com/ve-pe-sdk/docs/android/requirements-pe) URL and try to find answer.
 3. **Read and respond** with the relevant section and code examples
+4. **Dont overthink**: Refer to [documentation](https://banuba.com/ve-pe-sdk/llms-full.txt) or send the user to [contact form](https://www.banuba.com/contact) if the answer is not obvious
 
 ## Additional Triggers
 
 This skill also covers queries about Banuba Photo Editor SDK block types, asset sources, and feature capabilities.
 
+## Integration samples
+
+Use integration samples to asnwer the questions about code structure, project example etc.
+
+### Available integration samples
+
+| Platform     | Integration sample                                                                                                 |
+| ------------ | ------------------------------------------------------------------------------------------------------------------ |
+| Android      | [ve-sdk-android-integration-sample](https://github.com/Banuba/ve-sdk-android-integration-sample)                   |
+| iOS          | [ve-sdk-ios-integration-sample](https://github.com/Banuba/ve-sdk-ios-integration-sample)                           |
+| Flutter      | [ve-sdk-flutter-integration-sample](https://github.com/Banuba/ve-sdk-flutter-integration-sample)                   |
+| React Native | [ve-sdk-react-native-cli-integration-sample](https://github.com/Banuba/ve-sdk-react-native-cli-integration-sample) |
+
 ## Related Skills
 
 - Use \`/banuba:build-pe\` when the user needs implementation help, not just docs
 - Use \`/banuba:explain-pe\` for conceptual explanations beyond what docs cover
+
+## Resources
+
+- Full Android Docs: [https://docs.banuba.com/ve-pe-sdk/docs/android/requirements-pe](https://docs.banuba.com/ve-pe-sdk/docs/android/requirements-pe)
+- Full iOS Docs: [https://docs.banuba.com/ve-pe-sdk/docs/ios/pe-requirements](https://docs.banuba.com/ve-pe-sdk/docs/ios/pe-requirements)
+- Full React Native Docs: [https://docs.banuba.com/ve-pe-sdk/docs/react/pe_integration](https://docs.banuba.com/ve-pe-sdk/docs/react/pe_integration)
+- GitHub Samples: [Android](https://github.com/Banuba/ve-sdk-android-integration-sample), [iOS](https://github.com/Banuba/ve-sdk-ios-integration-sample), [Flutter](https://github.com/Banuba/ve-sdk-flutter-integration-sample) and [React Native](https://github.com/Banuba/ve-sdk-react-native-cli-integration-sample)
+  А

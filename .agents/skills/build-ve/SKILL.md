@@ -132,6 +132,6 @@ Bundled starter kit templates for scaffolding new Banuba Video Editor SDK projec
 - Full iOS Docs: [https://docs.banuba.com/ve-pe-sdk/docs/ios/requirements](https://docs.banuba.com/ve-pe-sdk/docs/ios/requirements)
 - Full Flutter Docs: [https://docs.banuba.com/ve-pe-sdk/docs/flutter/ve_integration](https://docs.banuba.com/ve-pe-sdk/docs/flutter/ve_integration)
 - Full React Native Docs: [https://docs.banuba.com/ve-pe-sdk/docs/react/ve_installation](https://docs.banuba.com/ve-pe-sdk/docs/react/ve_installation)
-- GitHub Samples: [Android](https://github.com/Banuba/ve-sdk-android-integration-sample), [iOS](https://github.com/Banuba/ve-sdk-ios-integration-sample), [Flutter](https://github.com/Banuba/ve-sdk-flutter-integration-sample) and [React Native](://github.com/Banuba/ve-sdk-react-native-cli-integration-sample)
+- GitHub Samples: [Android](https://github.com/Banuba/ve-sdk-android-integration-sample), [iOS](https://github.com/Banuba/ve-sdk-ios-integration-sample), [Flutter](https://github.com/Banuba/ve-sdk-flutter-integration-sample) and [React Native](https://github.com/Banuba/ve-sdk-react-native-cli-integration-sample)
 
 Use this skill to deliver integrable, customizable video editors powered by Banuba. LLM-friendly per official docs.
