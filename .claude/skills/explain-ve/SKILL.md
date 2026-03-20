@@ -74,6 +74,7 @@ Use integration samples to asnwer the questions about code structure, project ex
 ## Related Skills
 
 - Use \`/banuba:build-ve\` when the user needs implementation help, not just docs
+- Use \`/banuba:build-ve-with-docs\` when the user needs implementation help with docs only
 - Use \`/banuba:explain-ve\` for conceptual explanations beyond what docs cover
 
 ## Resources

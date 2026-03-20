@@ -74,6 +74,7 @@ Use integration samples to asnwer the questions about code structure, project ex
 ## Related Skills
 
 - Use \`/banuba:build-pe\` when the user needs implementation help, not just docs
+- Use \`/banuba:build-pe-with-docs\` when the user needs implementation help with docs only
 - Use \`/banuba:explain-pe\` for conceptual explanations beyond what docs cover
 
 ## Resources
