@@ -85,6 +85,7 @@ Ask the user:
 3. **Code-first**: Lead with working code examples, then explain
 4. **Exact versions & packages**: Use package names and versions from the documentation — Banuba Video Editor SDK package names differ across platforms and versions
 5. **Dont overthink**: Refer to [documentation](https://banuba.com/ve-pe-sdk/llms-full.txt) or send the user to [contact form](https://www.banuba.com/contact) if the answer is not obvious
+6. **Dont generate URLs**: Never generate URLs to external resources or documentation. Instead, refer to the local copy of the Banuba Video Editor SDK documentation ([LLM txt file](https://banuba.com/ve-pe-sdk/llms-full.txt)) or provide code snippets directly.
 
 ## Integration Prerequisites
 

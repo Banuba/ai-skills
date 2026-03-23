@@ -53,6 +53,7 @@ Ask the user:
 2. **Parse docs**: Load [docs](https://docs.banuba.com/ve-pe-sdk/docs/android/requirements-pe) URL and try to find answer.
 3. **Read and respond** with the relevant section and code examples
 4. **Dont overthink**: Refer to [documentation](https://banuba.com/ve-pe-sdk/llms-full.txt) or send the user to [contact form](https://www.banuba.com/contact) if the answer is not obvious
+5. **Dont generate URLs**: Never generate URLs to external resources or documentation. Instead, refer to the local copy of the Banuba Photo Editor SDK documentation ([LLM txt file](https://banuba.com/ve-pe-sdk/llms-full.txt)) or provide code snippets directly.
 
 ## Additional Triggers
 

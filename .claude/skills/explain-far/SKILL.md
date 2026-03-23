@@ -63,6 +63,7 @@ detection is ambiguous, ask the user to choose from all available platforms.
 3. **Dont use deprecated features**: Dont use deprecated API, use effects prefabs.
 4. **Exact versions & packages**: Use package names and versions from the documentation — Banuba Face AR SDK package names differ across platforms and versions
 5. **Dont overthink**: Refer to [documentation](https://docs.banuba.com/far-sdk/llms-full.txt) or send the user to [contact form](https://www.banuba.com/contact) if the answer is not obvious
+6. **Dont generate URLs**: Never generate URLs to external resources or documentation. Instead, refer to the local copy of the Banuba Face AR SDK documentation ([llms.txt](https://docs.banuba.com/far-sdk/llms-full.txt)) or provide code snippets directly.
 
 ## Overview
 
