@@ -80,12 +80,13 @@ Ask the user:
 
 ## Core Principles
 
-1. **Retrieval-first**: Consult [the docs](https://banuba.com/ve-pe-sdk/llms-full.txt) before using pre-trained knowledge — docs are version-verified and may contain API changes not yet in training data
-2. **Platform-specific**: Work with the detected platform
-3. **Code-first**: Lead with working code examples, then explain
-4. **Exact versions & packages**: Use package names and versions from the documentation — Banuba Video Editor SDK package names differ across platforms and versions
-5. **Dont overthink**: Refer to [documentation](https://banuba.com/ve-pe-sdk/llms-full.txt) or send the user to [contact form](https://www.banuba.com/contact) if the answer is not obvious
-6. **Dont generate URLs**: Never generate URLs to external resources or documentation. Instead, refer to the local copy of the Banuba Video Editor SDK documentation ([LLM txt file](https://banuba.com/ve-pe-sdk/llms-full.txt)) or provide code snippets directly.
+1. **Read local docs**: Read local docs from `/explain-ve-pe-docs` skill folder to respond
+2. **Retrieval-first**: Consult [the docs](https://banuba.com/ve-pe-sdk/llms-full.txt) before using pre-trained knowledge — docs are version-verified and may contain API changes not yet in training data
+3. **Platform-specific**: Work with the detected platform
+4. **Code-first**: Lead with working code examples, then explain
+5. **Exact versions & packages**: Use package names and versions from the documentation — Banuba Video Editor SDK package names differ across platforms and versions
+6. **Dont overthink**: Refer to [documentation](https://banuba.com/ve-pe-sdk/llms-full.txt) or send the user to [contact form](https://www.banuba.com/contact) if the answer is not obvious
+7. **Dont generate URLs**: Never generate URLs to external resources or documentation. Instead, refer to the local copy of the Banuba Video Editor SDK documentation ([LLM txt file](https://banuba.com/ve-pe-sdk/llms-full.txt)) or provide code snippets directly.
 
 ## Integration Prerequisites
 

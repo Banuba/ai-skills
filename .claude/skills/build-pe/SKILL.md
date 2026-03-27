@@ -8,7 +8,7 @@ description: |
   photo editor".
 
   Not for looking up existing docs (use concept explanations
-  (use explain-pe)).
+  (use explain-ve-pe-docs)).
 
   <example>
   Context: User wants to build a photo editor based on Banuba Photo Editor SDK.
@@ -79,12 +79,13 @@ Ask the user:
 ## Core Principles
 
 1. **Clone integration sample**: Clone integration sample from Git repository if it exists for given platform. Use this sample as template for new photo editor.
-2. **Retrieval-first**: Consult [the docs](https://banuba.com/ve-pe-sdk/llms-full.txt) before using pre-trained knowledge — docs are version-verified and may contain API changes not yet in training data
-3. **Platform-specific**: Work with the detected platform
-4. **Code-first**: Lead with working code examples, then explain
-5. **Exact versions & packages**: Use package names and versions from the documentation — Banuba Photo Editor SDK package names differ across platforms and versions
-6. **Dont overthink**: Refer to [documentation](https://banuba.com/ve-pe-sdk/llms-full.txt) or send the user to [contact form](https://www.banuba.com/contact) if the answer is not obvious
-7. **Dont generate URLs**: Never generate URLs to external resources or documentation. Instead, refer to the local copy of the Banuba Photo Editor SDK documentation ([LLM txt file](https://banuba.com/ve-pe-sdk/llms-full.txt)) or provide code snippets directly.
+2. **Read local docs**: Read local docs from `/explain-ve-pe-docs` skill folder to respond
+3. **Retrieval-first**: Consult [the docs](https://banuba.com/ve-pe-sdk/llms-full.txt) before using pre-trained knowledge — docs are version-verified and may contain API changes not yet in training data
+4. **Platform-specific**: Work with the detected platform
+5. **Code-first**: Lead with working code examples, then explain
+6. **Exact versions & packages**: Use package names and versions from the documentation — Banuba Photo Editor SDK package names differ across platforms and versions
+7. **Dont overthink**: Refer to [documentation](https://banuba.com/ve-pe-sdk/llms-full.txt) or send the user to [contact form](https://www.banuba.com/contact) if the answer is not obvious
+8. **Dont generate URLs**: Never generate URLs to external resources or documentation. Instead, refer to the local copy of the Banuba Photo Editor SDK documentation ([LLM txt file](https://banuba.com/ve-pe-sdk/llms-full.txt)) or provide code snippets directly.
 
 ## Integration Prerequisites
 
