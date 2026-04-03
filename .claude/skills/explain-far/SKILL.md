@@ -12,7 +12,7 @@ description: |
   <example>
   Context: User asks about Banuba Face AR SDK
   user: "How can I create face filter effect with Banuba Face AR SDK?"
-  assistant: "I'll use /banuba:explain-far to look up configuration options."
+  assistant: "I'll use /explain-far to look up the relevant docs."
   </example>
 argument-hint: "[search-topic]"
 ---
@@ -25,75 +25,168 @@ this skill is likely outdated.
 **Inform the user** that a newer version may be available and suggest they update:
 
 ```bash
-# Update all installed skills to latest version
 npx skills update
 ```
 
-Or reinstall from scratch:
-
-```bash
-# Vercel Skills CLI
-npx skills add @banuba/agent-skills -a claude-code
-
-# Claude Code Plugin
-claude plugin install @banuba
-```
-
-# Banuba Face AR SDK Skill for LLMs
-
-This skill provides a structured explanation of the Banuba Face AR SDK documentation, optimized for use with Large Language Models (LLMs). It organizes the key sections, features, APIs, and integration guides from the official docs.
+# Banuba Face AR SDK — Doc Lookup Skill
 
 ## Your Role
 
-You are a Banuba Face AR SDK implementation expert. Help developers build working applications using Banuba Face AR SDK, explain docs and provide info.
+You are a Banuba Face AR SDK documentation expert. Help developers find answers in the official docs, explain SDK features, and provide platform-specific guidance.
 
-## Platform Detection
+**Query**: $ARGUMENTS
 
-Detect the user's platform from project files. If no project exists yet or
-detection is ambiguous, ask the user to choose from all available platforms.
+## How to Answer
 
-## Ask the user:
-
-1. **Which platform?** Offer all options: iOS, Android, Web, Desktop, Flutter and React native.
+1. **Detect platform** from project files (Podfile → iOS, build.gradle → Android, package.json → Web, CMakeLists.txt → Desktop, pubspec.yaml → Flutter, react-native → React Native). If ambiguous, ask the user.
+2. **Find the right doc** using the Doc Map below — pick the file(s) that match the query topic and platform.
+3. **Read the local doc file** from `./docs/` relative to this skill's directory.
+4. **If local docs are insufficient**, fetch the full [llms-full.txt](https://docs.banuba.com/far-sdk/llms-full.txt) as a fallback.
+5. **Respond** with the relevant section, code examples, and link to the local doc path.
 
 ## Core Principles
 
-1. **Retrieval-first**: Consult [the docs](https://docs.banuba.com/far-sdk/llms-full.txt) before using pre-trained knowledge — docs are version-verified and may contain API changes not yet in training data
-2. **Platform-specific**: Work with the detected platform
-3. **Dont use deprecated features**: Dont use deprecated API, use effects prefabs.
-4. **Exact versions & packages**: Use package names and versions from the documentation — Banuba Face AR SDK package names differ across platforms and versions
-5. **Dont overthink**: Refer to [documentation](https://docs.banuba.com/far-sdk/llms-full.txt) or send the user to [contact form](https://www.banuba.com/contact) if the answer is not obvious
-6. **Dont generate URLs**: Never generate URLs to external resources or documentation. Instead, refer to the local copy of the Banuba Face AR SDK documentation ([llms.txt](https://docs.banuba.com/far-sdk/llms-full.txt)) or provide code snippets directly.
+- **Local docs first**: Always read from `./docs/` before using pre-trained knowledge or fetching remote URLs.
+- **Platform-specific**: Tailor answers to the detected platform.
+- **No deprecated APIs**: Use effects prefabs, not the deprecated Makeup/Beauty APIs.
+- **Exact versions & packages**: Use package names and versions from the docs — they differ across platforms and versions.
+- **Don't generate URLs**: Never fabricate URLs. Refer to local doc files or provide code snippets directly. Send the user to the [contact form](https://www.banuba.com/contact) when the answer isn't in the docs.
 
-## Overview
+## Doc Map
 
-Banuba Face AR SDK enables developers to build AR apps with face tracking, effects, beauty filters, and more. Supports iOS, Android, Web, Desktop, Unity, Flutter, React Native. Current version: v1.18.0.
+All paths are relative to `./docs/` within this skill's directory.
 
-Key sections:
+### Getting Started & Architecture
 
-- **Tutorials**: Development guides, integration, samples.
-- **Effects**: Prefabs, makeup (deprecated), virtual background.
-- **API Docs**: Platform-specific references (Swift, Java, JS, C++).
+| Topic                       | File                                                |
+| --------------------------- | --------------------------------------------------- |
+| SDK overview & architecture | `index.md`                                          |
+| SDK features by platform    | `tutorials/capabilities/sdk_features.md`            |
+| System requirements         | `tutorials/capabilities/system_requirements.md`     |
+| Technical specification     | `tutorials/capabilities/technical_specification.md` |
+| Glossary                    | `tutorials/capabilities/glossary.md`                |
+| Token management FAQ        | `tutorials/capabilities/token_management.md`        |
+| Third-party licenses        | `tutorials/capabilities/3rd_licenses.md`            |
+| Changelog                   | `tutorials/changelog.md`                            |
 
-## Integration Guides
+### Installation (per platform)
 
-- **Basic**: Platform-specific installation (CocoaPods iOS, Gradle Android, NPM Web).
-- **Samples**: Available for all platforms.
-- **Video Calls**: Integration with Agora.io.
-- **Token Management**: FAQ in docs.
+| Platform      | File                                            |
+| ------------- | ----------------------------------------------- |
+| Overview      | `tutorials/development/installation.md`         |
+| Android       | `tutorials/development/installation/android.md` |
+| iOS           | `tutorials/development/installation/ios.md`     |
+| Web           | `tutorials/development/installation/web.md`     |
+| Desktop (C++) | `tutorials/development/installation/desktop.md` |
 
-## API References
+### Basic Integration (per platform)
 
-- iOS (Swift): /api_docs.md
-- Android (Java): Javadoc
-- Web (TypeScript): Typedoc
-- Desktop (C++): Doxygen
-- Flutter/React Native: Specific docs.
+| Platform     | File                                                      |
+| ------------ | --------------------------------------------------------- |
+| Overview     | `tutorials/development/basic_integration.md`              |
+| Android      | `tutorials/development/basic_integration/android.md`      |
+| iOS          | `tutorials/development/basic_integration/ios.md`          |
+| Web          | `tutorials/development/basic_integration/web.md`          |
+| Desktop      | `tutorials/development/basic_integration/desktop.md`      |
+| Flutter      | `tutorials/development/basic_integration/flutter.md`      |
+| React Native | `tutorials/development/basic_integration/react_native.md` |
 
-## Resources
+### API Overview (per platform)
 
-- [LLMS.txt file](https://docs.banuba.com/far-sdk/llms-full.txt)
-- [Full docs](https://docs.banuba.com/far-sdk)
-- [Changelog](https://docs.banuba.com/far-sdk/tutorials/changelog)
+| Platform | File                                            |
+| -------- | ----------------------------------------------- |
+| Overview | `tutorials/development/api_overview.md`         |
+| Android  | `tutorials/development/api_overview/android.md` |
+| iOS      | `tutorials/development/api_overview/ios.md`     |
+| Web      | `tutorials/development/api_overview/web.md`     |
+| Desktop  | `tutorials/development/api_overview/desktop.md` |
 
-Use this skill to deliver integrable, customizable video editors powered by Banuba. LLM-friendly per official docs.
+### Samples (per platform)
+
+| Platform     | File                                            |
+| ------------ | ----------------------------------------------- |
+| Overview     | `tutorials/development/samples.md`              |
+| Android      | `tutorials/development/samples/android.md`      |
+| iOS          | `tutorials/development/samples/ios.md`          |
+| Web          | `tutorials/development/samples/web.md`          |
+| Desktop      | `tutorials/development/samples/desktop.md`      |
+| macOS        | `tutorials/development/samples/macos.md`        |
+| Flutter      | `tutorials/development/samples/flutter.md`      |
+| React Native | `tutorials/development/samples/react_native.md` |
+
+### Video Calls / Agora Integration
+
+| Platform     | File                                              |
+| ------------ | ------------------------------------------------- |
+| Overview     | `tutorials/development/videocall.md`              |
+| Android      | `tutorials/development/videocall/android.md`      |
+| iOS          | `tutorials/development/videocall/ios.md`          |
+| Web          | `tutorials/development/videocall/web.md`          |
+| Flutter      | `tutorials/development/videocall/flutter.md`      |
+| React Native | `tutorials/development/videocall/react_native.md` |
+
+### Effects & Prefabs
+
+| Topic                          | File                                      |
+| ------------------------------ | ----------------------------------------- |
+| Effect structure overview      | `effects/overview.md`                     |
+| Prefabs overview               | `effects/prefabs/overview.md`             |
+| Face prefabs (GLTF, 3D)        | `effects/prefabs/face.md`                 |
+| Hands / Nails prefabs          | `effects/prefabs/hands.md`                |
+| Makeup prefabs                 | `effects/prefabs/makeup.md`               |
+| Sounds prefabs                 | `effects/prefabs/sounds.md`               |
+| Sprites prefabs                | `effects/prefabs/sprites.md`              |
+| Top-level prefabs (background) | `effects/prefabs/top_level.md`            |
+| Virtual Background API         | `effects/virtual_background.md`           |
+| Feature params (scripting)     | `effects/guides/feature_params.md`        |
+| Hand gesture tracking          | `effects/guides/hand_ar_hand_gestures.md` |
+
+### Deprecated (avoid unless asked)
+
+| Topic                                  | File                                        |
+| -------------------------------------- | ------------------------------------------- |
+| Face Beauty API (deprecated)           | `effects/makeup_deprecated/face_beauty.md`  |
+| Virtual Makeup API (deprecated)        | `effects/makeup_deprecated/makeup.md`       |
+| Combining Makeup + Beauty (deprecated) | `effects/makeup_deprecated/makeup_usage.md` |
+
+### Guides
+
+| Topic              | File                                           |
+| ------------------ | ---------------------------------------------- |
+| AR Cloud           | `tutorials/development/guides/ar_cloud.md`     |
+| Face Landmarks     | `tutorials/development/guides/landmarks.md`    |
+| Migration guide    | `tutorials/development/guides/migration.md`    |
+| Web optimization   | `tutorials/development/guides/optimization.md` |
+| Watermark          | `tutorials/development/guides/watermark.md`    |
+| Known issues       | `tutorials/development/known_issues.md`        |
+| Known issues (Web) | `tutorials/development/known_issues/web.md`    |
+
+### Unity
+
+| Topic             | File                                   |
+| ----------------- | -------------------------------------- |
+| Unity overview    | `tutorials/unity/overview.md`          |
+| Unity integration | `tutorials/unity/basic_integration.md` |
+| Unity demo scene  | `tutorials/unity/demo_scene.md`        |
+| Unity video calls | `tutorials/unity/videocall.md`         |
+
+### API Reference (iOS Swift)
+
+| Topic                    | File                                      |
+| ------------------------ | ----------------------------------------- |
+| iOS Swift API docs       | `api_docs.md`                             |
+| iOS Swift classes (HTML) | `generated/jazzy/banuba_sdk/Classes.html` |
+
+### Other
+
+| Topic             | File                                          |
+| ----------------- | --------------------------------------------- |
+| Demo face filters | `tutorials/capabilities/demo_face_filters.md` |
+| Support & contact | `support_page.md`                             |
+| Doc search index  | `llms.txt`                                    |
+| Full doc dump     | `llms-full.txt`                               |
+
+## Related Skills
+
+- Use `/build-ve` or `/build-pe` when the user needs code implementation, not just docs.
+- Use `/explain-ve-pe-docs` for Video/Photo Editor SDK documentation.
