@@ -2,134 +2,106 @@
 name: build-pe
 description: |
   Implement features, write code, and set up Banuba Photo Editor SDK.
-
-  Use when the user asks to implement, create, add, build, set up, or integrate
-  something with Banuba Photo Editor SDK. Triggered by "help me add", "set up", "build a
-  photo editor".
-
-  Not for looking up existing docs (use concept explanations
-  (use explain-pe)).
-
-  <example>
-  Context: User wants to build a photo editor based on Banuba Photo Editor SDK.
-  user: "Help me set up Banuba Photo Editor SDK in my project"
-  assistant: "I'll use /banuba:build-pe to help set this up."
-  </example>
-
-  <example>
-  Context: User wants to add a specific feature
-  user: "Add new feature to my photo editor"
-  assistant: "Let me use /banuba:build-pe to this feature."
-  </example>
-argument-hint: "[feature or task]"
+  Triggered by requests to implement, create, add, build, set up, or integrate
+  with Banuba Photo Editor SDK.
+  Not for documentation lookup — use explain-ve-pe-docs for that.
 ---
 
-## Version Notice
+# Banuba Photo Editor SDK — Build Skill
 
-This skill was generated for [Banuba Photo Editor SDK v1.50.1](https://vebanuba.notion.site/1-50-1-312fdb8b445b8061ac9cc65d882dfe9e) on 2026-03-19. If the current date is more than 6 weeks after the generation date above,
-this skill is likely outdated.
+SDK version: v1.50.1 | Generated: 2026-03-19 | If current date is more than 6 weeks after generation date, warn the user this skill may be outdated.
 
-**Inform the user** that a newer version may be available and suggest they update:
+## Critical constraint
 
-```bash
-# Update all installed skills to latest version
-npx skills update
-```
+All generated code MUST use API names, class names, method signatures, package names, and version numbers from the official documentation — not from pretrained knowledge. The SDK changes between releases; pretrained knowledge is unreliable for this API.
 
-Or reinstall from scratch:
+## Documentation source
 
-```bash
-# Vercel Skills CLI
-npx skills add @banuba/agent-skills -a claude-code
+**Before generating any code**, fetch and search this file:
 
-# Claude Code Plugin
-claude plugin install @banuba
-```
+    https://banuba.com/ve-pe-sdk/llms-full.txt
 
-# Banuba Photo Editor SDK Skill
+This is the authoritative, version-verified, LLM-optimized reference for all Banuba Video and Photo Editor SDKs.
 
-## Overview
+If you cannot fetch URLs, instruct the user to paste the contents of this file or the relevant section into the conversation.
 
-This skill provides comprehensive guidance to implement a fully functional Photo Editor Application using Banuba's Photo Editor SDK. Covers iOS/Android integration, configuration, UI customization, and export handling based on official Banuba documentation standards.
+## Workflow
 
-## When to Use
+For every request, follow these steps in order:
 
-- User requests: "Build a photo editor app", "Integrate Banuba Photo Editor SDK", "Create TikTok-like photo editor", "Photo editing app with AR filters".
-- Platforms: Specify Android, iOS, cross-platform (React Native/Flutter).
-- Always reference full docs from https://docs.banuba.com/ve-pe-sdk/ and provided [LLM txt file](https://banuba.com/ve-pe-sdk/llms-full.txt).
+### 1. Detect platform
 
-**Task**: $ARGUMENTS
+Check the user's project files:
 
-## Your Role
+| Signal                                               | Platform     |
+| ---------------------------------------------------- | ------------ |
+| `build.gradle`, `AndroidManifest.xml`, `.kt`/`.java` | Android      |
+| `Podfile`, `.xcodeproj`, `.swift`                    | iOS          |
+| `pubspec.yaml`                                       | Flutter      |
+| `package.json` with `react-native` dep               | React Native |
 
-You are a Banuba Photo Editor SDK implementation expert. Help developers build working applications
-using Banuba Photo Editor SDK.
+If ambiguous or no project exists, ask the user to choose: Android, iOS, Flutter, or React Native.
 
-## Platform Detection
+### 2. Fetch and search docs
 
-Detect the user's platform from project files. If no project exists yet or
-detection is ambiguous, ask the user to choose from all available platforms.
+Retrieve `https://banuba.com/ve-pe-sdk/llms-full.txt` and find sections matching the user's platform and request. All generated code must be grounded in this source.
 
-### New project or ambiguous detection
+### 3. Scaffold from integration sample (new projects only)
 
-Ask the user:
+| Platform     | Repository                                                             |
+| ------------ | ---------------------------------------------------------------------- |
+| Android      | `https://github.com/Banuba/ve-sdk-android-integration-sample`          |
+| iOS          | `https://github.com/Banuba/ve-sdk-ios-integration-sample`              |
+| Flutter      | `https://github.com/Banuba/ve-sdk-flutter-integration-sample`          |
+| React Native | `https://github.com/Banuba/ve-sdk-react-native-cli-integration-sample` |
 
-1. **Which platform?** Offer all options: iOS, Android, Flutter and React native.
+Clone the relevant sample into the workspace as the project scaffold.
 
-## Core Principles
+### 4. Generate code
 
-1. **Clone integration sample**: Clone integration sample from Git repository if it exists for given platform. Use this sample as template for new photo editor.
-2. **Retrieval-first**: Consult [the docs](https://banuba.com/ve-pe-sdk/llms-full.txt) before using pre-trained knowledge — docs are version-verified and may contain API changes not yet in training data
-3. **Platform-specific**: Work with the detected platform
-4. **Code-first**: Lead with working code examples, then explain
-5. **Exact versions & packages**: Use package names and versions from the documentation — Banuba Photo Editor SDK package names differ across platforms and versions
-6. **Dont overthink**: Refer to [documentation](https://banuba.com/ve-pe-sdk/llms-full.txt) or send the user to [contact form](https://www.banuba.com/contact) if the answer is not obvious
-7. **Dont generate URLs**: Never generate URLs to external resources or documentation. Instead, refer to the local copy of the Banuba Photo Editor SDK documentation ([LLM txt file](https://banuba.com/ve-pe-sdk/llms-full.txt)) or provide code snippets directly.
+Rules:
 
-## Integration Prerequisites
+- Use only APIs and signatures found in the fetched docs
+- Copy exact package names and version numbers from the docs
+- Output complete, drop-in files (e.g., `App.kt` + `build.gradle` for Android; `ContentView.swift` + `Podfile` for iOS)
+- Lead with working code, then add explanation
+- Provide numbered step-by-step integration instructions
+- Never fabricate URLs — only link to URLs from this file or the fetched docs
+- When appropriate, offer minimal vs. full-featured configurations
 
-1. Obtain Banuba license token (mandatory; SDK won't run without it).
-2. Android: min SDK 21+, Camera2 API, OpenGL ES 3.0+, arm64-v8a/armv7.
-3. iOS: iOS 12+, ARC, Swift 5+.
-4. Add Banuba Maven repo (Android) or CocoaPods/SPM (iOS).
+## Prerequisites
 
-## Core Workflow for Code Generation
+| Platform | Requirements                                                  |
+| -------- | ------------------------------------------------------------- |
+| Android  | minSdk 21+, Camera2 API, OpenGL ES 3.0+, arm64-v8a or armv7   |
+| iOS      | iOS 12+, ARC, Swift 5+                                        |
+| All      | Banuba license token — mandatory, SDK will not run without it |
 
-Generate **full working app** or **integration module** step-by-step:
+Dependencies:
 
-## Integration samples
+- **Android**: Add Banuba Maven repository to project-level `build.gradle`
+- **iOS**: Add via CocoaPods or Swift Package Manager
 
-Bundled starter kit templates for scaffolding new Banuba Photo Editor SDK projects. Each kit is a complete project ready to run.
+## Common pitfalls
 
-### Available integration samples
+| Issue             | Resolution                                                                              |
+| ----------------- | --------------------------------------------------------------------------------------- |
+| Missing token     | SDK crashes silently — always warn user to replace `YOUR_TOKEN` with a real license key |
+| No effects assets | AR features render blank without bundled effect assets                                  |
+| Permissions       | Camera + storage need runtime permission checks on both platforms                       |
+| Emulator          | Camera2 may fail on emulators — instruct user to test on physical device                |
+| Licensing         | Commercial use requires paid token; review FFmpeg LGPL terms                            |
 
-| Platform     | Integration sample                                                                                                 |
-| ------------ | ------------------------------------------------------------------------------------------------------------------ |
-| Android      | [ve-sdk-android-integration-sample](https://github.com/Banuba/ve-sdk-android-integration-sample)                   |
-| iOS          | [ve-sdk-ios-integration-sample](https://github.com/Banuba/ve-sdk-ios-integration-sample)                           |
-| Flutter      | [ve-sdk-flutter-integration-sample](https://github.com/Banuba/ve-sdk-flutter-integration-sample)                   |
-| React Native | [ve-sdk-react-native-cli-integration-sample](https://github.com/Banuba/ve-sdk-react-native-cli-integration-sample) |
+## When the answer is not in the docs
 
-## Output Format
+Do not guess or fabricate API calls. Either:
 
-- **Complete code**: Single file or zip-ready structure (App.kt, MainActivity.kt, build.gradle for Android; ContentView.swift, App.swift for iOS).
-- **Steps**: Numbered integration instructions.
-- **Customization**: Offer 2-3 variants (e.g., minimal vs. full-featured).
-- **Warnings**: "Replace 'YOUR_TOKEN' with real license. Test on device (emulator may lack Camera2)."
-- Cite docs: Always link specific guides from LLM txt.
+1. Quote the closest relevant section from the fetched docs, or
+2. Direct the user to: https://www.banuba.com/contact
 
-## Common Pitfalls
+## Reference links
 
-- Missing token: SDK crashes silently.
-- No effects assets: Blank AR.
-- Permissions: Runtime checks required.
-- Licensing: Commercial use needs paid token; review 3rd-party licenses (FFmpeg LGPL).
-
-## Resources
-
-- Full Android Docs: [https://docs.banuba.com/ve-pe-sdk/docs/android/requirements-pe](https://docs.banuba.com/ve-pe-sdk/docs/android/requirements-pe)
-- Full iOS Docs: [https://docs.banuba.com/ve-pe-sdk/docs/ios/pe-requirements](https://docs.banuba.com/ve-pe-sdk/docs/ios/pe-requirements)
-- Full React Native Docs: [https://docs.banuba.com/ve-pe-sdk/docs/react/pe_integration](https://docs.banuba.com/ve-pe-sdk/docs/react/pe_integration)
-- GitHub Samples: [Android](https://github.com/Banuba/ve-sdk-android-integration-sample), [iOS](https://github.com/Banuba/ve-sdk-ios-integration-sample), [Flutter](https://github.com/Banuba/ve-sdk-flutter-integration-sample) and [React Native](https://github.com/Banuba/ve-sdk-react-native-cli-integration-sample)
-
-Use this skill to deliver integrable, customizable photo editors powered by Banuba. LLM-friendly per official docs.
+- Android docs: https://docs.banuba.com/ve-pe-sdk/docs/android/requirements-pe
+- iOS docs: https://docs.banuba.com/ve-pe-sdk/docs/ios/pe-requirements
+- React Native docs: https://docs.banuba.com/ve-pe-sdk/docs/react/pe_integration
+- Sales / licensing: sales@banuba.com
