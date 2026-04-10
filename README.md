@@ -26,38 +26,50 @@ The build skills include starter kit templates for common platforms and autonomo
 - **Video & Photo Editor SDKs** — Android, iOS, Flutter, React Native
 - **Face AR SDK** — Android, iOS, Web, Desktop (C++), Flutter, React Native, Unity, macOS
 
+### SDK Versions
+
+- Video Editor SDK v1.50.1
+- Photo Editor SDK v1.50.1
+- Face AR SDK v1.18.0
+
 ## Setup Instructions
 
 ### Claude Code
 
-Add the marketplace and install the plugin:
-
-```bash
-# Add the marketplace (one-time setup)
-claude plugin marketplace add @banuba/agent-skills
-
-# Install the plugin
-claude plugin install @banuba
-```
-
-### Qwen Code
-
-Skills are also packaged for Qwen Code (see `.qwen/skills/`).
-
-### Vercel Skills CLI
-
 Install using the [Vercel Skills CLI](https://github.com/vercel-labs/skills):
 
 ```bash
-# Install all skills for Claude Code
+# Install all skills
 npx skills add @banuba/agent-skills -a claude-code
 
-# Install a specific skill only
+# Or install a specific skill only
 npx skills add @banuba/agent-skills --skill build-ve -a claude-code
 
 # List available skills first
 npx skills add @banuba/agent-skills --list
 ```
+
+Skills are installed into the `.claude/skills/` directory and loaded automatically.
+
+### Codex
+
+Install using the [Vercel Skills CLI](https://github.com/vercel-labs/skills):
+
+```bash
+npx skills add @banuba/agent-skills -a codex
+```
+
+Skills are installed into the `.codex/skills/` directory.
+
+### Qwen Code
+
+Install using the [Vercel Skills CLI](https://github.com/vercel-labs/skills):
+
+```bash
+npx skills add @banuba/agent-skills -a qwen-code
+```
+
+Skills are installed into the `.qwen/skills/` directory.
 
 ## Usage
 
@@ -66,15 +78,15 @@ Once installed, invoke skills with slash commands in your AI coding assistant:
 ### Build a feature
 
 ```
-/banuba:build-ve   Set up a Video Editor for Android with AI Clipping
-/banuba:build-pe   Add Photo Editor with AR filters to my iOS app
+/build-ve   Set up a Video Editor for Android with AI Clipping
+/build-pe   Add Photo Editor with AR filters to my iOS app
 ```
 
 ### Look up documentation
 
 ```
-/banuba:explain-ve-pe-docs How do I customize the export settings?
-/banuba:explain-far        How to create a Face AR effect with background separation?
+/explain-ve-pe-docs How do I customize the export settings?
+/explain-far        How to create a Face AR effect with background separation?
 ```
 
 ## How It Works
@@ -82,3 +94,14 @@ Once installed, invoke skills with slash commands in your AI coding assistant:
 Each documentation skill bundles the complete SDK guides and API references locally. Skills read directly from these bundled files — no external services or MCP servers are required.
 
 The build skills include starter kit templates for common use cases like video editors or photo editors. They detect your project's platform and generate code accordingly.
+
+## Project Structure
+
+```
+.agents/skills/       Portable skill definitions (SKILL.md per skill)
+.claude/skills/       Claude Code skills + bundled documentation
+.codex/skills/        Codex skills + bundled documentation
+.qwen/skills/         Qwen Code skills + bundled documentation
+```
+
+The `.agents/` directory contains tool-agnostic skill definitions. The `.claude/`, `.codex/`, and `.qwen/` directories each contain the same skills and documentation packaged for their respective AI coding assistant.
