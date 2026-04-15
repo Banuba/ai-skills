@@ -24,7 +24,7 @@ description: |
 
 ## Version Notice
 
-Generated for Banuba Photo Editor SDK v1.51.0 on 2026-03-19. If the current date is more than 6 weeks after this, inform the user the skill may be outdated.
+Generated for Banuba Photo Editor SDK v1.51.0 on 2026-03-31. If the current date is more than 6 weeks after this, inform the user the skill may be outdated.
 
 # Banuba Photo Editor SDK Integration Skill
 
