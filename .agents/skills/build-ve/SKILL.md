@@ -12,7 +12,7 @@ description: |
 
 # Banuba Video Editor SDK — Build Skill
 
-> **SDK version**: v1.50.1 (generated 2026-03-19)
+> **SDK version**: v1.51.0 (generated 2026-03-19)
 > If the current date is more than 6 weeks after 2026-03-19, warn the user that this skill may be outdated and suggest updating.
 
 ## Role

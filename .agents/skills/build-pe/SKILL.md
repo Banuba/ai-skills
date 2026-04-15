@@ -9,7 +9,7 @@ description: |
 
 # Banuba Photo Editor SDK — Build Skill
 
-SDK version: v1.50.1 | Generated: 2026-03-19 | If current date is more than 6 weeks after generation date, warn the user this skill may be outdated.
+SDK version: v1.51.0 | Generated: 2026-03-19 | If current date is more than 6 weeks after generation date, warn the user this skill may be outdated.
 
 ## Critical constraint
 

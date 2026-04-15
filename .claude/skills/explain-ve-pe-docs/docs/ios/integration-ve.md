@@ -34,7 +34,7 @@ source 'https://cdn.cocoapods.org/'
 source 'https://github.com/Banuba/specs.git'
 source 'https://github.com/sdk-banuba/banuba-sdk-podspecs.git'
 
-banuba_sdk_version = '1.50.1'
+banuba_sdk_version = '1.51.0'
 
 pod 'BanubaVideoEditorSDK', banuba_sdk_version
 pod 'BanubaSDKSimple', banuba_sdk_version

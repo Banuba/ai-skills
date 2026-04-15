@@ -28,8 +28,8 @@ The build skills include starter kit templates for common platforms and autonomo
 
 ### SDK Versions
 
-- Video Editor SDK v1.50.1
-- Photo Editor SDK v1.50.1
+- Video Editor SDK v1.51.0
+- Photo Editor SDK v1.51.0
 - Face AR SDK v1.18.0
 
 ## Setup Instructions

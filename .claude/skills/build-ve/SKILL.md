@@ -25,7 +25,7 @@ argument-hint: "[feature or task]"
 
 ## Version Notice
 
-Generated for Banuba Video Editor SDK v1.50.1 on 2026-03-19. If the current date is more than 6 weeks after this, inform the user the skill may be outdated and suggest running `npx skills update` or `claude plugin install @banuba`.
+Generated for Banuba Video Editor SDK v1.51.0 on 2026-03-19. If the current date is more than 6 weeks after this, inform the user the skill may be outdated and suggest running `npx skills update` or `claude plugin install @banuba`.
 
 # Banuba Video Editor SDK Integration Skill
 

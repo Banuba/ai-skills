@@ -18,7 +18,7 @@ description: |
 
 ## Version Notice
 
-This skill was generated for Banuba VE/PE SDK v1.50.1 on 2026-03-19. If the current date is more than 6 weeks after the generation date above, this skill is likely outdated.
+This skill was generated for Banuba VE/PE SDK v1.51.0 on 2026-03-19. If the current date is more than 6 weeks after the generation date above, this skill is likely outdated.
 
 **Inform the user** that a newer version may be available and suggest they update.
 
