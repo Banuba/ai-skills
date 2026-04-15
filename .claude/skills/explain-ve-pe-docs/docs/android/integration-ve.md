@@ -89,12 +89,12 @@ Add the following to your [AndroidManifest.xml](https://github.com/Banuba/ve-sdk
 ``` xml
 <activity android:name="com.banuba.sdk.ve.flow.VideoCreationActivity"
     android:screenOrientation="portrait"
-    android:theme="@style/CustomIntegrationAppTheme"
+    android:theme="@style/VideoCreationTheme"
     android:windowSoftInputMode="adjustResize"
     tools:replace="android:theme" />
 ```  
 > **Important**  
-> Add [CustomIntegrationAppTheme](https://github.com/Banuba/ve-sdk-android-integration-sample/tree/main/app/src/main/res/values/themes.xml#L19) styles resource file.
+> Starting with version 1.51.0, themes are included in the SDK. For earlier versions, see the ```Removed styles``` section in the [changelog](https://www.notion.so/vebanuba/1-51-0-324fdb8b445b801b8f8bcceeb39066ad).
 
 2. **Network permissions** (optional)– only required if using [Giphy](https://giphy.com/) stickers or downloading AR effects from the cloud.
 ```xml

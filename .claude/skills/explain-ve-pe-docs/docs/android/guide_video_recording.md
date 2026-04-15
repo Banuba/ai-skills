@@ -72,13 +72,13 @@ Camera screen includes 3 modes for recording content implemented as ```RecordMod
 - ```Video```
 - ```Photo``` and ```Video``` - default value
 
-Implement ```CameraRecordingModesProvider``` in [VideoEditorModule](https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/app/src/main/java/com/banuba/example/integrationapp/VideoEditorModule.kt) to customize mode that meets your requirements.
+Implement ```CameraConfig``` in [VideoEditorModule](https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/app/src/main/java/com/banuba/example/integrationapp/VideoEditorModule.kt) to customize mode that meets your requirements.
 Default implementation is
 ```kotlin
-single<CameraRecordingModesProvider> {
-    object : CameraRecordingModesProvider {
-        override var availableModes = setOf(RecordMode.Video, RecordMode.Photo)
-    }
+single<CameraConfig>{
+    CameraConfig(
+        recordingModes = listOf(RecordMode.Video, RecordMode.Story)
+    )
 }
 ```
 :::danger

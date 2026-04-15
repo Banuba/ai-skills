@@ -2,7 +2,7 @@
 
 > FAQ on Android
 
-# FAQ on Android  
+# FAQ on Android
 
 These are the answers to the most common questions asked about our SDK.
 
@@ -36,13 +36,15 @@ To add other text fonts that are used in the editor screen follow the next steps
 
 1. Add font files to the `app/src/main/res/font/` directory;
 
-2. Add fonts names to the  ```strings.xml ``` resource file:
+2. Add fonts names to the `strings.xml ` resource file:
+
 ```xml
 <string name="font_1_title" translatable="false">Font 1 Title</string>
 <string name="font_N_title" translatable="false">Font N Title</string>
 ```
 
 3. Add `font_resources.xml` with fonts array declaration to the `app/src/main/res/values/` directory. The format of `font_resources.xml` should be the next one:
+
 ```xml
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
@@ -63,16 +65,16 @@ To add other text fonts that are used in the editor screen follow the next steps
 </resources>
 ```
 
-4. The final step is to pass your custom `font_resources` id to the `MainTextOnVideoTypefaceProvider` in the ```SampleIntegrationKoinModule``` to override the default implementation:
+4. The final step is to pass your custom `font_resources` id to the `MainTextOnVideoTypefaceProvider` in the `SampleIntegrationKoinModule` to override the default implementation:
 
-    ```kotlin
-    single<TextOnVideoTypefaceProvider> {
-        MainTextOnVideoTypefaceProvider(
-            context = get(),
-            fontsArrayResId = R.array.font_resources
-        )
-    }
-    ```
+   ```kotlin
+   single<TextOnVideoTypefaceProvider> {
+       MainTextOnVideoTypefaceProvider(
+           context = get(),
+           fontsArrayResId = R.array.font_resources
+       )
+   }
+   ```
 
 ### Optimizing app size
 
@@ -97,7 +99,7 @@ If you need to change language programmatically in your application, see the nex
 
 ### How do I use the Video Editor several times from different entry points?
 
-Before you want to use VideoEditor again, you need to release ```Video Editor SDK```: 
+Before you want to use VideoEditor again, you need to release `Video Editor SDK`:
 
 ```kotlin
 private fun releaseVideoEditor() {
@@ -118,63 +120,64 @@ private fun releaseUtilityManager() {
 }
 ```
 
-```EditorUtilityManager``` is NULL when the token is expired or revoked.
+`EditorUtilityManager` is NULL when the token is expired or revoked.
 
 ### I want to change icons and name for effects.
 
 Effect customization is implemented by android resources with well-defined names which follow a strict scheme.
 
-| Customization | Resource type | Resource name template | Example
-| :---: | :---: | :---: | :---: |
-| Title | string | visual_effect_\{id\}, time_effect_\{id\} | visual_effect_flash
-| Icon | drawable | ic_visual_effect_\{id\}, ic_time_effect_\{id\} | ic_time_effect_rapid
-| Color | color | visual_effect_color_\{id\}, time_effect_color_\{id\} | visual_effect_color_vhs
+| Customization | Resource type |                Resource name template                |         Example         |
+| :-----------: | :-----------: | :--------------------------------------------------: | :---------------------: |
+|     Title     |    string     |       visual*effect*\{id\}, time*effect*\{id\}       |   visual_effect_flash   |
+|     Icon      |   drawable    |    ic*visual_effect*\{id\}, ic*time_effect*\{id\}    |  ic_time_effect_rapid   |
+|     Color     |     color     | visual*effect_color*\{id\}, time*effect_color*\{id\} | visual_effect_color_vhs |
 
 To change appearance o the effect, you should place any android resources named according to the scheme presented above into res folder of your app. The resource depends on the item you want to customize (string for the title, drawable for the icon, color for the color on the timeline).
 
 Effects identifiers are presented in the table below:
 
-| Effect      | Type | String identifier | Default icon |
-| :---------- | :---:| :--------------:  | :----------: |
-| Acid-whip | visual | acid_whip|  
-| Cathode | visual | cathode |  
-| Flash | visual | flash |  
-| Glitch | visual | glitch |  
-| Glitch 2 | visual | glitch2 |  
-| Glitch 3 | visual | glitch3 |  
-| Heat map | visual | heat_map |  
-| DSLR Kaleidoscope | visual | dslr_kaleidoscope |  
-| Kaleidoscope | visual | kaleidoscope |  
-| Lumiere | visual | lumiere |  
-| Pixel dynamic | visual | pixel_dynamic |  
-| Pixel static | visual | pixel_static |  
-| Polaroid | visual | polaroid |  
-| Rave | visual | rave |  
-| Soul | visual | soul |  
-| Stars | visual | stars |  
-| Transition 1 | visual | transition1 |  
-| Transition 2 | visual | transition2 |  
-| Transition 3 | visual | transition3 |  
-| Transition 4 | visual | transition4 |  
-| TV Foam | visual | tv_foam |  
-| DV Cam | visual | dv_cam |  
-| VHS | visual | vhs |  
-| VHS 2 | visual | vhs2 |  
-| Zoom | visual | zoom |  
-| Zoom 2 | visual | zoom2 |  
-| Slow mo | time | slow_motion |  
-| Rapid | time | rapid |  
+| Effect            |  Type  | String identifier |                                                           Default icon                                                           |
+| :---------------- | :----: | :---------------: | :------------------------------------------------------------------------------------------------------------------------------: |
+| Acid-whip         | visual |     acid_whip     |                  |
+| Cathode           | visual |      cathode      |                      |
+| Flash             | visual |       flash       |                          |
+| Glitch            | visual |      glitch       |                        |
+| Glitch 2          | visual |      glitch2      |                      |
+| Glitch 3          | visual |      glitch3      |                      |
+| Heat map          | visual |     heat_map      |                    |
+| DSLR Kaleidoscope | visual | dslr_kaleidoscope |  |
+| Kaleidoscope      | visual |   kaleidoscope    |            |
+| Lumiere           | visual |      lumiere      |                      |
+| Pixel dynamic     | visual |   pixel_dynamic   |          |
+| Pixel static      | visual |   pixel_static    |            |
+| Polaroid          | visual |     polaroid      |                    |
+| Rave              | visual |       rave        |                            |
+| Soul              | visual |       soul        |                            |
+| Stars             | visual |       stars       |                          |
+| Transition 1      | visual |    transition1    |              |
+| Transition 2      | visual |    transition2    |              |
+| Transition 3      | visual |    transition3    |              |
+| Transition 4      | visual |    transition4    |              |
+| TV Foam           | visual |      tv_foam      |                      |
+| DV Cam            | visual |      dv_cam       |                        |
+| VHS               | visual |        vhs        |                              |
+| VHS 2             | visual |       vhs2        |                            |
+| Zoom              | visual |       zoom        |                            |
+| Zoom 2            | visual |       zoom2       |                          |
+| Slow mo           |  time  |    slow_motion    |                  |
+| Rapid             |  time  |       rapid       |                              |
 
-For example, to change the title of ```Flash``` visual effect to ```SuperFlash``` add it in  ```strings.xml``` in your app.
+For example, to change the title of `Flash` visual effect to `SuperFlash` add it in `strings.xml` in your app.
+
 ```xml
 <string name="visual_effect_flash">SuperFlash</string>
 ```
 
-You can change the color on the timeline for any visual effect. For example, for ```VHS```  you should add color resource with the name ```visual_effect_color_vhs``` into ```colors.xml``` file in your app.
+You can change the color on the timeline for any visual effect. For example, for `VHS` you should add color resource with the name `visual_effect_color_vhs` into `colors.xml` file in your app.
 
 ### I want to change the order of masks, video effects or filters.
 
-The SDK allows to reorder masks and filters in the way you need. To achieve this, create a class ```CustomColorFilterOrderProvider``` and implement ```OrderProvider```:
+The SDK allows to reorder masks and filters in the way you need. To achieve this, create a class `CustomColorFilterOrderProvider` and implement `OrderProvider`:
 
 ```kotlin
 class CustomColorFilterOrderProvider : OrderProvider {
@@ -209,10 +212,10 @@ class CustomColorFilterOrderProvider : OrderProvider {
 ```
 
 :::important
-These are names of specific color filters located in ```assets/bnb-resources/luts```.  
+These are names of specific color filters located in `assets/bnb-resources/luts`.
 :::
 
-Next, use ```CustomColorFilterOrderProvider``` in [VideoEditorModule](https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/app/src/main/java/com/banuba/example/integrationapp/VideoEditorModule.kt#L60)
+Next, use `CustomColorFilterOrderProvider` in [VideoEditorModule](https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/app/src/main/java/com/banuba/example/integrationapp/VideoEditorModule.kt#L60)
 
 ```kotlin
 single<OrderProvider>(named("colorFilterOrderProvider")) {
@@ -226,7 +229,7 @@ Transitions are visual effects applying to the segue between two videos. They ar
 
 To disable or enable transitions, set the `supportsTransitions` flag in the `EditorConfig` class to false or true respectively:
 
-``` kotlin
+```kotlin
 single <EditorConfig>{
     EditorConfig(supportsTransitions = false)
 }
@@ -238,11 +241,11 @@ Transition effects are not being played if the closest video (either to the left
 
 ### How can I convert one or several still images to a video programmatically?
 
-If you would like to create a video from the images instances without opening the Video Editor, you can use the methods from the ```Utils``` object in the [GitHub Sample](https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/app/src/main/java/com/banuba/example/integrationapp/Utils.kt#L72-L131).
+If you would like to create a video from the images instances without opening the Video Editor, you can use the methods from the `Utils` object in the [GitHub Sample](https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/app/src/main/java/com/banuba/example/integrationapp/Utils.kt#L72-L131).
 
 ### How to change the style appearance of the SDK?
 
-Extend ```VideoCreationTheme``` style to customize Video Editor appearance for your app.
+Extend `VideoCreationTheme` style to customize Video Editor appearance for your app.
 
 ```xml
 <style name="CustomIntegrationAppTheme" parent="VideoCreationTheme">
@@ -250,7 +253,7 @@ Extend ```VideoCreationTheme``` style to customize Video Editor appearance for y
 </style>
 ```
 
-Specify your style in ```AndroidManifest.xml``` file for ```VideoCreationActivity```.
+Specify your style in `AndroidManifest.xml` file for `VideoCreationActivity`.
 
 ```xml
 <activity
@@ -271,7 +274,7 @@ The trimmer screen will still be accessible after importing media files from the
 
 To disable it, just change the `supportsTrimRecordedVideo` property to `false` in the `EditorConfig`:
 
-``` kotlin
+```kotlin
 single <EditorConfig>{
     EditorConfig(supportsTrimRecordedVideo = false)
 }
@@ -279,15 +282,15 @@ single <EditorConfig>{
 
 ### How to change the video scaling on the editor screen?
 
-Yon can change video scaling on the editor screen while playback by providing ```PlayerScaleType``` [VideoEditorModule](https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/app/src/main/java/com/banuba/example/integrationapp/VideoEditorModule.kt#L60). To ensure that the video will be fully shown - use ```CENTER_INSIDE``` (keep in mind that if device and video resolutions are different black lines will appear), to fill the screen - use ```FIT_SCREEN_HEIGHT``` (it fills the screen only if video has aspect ratio 9:16)
+Yon can change video scaling on the editor screen while playback by providing `PlayerScaleType` [VideoEditorModule](https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/app/src/main/java/com/banuba/example/integrationapp/VideoEditorModule.kt#L60). To ensure that the video will be fully shown - use `CENTER_INSIDE` (keep in mind that if device and video resolutions are different black lines will appear), to fill the screen - use `FIT_SCREEN_HEIGHT` (it fills the screen only if video has aspect ratio 9:16)
 
-``` kotlin
+```kotlin
 factory<PlayerScaleType>(named("editorVideoScaleType"), override = true) {
      PlayerScaleType.CENTER_INSIDE
 }
 ```
 
-The default value is ```PlayerScaleType.FIT_SCREEN_HEIGHT```.
+The default value is `PlayerScaleType.FIT_SCREEN_HEIGHT`.
 
 ### How to collect logs when I encounter an issue?
 
@@ -298,15 +301,18 @@ If you encounter a crash or other issue and are unsure how to provide logs to th
 After following the instructions, please send the generated bug report file to the [support team](https://www.banuba.com/support) for further investigation.
 
 ### FFmpeg build issue
-Below are the steps to resolve the issue while building the project.
-1. Add the ```android.bundle.enableUncompressedNativeLibs=false``` in the ```gradle.properties```
 
-``` properties
+Below are the steps to resolve the issue while building the project.
+
+1. Add the `android.bundle.enableUncompressedNativeLibs=false` in the `gradle.properties`
+
+```properties
 android.bundle.enableUncompressedNativeLibs=false
 ```
 
-2. Add ```android:extractNativeLibs="true"``` in ```AndroidManifest.xml``` file
-``` xml
+2. Add `android:extractNativeLibs="true"` in `AndroidManifest.xml` file
+
+```xml
 <application
     ...
     android:extractNativeLibs="true"
@@ -315,4 +321,5 @@ android.bundle.enableUncompressedNativeLibs=false
 ```
 
 ### How to integrate custom FFmpeg dependency.
+
 Check out [step-by-step guide](ffmpeg.md) to integrate custom FFmpeg dependency.
