@@ -88,6 +88,10 @@ Dependency setup:
 - **Android**: Add Banuba Maven repository
 - **iOS**: Add via CocoaPods or Swift Package Manager
 
+## Upgrading between SDK versions
+
+When the user is upgrading from an older SDK version, search the fetched docs for the target version's release notes. Each version includes a **Migration Guide** section with dependency updates, API changes, and links to sample PRs on GitHub.
+
 ## Common pitfalls
 
 | Issue             | Detail                                                         |

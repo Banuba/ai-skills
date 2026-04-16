@@ -55,8 +55,17 @@ Reference these GitHub repos when the user asks about project structure or examp
 | Flutter      | https://github.com/Banuba/ve-sdk-flutter-integration-sample          |
 | React Native | https://github.com/Banuba/ve-sdk-react-native-cli-integration-sample |
 
+## Release Notes & Migration
+
+When the user asks about release notes, changelogs, what's new, migration guides, or upgrading between SDK versions, search the fetched LLM docs for the relevant version's release notes. Each version includes:
+
+- **List of changes**: new features, improvements, and bug fixes
+- **Migration Guide**: dependency updates, API changes, and links to sample PRs on GitHub
+
+If the user asks about a specific version, look for the section matching that version number in the docs.
+
 ## Scope boundaries
 
-- **This skill**: documentation lookup, configuration explanations, feature guides, getting-started instructions.
+- **This skill**: documentation lookup, configuration explanations, feature guides, getting-started instructions, release notes, and migration guides.
 - **build-ve skill**: writing Video Editor implementation code, scaffolding projects.
 - **build-pe skill**: writing Photo Editor implementation code, scaffolding projects.

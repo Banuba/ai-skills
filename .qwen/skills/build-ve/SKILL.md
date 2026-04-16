@@ -102,6 +102,10 @@ Modify the cloned sample based on the user's needs. Consult the platform-specifi
 - **Steps**: Numbered integration instructions.
 - **Warnings**: Always remind to replace `YOUR_TOKEN` and test on a real device.
 
+## Upgrading Between SDK Versions
+
+When the user is upgrading from an older SDK version, consult the release notes for the target version. If the `explain-ve-pe-docs` skill is available, read its local docs at `release-notes/{version}.md` — each file contains a **Migration Guide** with dependency updates, API changes, and links to sample PRs. For the full Android changelog, see `release-notes/Android.md`.
+
 ## Common Pitfalls
 
 - Missing token: SDK crashes silently.
