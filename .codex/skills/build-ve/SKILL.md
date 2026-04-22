@@ -46,7 +46,7 @@ Detect the user's platform from project files. If no project exists yet or detec
 
 1. Obtain Banuba license token (mandatory; SDK won't run without it).
 2. Android: min SDK 21+, Camera2 API, OpenGL ES 3.0+, arm64-v8a/armv7.
-3. iOS: iOS 12+, ARC, Swift 5+.
+3. iOS: iOS 15+, ARC, Swift 5+, Xcode 26.0+.
 4. Add Banuba Maven repo (Android) or CocoaPods/SPM (iOS).
 
 ## Core Workflow
