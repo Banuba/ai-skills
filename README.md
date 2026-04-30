@@ -11,7 +11,7 @@ Give your AI coding assistant expert-level knowledge of Banuba Video Editor and 
 [Agent Skills](https://agentskills.io) are portable knowledge packs that plug into AI coding assistants. By installing the Banuba agent skills, you get:
 
 - **Offline documentation** — all guides, API references, and best practices bundled locally — no external API calls
-- **Guided code generation** — build and explain skills that walk through SDK implementation step by step
+- **Guided code generation** — a step-by-step walkthrough and explanation of SDK implementation
 - **Autonomous scaffolding** — a builder agent that creates complete Video Editor or Photo Editor projects from scratch
 
 ## Why Agent Skills??
