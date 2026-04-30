@@ -18,7 +18,7 @@ Feel free to contact us if you have any questions regarding the [Photo Editor SD
 
 This is what you need to run the AR Photo Editor SDK:
 - Swift 5.10 or newer,
-- Xcode 16.0 or newer,
+- Xcode 26.0 or newer,
 - iOS 15.0 or newer.
 
 ## SDK size

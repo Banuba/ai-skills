@@ -17,7 +17,7 @@ Feel free to contact us if you have any questions regarding [Video Editor SDK](h
 This is what you need to run the AI Video Editor SDK:
 
 - Swift 5.9 or newer,
-- Xcode 16.0 or newer,
+- Xcode 26.0 or newer,
 - iOS 15.0 or newer.
 - :white_check_mark: arm64, :white_check_mark: arm64e, :exclamation: x86-64 limited support
 

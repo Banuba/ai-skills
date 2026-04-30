@@ -27,8 +27,7 @@ videoEditorSDK?.presentVideoEditor(
 ## What are the available entry points of the Video Editor?
 
 The Video Editor supports multiple launch entry points that are declared in `PresentEventOptions.EntryPoint` to meet all your requirements:
-
-```swift
+``` swift
 public enum EntryPoint: String, Codable {
   case camera
   case pip
@@ -40,8 +39,7 @@ public enum EntryPoint: String, Codable {
 ```
 
 To open the Video Editor at the desired screen, use `VideoEditorLaunchConfig` that should be passed to the `presentVideoEditor` method of the `BanubaVideoEditor` class:
-
-```swift
+``` swift
 public func presentVideoEditor(
   withLaunchConfiguration configuration: VideoEditorLaunchConfig,
   completion: (() -> Void)?
@@ -49,8 +47,7 @@ public func presentVideoEditor(
 ```
 
 1. Launch from the Camera screen where the user can record a video or take a picture:
-
-```swift
+``` swift
 let launchConfig = VideoEditorLaunchConfig(
   entryPoint: .camera,
   hostController: UIViewController,
@@ -63,12 +60,12 @@ videoEditorSDK.presentVideoEditor(
 )
 ```
 
-2. Launch from the Camera screen in the Picture-in-Picture (PIP) mode:
-   :::important
-   The Video Editor will not open in the PIP mode if your license token does not support the PIP feature.
-   :::
+2. Launch from the Camera screen in the Picture-in-Picture (PIP) mode:  
+:::important  
+The Video Editor will not open in the PIP mode if your license token does not support the PIP feature.
+:::
 
-```swift
+``` swift
 let launchConfig = VideoEditorLaunchConfig(
   entryPoint: .pip,
   hostController: UIViewController,
@@ -82,8 +79,7 @@ videoEditorSDK.presentVideoEditor(
 ```
 
 3. Launch from the Trimmer screen where the user can trim a video, add transitions and move to the editing screen for adding effects:
-
-```swift
+``` swift
 let launchConfig = VideoEditorLaunchConfig(
   entryPoint: .trimmer,
   hostController: UIViewController,
@@ -98,8 +94,7 @@ videoEditorSDK.presentVideoEditor(
 ```
 
 4. Launch from the Editor screen where the user can add effects to a video:
-
-```swift
+``` swift
 let launchConfig = VideoEditorLaunchConfig(
   entryPoint: .editor,
   hostController: UIViewController,
@@ -114,8 +109,7 @@ videoEditorSDK.presentVideoEditor(
 ```
 
 5. Launch from the Drafts screen where the user can pick any non-completed draft and proceed with making a video:
-
-```swift
+``` swift
 let launchConfig = VideoEditorLaunchConfig(
   entryPoint: .drafts,
   hostController: UIViewController,
@@ -128,8 +122,7 @@ videoEditorSDK.presentVideoEditor(
 ```
 
 6. Launch from the Gallery screen where the user can select videos or photos and proceed to the Editor screen:
-
-```swift
+``` swift
 let launchConfig = VideoEditorLaunchConfig(
   entryPoint: .gallery,
   hostController: UIViewController,
@@ -158,7 +151,7 @@ extension ViewController: BanubaVideoEditorDelegate {
       }
     }
   }
-
+  
   func videoEditorDidCancel(
     _ videoEditor: BanubaVideoEditor
   ) {
@@ -173,7 +166,7 @@ extension ViewController: BanubaVideoEditorDelegate {
 }
 ```
 
-Use the following approach if you want to [create the BanubaVideoEditor instance](https://github.com/Banuba/ve-sdk-ios-integration-sample/blob/d9733e78a6a752dd8fad849f6aa6d5553eb07f56/Example/Example/ViewController.swift#L42) again.
+Use the following approach if you want to [create the BanubaVideoEditor instance](https://github.com/Banuba/ve-sdk-ios-integration-sample/blob/d9733e78a6a752dd8fad849f6aa6d5553eb07f56/Example/Example/ViewController.swift#L42) again. 
 
 For example, as your tap button action:
 
@@ -207,7 +200,6 @@ let config = VideoEditorConfig()
 config.combinedGalleryConfiguration.isPhotoSequenceAnimationEnabled = true
 config.recorderConfiguration.isPhotoSequenceAnimationEnabled = true
 ```
-
 ## I want to change the cursor color.
 
 All you need is just to set your color into the `cursorColor` parameter in the `MainOverlayViewControllerConfig` entity:
@@ -230,8 +222,7 @@ public class BanubaVideoEditor {
   ...
 }
 ```
-
-`MusicEditorMetadata` contains the array of `MusicEditorTrack` which contains the following fields:
+`MusicEditorMetadata` contains the array of `MusicEditorTrack` which contains the following fields: 
 
 ```swift
 // MARK: - MusicEditorTrack
@@ -249,7 +240,6 @@ public struct MusicEditorTrack: Codable {
   ...
 }
 ```
-
 or if you want to know what track was played on the camera screen, you can use:
 
 ```swift
@@ -262,17 +252,14 @@ public class BanubaVideoEditor {
   ...
 }
 ```
-
 ## I want to change the font.
 
 You can change the font for the whole Video Editor by calling in `VideoEditorConfig` this method:
-
+ 
 ```swift
 func applyFont(_ font: UIFont)
 ```
-
 or change the font for each screen separately by calling the appropriate methods:
-
 ```swift
 func updateFullScreenActivityFonts(_ font: UIFont)
 
@@ -325,13 +312,13 @@ Here is an example on how to inherit `VoiceFilterProvider` to your own entity:
 /// Example voice filter provider
 struct ExampleVoiceFilterProvider: VoiceFilterProvider {
   private let filters: [VoiceFilter]
-
+  
   // MARK: - VoiceFilterProvider
-
+  
   func provideFilters() -> [VoiceFilter] {
     return filters
   }
-
+  
   init() {
     filters = [
       VoiceFilter(
@@ -382,33 +369,33 @@ config.musicEditorConfiguration.audioTrackLineEditControllerConfig.voiceFilterPr
 The name of the icon for the effect must match the identifier of the effect.
 Below there is a table with the name, ID and icon of the default effects:
 
-| Default image effect                                                                              | Name          | ID     |
-| ------------------------------------------------------------------------------------------------- | ------------- | ------ |
-|                      | Acid whip     | 102000 |
-|                          | Cathode       | 102001 |
-|                      | DV Cam        | 102002 |
-|                    | Flash         | 102003 |
-|                            | Glitch        | 102004 |
-|                    | Glitch 2      | 102005 |
-|                    | Heat Map      | 102006 |
-|                    | Lumiere       | 102007 |
-|          | Mirror        | 102008 |
-|  | Mirror 2      | 102009 |
-|        | Pixel Dynamic | 102010 |
-|          | Pixel Static  | 102011 |
-|                        | Polaroid      | 102012 |
-|                      | Rave          | 102013 |
-|                      | Soul          | 102014 |
-|                        | Stars         | 102015 |
-|                  | TV-Foam       | 102016 |
-|            | Transition    | 102017 |
-|            | Transition 2  | 102018 |
-|                        | VHS           | 102019 |
-|                          | VHS 2         | 102020 |
-|                                | Zoom          | 102021 |
-|                        | Zoom 2        | 102022 |
-|          | 0.5x          | 104000 |
-|                    | 2x            | 104001 |
+| Default image effect | Name      | ID      |
+| ---------- | ---------  | ----------- |
+|  | Acid whip | 102000
+|  | Cathode | 102001
+|  | DV Cam | 102002
+|  | Flash | 102003
+|  | Glitch | 102004
+|  | Glitch 2 | 102005
+|  | Heat Map | 102006
+|  | Lumiere | 102007
+|  | Mirror | 102008
+|  | Mirror 2 | 102009
+|  | Pixel Dynamic | 102010
+|  | Pixel Static | 102011
+|  | Polaroid | 102012
+|  | Rave | 102013
+|  | Soul | 102014
+|  | Stars | 102015
+|  | TV-Foam | 102016
+|  | Transition | 102017
+|  | Transition 2 | 102018
+|  | VHS | 102019
+|  | VHS 2 | 102020
+|  | Zoom | 102021
+|  | Zoom 2 | 102022
+|  | 0.5x | 104000
+|  | 2x | 104001
 
 In order to change the name of the effect, you need to do it in the [localization file](https://github.com/Banuba/ve-sdk-ios-integration-sample/tree/main/Example/Example/en.lproj/Localizable.strings#L254).
 
@@ -417,8 +404,7 @@ In order to change the name of the effect, you need to do it in the [localizatio
 In order to find out which filter, effects, masks and music were applied to the video, you need to refer to the instance of the `BanubaVideoEditor` entity.
 
 The instance:
-
-```swift
+``` swift
 let videoEditorSDK = BanubaVideoEditor(
   ...
 )
@@ -482,7 +468,6 @@ The newly added locale will be applied after the device language is changed by t
 ## How can I change the extension of the exported video?
 
 To save the video in the format you want, you just need to add the appropriate `PathComponent` when creating the video URL:
-
 ```swift
 let videoURL = manager.temporaryDirectory.appendingPathComponent("tmp.mov")
 ```
@@ -495,7 +480,7 @@ See all the formats supported for the video export [here](guide_export.md).
 
 The SDK allows to reorder masks and filters in the way you need. To achieve this, use the `preferredLutsOrder` and `preferredMasksOrder` properties:
 
-```swift
+``` swift
 let config = VideoEditorConfig()
 
 // Sorting for the record screen
@@ -541,7 +526,7 @@ The trimmer screen will still be accessible after importing media files from the
 
 To disable it, just change the `supportsTrimRecordedVideo` property to `false` in the `FeatureConfiguration` entity:
 
-```swift
+``` swift
 func createVideoEditorConfig() -> VideoEditorConfig {
   var config = VideoEditorConfig()
   ...
@@ -557,19 +542,19 @@ func createVideoEditorConfig() -> VideoEditorConfig {
 Transitions are visual effects applying to the segue between two videos. They are provided with the Banuba Video Editor SDK **by default**.
 
 To disable or enable transitions, set the `useTransitions` flag inside the `FeatureConfiguration` class to false or true respectively:
-
-```swift
+ 
+ ``` swift
 /// Allows you to use transition effects between videos
 /// Defaults is true
 public var useTransitions: Bool
-```
-
+ ```
+ 
 Example:
-
-```swift
+ 
+ ``` swift
 let config = VideoEditorConfig()
 config.featureConfiguration.useTransitions = true
-```
+ ```
 
 :::note
 Transition effects are not being played if the closest video (either to the left or to the right of the transition icon) is very short.
@@ -581,7 +566,7 @@ If you would like to create a video from UIImage instances without opening the V
 
 ## Is it possible to store localization strings in a file other than Localizable.strings?
 
-Sometimes other 3rd party dependencies overwrite the `Localizable.strings` file stored in the app bundle during compilation. In such cases it is also possible to store the localization strings in the `Banuba.strings` file.
+Sometimes other 3rd party dependencies overwrite the `Localizable.strings` file stored in the app bundle during compilation. In such cases it is also possible to store the localization strings in the `Banuba.strings` file. 
 
 ## How to change the default animation (exposure view) shown after tapping on the camera preview?
 
@@ -619,11 +604,11 @@ class ExampleViewControllerFactory: ExternalViewControllerFactory {
     var exposureViewFactory: AnimatableViewFactory?
     var musicEditorFactory: MusicEditorExternalViewControllerFactory?
     var countdownTimerViewFactory: CountdownTimerViewFactory?
-
+    
     init() {
         countdownTimerViewFactory = CountdownTimerViewControllerFactory()
     }
-
+    
     /// Example countdown timer view factory for Recorder countdown animation
     class CountdownTimerViewControllerFactory: CountdownTimerViewFactory {
         func makeCountdownTimerView() -> CountdownTimerAnimatableView {

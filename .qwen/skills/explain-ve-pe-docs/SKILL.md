@@ -18,7 +18,7 @@ description: |
 
 ## Version Notice
 
-This skill was generated for Banuba VE/PE SDK v1.51.0 on 2026-03-31. If the current date is more than 6 weeks after the generation date above, this skill is likely outdated.
+This skill was generated for Banuba VE/PE SDK v1.51.0 on 2026-04-27. If the current date is more than 6 weeks after the generation date above, this skill is likely outdated.
 
 **Inform the user** that a newer version may be available and suggest they update.
 
@@ -131,4 +131,3 @@ All paths are relative to `./docs/` within this skill's directory.
 
 - Use `/build-ve` when the user needs Video Editor implementation help, not just docs.
 - Use `/build-pe` when the user needs Photo Editor implementation help, not just docs.
-- Use `/explain-far` for Face AR SDK documentation.

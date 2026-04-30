@@ -1,6 +1,6 @@
 # Banuba Agent Skills
 
-This repository contains AI coding assistant skills for Banuba Video Editor, Photo Editor, and Face AR SDKs. Skills are portable knowledge packs that provide offline documentation and guided code generation.
+This repository contains AI coding assistant skills for Banuba Video Editor and Photo Editor SDKs. Skills are portable knowledge packs that provide offline documentation and guided code generation.
 
 ## Project Structure
 
@@ -20,25 +20,22 @@ Each skill is defined once in `.agents/` and replicated with platform-specific p
 | `build-ve`           | Builder     | Scaffold and implement Banuba Video Editor SDK projects            |
 | `build-pe`           | Builder     | Scaffold and implement Banuba Photo Editor SDK projects            |
 | `explain-ve-pe-docs` | Docs lookup | Look up VE/PE SDK configuration, customization, and feature guides |
-| `explain-far`        | Docs lookup | Look up Face AR SDK reference docs and configuration               |
 
 ## SDK Versions
 
 - Video Editor SDK v1.51.0
 - Photo Editor SDK v1.51.0
-- Face AR SDK v1.18.0
 
 ## Supported Platforms
 
 - **Video & Photo Editor SDKs**: Android, iOS, Flutter, React Native
-- **Face AR SDK**: Android, iOS, Web, Desktop (C++), Flutter, React Native, Unity, macOS
 
 ## Key Conventions
 
 - Skills are installed via `npx skills add @banuba/agent-skills -a <assistant>`.
 - Each SKILL.md file contains a YAML frontmatter block (`name`, `description`, `argument-hint`) followed by the skill prompt.
 - Builder skills (`build-ve`, `build-pe`) fetch live docs from `https://banuba.com/ve-pe-sdk/llms-full.txt` and clone integration samples from GitHub.
-- Docs lookup skills (`explain-ve-pe-docs`, `explain-far`) read from bundled `./docs/` directories within each skill folder.
+- Docs lookup skill (`explain-ve-pe-docs`) read from bundled `./docs/` directories within each skill folder.
 - All four skills must stay in sync across `.agents/`, `.claude/`, `.codex/`, and `.qwen/` directories.
 
 ## When Editing Skills
