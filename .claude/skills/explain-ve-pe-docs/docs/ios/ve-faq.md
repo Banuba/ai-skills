@@ -309,6 +309,9 @@ The filters' availability depends on the token. However, in order for them to be
 Here is an example on how to inherit `VoiceFilterProvider` to your own entity:
 
 ```swift
+import BanubaMusicEditorSDK
+import UIKit
+
 /// Example voice filter provider
 struct ExampleVoiceFilterProvider: VoiceFilterProvider {
   private let filters: [VoiceFilter]

@@ -5606,3 +5606,6 @@ implementation("com.banuba.sdk:pe-sdk:${banubaPESdkVersion}")
 ### [1.50.0]
 ### [1.50.1]
 ### [1.51.0]
+### [1.51.1]
+### [1.51.2]
+### [1.51.3]

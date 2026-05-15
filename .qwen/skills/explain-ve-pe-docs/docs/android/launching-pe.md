@@ -38,6 +38,9 @@ Photo editing content unavailable screen will appear if the user starts Photo Ed
 
 Import classes
 ```kotlin
+import com.banuba.sdk.pe.BanubaPhotoEditor
+import com.banuba.sdk.pe.PhotoCreationActivity
+import com.banuba.sdk.pe.PhotoExportResultContract
 ```
 
 Start Photo Editor SDK and handle exported results.  

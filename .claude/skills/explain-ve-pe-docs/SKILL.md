@@ -19,7 +19,7 @@ argument-hint: "[search-topic]"
 
 ## Version Notice
 
-This skill was generated for Banuba VE/PE SDK v1.51.0 on 2026-04-27. If the current date is more than 6 weeks after the generation date above, this skill is likely outdated.
+This skill was generated on 2026-05-15 against Banuba VE/PE SDK docs. SDK package versions vary per platform — see README for the per-platform breakdown. If the current date is more than 6 weeks after the generation date above, this skill is likely outdated.
 
 **Inform the user** that a newer version may be available and suggest they update:
 
@@ -40,7 +40,7 @@ You are a Banuba Video and Photo Editor SDKs documentation expert. Help develope
 1. **Detect platform** from project files (build.gradle → Android, Podfile → iOS, pubspec.yaml → Flutter, package.json with react-native → React Native). If ambiguous, ask the user.
 2. **Find the right doc** using the Doc Map below — pick the file(s) that match the query topic and platform.
 3. **Read the local doc file** from `./docs/` relative to this skill's directory.
-4. **If local docs are insufficient**, fetch the full [llms-full.txt](https://banuba.com/ve-pe-sdk/llms-full.txt) as a fallback.
+4. **If local docs are insufficient**, fall back to `./docs/llms-full.txt`, then to `https://banuba.com/ve-pe-sdk/llms-full.txt`.
 5. **Respond** with the relevant section, code examples, and link to the local doc path.
 
 ## Core Principles
@@ -122,13 +122,14 @@ All paths are relative to `./docs/` within this skill's directory.
 
 ### Release Notes & Migration
 
-| Topic                       | File                                              |
-| --------------------------- | ------------------------------------------------- |
-| Latest release (v1.51.0)    | `release-notes/1.51.0.md`                         |
-| Full Android changelog      | `release-notes/Android.md`                        |
-| Known issues                | `release-notes/Known_issues.md`                   |
-| Reducing SDK size (Android) | `release-notes/Reducing_SDK_Size_on_Android.md`   |
-| Version-specific notes      | `release-notes/{version}.md` (e.g., `1.50.0.md`) |
+| Topic                          | File                                                        |
+|--------------------------------|-------------------------------------------------------------|
+| Latest major release (v1.51.0) | `release-notes/1.51.0.md`                                   |
+| VE patch series (1.51.x)       | `release-notes/1.51.x_patches.md` (Android/iOS native only) |
+| Full Android changelog         | `release-notes/Android.md`                                  |
+| Known issues                   | `release-notes/Known_issues.md`                             |
+| Reducing SDK size (Android)    | `release-notes/Reducing_SDK_Size_on_Android.md`             |
+| Version-specific notes         | `release-notes/{version}.md` (e.g., `1.50.0.md`)            |
 
 > For migration between SDK versions, read the target version's release notes file — each contains a **Migration Guide** section with dependency updates, API changes, and links to sample PRs.
 

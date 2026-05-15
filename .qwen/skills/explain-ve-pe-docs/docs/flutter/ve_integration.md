@@ -10,6 +10,7 @@ This guide helps to complete full Video Editor SDK integration.
 Use in your Dart code
 
 ``` dart
+import 'package:ve_sdk_flutter/ve_sdk_flutter.dart';
 ```
 
 ## Configuration

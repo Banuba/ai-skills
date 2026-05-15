@@ -61,6 +61,8 @@ Please contact Banuba representatives to know more about using this feature.
 Use ```BanubaMusicProvider``` implementation in [VideoEditorModule](https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/app/src/main/java/com/banuba/example/integrationapp/VideoEditorModule.kt#L64)
 
 ```kotlin
+import com.banuba.sdk.audiobrowser.api.BanubaMusicProvider
+
 single<ContentFeatureProvider<TrackData, Fragment>>(named("musicTrackProvider")){
     BanubaMusicProvider()
 }

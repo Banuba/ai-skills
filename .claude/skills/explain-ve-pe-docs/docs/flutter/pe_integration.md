@@ -10,6 +10,7 @@ This guide helps to complete full Photo Editor SDK integration.
 Use in your Dart code
 
 ``` dart
+import 'package:pe_sdk_flutter/pe_sdk_flutter.dart';
 ```
 
 ## Configuration

@@ -21,3 +21,21 @@ Use a new entry point in `VideoCreationActivity` to launch the Video Editor SDK 
 ```kotlin
 val intent = VideoCreationActivity.startFromTemplates(Context)
 ```
+
+## Setup Custom Templates
+
+:::important
+Use this method if you have an agreement with Banuba for the delivery of additional templates and have received the corresponding URL. By default, the SDK is delivered with predefined configuration to load Banuba templates.
+:::
+
+```kotlin
+class KoinModule {
+    ...
+    single {
+        TemplatesConfig(
+            url = // your endpoint i.e. "https://" 
+        )
+        ...
+    }
+}
+```
