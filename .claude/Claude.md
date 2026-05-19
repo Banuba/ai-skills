@@ -40,7 +40,7 @@ Each skill is defined once in `.agents/` and replicated with platform-specific p
 
 ## Key Conventions
 
-- Skills are installed via `npx skills add @banuba/agent-skills -a <assistant>`.
+- Skills are installed via `npx skills add Banuba/ai-skills -a <assistant>`.
 - Each SKILL.md file contains a YAML frontmatter block (`name`, `description`, `argument-hint`) followed by the skill prompt.
 - Builder skills (`build-ve`, `build-pe`) fetch live docs from `https://banuba.com/ve-pe-sdk/llms-full.txt` and clone integration samples from GitHub.
 - Docs lookup skill (`explain-ve-pe-docs`) read from bundled `./docs/` directories within each skill folder.

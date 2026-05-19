@@ -53,13 +53,13 @@ Install using the [Vercel Skills CLI](https://github.com/vercel-labs/skills):
 
 ```bash
 # Install all skills
-npx skills add @banuba/agent-skills -a claude-code
+npx skills add Banuba/ai-skills -a claude-code
 
 # Or install a specific skill only
-npx skills add @banuba/agent-skills --skill build-ve -a claude-code
+npx skills add Banuba/ai-skills --skill build-ve -a claude-code
 
 # List available skills first
-npx skills add @banuba/agent-skills --list
+npx skills add Banuba/ai-skills --list
 ```
 
 Skills are installed into the `.claude/skills/` directory and loaded automatically.
@@ -69,7 +69,7 @@ Skills are installed into the `.claude/skills/` directory and loaded automatical
 Install using the [Vercel Skills CLI](https://github.com/vercel-labs/skills):
 
 ```bash
-npx skills add @banuba/agent-skills -a codex
+npx skills add Banuba/ai-skills -a codex
 ```
 
 Skills are installed into the `.codex/skills/` directory.
@@ -79,7 +79,7 @@ Skills are installed into the `.codex/skills/` directory.
 Install using the [Vercel Skills CLI](https://github.com/vercel-labs/skills):
 
 ```bash
-npx skills add @banuba/agent-skills -a qwen-code
+npx skills add Banuba/ai-skills -a qwen-code
 ```
 
 Skills are installed into the `.qwen/skills/` directory.

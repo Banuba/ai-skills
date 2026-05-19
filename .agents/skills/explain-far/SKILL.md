@@ -27,7 +27,7 @@ Or reinstall from scratch:
 
 ```bash
 # Vercel Skills CLI
-npx skills add @banuba/agent-skills -a claude-code
+npx skills add Banuba/ai-skills -a claude-code
 
 # Claude Code Plugin
 claude plugin install @banuba
