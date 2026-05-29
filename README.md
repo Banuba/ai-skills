@@ -1,10 +1,10 @@
-# Banuba Video Editor, Photo Editor, and Face AR SDKs — Agent Skills
+# Banuba Face AR, Video Editor and Photo Editor SDKs — Agent Skills
 
 [![Version](https://img.shields.io/badge/version-0.8.0-blue.svg)](VERSION)
 
-Banuba Agent Skills are portable knowledge packs that install into Claude Code, Codex, and Qwen Code, giving the AI assistant offline access to Banuba Video Editor, Photo Editor, and Face AR SDK documentation plus autonomous scaffolding for new VE, PE, and Face AR Web projects.
+Banuba Agent Skills are portable knowledge packs that install into Claude Code, Codex, and Qwen Code, giving the AI assistant offline access to Banuba Face AR, Video Editor and Photo Editor SDKs documentation plus autonomous scaffolding for new Face AR Web, VE and PE SDKs projects.
 
-Give your AI coding assistant expert-level knowledge of Banuba Video Editor, Photo Editor, and Face AR SDKs. Build photo editors, video editors, and AR web apps by describing what you want.
+Give your AI coding assistant expert-level knowledge of Face AR SDK, Banuba Video Editor and Photo Editor SDKs. Build photo editors, video editors, and AR web apps by describing what you want.
 
 ## What Are Agent Skills?
 
@@ -22,10 +22,10 @@ Dropping a raw `llms.txt` dump into your assistant works once — but it bloats 
 
 | Skill                | Description                                                                                            |
 | -------------------- |--------------------------------------------------------------------------------------------------------|
+| `far-general`        | Unified Banuba Face AR SDK skill — capabilities, documentation, and Web integration (Claude Code only) |
 | `build-ve`           | Implement features, write code, and set up Banuba Video Editor SDK projects                            |
 | `build-pe`           | Implement features, write code, and set up Banuba Photo Editor SDK projects                            |
 | `explain-ve-pe-docs` | Look up Banuba Video and Photo Editor SDKs docs — configuration, UI customization, guides              |
-| `far-general`        | Unified Banuba Face AR SDK skill — capabilities, documentation, and Web integration (Claude Code only) |
 
 The build skills include starter kit templates for common platforms and autonomously scaffold complete Banuba Video Editor or Photo Editor applications — applying templates and implementing features end-to-end.
 
@@ -36,6 +36,7 @@ The build skills include starter kit templates for common platforms and autonomo
 
 ### SDK Versions
 
+- Face AR SDK: v1.18.1
 - Video Editor SDK
   - Android: v1.51.3
   - iOS: v1.51.3
@@ -46,7 +47,6 @@ The build skills include starter kit templates for common platforms and autonomo
   - iOS: v1.3.5
   - Flutter: v0.4.0
   - React Native: v0.3.0
-- Face AR SDK: v1.18.1
 
 ## Setup Instructions
 
