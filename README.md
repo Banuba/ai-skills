@@ -4,7 +4,7 @@
 
 Banuba Agent Skills are portable knowledge packs that install into Claude Code, Codex, and Qwen Code, giving the AI assistant offline access to Banuba Face AR, Video Editor and Photo Editor SDKs documentation plus autonomous scaffolding for new Face AR Web, VE and PE SDKs projects.
 
-Give your AI coding assistant expert-level knowledge of Face AR SDK, Banuba Video Editor and Photo Editor SDKs. Build photo editors, video editors, and AR web apps by describing what you want.
+Give your AI coding assistant expert-level knowledge of Face AR SDK, Banuba Video Editor and Photo Editor SDKs. Build mobile and web apps by describing what you want.
 
 ## What Are Agent Skills?
 
@@ -20,23 +20,23 @@ Dropping a raw `llms.txt` dump into your assistant works once — but it bloats 
 
 ## Available Skills
 
-| Skill                | Description                                                                                            |
-| -------------------- |--------------------------------------------------------------------------------------------------------|
-| `far-general`        | Unified Banuba Face AR SDK skill — capabilities, documentation, and Web integration (Claude Code only) |
-| `build-ve`           | Implement features, write code, and set up Banuba Video Editor SDK projects                            |
-| `build-pe`           | Implement features, write code, and set up Banuba Photo Editor SDK projects                            |
-| `explain-ve-pe-docs` | Look up Banuba Video and Photo Editor SDKs docs — configuration, UI customization, guides              |
+| Skill                | Description                                                                                                  |
+| -------------------- | ------------------------------------------------------------------------------------------------------------ |
+| `far-general`        | Build web apps with Face AR SDK, get explanations, read documents, and more. Other platforms are coming soon.|
+| `build-ve`           | Implement features, write code, and set up Banuba Video Editor SDK projects                                  |
+| `build-pe`           | Implement features, write code, and set up Banuba Photo Editor SDK projects                                  |
+| `explain-ve-pe-docs` | Look up Banuba Video and Photo Editor SDKs docs — configuration, UI customization, guides                    |
 
-The build skills include starter kit templates for common platforms and autonomously scaffold complete Banuba Video Editor or Photo Editor applications — applying templates and implementing features end-to-end.
+The build skills include starter kit templates for common platforms that let you autonomously create complete Banuba Video Editor, Photo Editor, or Face AR (web) applications — applying templates and implementing features end-to-end.
 
 ### Supported Platforms
 
 - **Video & Photo Editor SDKs** — Android, iOS, Flutter, React Native
-- **Face AR SDK** — Web (Claude Code only)
 
 ### SDK Versions
 
-- Face AR SDK: v1.18.1
+- Face AR SDK
+  - Web: v1.18.1
 - Video Editor SDK
   - Android: v1.51.3
   - iOS: v1.51.3
@@ -87,6 +87,24 @@ npx skills add Banuba/ai-skills -a qwen-code
 
 Skills are installed into the `.qwen/skills/` directory.
 
+### Face AR SDK
+
+Install using the [Vercel Skills CLI](https://github.com/vercel-labs/skills):
+
+```bash
+# Install only the far-general skill
+npx skills add Banuba/ai-skills --skill far-general -a claude-code
+
+# Install only the far-general skill
+npx skills add Banuba/ai-skills --skill far-general -a codex
+
+# Install only the far-general skill
+npx skills add Banuba/ai-skills --skill far-general -a qwen-code
+
+# See the available Banuba skills first
+npx skills add Banuba/ai-skills --list
+```
+
 ## Usage
 
 Once installed, invoke skills with slash commands in your AI coding assistant:
@@ -94,8 +112,9 @@ Once installed, invoke skills with slash commands in your AI coding assistant:
 ### Build a feature
 
 ```
-/build-ve   Set up a Video Editor for Android with AI Clipping
-/build-pe   Add Photo Editor with AR filters to my iOS app
+/far-general   Build a Snapchat-style face-filter camera for a Web Application
+/build-ve      Set up a Video Editor for Android with AI Clipping
+/build-pe      Add Photo Editor with AR filters to my iOS app
 ```
 
 ### Look up documentation
@@ -104,11 +123,10 @@ Once installed, invoke skills with slash commands in your AI coding assistant:
 /explain-ve-pe-docs How do I customize the export settings?
 ```
 
-### Face AR
+### Get explanation
 
 ```
-/far-general Can the SDK detect skin tone?
-/far-general Add background blur to my Face AR web app
+/far-general How do I load a custom .zip effect at runtime in a Web project?
 ```
 
 ## How It Works
