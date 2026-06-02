@@ -10,7 +10,7 @@ Give your AI coding assistant expert-level knowledge of Face AR SDK, Banuba Vide
 
 [Agent Skills](https://agentskills.io) are portable knowledge packs that plug into AI coding assistants. By installing the Banuba agent skills, you get:
 
-- **Offline documentation** — all guides, API references, and best practices bundled locally — no external API calls
+- **Documentation lookup skills are local-first** and can answer from bundled docs. **Builder skills may access the network** to fetch versioned LLM docs, clone official samples, and install platform dependencies.
 - **Guided code generation** — a step-by-step walkthrough and explanation of SDK implementation
 - **Autonomous scaffolding** — a builder agent that creates complete Video Editor or Photo Editor projects from scratch
 
@@ -94,12 +94,6 @@ Install using the [Vercel Skills CLI](https://github.com/vercel-labs/skills):
 ```bash
 # Install only the far-general skill
 npx skills add Banuba/ai-skills --skill far-general -a claude-code
-
-# Install only the far-general skill
-npx skills add Banuba/ai-skills --skill far-general -a codex
-
-# Install only the far-general skill
-npx skills add Banuba/ai-skills --skill far-general -a qwen-code
 
 # See the available Banuba skills first
 npx skills add Banuba/ai-skills --list
