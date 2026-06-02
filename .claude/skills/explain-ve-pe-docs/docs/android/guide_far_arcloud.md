@@ -23,7 +23,7 @@ Follow next steps to integrate ```Banuba Face AR SDK``` into your project.
 First, add Gradle ```com.banuba.sdk:effect-player-adapter``` dependency in [app gradle file](https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/app/build.gradle#L74).
 
 ```diff
-    def banubaSdkVersion = '1.48.5'
+    def banubaSdkVersion = '1.52.0'
     ...
     // highlight-add-next-line
 +   implementation "com.banuba.sdk:effect-player-adapter:${banubaSdkVersion}"
@@ -60,7 +60,7 @@ Follow next steps to integrate ```AR Cloud``` into your project.
 First, add Gradle ```com.banuba.sdk:ar-cloud``` dependency in [app gradle file](https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/app/build.gradle).
 
 ```diff
-    def banubaSdkVersion = '1.48.5'
+    def banubaSdkVersion = '1.52.0'
     ...
     // highlight-add-next-line
 +   implementation "com.banuba.sdk:ar-cloud:${banubaSdkVersion}"

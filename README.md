@@ -35,15 +35,15 @@ The build skills include starter kit templates for common platforms and autonomo
 ### SDK Versions
 
 - Video Editor SDK
-  - Android: v1.51.3
-  - iOS: v1.51.3
-  - Flutter: v0.42.0
-  - React Native: v0.49.0
+  - Android: v1.52.0
+  - iOS: v1.52.1
+  - Flutter: v0.43.0
+  - React Native: v0.50.0
 - Photo Editor SDK
-  - Android: v1.3.7
-  - iOS: v1.3.5
-  - Flutter: v0.4.0
-  - React Native: v0.3.0
+  - Android: v1.3.8
+  - iOS: v1.3.6
+  - Flutter: v0.5.0
+  - React Native: v0.4.0
 
 ## Setup Instructions
 

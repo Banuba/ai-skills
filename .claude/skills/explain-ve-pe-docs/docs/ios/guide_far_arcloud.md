@@ -24,7 +24,7 @@ Make sure every effect folder includes the ` preview.png`  file. This file is us
 Add the dependency below to the [Podfile](https://github.com/Banuba/ve-sdk-ios-integration-sample/blob/main/Example/Podfile#L19) to integrate `Banuba Face AR SDK` into your project:
 
 ```ruby
-pod 'BanubaSDK', '1.48.2'
+pod 'BanubaSDK', '1.52.1'
 ```
 
 ## Manage effects
@@ -51,7 +51,7 @@ Any AR effect downloaded from `AR Cloud` is cached on the user's device.
 
 Add the dependency below to the [Podfile](https://github.com/Banuba/ve-sdk-ios-integration-sample/blob/main/Example/Podfile#L11) to integrate `AR Cloud` into your project:
 ```ruby
-pod 'BanubaARCloudSDK', '1.48.2'
+pod 'BanubaARCloudSDK', '1.52.1'
 ```
 
 Since the link to your AR Cloud bucket is included into the license token, AR effects will appear once you set the license token with the AR Cloud link.
@@ -78,7 +78,7 @@ These are the names of specific directories located in `bundleEffects` or on `AR
 The Video Editor SDK can work without the Face AR SDK.
 Change the [Podfile](https://github.com/Banuba/ve-sdk-ios-integration-sample/blob/main/Example/Podfile) to disable the Face AR SDK:
 ```diff
-   banuba_sdk_version = '1.48.2'
+   banuba_sdk_version = '1.52.1'
    // highlight-remove-start
 -  pod 'BanubaSDK', banuba_sdk_version
    // highlight-remove-end

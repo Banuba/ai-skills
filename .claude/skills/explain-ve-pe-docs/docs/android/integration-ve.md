@@ -54,7 +54,7 @@ android {
 Specify dependencies in the app [gradle](https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/app/build.gradle#L63) file.
 
 ```groovy
-    def banubaSdkVersion = '1.50.0'
+    def banubaSdkVersion = '1.52.0'
 
     implementation "com.banuba.sdk:ffmpeg:5.3.0"
     implementation "com.banuba.sdk:camera-sdk:${banubaSdkVersion}"
@@ -166,10 +166,10 @@ override fun onCreate() {
     }
 ```
 
-Create SDK instance of ```BanubaVideoEditor``` with your license token.
+Create SDK instance of ```EditorSdk``` with your license token.
 
 ``` kotlin
-val videoEditorSDK = BanubaVideoEditor.initialize(LICENSE_TOKEN)
+val videoEditorSDK = EditorSdk.initialize(LICENSE_TOKEN)
 ```
 
 :::warning

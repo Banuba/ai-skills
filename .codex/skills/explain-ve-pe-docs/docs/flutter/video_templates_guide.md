@@ -33,15 +33,32 @@ Future<void> _startVideoEditorInCameraMode() async {
 
 ## Setup Custom Templates
 
+:::note
+Use this method if you have an agreement with Banuba for the delivery of additional templates and have received the corresponding URL. By default, the SDK is delivered with predefined configuration to load Banuba templates.
+:::
+
+Two options are available.
+
+### By URL
+
+```dart
+final config = FeaturesConfigBuilder()
+    .setTemplatesConfig(TemplatesConfig(url: YOUR_URL))
+    ...
+    .build();
+```
+
+### By secret key
+
 :::important
-Use this method if you have an agreement with Banuba for the delivery of additional templates and have received the corresponding URL. By default, the SDK is delivered with predefined configuration to load Banuba templates. 
+Requires a `secret` key provided by your Banuba representative.
 :::
 
 ```dart
-    final config = FeaturesConfigBuilder()
-      .setTemplatesConfig(TemplatesConfig(url: <YOUR_URL>))
-      ...
-     .build()
+final config = FeaturesConfigBuilder()
+    .setTemplatesConfig(TemplatesConfig(secret: 'YOUR_SECRET_KEY'))
+    ...
+    .build();
 ```
 
 ## Template Builder

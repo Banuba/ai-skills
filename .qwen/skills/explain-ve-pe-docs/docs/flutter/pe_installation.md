@@ -24,7 +24,7 @@ $ flutter pub add pe_sdk_flutter
 or specify the package in your ```pubspec.yaml``` file
 ```
 dependencies:
-    pe_sdk_flutter: ^0.0.3
+    pe_sdk_flutter: ^0.5.0
 ```
 
 ## Integration guide

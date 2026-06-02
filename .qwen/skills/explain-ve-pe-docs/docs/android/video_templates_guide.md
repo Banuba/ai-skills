@@ -28,14 +28,30 @@ val intent = VideoCreationActivity.startFromTemplates(Context)
 Use this method if you have an agreement with Banuba for the delivery of additional templates and have received the corresponding URL. By default, the SDK is delivered with predefined configuration to load Banuba templates.
 :::
 
+Use `TemplatesConfig` to enable templates in your app.  
+Two options are available — add `TemplatesConfig` to your Video Editor Koin module.
+
+### By URL
+
 ```kotlin
-class KoinModule {
-    ...
-    single {
-        TemplatesConfig(
-            url = // your endpoint i.e. "https://" 
-        )
-        ...
-    }
+single {
+    TemplatesConfig(
+        url = // your endpoint i.e. "https://"
+    )
+}
+```
+
+### By secret key
+
+:::important
+Requires a `secret` key provided by your Banuba representative.
+:::
+
+```kotlin
+single {
+    TemplatesConfig(
+        url = "",
+        secret = // set your secret key provided by Banuba
+    )
 }
 ```

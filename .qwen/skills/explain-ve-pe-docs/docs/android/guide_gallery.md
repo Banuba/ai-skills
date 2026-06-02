@@ -14,7 +14,7 @@ Gallery is integrated by default.
 
 The following guide will help you to integrate gallery to your project if it was not added before.
 
-Add module ```com.banuba.sdk:ve-gallery-sdk:1.48.5``` to [gradle](https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/app/build.gradle#L73) file
+Add module ```com.banuba.sdk:ve-gallery-sdk:1.52.0``` to [gradle](https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/app/build.gradle#L73) file
 and specify ```GalleryKoinModule``` module in [VideoEditorModule](https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/app/src/main/java/com/banuba/example/integrationapp/VideoEditorModule.kt#L39)
 ```diff
 startKoin {
