@@ -1,6 +1,6 @@
 # Banuba Agent Skills
 
-This repository contains AI coding assistant skills for Banuba Video Editor, Photo Editor, and Face AR SDKs. Skills are portable knowledge packs that provide offline documentation and guided code generation.
+This repository contains AI coding assistant skills for Face AR SDKs, Banuba Video Editor and Photo Editor SDKs. Skills are portable knowledge packs that provide offline documentation and guided code generation.
 
 ## Project Structure
 
@@ -17,13 +17,14 @@ Each skill is defined once in `.agents/` and replicated with platform-specific p
 
 | Skill                | Type        | Purpose                                                            |
 | -------------------- | ----------- | ------------------------------------------------------------------ |
+| `far-general`        | Unified     | Banuba Face AR SDK: sales, dev (docs), and integration (Web) modes |
 | `build-ve`           | Builder     | Scaffold and implement Banuba Video Editor SDK projects            |
 | `build-pe`           | Builder     | Scaffold and implement Banuba Photo Editor SDK projects            |
 | `explain-ve-pe-docs` | Docs lookup | Look up VE/PE SDK configuration, customization, and feature guides |
-| `far-general`        | Unified     | Banuba Face AR SDK: sales, dev (docs), and integration (Web) modes |
 
 ## SDK Versions
 
+- Face AR SDK: v1.18.1
 - Video Editor SDK
   - Android: v1.51.3
   - iOS: v1.51.3
@@ -38,6 +39,7 @@ Each skill is defined once in `.agents/` and replicated with platform-specific p
 ## Supported Platforms
 
 - **Video & Photo Editor SDKs**: Android, iOS, Flutter, React Native
+- **Face AR SDK** — Web (Claude Code only)
 
 ## Key Conventions
 
