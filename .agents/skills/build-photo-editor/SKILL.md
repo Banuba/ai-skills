@@ -1,10 +1,10 @@
 ---
-name: build-pe
+name: build-photo-editor
 description: |
   Implement features, write code, and set up Banuba Photo Editor SDK.
   Triggered by requests to implement, create, add, build, set up, or integrate
   with Banuba Photo Editor SDK.
-  Not for documentation lookup — use explain-ve-pe-docs for that.
+  Not for documentation lookup — use explain-video-editor-photo-editor-docs for that.
 ---
 
 # Banuba Photo Editor SDK — Build Skill

@@ -1,5 +1,5 @@
 ---
-name: build-ve
+name: build-video-editor
 description: |
   Implement features, write code, and set up Banuba Video Editor SDK.
 
@@ -7,7 +7,7 @@ description: |
   something with Banuba Video Editor SDK. Triggered by "help me add", "set up", "build a
   video editor".
 
-  Not for looking up existing docs — use explain-ve-pe-docs for that.
+  Not for looking up existing docs — use explain-video-editor-photo-editor-docs for that.
 ---
 
 # Banuba Video Editor SDK — Build Skill

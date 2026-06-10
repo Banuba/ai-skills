@@ -1,5 +1,5 @@
 ---
-name: build-ve
+name: build-video-editor
 description: |
   Implement features, write code, and set up Banuba Video Editor SDK.
 
@@ -7,12 +7,25 @@ description: |
   something with Banuba Video Editor SDK. Triggered by "help me add", "set up", "build a
   video editor".
 
-  Not for looking up existing docs (use explain-ve-pe-docs skill instead).
+  Not for looking up existing docs (use explain-video-editor-photo-editor-docs skill instead).
+
+  <example>
+  Context: User wants to build a video editor based on Banuba Video Editor SDK.
+  user: "Help me set up Banuba Video Editor SDK in my project"
+  assistant: "I'll use /build-video-editor to help set this up."
+  </example>
+
+  <example>
+  Context: User wants to add a specific feature
+  user: "Add new feature to my video editor"
+  assistant: "Let me use /build-video-editor to implement this feature."
+  </example>
+argument-hint: "[feature or task]"
 ---
 
 ## Version Notice
 
-Generated for Banuba Video Editor SDK on 2026-05-15. Latest versions: Android v1.52.0, iOS v1.52.1, Flutter v0.43.0, React Native v0.50.0. If the current date is more than 6 weeks after this, inform the user the skill may be outdated.
+Generated for Banuba Video Editor SDK on 2026-05-15. Latest versions: Android v1.52.0, iOS v1.52.1, Flutter v0.43.0, React Native v0.50.0. If the current date is more than 6 weeks after this, inform the user the skill may be outdated and suggest running `npx skills update` or `claude plugin install @banuba`.
 
 # Banuba Video Editor SDK Integration Skill
 
@@ -37,7 +50,7 @@ Detect the user's platform from project files. If no project exists yet or detec
 ## Core Principles
 
 1. **Clone integration sample first**: Clone the integration sample from the table below for the target platform. Use it as a working starting point.
-2. **Retrieval-first**: Consult [the docs](https://banuba.com/ve-pe-sdk/llms-full.txt) before using pre-trained knowledge — docs are version-verified and may contain API changes not yet in training data. If the `explain-ve-pe-docs` skill is available, read its local docs.
+2. **Retrieval-first**: Consult [the docs](https://banuba.com/ve-pe-sdk/llms-full.txt) before using pre-trained knowledge — docs are version-verified and may contain API changes not yet in training data. If the `explain-video-editor-photo-editor-docs` skill is available, read its local docs.
 3. **Platform-specific**: Generate code only for the detected platform.
 4. **Code-first**: Lead with working code examples, then explain.
 5. **Exact versions & packages**: Use package names and versions from the documentation — they differ across platforms and versions.
@@ -107,7 +120,7 @@ Modify the cloned sample based on the user's needs. Consult the platform-specifi
 
 ## Upgrading Between SDK Versions
 
-When the user is upgrading from an older SDK version, consult the release notes for the target version. If the `explain-ve-pe-docs` skill is available, read its local docs at `release-notes/{version}.md` — each file contains a **Migration Guide** with dependency updates, API changes, and links to sample PRs. For the full Android changelog, see `release-notes/Android.md`.
+When the user is upgrading from an older SDK version, consult the release notes for the target version. If the `explain-video-editor-photo-editor-docs` skill is available, read its local docs at `release-notes/{version}.md` — each file contains a **Migration Guide** with dependency updates, API changes, and links to sample PRs. For the full Android changelog, see `release-notes/Android.md`.
 
 ## Common Pitfalls
 

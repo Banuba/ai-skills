@@ -170,9 +170,9 @@ This downloads Banuba's official AI Skills into a hidden `.claude/skills/` folde
 
 The installed skills include:
 
-- `build-ve` - helps set up Banuba Video Editor SDK
-- `build-pe` - helps set up Banuba Photo Editor SDK
-- `explain-ve-pe-docs` - helps the agent answer SDK documentation questions
+- `build-video-editor` - helps set up Banuba Video Editor SDK
+- `build-photo-editor` - helps set up Banuba Photo Editor SDK
+- `explain-video-editor-photo-editor-docs` - helps the agent answer SDK documentation questions
 
 **Done when:** Terminal prints a list of installed skills.
 
@@ -180,7 +180,7 @@ Optional commands:
 
 ```bash
 # Install only the Video Editor skill
-npx skills add Banuba/ai-skills --skill build-ve -a claude-code
+npx skills add Banuba/ai-skills --skill build-video-editor -a claude-code
 
 # See the available skills first
 npx skills add Banuba/ai-skills --list
@@ -205,14 +205,14 @@ Type one of the prompts below. Replace the bracketed parts with your platform an
 **For Video Editor:**
 
 ```
-/build-ve Set up a Banuba Video Editor demo for [Android].
+/build-video-editor Set up a Banuba Video Editor demo for [Android].
 Banuba license key: [paste your token]
 ```
 
 **For Photo Editor:**
 
 ```
-/build-pe Set up a Banuba Photo Editor demo for [iOS] with photo effects and AR filters.
+/build-photo-editor Set up a Banuba Photo Editor demo for [iOS] with photo effects and AR filters.
 Banuba license key: [paste your token]
 ```
 
@@ -249,7 +249,7 @@ Try recording or selecting media, applying filters or effects, trimming, and exp
 | **Application owner** | Record a short screen capture and align stakeholders on what matters before scoping production work. |
 | **Product manager** | Iterate by re-prompting the agent. For example: "Add a music library," "Remove the beauty filters tab," or "Make export the primary action." |
 | **Project manager** | Use the [handoff template](#developer-handoff-template) below to brief engineering clearly. |
-| **Junior developer** | Use inline docs lookup when needed: `/explain-ve-pe-docs How does export work?` Then connect the editor to the real app flow. |
+| **Junior developer** | Use inline docs lookup when needed: `/explain-video-editor-photo-editor-docs How does export work?` Then connect the editor to the real app flow. |
 
 ### Developer handoff template
 
@@ -260,7 +260,7 @@ Paste this into a ticket or Slack message:
 **Banuba Video/Photo Editor demo is ready for engineering review**
 
 **What's done:**  
-A working demo was scaffolded with Banuba's `[build-ve / build-pe]` AI Skill for `[platform]`.
+A working demo was scaffolded with Banuba's `[build-video-editor / build-photo-editor]` AI Skill for `[platform]`.
 
 **Source:**  
 `[path or repo link]`
@@ -281,7 +281,7 @@ Do not paste the license key directly into the ticket or Slack thread.
 **References:**
 
 - Banuba SDK documentation: [https://docs.banuba.com/ve-pe-sdk](https://docs.banuba.com/ve-pe-sdk/docs/ios/requirements)
-- For inline documentation lookups in Claude Code, use: `/explain-ve-pe-docs [your question]`
+- For inline documentation lookups in Claude Code, use: `/explain-video-editor-photo-editor-docs [your question]`
 
 ---
 
@@ -295,7 +295,7 @@ Most issues happen because one of three things is missing: Node.js, Claude Code,
 |---|---|---|
 | `npx: command not found` | Node.js is not installed, or Terminal has not refreshed after installation | Install Node.js from [https://nodejs.org](https://nodejs.org). Then close Terminal, reopen it, and run `node --version`. |
 | `claude: command not found` | Claude Code is not installed, or Terminal cannot find it | Reinstall Claude Code from the [official Claude Code docs](https://docs.claude.com/en/docs/claude-code). Then close Terminal, reopen it, and run `claude --version`. |
-| `/build-ve` not recognized | Claude Code was opened outside the folder where Banuba AI Skills were installed | Go back to your project folder with `cd banuba-demo`, then run `claude` again. |
+| `/build-video-editor` not recognized | Claude Code was opened outside the folder where Banuba AI Skills were installed | Go back to your project folder with `cd banuba-demo`, then run `claude` again. |
 | Skills installed, but the agent does not seem to use them | The skills may be installed in a different folder | Make sure you are in the same folder where you ran `npx skills add Banuba/ai-skills -a claude-code`. |
 | Build finished, but the simulator or emulator will not launch | The platform toolchain may not be fully set up | Open the project in Android Studio or Xcode and click **Run** from there. The IDE usually gives clearer error messages. |
 | License error at runtime | The platform toolchain may not be fully set up | Request a fresh key if needed. Then tell the agent: "Update the Banuba license key in this project." Paste the key only when the agent asks for it. |
@@ -323,9 +323,9 @@ Do **not** paste your Banuba license key into public issues, Slack channels, or 
 
 | Skill | What it does | Example prompt |
 |---|---|---|
-| `build-ve` | Sets up Banuba Video Editor SDK end-to-end | "Set up a short-form video editor with trimming, filters, AR effects, and export." |
-| `build-pe` | Sets up Banuba Photo Editor SDK end-to-end | "Set up a photo editor with effects, filters, and AR features." |
-| `explain-ve-pe-docs` | Answers questions using Banuba Video Editor and Photo Editor SDK documentation | "How do I change the export resolution?" |
+| `build-video-editor` | Sets up Banuba Video Editor SDK end-to-end | "Set up a short-form video editor with trimming, filters, AR effects, and export." |
+| `build-photo-editor` | Sets up Banuba Photo Editor SDK end-to-end | "Set up a photo editor with effects, filters, and AR features." |
+| `explain-video-editor-photo-editor-docs` | Answers questions using Banuba Video Editor and Photo Editor SDK documentation | "How do I change the export resolution?" |
 
 The build skills include starter templates for **Android, iOS, Flutter, and React Native**. The agent can detect the platform from your prompt or project structure.
 
@@ -359,6 +359,6 @@ This option is slower and will not create or edit files on your computer, but it
 - **npx** - A tool that comes with Node.js. It can run an installer command without permanently installing that installer on your computer. In this guide, you use it to install Banuba AI Skills.
 - **Repo (GitHub repo)** - A folder of code hosted on GitHub. For this guide, you do not need to open GitHub manually - the install command fetches the required files for you.
 - **Simulator / emulator** - A virtual phone running on your laptop. It lets you test an app without using a real device.
-- **Slash command** - A command inside an AI agent starting with `/`, like `/build-ve`.
+- **Slash command** - A command inside an AI agent starting with `/`, like `/build-video-editor`.
 - **Terminal** - The text-window app where you type commands. On Mac, it is called Terminal. On Windows, you can use Terminal or PowerShell.
 - **IDE** - An app developers use to open, run, and edit projects. Examples include Android Studio, Xcode, Visual Studio Code, and WebStorm.

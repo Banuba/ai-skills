@@ -1,67 +1,64 @@
 # desktop
 
-![image](/assets/images/desktop_player_api_overview-45d2577b869d02247fa0b0dd15d29a70.svg)
+**Banuba SDK** for **desktop** can be divided into three main entities: `input`, `player` and `output`.
+The plethora of input options multiplied by the plethora of output options covers many use cases.
 
-**Banuba SDK** for **desktop** can be divided into three main entities: `input`, `player` and `output`. The plethora of input options multiplied by the plethora of output options covers many use cases.
-
-## Basic Player API interfaces:[​](#basic-player-api-interfaces "Direct link to Basic Player API interfaces:")
-
+## Basic Player API interfaces:
 * `bnb::player_api::interfaces::input` - receive frames and transfer them to the `player`.
 * `bnb::player_api::interfaces::output` - presents frames on the surface or read in memory.
 * `bnb::player_api::interfaces::player` - frames processing and rendering.
 * `bnb::player_api::interfaces::render_target` - rendering context.
 * `bnb::player_api::interfaces::render_delegate` - connection between the application rendering and `player` rendering.
 
-## Input[​](#input "Direct link to Input")
+## Input
 
 Processes frames from one of the producers:
-
 * `bnb::player_api::live_input` - live stream with the ability to skip frames.
 * `bnb::player_api::photo_input` - photo or image.
 * `bnb::player_api::stream_input` - stream without frames skipping.
 * Custom - your own implementation for the `bnb::player_api::interfaces::input` interface.
 
-## Output[​](#output "Direct link to Output")
+## Output 
 
 Presents a rendered frame onto one of the available surfaces:
-
 * `bnb::player_api::opengl_frame_output` - array of pixels, should be used with `opengl_render_target`.
 * `bnb::player_api::metal_frame_output` - array of pixels, should be used with `metal_render_target`.
 * `bnb::player_api::texture_output` - **GPU** texture, texture type depends on the used `render_target`.
 * `bnb::player_api::window_output` - window should work with the same **GAPI** as the used `render_target`.
 * Custom - your own implementation for the `bnb::player_api::interfaces::output` interface.
 
-## Player[​](#player "Direct link to Player")
+## Player
 
 * `bnb::player_api::player` - processes frames and applies effects.
 
-## Render target[​](#render-target "Direct link to Render target")
+## Render target
 
 * `bnb::player_api::opengl_render_target` - **OpenGL** implementation for the `render_target`
 * `bnb::player_api::metal_render_target` - **Metal** implementation for the `render_target`.
 
-## Render delegate[​](#render-delegate "Direct link to Render delegate")
+## Render delegate
 
-This is always a custom implementation. To implement the interface, you need to inherit from interface `bnb::player_api::interfaces::render_delegate` and override three methods:
-
+This is always a custom implementation. To implement the interface, you need to inherit from
+interface `bnb::player_api::interfaces::render_delegate` and override three methods:
 * `activate()` - activating the rendering context, if necessary.
 * `started()` - frame rendering has started. After this, `finished(...)` will be called.
 * `finished(int64_t frame_number)` - frame rendering has ended. The frame number is any non-negative number. If `-1` is passed, then the frame rendering has failed.
 
-## Input and output of user data[​](#input-and-output-of-user-data "Direct link to Input and output of user data")
-
+## Input and output of user data
 The **input** and the **output** can operate on a pixel buffer.
-
 * `bnb::full_image_t` - provides access to an array of pixels as a byte buffer.
-* `bnb::pixel_buffer_format` - pixel buffer format can be one of: `bpc8_rgb`, `bpc8_rgba`, `bpc8_bgr`, `bpc8_bgra`, `bpc8_argb`, `i420`, `nv12`.
+* `bnb::pixel_buffer_format` - pixel buffer format can be one of: `bpc8_rgb`, `bpc8_rgba`, `bpc8_bgr`,
+`bpc8_bgra`, `bpc8_argb`, `i420`, `nv12`.
 
-## Use cases[​](#use-cases "Direct link to Use cases")
+## Use cases
 
-### live\_input[​](#live_input "Direct link to live_input")
+### live_input
 
-Used to receive and subsequently process frames in real time. If a new frame is received and the player has not yet processed the previous frame, the new frame will be skipped. Suitable for receiving frames from a camera.
+Used to receive and subsequently process frames in real time. If a new frame is received and the
+player has not yet processed the previous frame, the new frame will be skipped. Suitable for
+receiving frames from a camera.
 
-```
+```cpp
 #include <bnb/player_api/interfaces/input/live_input.hpp>
 ...
     // Creating an instance
@@ -77,11 +74,11 @@ auto frame_time = get_my_current_timestamp_us();
 input.push(frame, frame_time);
 ```
 
-### photo\_input[​](#photo_input "Direct link to photo_input")
+### photo_input
 
 Used for obtaining and subsequent processing of photographs.
 
-```
+```cpp
 #include <bnb/player_api/interfaces/input/photo_input.hpp>
 ...
     // Creating an instance
@@ -94,11 +91,12 @@ Used for obtaining and subsequent processing of photographs.
 input.push(filepath);
 ```
 
-### stream\_input[​](#stream_input "Direct link to stream_input")
+### stream_input
 
-Used to receive and subsequently process a stream of frames. Does not skip frames if the previous frame is still not processed. Suitable for processing video streams.
+Used to receive and subsequently process a stream of frames. Does not skip frames if the previous
+frame is still not processed. Suitable for processing video streams.
 
-```
+```cpp
 #include <bnb/player_api/interfaces/input/stream_input.hpp>
 ...
     // Creating an instance
@@ -114,11 +112,11 @@ auto frame_time = get_my_video_timestamp_us();
 input.push(frame, frame_time);
 ```
 
-### Custom input[​](#custom-input "Direct link to Custom input")
+### Custom input
 
 A custom **input** is needed if the standard implementation does not contain the required logic.
 
-```
+```cpp
 #include <bnb/player_api/interfaces/input.hpp>
 #include <bnb/types/interfaces/all.hpp>
 
@@ -157,15 +155,16 @@ private:
 };
 ```
 
-### opengl\_frame\_output[​](#opengl_frame_output "Direct link to opengl_frame_output")
+### opengl_frame_output
 
-Allows you to receive the processing result frames as an array of pixels in the desired format and orientation.
+Allows you to receive the processing result frames as an array of pixels
+in the desired format and orientation.
 
-Important
-
+:::warning Important
 `opengl_frame_output` only works in conjunction with `opengl_render_target`.
+:::
 
-```
+```cpp
 #include <bnb/player_api/interfaces/output/opengl_frame_output.hpp>
 ...
     // Creating an instance
@@ -179,15 +178,16 @@ output->set_orientation(bnb::orientation::left, true);
     player->use(output);
 ```
 
-### metal\_frame\_output[​](#metal_frame_output "Direct link to metal_frame_output")
+### metal_frame_output
 
-Allows you to receive the processing result frames as an array of pixels in the desired format and orientation.
+Allows you to receive the processing result frames as an array of pixels
+in the desired format and orientation.
 
-Important
-
+:::warning Important
 `metal_frame_output` only works in conjunction with `metal_render_target` and it available only on `Apple` platform.
+:::
 
-```
+```cpp
 #include <bnb/player_api/interfaces/output/metal_frame_output.hpp>
 ...
     // Creating an instance
@@ -201,11 +201,11 @@ output->set_orientation(bnb::orientation::left, true);
     player->use(output);
 ```
 
-### texture\_output[​](#texture_output "Direct link to texture_output")
+### texture_output
 
 Allows you to get texture.
 
-```
+```cpp
 #include <bnb/player_api/interfaces/output/texture_output.hpp>
 ...
     // Creating an instance
@@ -217,11 +217,11 @@ Allows you to get texture.
     player->use(output);
 ```
 
-### window\_output[​](#window_output "Direct link to window_output")
+### window_output
 
 Renders frames onto the window surface, at the specified location, and in the specified orientation.
 
-```
+```cpp
 #include <bnb/player_api/interfaces/output/window_output.hpp>
 ...
     // Creating an instance with opengl_render_target
@@ -242,11 +242,11 @@ auto output = bnb::player_api::window_output::create(static_cast<void*>(metal_la
     output->set_frame_layout(position_left, position_top, render_width, render_height);
 ```
 
-### Custom output[​](#custom-output "Direct link to Custom output")
+### Custom output
 
 A custom **output** is needed if the standard implementation does not contain the required logic.
 
-```
+```cpp
 #include <bnb/player_api/interfaces/output.hpp>
 ... class my_custom_output : public bnb::player_api_interfaces
 {
@@ -267,15 +267,14 @@ public:
 };
 ```
 
-### full\_image\_t[​](#full_image_t "Direct link to full_image_t")
+### full_image_t
 
-Three functions are available to create images in different formats:
-
+Three functions are available to create images in different formats: 
 * `bnb::full_image_t::create_bpc8` - for image formats `bpc8_rgb`, `bpc8_rgba`, `bpc8_bgr`, `bpc8_bgra`, `bpc8_argb`.
 * `bnb::full_image_t::create_nv12` - for nv12 yuv images with `bt601` or `bt709` color standard and with `full` or `video` color range.
 * `bnb::full_image_t::create_i420` - for i420 yuv images with `bt601` or `bt709` color standard and with `full` or `video` color range.
 
-```
+```cpp
 #include <bnb/types/full_image.hpp>
 ...
     // creating RGB image
@@ -293,7 +292,7 @@ Three functions are available to create images in different formats:
 
 Retrieving image data:
 
-```
+```cpp
 #include <bnb/types/full_image.hpp>
 ...
     // Getting RGB image data
@@ -304,11 +303,13 @@ int32_t height = rgb_image.get_height_of_plane(0);
 int32_t stride = rgb_image.get_bytes_per_row_of_plane(0);
 ```
 
-### player[​](#player-1 "Direct link to player")
+### player
 
-The **player** requests frames from the input, then processes those frames using the Banuba SDK and passes the results to one or more outputs. Default frame processing in Banuba SDK works automatically. If you wish, you can enable on-demand processing.
+The **player** requests frames from the input, then processes those frames using the Banuba SDK and
+passes the results to one or more outputs. Default frame processing in Banuba SDK works automatically.
+If you wish, you can enable on-demand processing.
 
-```
+```cpp
 #include <bnb/player_api/interfaces/player/player.hpp>
 ... auto fps = 30;
 auto render_target = /* render target */;
@@ -323,15 +324,16 @@ auto renderer = /* my custom renderer */
 player->load_async(/* path to the effect */);
 ```
 
-### opengl\_render\_target[​](#opengl_render_target "Direct link to opengl_render_target")
+### opengl_render_target
 
-The render target allows the player to render frames processed by the player onto outputs using OpenGL technology.
+The render target allows the player to render frames processed by the player onto outputs using
+OpenGL technology.
 
-Important
-
+:::warning Important
 `opengl_render_target` only works with OpenGL based outputs.
+:::
 
-```
+```cpp
 #include <bnb/player_api/interfaces/render_target/opengl_render_target.hpp>
 ...
     // Creating an instance
@@ -341,15 +343,16 @@ Important
     auto player = bnb::player_api::player::create(/* fps value */, render_target, /* some renderer */);
 ```
 
-### metal\_render\_target[​](#metal_render_target "Direct link to metal_render_target")
+### metal_render_target
 
-The render target allows the player to render frames processed by the player onto outputs using OpenGL technology.
+The render target allows the player to render frames processed by the player onto outputs using
+OpenGL technology.
 
-Important
-
+:::warning Important
 `metal_render_target` only works with METAL based outputs.
+:::
 
-```
+```cpp
 #include <bnb/player_api/interfaces/render_target/metal_render_target.hpp>
 ...
     // Creating an instance
@@ -359,11 +362,11 @@ Important
     auto player = bnb::player_api::player::create(/* fps value */, render_target, /* some renderer */);
 ```
 
-### Custom render delegate[​](#custom-render-delegate "Direct link to Custom render delegate")
+### Custom render delegate
 
 Necessary for connecting the **player** and application in the context of rendering.
 
-```
+```cpp
 class my_custom_renderer : public bnb::player_api::interfaces::render_delegate
 {
 public:

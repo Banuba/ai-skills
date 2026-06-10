@@ -17,10 +17,10 @@ Each skill is defined once in `.agents/` and replicated with platform-specific p
 
 | Skill                | Type        | Purpose                                                            |
 | -------------------- | ----------- | ------------------------------------------------------------------ |
-| `far-general`        | Unified     | Banuba Face AR SDK: sales, dev (docs), and integration (Web) modes |
-| `build-ve`           | Builder     | Scaffold and implement Banuba Video Editor SDK projects            |
-| `build-pe`           | Builder     | Scaffold and implement Banuba Photo Editor SDK projects            |
-| `explain-ve-pe-docs` | Docs lookup | Look up VE/PE SDK configuration, customization, and feature guides |
+| `far-general`        | Unified     | Banuba Face AR SDK: sales, dev (docs), and integration (Web, Android, iOS, Desktop) modes |
+| `build-video-editor`           | Builder     | Scaffold and implement Banuba Video Editor SDK projects            |
+| `build-photo-editor`           | Builder     | Scaffold and implement Banuba Photo Editor SDK projects            |
+| `explain-video-editor-photo-editor-docs` | Docs lookup | Look up VE/PE SDK configuration, customization, and feature guides |
 
 ## SDK Versions
 
@@ -39,14 +39,14 @@ Each skill is defined once in `.agents/` and replicated with platform-specific p
 ## Supported Platforms
 
 - **Video & Photo Editor SDKs**: Android, iOS, Flutter, React Native
-- **Face AR SDK** — Web (Claude Code only)
+- **Face AR SDK** — Web, Android, iOS, Desktop C++ (Claude Code only)
 
 ## Key Conventions
 
 - Skills are installed via `npx skills add Banuba/ai-skills -a <assistant>`.
 - Each SKILL.md file contains a YAML frontmatter block (`name`, `description`, `argument-hint`) followed by the skill prompt.
-- Builder skills (`build-ve`, `build-pe`) fetch live docs from `https://banuba.com/ve-pe-sdk/llms-full.txt` and clone integration samples from GitHub.
-- Docs lookup skill (`explain-ve-pe-docs`) read from bundled `./docs/` directories within each skill folder.
+- Builder skills (`build-video-editor`, `build-photo-editor`) fetch live docs from `https://banuba.com/ve-pe-sdk/llms-full.txt` and clone integration samples from GitHub.
+- Docs lookup skill (`explain-video-editor-photo-editor-docs`) read from bundled `./docs/` directories within each skill folder.
 - All four skills must stay in sync across `.agents/`, `.claude/`, `.codex/`, and `.qwen/` directories.
 
 ## When Editing Skills

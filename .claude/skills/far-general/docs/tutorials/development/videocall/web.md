@@ -4,93 +4,88 @@
 * OpenTok
 * WebRTC
 
-### Agora[​](#agora "Direct link to Agora")
+### Agora
 
-tip
-
+:::tip
 Check the official **[Banuba Agora Extension](https://github.com/Banuba/agora-plugin-filters-web)** for Web [@banuba/agora-extension](https://www.npmjs.com/package/@banuba/agora-extension).
+:::
 
 Or if you need finer control, you may use the **Banuba WebAR** directly:
 
 1. Import **AgoraRTC** and **Banuba WebAR**
-
-index.html
-
+```js
+  <script src="https://download.agora.io/sdk/web/AgoraRTC_N-4.2.0.js"></script>
 ```
-loading...
+```js
+    import { Effect, Webcam, Player, Module, Dom, MediaStreamCapture } from "https://cdn.jsdelivr.net/npm/@banuba/webar/dist/BanubaSDK.browser.esm.min.js"
 ```
-
-![Icon](/img/icons/github.svg "GitHub")
-
-index.html
-
-```
-loading...
-```
-
-![Icon](/img/icons/github.svg "GitHub")
 
 2. Setup client tokens
-
-AgoraAppId.js
-
-```
-loading...
-```
-
-![Icon](/img/icons/github.svg "GitHub")
-
-BanubaClientToken.js
+```js
+window.AGORA_APP_ID = "PUT YOUR APP ID HERE"
+window.AGORA_TOKEN = "PUT YOUR TOKEN HERE"
+window.AGORA_CHANNEL_NAME = "PUT YOUR CHANNEL NAME HERE"
 
 ```
-loading...
+```js
+window.BANUBA_CLIENT_TOKEN = "PUT YOUR CLIENT TOKEN HERE"
 ```
-
-![Icon](/img/icons/github.svg "GitHub")
 
 3. Initialize `Player`
+```js
+      const wcam = new Webcam({ width: 640, height: 480 })
+      const [player, modules] = await Promise.all([
+        Player.create({
+          devicePixelRatio: 1,
+          clientToken: window.BANUBA_CLIENT_TOKEN,
+        }),
+        // Find more about available modules:
+        // https://docs.banuba.com/face-ar-sdk-v1/generated/typedoc/classes/Module.html
+        Module.preload(["background", "face_tracker"].map(m => `https://cdn.jsdelivr.net/npm/@banuba/webar/dist/modules/${m}.zip`)),
+      ])
 
-index.html
+      await player.addModule(...modules)
 
+      player.use(wcam)
+      Dom.render(player, "#webar")
 ```
-loading...
-```
-
-![Icon](/img/icons/github.svg "GitHub")
 
 4. Initialize `AgoraRTC`
+```js
+      const client = AgoraRTC.createClient({ mode: "rtc", codec: "h264" })
 
-index.html
-
+      await client.join(
+        window.AGORA_APP_ID,
+        window.AGORA_CHANNEL_NAME,
+        window.AGORA_TOKEN,
+      )
 ```
-loading...
-```
-
-![Icon](/img/icons/github.svg "GitHub")
 
 5. Connect `Player` to `AgoraRTC`
+```js
+      const stream = new MediaStreamCapture(player)
+      const video = await AgoraRTC.createCustomVideoTrack({ mediaStreamTrack: stream.getVideoTrack() })
+      const audio = await AgoraRTC.createMicrophoneAudioTrack()
 
-index.html
-
+      await client.publish([ video, audio ])
 ```
-loading...
-```
-
-![Icon](/img/icons/github.svg "GitHub")
 
 6. Run the application! 🎉 🚀 💅
 
-tip
-
+:::tip
 See [AgoraWebSDK NG API docs](https://agoraio-community.github.io/AgoraWebSDK-NG/api/en/interfaces/iagorartc.html#createcustomvideotrack) for details.
+:::
 
-tip
-
+:::tip
 See [Banuba Video call demo app](https://github.com/Banuba/videocall-web) for more code examples.
+:::
 
-### OpenTok (TokBox)[​](#opentok-tokbox "Direct link to OpenTok (TokBox)")
+  </TabItem>
+  <TabItem value="opentok" label="OpenTok">
 
-```
+### OpenTok (TokBox)
+
+```ts
 import "https://cdn.jsdelivr.net/npm/@opentok/client"
 import { MediaStream, Player, Module Effect, MediaStreamCapture } from "https://cdn.jsdelivr.net/npm/@banuba/webar/dist/BanubaSDK.browser.esm.js"
 
@@ -130,20 +125,22 @@ session.connect("OT SESSION TOKEN", async () => {
 
 // ...
 ```
-
-tip
-
+:::tip
 See [TokBox Video API docs](https://tokbox.com/developer/sdks/js/reference/OT.html#initPublisher) for details.
+:::
 
-tip
-
+:::tip
 See [Banuba Video call (TokBox) demo app](https://github.com/Banuba/videocall-tokbox-web) for more code examples.
+:::
 
-### WebRTC[​](#webrtc "Direct link to WebRTC")
+  </TabItem>
+  <TabItem value="webrtc" label="WebRTC">
+
+### WebRTC
 
 Considering the [Fireship WebRTC demo](https://github.com/fireship-io/webrtc-firebase-demo/blob/main/main.js)
 
-```
+```ts
 import {
   MediaStream as BanubaMediaStream,
   Player,
@@ -182,3 +179,5 @@ webcamButton.onclick = async () => {
   // ...
 }
 ```
+  </TabItem>
+</Tabs>

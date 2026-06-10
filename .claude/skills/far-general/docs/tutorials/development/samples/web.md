@@ -1,26 +1,26 @@
 # web
 
-## Quickstart[​](#quickstart "Direct link to Quickstart")
+## Quickstart
 
 **[Quickstart Web](https://github.com/Banuba/quickstart-web)**
 
-## Beauty[​](#beauty "Direct link to Beauty")
+## Beauty
 
 **[Beauty demo app](https://github.com/Banuba/beauty-web)**
 
-## Vue[​](#vue "Direct link to Vue")
+## Vue
 
 **[Vue demo app](https://github.com/Banuba/quickstart-web-vue)**
 
-## Angular[​](#angular "Direct link to Angular")
+## Angular
 
 **[Angular demo app](https://github.com/Banuba/quickstart-web-angular)**
 
-## React[​](#react "Direct link to React")
+## React
 
 **[React demo app](https://github.com/Banuba/quickstart-web-react)**
 
-```
+```ts
 import React, { useEffect } from "react"
 import data from "@banuba/webar/BanubaSDK.data"
 import wasm from "@banuba/webar/BanubaSDK.wasm"
@@ -59,33 +59,37 @@ export default function WebARComponent() {
 }
 ```
 
-tip
+:::tip
+See [Bundlers](../installation.md#bundlers) for notes about specific bundlers and `locateFile` usage.
+:::
 
-See [Bundlers](/tutorials/development/installation.md#bundlers) for notes about specific bundlers and `locateFile` usage.
-
-## Agora[​](#agora "Direct link to Agora")
+## Agora
 
 **[Banuba Agora Extension](https://github.com/Banuba/agora-plugin-filters-web)**
 
 **[Video call demo app](https://github.com/Banuba/videocall-web)**
 
-## ZEGOCLOUD[​](#zegocloud "Direct link to ZEGOCLOUD")
+## ZEGOCLOUD
 
 **[ZEGOCLOUD sample](https://github.com/Banuba/banuba_sdk_zegocloud_sdk_web)**
 
-## OpenTok (TokBox)[​](#opentok-tokbox "Direct link to OpenTok (TokBox)")
+## OpenTok (TokBox)
 
 **[TokBox demo app](https://github.com/Banuba/videocall-tokbox-web)**
 
-## Customizing video source[​](#customizing-video-source "Direct link to Customizing video source")
+## Customizing video source
 
-You can easily modify the built-in [Webcam](/generated/typedoc/classes/Webcam.html#constructor) module video by passing [parameters](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints#properties_of_video_tracks) to it.
+You can easily modify the built-in 
+[Webcam](pathname:///generated/typedoc/classes/Webcam.html#constructor) module 
+video by passing 
+[parameters](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints#properties_of_video_tracks) 
+to it.
 
-### Switching from front to back camera[​](#switching-from-front-to-back-camera "Direct link to Switching from front to back camera")
+### Switching from front to back camera
 
 For example, you can use back camera of the device by passing [facingMode](https://developer.mozilla.org/en-US/docs/Web/API/MediaTrackConstraints/facingMode) parameter to it:
 
-```
+```ts
 // ...
 
 // The default facingMode value is "user" which means front camera
@@ -95,11 +99,11 @@ await player.use(new Webcam({ facingMode: "environment" }))
 // ...
 ```
 
-### Rendering WebAR video in full screen on mobile[​](#rendering-webar-video-in-full-screen-on-mobile "Direct link to Rendering WebAR video in full screen on mobile")
+### Rendering WebAR video in full screen on mobile
 
 Simply add the following CSS to force WebAR AR video to fill viewport:
 
-```
+```html
 <style>
   /* The simplest way to force Banuba WebAR canvas to fill viewport */
   #webar > canvas {
@@ -120,11 +124,15 @@ Simply add the following CSS to force WebAR AR video to fill viewport:
 </script>
 ```
 
-If you decide to specify the exact `width` and `height` for the [Webcam](/generated/typedoc/classes/Webcam.html#constructor), pay attention that on several mobile devices/operating systems webcam video width and height may be flipped. It's a known platform-specific [webcam bug](https://stackoverflow.com/questions/62538271/getusermedia-selfie-full-screen-on-mobile/62598616#62598616).
+If you decide to specify the exact `width` and `height` for the 
+[Webcam](pathname:///generated/typedoc/classes/Webcam.html#constructor), pay 
+attention that on several mobile devices/operating systems webcam video width 
+and height may be flipped. It's a known platform-specific 
+[webcam bug](https://stackoverflow.com/questions/62538271/getusermedia-selfie-full-screen-on-mobile/62598616#62598616).
 
 To work around it, swap the `width` and `height` values:
 
-```
+```js
 const desiredWidth = 360
 const desiredHeight = 540
 
@@ -136,11 +144,15 @@ await player.use(new Webcam({
 
 Also, you may want to check out the [Video cropping](#video-cropping) section for more advanced scenarios.
 
-### External MediaStream[​](#external-mediastream "Direct link to External MediaStream")
+### External MediaStream
 
-If the built-in [Webcam](/generated/typedoc/classes/Webcam.html#constructor) can not fit your needs you can use a custom [MediaStream](/generated/typedoc/classes/MediaStream.html) with [Player](/generated/typedoc/classes/Player.html#constructor):
+If the built-in 
+[Webcam](pathname:///generated/typedoc/classes/Webcam.html#constructor) can not 
+fit your needs you can use a custom 
+[MediaStream](pathname:///generated/typedoc/classes/MediaStream.html) with 
+[Player](pathname:///generated/typedoc/classes/Player.html#constructor):
 
-```
+```ts
 import { MediaStream /* ... */ } from "@banuba/webar"
 
 // ...
@@ -156,15 +168,16 @@ await player.use(new MediaStream(canvas))
 // ...
 ```
 
-See [MediaStream](/generated/typedoc/classes/MediaStream.html) docs for more details.
+See [MediaStream](pathname:///generated/typedoc/classes/MediaStream.html) docs 
+for more details.
 
-## Capturing processed video[​](#capturing-processed-video "Direct link to Capturing processed video")
+## Capturing processed video
 
 You can easily capture the processed video, take screenshots, video recordings or pass the captured video to a WebRTC connection.
 
-### Screenshot[​](#screenshot "Direct link to Screenshot")
+### Screenshot
 
-```
+```ts
 import { ImageCapture /* ... */ } from "@banuba/webar"
 
 // ...
@@ -175,11 +188,13 @@ const photo = await capture.takePhoto()
 // ...
 ```
 
-See [ImageCapture.takePhoto()](/generated/typedoc/classes/ImageCapture.html#takePhoto) docs for more details.
+See 
+[ImageCapture.takePhoto()](pathname:///generated/typedoc/classes/ImageCapture.html#takePhoto) 
+docs for more details.
 
-### Video[​](#video "Direct link to Video")
+### Video
 
-```
+```ts
 import { VideoRecorder /* ... */ } from "@banuba/webar"
 
 // ...
@@ -192,11 +207,11 @@ const video = await recorder.stop()
 // ...
 ```
 
-See [VideoRecorder](/generated/typedoc/classes/VideoRecorder.html) docs for more details.
+See [VideoRecorder](pathname:///generated/typedoc/classes/VideoRecorder.html) docs for more details.
 
-### MediaStream[​](#mediastream "Direct link to MediaStream")
+### MediaStream
 
-```
+```ts
 import { MediaStreamCapture /* ... */ } from "@banuba/webar"
 
 // ...
@@ -214,13 +229,17 @@ connection.addTrack(capture.getVideoTrack())
 // ...
 ```
 
-See [MediaStreamCapture](/generated/typedoc/classes/MediaStreamCapture.html) docs for more details.
+See 
+[MediaStreamCapture](pathname:///generated/typedoc/classes/MediaStreamCapture.html) 
+docs for more details.
 
-## Video cropping[​](#video-cropping "Direct link to Video cropping")
+## Video cropping
 
-You can adjust video frame dimensions via [Webcam](/generated/typedoc/classes/Webcam.html#constructor) constructor parameters:
+You can adjust video frame dimensions via 
+[Webcam](pathname:///generated/typedoc/classes/Webcam.html#constructor) 
+constructor parameters:
 
-```
+```ts
 const wcam = new Webcam({ width: 320, height: 240 })
 ```
 
@@ -228,7 +247,7 @@ But this approach is platform-dependent and varies between browsers, e.g. some b
 
 To work around this platform-specific limitations, you can leverage the built-in SDK crop modificator:
 
-```
+```ts
 const desiredWidth = 320
 const desiredHeight = 240
 
@@ -244,15 +263,17 @@ await player.use(webcam, { crop })
 
 This way you can get the desired frame size regardless of the platform used.
 
-See [Player.use()](/generated/typedoc/classes/Player.html#use) and [InputOptions](//generated/typedoc/types/InputOptions.html) docs for more datails.
+See [Player.use()](pathname:///generated/typedoc/classes/Player.html#use) and 
+[InputOptions](pathname:////generated/typedoc/types/InputOptions.html) docs 
+for more datails.
 
-## Postprocessing[​](#postprocessing "Direct link to Postprocessing")
+## Postprocessing
 
 It's possible to post-process the video processed by WebAR SDK.
 
 You can grab the idea from the code-snippet:
 
-```
+```ts
 import { MediaStreamCapture /* ... */ } from "@banuba/webar"
 
 // ...

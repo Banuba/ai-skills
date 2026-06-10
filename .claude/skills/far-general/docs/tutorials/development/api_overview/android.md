@@ -1,8 +1,8 @@
 # android
 
-![image](/assets/images/android_player_api_overview-69f91128c9d7c1f1e3e7286f7f919f36.svg)
-
-**Player API** is a set of classes and methods that help facilitate and speed up the integration of the Banuba SDK into applications. The **Player API** concept distinguishes three main entities: **Input**, **Player**, and **Output**.
+**Player API** is a set of classes and methods that help facilitate and speed up the integration of
+the Banuba SDK into applications. The **Player API** concept distinguishes three main entities:
+**Input**, **Player**, and **Output**.
 
 Basic **Player API** packages:
 
@@ -11,42 +11,48 @@ Basic **Player API** packages:
 * `com.banuba.sdk.output` — all the classes responsible for the output data, the Output entity.
 * `com.banuba.sdk.frame` — the pixel buffer used for both input and output.
 
-## Input[​](#input "Direct link to Input")
+## Input
 
-**Input** receives frames from a camera, image, or user input and provides them to the `Player`. The `Player` can only work with one Input at a time.
+**Input** receives frames from a camera, image, or user input and provides them to the `Player`.
+The `Player` can only work with one Input at a time.
 
 * `CameraInput` — this class provides frames from the front or rear camera in real time.
 * `ProtoInput` — this class provides frames as photos taken by the camera or loaded from a file.
 * `StreamInput` — this class provides user frames from user data.
 * `VideoInput` — this class provides frames from a video file.
 
-## Player[​](#player "Direct link to Player")
+## Player
 
-The **Player** class requests frames from **Input**, then processes these frames and passes the results to one or more **Outputs**. By default, frame processing works automatically. Optionally, you can enable on-demand processing.
+The **Player** class requests frames from **Input**, then processes these frames and
+passes the results to one or more **Outputs**. By default, frame processing works automatically. 
+Optionally, you can enable on-demand processing.
 
-## Output[​](#output "Direct link to Output")
+## Output
 
-**Output** receives the result of the work from the **Player** and renders it to the surface or a texture, writes it into a file, or provides the user with frames in a supported format.
-
+**Output** receives the result of the work from the **Player** and renders it to the surface or a texture,
+writes it into a file, or provides the user with frames in a supported format.
 * `FrameOutput` — provides the user with data in the form of a buffer of pixels.
 * `SurfaceOutput` — this class renders frames to the `SurfaceView`.
 * `TextureOutput` — this class renders frames to the `TextureView`.
 * `VideoOutput` — this class writes frames to a video file.
 
-## Input and Output of user data[​](#input-and-output-of-user-data "Direct link to Input and Output of user data")
+## Input and Output of user data
 
 The **Input** and the **Output** can operate on a pixel buffer.
+* `FramePixelBuffer` — provides access to an array of pixels as a byte buffer. In the `StreamInput`
+class, it is used as the input data buffer, and in the `FrameOutput` class, it is used as the output
+data buffer.
+* `FramePixelBufferFormat` — pixel buffer format can be one of: `RGBA`, `I420_BT601_FULL`,
+`I420_BT601_VIDEO`, `I420_BT709_FULL` or `I420_BT709_VIDEO`.
 
-* `FramePixelBuffer` — provides access to an array of pixels as a byte buffer. In the `StreamInput` class, it is used as the input data buffer, and in the `FrameOutput` class, it is used as the output data buffer.
-* `FramePixelBufferFormat` — pixel buffer format can be one of: `RGBA`, `I420_BT601_FULL`, `I420_BT601_VIDEO`, `I420_BT709_FULL` or `I420_BT709_VIDEO`.
+## Use cases
 
-## Use cases[​](#use-cases "Direct link to Use cases")
+### CameraDevice
 
-### CameraDevice[​](#cameradevice "Direct link to CameraDevice")
+The camera device is associated with the device's physical camera. All camera settings are made
+using this class.
 
-The camera device is associated with the device's physical camera. All camera settings are made using this class.
-
-```
+```kotlin
 // Variable declaration somewhere inside the activity
 private val cameraDevice by lazy(LazyThreadSafetyMode.NONE) {
     CameraDevice(requireNotNull(this.applicationContext), this@MainActivity)
@@ -75,11 +81,13 @@ them to player */
 cameraDevice.stop()
 ```
 
-### CameraInput[​](#camerainput "Direct link to CameraInput")
+### CameraInput
 
-Allows to receive and process frames from the `CameraDevice`. The `Player` will only process the most recently received frame, all other frames will be discarded. Frames will be processed in online mode.
+Allows to receive and process frames from the `CameraDevice`. The `Player` will only process the most
+recently received frame, all other frames will be discarded. Frames will be processed in
+online mode.
 
-```
+```kotlin
 // Somewhere in the initialization code
 /* There is no need to create a variable for this class since this class is only used
 to transfer frames from the camera to the player. But it is necessary that cameraDevice
@@ -87,11 +95,14 @@ is created */
 player.use(CameraInput(cameraDevice), ...)
 ```
 
-### PhotoInput[​](#photoinput "Direct link to PhotoInput")
+### PhotoInput
 
-Allows you to process photos from the `CameraDevice`, from the Android [`Bitmap`](https://developer.android.com/reference/android/graphics/Bitmap), from the Android [`Image`](https://developer.android.com/reference/android/media/Image), or from the [`FramePixelBuffer`](#framepixelbuffer) with or without a given orientation and mirroring. The photo will be processed in the offline mode.
+Allows you to process photos from the `CameraDevice`, from the Android [`Bitmap`](https://developer.android.com/reference/android/graphics/Bitmap),
+from the Android [`Image`](https://developer.android.com/reference/android/media/Image),
+or from the [`FramePixelBuffer`](#framepixelbuffer) with or without a given orientation and
+mirroring. The photo will be processed in the offline mode.
 
-```
+```kotlin
 // Somewhere in the image processing code
 val photoInput = PhotoInput()
 player.use(photoInput, ...)
@@ -103,11 +114,12 @@ photoInput.take(cameraDevice, object: CameraDevice.IErrorOccurred {
 })
 ```
 
-### StreamInput[​](#streaminput "Direct link to StreamInput")
+### StreamInput
 
-Pushes the user data stream to the `Player`. User data can come from anywhere, for example, received over the network. Frames will be processed in online mode.
+Pushes the user data stream to the `Player`. User data can come from anywhere, for example, received
+over the network. Frames will be processed in online mode.
 
-```
+```kotlin
 // Variable declaration 
 private val streamInput by lazy(LazyThreadSafetyMode.NONE) {
     StreamInput()
@@ -131,11 +143,13 @@ that it must be transmitted in nanoseconds. */
 streamInput.push(frame, myFrameTimestampInNanoseconds)
 ```
 
-### VideoInput[​](#videoinput "Direct link to VideoInput")
+### VideoInput
 
-Used when you need to process a video file, all the frames will be processed sequentially one by one. Must be used with `MANUAL` player rendering. Supported video formats depend on the specific device and installed **Android** codecs. Frames will be processed in offline mode.
+Used when you need to process a video file, all the frames will be processed sequentially one by
+one. Must be used with `MANUAL` player rendering. Supported video formats depend on the
+specific device and installed **Android** codecs. Frames will be processed in offline mode.
 
-```
+```kotlin
 // Variable declaration
 private val videoInput by lazy(LazyThreadSafetyMode.NONE) {
     VideoInput()
@@ -176,7 +190,7 @@ videoInput.processVideoFile(File("path_to/my_video.mp4"), object: VideoInput.IVi
 videoInput.stopProcessing()
 ```
 
-### FramePixelBufferFormat[​](#framepixelbufferformat "Direct link to FramePixelBufferFormat")
+### FramePixelBufferFormat
 
 Pixel buffer format can be one of:
 
@@ -186,13 +200,12 @@ Pixel buffer format can be one of:
 * `I420_BT709_FULL` - yuv i420 image encoded by standard bt709 full range.
 * `I420_BT709_VIDEO` - yuv i420 image encoded by standard bt709 video range.
 
-### FramePixelBuffer[​](#framepixelbuffer "Direct link to FramePixelBuffer")
+### FramePixelBuffer
 
-A wrapper for pixel images that can store images of different formats and provide convenient access to all image parameters.
+A wrapper for pixel images that can store images of different formats and provide convenient access to
+all image parameters.
 
-example of creating RGBA FramePixelBuffer
-
-```
+```kotlin title="example of creating RGBA FramePixelBuffer"
 /* The format BPC8_RGBA has a single plane of densely packed pixels */
 val myWidth = 400 /* width of the image */
 val myHeight = 300 /* height of the image */
@@ -209,9 +222,7 @@ val frame = FramePixelBuffer(myArrayOfPixels,
 )
 ```
 
-example of creating YUV FramePixelBuffer
-
-```
+```kotlin title="example of creating YUV FramePixelBuffer"
 /* You can read more about YUV format here:
 https://learn.microsoft.com/en-us/windows/win32/medfound/recommended-8-bit-yuv-formats-for-video-rendering
 */
@@ -238,11 +249,12 @@ val frame = FramePixelBuffer(myArrayOfPixels,
 )
 ```
 
-### Player[​](#player-1 "Direct link to Player")
+### Player
 
-The main class with which you can manage **Banuba SDK**, **effects** and the entire rendering process. Rendering in this class is done in a separate thread, the **render thread**.
+The main class with which you can manage **Banuba SDK**, **effects** and the entire rendering process.
+Rendering in this class is done in a separate thread, the **render thread**.
 
-```
+```kotlin
 // Variable declaration
 private val player by lazy(LazyThreadSafetyMode.NONE) {
     Player()
@@ -275,22 +287,24 @@ method close() */
 player.close()
 ```
 
-### PlayerTouchListener[​](#playertouchlistener "Direct link to PlayerTouchListener")
+### PlayerTouchListener
 
-This class represents user clicks in **Banuba SDK**. This is required by some **effects**, and is one way to interact with them.
+This class represents user clicks in **Banuba SDK**. This is required by some **effects**, and is one way
+to interact with them.
 
-```
+```kotlin
 // Somewhere in the initialization code
 /* The player must be created and declared before use. The mySurfaceView is a UI element
 and must also exist in the layout */
 mySurfaceView.setOnTouchListener(PlayerTouchListener(this.applicationContext, player));
 ```
 
-### FrameOutput[​](#frameoutput "Direct link to FrameOutput")
+### FrameOutput
 
-Allows you to receive the processing result frames in the form of an array of pixels in the desired format and in the desired orientation.
+Allows you to receive the processing result frames in the form of an array of pixels in the
+desired format and in the desired orientation.
 
-```
+```kotlin
 // Variable declaration
 private val frameOutput by lazy(LazyThreadSafetyMode.NONE) {
     FrameOutput(object : FrameOutput.IFramePixelBufferProvider {
@@ -315,11 +329,11 @@ method */
 frameOutput.close()
 ```
 
-### SurfaceOutput[​](#surfaceoutput "Direct link to SurfaceOutput")
+### SurfaceOutput
 
 Allows you to display the processing result on an [SurfaceView](https://developer.android.com/reference/android/view/SurfaceView).
 
-```
+```kotlin
 // Variable declaration
 /* The mySurfaceView is a UI element and must exist in the layout */
 private val surfaceOutput by lazy(LazyThreadSafetyMode.NONE) {
@@ -339,11 +353,11 @@ method */
 surfaceOutput.close()
 ```
 
-### TextureOutput[​](#textureoutput "Direct link to TextureOutput")
+### TextureOutput
 
 Allows you to display the processing result on an [TextureView](https://developer.android.com/reference/android/view/TextureView).
 
-```
+```kotlin
 // Variable declaration
 /* The myTextureView is a UI element and must exist in the layout */
 private val textureOutput by lazy(LazyThreadSafetyMode.NONE) {
@@ -363,11 +377,11 @@ method */
 textureOutput.close()
 ```
 
-### VideoOutput[​](#videooutput "Direct link to VideoOutput")
+### VideoOutput
 
 The class allows you to record the processing result to a video file.
 
-```
+```kotlin
 // Variable declaration
 private val videoOutput by lazy(LazyThreadSafetyMode.NONE) {
         VideoOutput()

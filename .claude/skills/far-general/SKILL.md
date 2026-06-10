@@ -10,9 +10,9 @@ description: |
   "beautification", "face landmarks", "AR Cloud", "can the SDK", "how does", "explain",
   "add", "set up", "integrate", "build".
 
-  Web is the only platform with code generation. Other platforms (iOS, Android, Desktop,
-  macOS, Flutter, React Native, Unity) get the GitHub sample link plus the contact form.
-  For Video/Photo Editor SDK use build-ve, build-pe, or explain-ve-pe-docs.
+  Web, Android, iOS, and Desktop (C++) have full code generation support. Other platforms
+  (macOS, Flutter, React Native, Unity) get the GitHub sample link plus the contact form.
+  For Video/Photo Editor SDK use build-video-editor, build-photo-editor, or explain-video-editor-photo-editor-docs.
 
   <example>
   Context: Sales-team capability question.
@@ -92,19 +92,25 @@ Same audience as above — explaining, troubleshooting, and building. Respond pr
 
 ## Platform scope (all modes)
 
-Web is the only platform with full coverage and code generation. For other platforms, give the GitHub sample link and the [contact form](https://www.banuba.com/contact); do not generate code or read platform-specific docs.
+Web, Android, iOS, and Desktop (C++) have full coverage and code generation. For all other platforms (macOS, Flutter, React Native, Unity): **MUST NOT generate any code**. Only clone the official GitHub sample and direct to the [contact form](https://www.banuba.com/contact).
 
-| Platform | Sample |
-|---|---|
-| iOS | [banuba-sdk-ios-samples](https://github.com/Banuba/banuba-sdk-ios-samples) |
-| Android | [banuba-sdk-android-samples](https://github.com/Banuba/banuba-sdk-android-samples) |
-| Desktop (C++) | [quickstart-desktop-cpp](https://github.com/Banuba/quickstart-desktop-cpp) |
-| macOS | [quickstart-macos-swift](https://github.com/Banuba/quickstart-macos-swift) |
-| Flutter | [banuba-sdk-flutter](https://github.com/Banuba/banuba-sdk-flutter) |
-| React Native | [banuba-sdk-react-native](https://github.com/Banuba/banuba-sdk-react-native) |
-| Unity (iOS, Android, Windows, macOS — no Web) | [quickstart-unity](https://github.com/Banuba/quickstart-unity) |
+| Platform | Coverage | Sample |
+|---|---|---|
+| Web | ✅ Full — read `reference/build.md` (Web section) | [quickstart-web](https://github.com/Banuba/quickstart-web) |
+| Android | ✅ Full — read `reference/build.md` (Android section) | [banuba-sdk-android-samples](https://github.com/Banuba/banuba-sdk-android-samples) |
+| iOS | ✅ Full — read `reference/build.md` (iOS section) | [banuba-sdk-ios-samples](https://github.com/Banuba/banuba-sdk-ios-samples) |
+| Desktop (C++) | ✅ Full — read `reference/build.md` (Desktop section) | [quickstart-desktop-cpp](https://github.com/Banuba/quickstart-desktop-cpp) |
+| macOS | 🚫 No code generation — clone sample only | [quickstart-macos-swift](https://github.com/Banuba/quickstart-macos-swift) |
+| Flutter | 🚫 No code generation — clone sample only | [banuba-sdk-flutter](https://github.com/Banuba/banuba-sdk-flutter) |
+| React Native | 🚫 No code generation — clone sample only | [banuba-sdk-react-native](https://github.com/Banuba/banuba-sdk-react-native) |
+| Unity | 🚫 No code generation — clone sample only | [quickstart-unity](https://github.com/Banuba/quickstart-unity) |
 
-Detect Web from `package.json` (no `react-native`), `vite.config.*`, `webpack.config.*`, `rollup.config.*`, or `index.html` plus a JS bundler.
+**Platform detection:**
+- Web: `package.json` (no `react-native`), `vite.config.*`, `webpack.config.*`, `rollup.config.*`, or `index.html` + JS bundler
+- Android: `build.gradle`, `build.gradle.kts`, `AndroidManifest.xml`, or `*.kt` / `*.java` files
+- iOS: `*.xcodeproj`, `*.xcworkspace`, `Podfile`, or `*.swift` / `*.m` files
+- Desktop (C++): `CMakeLists.txt`, `*.cpp`, `*.hpp` files, or user explicitly says "desktop" / "C++"
+- If unclear, ask one question: "Which platform are you targeting?"
 
 ## Shared principles (all modes)
 
@@ -117,14 +123,14 @@ Detect Web from `package.json` (no `react-native`), `vite.config.*`, `webpack.co
 
 ## Reference files
 
-- `reference/sales.md`: Sales mode. Capabilities, compliance, customer references, plain-language CV glossary.
+- `reference/sales.md`: Sales mode. Capabilities, compliance, plain-language CV glossary.
 - `reference/explain.md`: Developer mode, explain/troubleshoot. Use-case to doc map, troubleshooting, technical CV concepts.
-- `reference/build.md`: Developer mode, build. Web integration workflow, prefab config, pitfalls, output format.
+- `reference/build.md`: Developer mode, build — Web, Android, iOS, Desktop. Integration workflow per platform, prefab config, pitfalls, output format.
 - `docs/`: bundled SDK documentation (single source for all modes).
 
 ## Related Skills
 
-- For Video Editor / Photo Editor SDK: `/build-ve`, `/build-pe`, `/explain-ve-pe-docs`.
+- For Video Editor / Photo Editor SDK: `/build-video-editor`, `/build-photo-editor`, `/explain-video-editor-photo-editor-docs`.
 
 ## Resources
 

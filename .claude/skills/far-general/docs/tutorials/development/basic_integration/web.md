@@ -1,74 +1,85 @@
 # web
 
-## Requirements[​](#requirements "Direct link to Requirements")
+## Requirements
 
 * [Nodejs](https://nodejs.org/en/) installed
 * Browser with [WebGL 2.0](https://caniuse.com/#feat=webgl2) and higher
 
-## Integration[​](#integration "Direct link to Integration")
+## Integration
 
 1. Setup the client token
-
-BanubaClientToken.js
-
+```js
+window.BANUBA_CLIENT_TOKEN = "PUT YOUR CLIENT TOKEN HERE"
 ```
-loading...
-```
-
-![Icon](/img/icons/github.svg "GitHub")
 
 2. Import the required types from the [@banuba/webar](https://www.npmjs.com/package/@banuba/webar) NPM package
-
-index.html
-
+```js
+const {
+  Dom,
+  Effect,
+  Image,
+  ImageCapture,
+  Module,
+  Player,
+  VideoRecorder,
+  Webcam,
+  VERSION,
+} = await import(
+  `https://cdn.jsdelivr.net/npm/@banuba/webar@${SDK_VERSION}/dist/BanubaSDK.browser.esm.min.js`
+);
 ```
-loading...
-```
 
-![Icon](/img/icons/github.svg "GitHub")
-
-info
-
-See the details about the NPM package in [Installation](/tutorials/development/installation.md).
+:::info
+See the details about the NPM package in [Installation](/tutorials/development/installation).
+:::
 
 3. Initialize `Player` and apply the `Effect`
-
-index.html
-
+```js
+const player = await Player.create({
+  clientToken: window.BANUBA_CLIENT_TOKEN,
+  proxyVideoRequestsTo: isSafari ? "___range-requests___/" : null,
+  useFutureInterpolate: false,
+  locateFile: `${sdkUrl}@${SDK_VERSION}/dist`,
+});
 ```
-loading...
+```js
+await Promise.all(
+  modulesList.map((moduleId) => {
+    return new Promise(async (resolve) => {
+      try {
+        const module = await Module.preload(
+          `https://cdn.jsdelivr.net/npm/@banuba/webar@${SDK_VERSION}/dist/modules/${moduleId}.zip`
+        );
+        await player.addModule(module);
+      } catch (error) {
+        console.warn(`Load module ${moduleId} error: `, error);
+      }
+
+      return resolve();
+    });
+  })
+);
 ```
-
-![Icon](/img/icons/github.svg "GitHub")
-
-index.html
-
+```js
+export const applyEffect = async (effectName) => {
+  currentEffect = new Effect(effectName);
+  await player.applyEffect(currentEffect);
+};
 ```
-loading...
-```
-
-![Icon](/img/icons/github.svg "GitHub")
-
-index.html
-
-```
-loading...
-```
-
-![Icon](/img/icons/github.svg "GitHub")
 
 4. Run a local web server from a terminal inside the folder
-
-```
+```bash
 npx live-server
 ```
 
 5. Open [localhost:8080](http://localhost:8080) and start clicking 🎉 🚀 💅
 
-tip
+:::tip
+Follow the instructions of the demo app [README.md](https://github.com/Banuba/quickstart-web/blob/master/README.md) 
+to get more info.
+:::
 
-Follow the instructions of the demo app [README.md](https://github.com/Banuba/quickstart-web/blob/master/README.md) to get more info.
-
-note
-
-The demo app leverages [jsDelivr](https://jsdelivr.com/) CDN for ease of getting started, for a real life application please use the [@banuba/webar](https://www.npmjs.com/package/@banuba/webar) npm package.
+:::note
+The demo app leverages [jsDelivr](https://jsdelivr.com/) CDN for ease of getting started, for a real life 
+application please use the [@banuba/webar](https://www.npmjs.com/package/@banuba/webar) npm package.
+:::

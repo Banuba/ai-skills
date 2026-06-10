@@ -1,5 +1,5 @@
 ---
-name: build-pe
+name: build-photo-editor
 description: |
   Implement features, write code, and set up Banuba Photo Editor SDK.
 
@@ -7,19 +7,7 @@ description: |
   something with Banuba Photo Editor SDK. Triggered by "help me add", "set up", "build a
   photo editor".
 
-  Not for looking up existing docs (use explain-ve-pe-docs skill instead).
-
-  <example>
-  Context: User wants to build a photo editor based on Banuba Photo Editor SDK.
-  user: "Help me set up Banuba Photo Editor SDK in my project"
-  assistant: "I'll use /build-pe to help set this up."
-  </example>
-
-  <example>
-  Context: User wants to add a specific feature
-  user: "Add new feature to my photo editor"
-  assistant: "Let me use /build-pe to implement this feature."
-  </example>
+  Not for looking up existing docs (use explain-video-editor-photo-editor-docs skill instead).
 ---
 
 ## Version Notice
@@ -49,7 +37,7 @@ Detect the user's platform from project files. If no project exists yet or detec
 ## Core Principles
 
 1. **Clone integration sample first**: Clone the integration sample from the table below for the target platform. Use it as a working starting point.
-2. **Retrieval-first**: Consult [the docs](https://banuba.com/ve-pe-sdk/llms-full.txt) before using pre-trained knowledge — docs are version-verified and may contain API changes not yet in training data. If the `explain-ve-pe-docs` skill is available, read its local docs.
+2. **Retrieval-first**: Consult [the docs](https://banuba.com/ve-pe-sdk/llms-full.txt) before using pre-trained knowledge — docs are version-verified and may contain API changes not yet in training data. If the `explain-video-editor-photo-editor-docs` skill is available, read its local docs.
 3. **Platform-specific**: Generate code only for the detected platform.
 4. **Code-first**: Lead with working code examples, then explain.
 5. **Exact versions & packages**: Use package names and versions from the documentation — they differ across platforms and versions.
@@ -118,7 +106,7 @@ Modify the cloned sample based on the user's needs. Consult the platform-specifi
 
 ## Upgrading Between SDK Versions
 
-When the user is upgrading from an older SDK version, consult the release notes for the target version. If the `explain-ve-pe-docs` skill is available, read its local docs at `release-notes/{version}.md` — each file contains a **Migration Guide** with dependency updates, API changes, and links to sample PRs. For the full Android changelog, see `release-notes/Android.md`.
+When the user is upgrading from an older SDK version, consult the release notes for the target version. If the `explain-video-editor-photo-editor-docs` skill is available, read its local docs at `release-notes/{version}.md` — each file contains a **Migration Guide** with dependency updates, API changes, and links to sample PRs. For the full Android changelog, see `release-notes/Android.md`.
 
 ## Common Pitfalls
 

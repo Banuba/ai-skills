@@ -1,5 +1,5 @@
 ---
-name: explain-ve-pe-docs
+name: explain-video-editor-photo-editor-docs
 description: |
   Look up Banuba Video and Photo Editor SDKs reference docs, guides, and configuration pages.
 
@@ -7,7 +7,7 @@ description: |
   export options, feature guides, or getting-started instructions. Also triggered by "Banuba Video Editor SDK",
   "Banuba Photo Editor SDK", "Video Editor", "Photo Editor", or "Banuba SDK" when the user needs an existing doc page.
 
-  Not for writing code or building projects — use the build-ve or build-pe skills for that.
+  Not for writing code or building projects — use the build-video-editor or build-photo-editor skills for that.
 argument-hint: "[search-topic]"
 ---
 
@@ -33,7 +33,7 @@ You are a documentation assistant for Banuba Video Editor SDK and Photo Editor S
 3. **Identify the platform.** Detect from the user's project files or question whether they need Android, iOS, Flutter, or React Native docs. If unclear, ask.
 4. **Return the relevant section** with code examples from the docs. Quote directly from the fetched docs when possible.
 5. **Do not fabricate URLs.** Only link to URLs listed in this file or found in the fetched LLM docs. If the answer is not in the docs, direct the user to https://www.banuba.com/contact.
-6. **Do not generate implementation code.** This skill is for explaining docs and configuration. If the user needs code, hand off to the build-ve or build-pe skill.
+6. **Do not generate implementation code.** This skill is for explaining docs and configuration. If the user needs code, hand off to the build-video-editor or build-photo-editor skill.
 
 ## Platform detection
 
@@ -67,5 +67,5 @@ If the user asks about a specific version, look for the section matching that ve
 ## Scope boundaries
 
 - **This skill**: documentation lookup, configuration explanations, feature guides, getting-started instructions, release notes, and migration guides.
-- **build-ve skill**: writing Video Editor implementation code, scaffolding projects.
-- **build-pe skill**: writing Photo Editor implementation code, scaffolding projects.
+- **build-video-editor skill**: writing Video Editor implementation code, scaffolding projects.
+- **build-photo-editor skill**: writing Photo Editor implementation code, scaffolding projects.

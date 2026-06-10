@@ -8,7 +8,7 @@ Starting from the 15.3 release Safari began to pause [MediaStream](https://devel
 
 The most likely reason is a memory leak caused by a dangling [Player](/generated/typedoc/classes/Player.html#constructor) instance which can not be automatically collected by the browser's GC. Consider the code:
 
-```
+```js
 let webcam
 
 document.querySelector("#start").onclick = async () => {
@@ -27,9 +27,13 @@ document.querySelector("#stop").onclick = () => {
 }
 ```
 
-Sequence of clicks on the `#start` followed by a click on the `#stop` leads to a memory leak, since the `player` object is still held in the browser memory. To fix it, you should call [Player.destroy()](/generated/typedoc/classes/Player.html#destroy) once the `player` object is not needed anymore. The following fixed code will not cause a memory leak:
+Sequence of clicks on the `#start` followed by a click on the `#stop` leads to a memory leak, 
+since the `player` object is still held in the browser memory.
+To fix it, you should call [Player.destroy()](pathname:///generated/typedoc/classes/Player.html#destroy) 
+once the `player` object is not needed anymore.
+The following fixed code will not cause a memory leak:
 
-```
+```js {17,18}
 let webcam, player
 
 document.querySelector("#start").onclick = async () => {
@@ -51,11 +55,10 @@ document.querySelector("#stop").onclick = () => {
 }
 ```
 
-note
-
+:::note
 If the app has such a "start - stop - repeat" logic, you may also consider to cache the `player` object instead of constantly re-creating it:
 
-```
+```js {1,4,5,18}
 let player, webcam 
 
 document.querySelector("#start").onclick = async () => {
@@ -77,19 +80,24 @@ document.querySelector("#stop").onclick = () => {
 }
 ```
 
-## Page running WebAR SDK crashes[​](#page-running-webar-sdk-crashes "Direct link to Page running WebAR SDK crashes")
+:::
+
+## Page running WebAR SDK crashes
 
 One of the most widespread reasons is a memory leak which drains all the device's RAM. Please check out the [Page running WebAR SDK consumes too much memory](#page-running-webar-sdk-consumes-too-much-memory) section.
 
-If that's not your case, please [contact support](/support/.md) and submit the issue.
+If that's not your case, please [contact support](/support) and submit the issue.
 
-## Effect animations are delayed in Safari[​](#effect-animations-are-delayed-in-safari "Direct link to Effect animations are delayed in Safari")
+## Effect animations are delayed in Safari
 
-This is [a known Safari bug](https://bugs.webkit.org/show_bug.cgi?id=232076), and for your convenience we provide you with [the ready-to-go fix](/js/range-requests.sw.js).
+This is [a known Safari bug](https://bugs.webkit.org/show_bug.cgi?id=232076), and for your convenience
+we provide you with [the ready-to-go fix](pathname:///js/range-requests.sw.js).
 
-Assume you have an html page from the [Basic Integration](/tutorials/development/basic_integration.md) section. Download the [range-requests.sw.js](/js/range-requests.sw.js) file and put it next to the WebAR running page. To fix the Safari playback issue prepend the `navigator.serviceWorker.register("./range-requests.sw.js")` to the page's script and point Player to proxy video requests to the service worker:
+Assume you have an html page from the [Basic Integration](/tutorials/development/basic_integration) section.
+Download the [range-requests.sw.js](pathname:///js/range-requests.sw.js) file and put it next to the WebAR running page.
+To fix the Safari playback issue prepend the `navigator.serviceWorker.register("./range-requests.sw.js")` to the page's script and point Player to proxy video requests to the service worker:
 
-```
+```html title=index.html
 <!DOCTYPE html>
 <html>
   <head>
@@ -128,16 +136,17 @@ Assume you have an html page from the [Basic Integration](/tutorials/development
 </html>
 ```
 
-You can verify the fix with help of the [Rorschach](/generated/effects/Rorschach.zip) animated effect.
+You can verify the fix with help of the [Rorschach](pathname:///generated/effects/Rorschach.zip) animated effect.
 
-note
+:::note
+You may want to conditionally include the fix for Safari but not for the other browsers.
+Check the [quickstart-web](https://github.com/Banuba/quickstart-web) demo app for a possible implementation.
+:::
 
-You may want to conditionally include the fix for Safari but not for the other browsers. Check the [quickstart-web](https://github.com/Banuba/quickstart-web) demo app for a possible implementation.
+:::note
+If your app already has a ServiceWorker in your app, simply import the [range-requests.sw.js](pathname:///js/range-requests.sw.js) into it:
 
-note
-
-If your app already has a ServiceWorker in your app, simply import the [range-requests.sw.js](/js/range-requests.sw.js) into it:
-
-```
+```js title=my-app.sw.js
 importScripts("range-requests.sw.js")
 ```
+:::

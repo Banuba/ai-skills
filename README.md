@@ -22,21 +22,25 @@ Dropping a raw `llms.txt` dump into your assistant works once — but it bloats 
 
 | Skill                | Description                                                                                                  |
 | -------------------- | ------------------------------------------------------------------------------------------------------------ |
-| `far-general`        | Build web apps with Face AR SDK, get explanations, read documents, and more. Other platforms are coming soon.|
-| `build-ve`           | Implement features, write code, and set up Banuba Video Editor SDK projects                                  |
-| `build-pe`           | Implement features, write code, and set up Banuba Photo Editor SDK projects                                  |
-| `explain-ve-pe-docs` | Look up Banuba Video and Photo Editor SDKs docs — configuration, UI customization, guides                    |
+| `far-general`        | Build Face AR apps on Web, Android, iOS, and Desktop (C++), get explanations, read documents, and more. |
+| `build-video-editor`           | Implement features, write code, and set up Banuba Video Editor SDK projects                                  |
+| `build-photo-editor`           | Implement features, write code, and set up Banuba Photo Editor SDK projects                                  |
+| `explain-video-editor-photo-editor-docs` | Look up Banuba Video and Photo Editor SDKs docs — configuration, UI customization, guides                    |
 
-The build skills include starter kit templates for common platforms that let you autonomously create complete Banuba Video Editor, Photo Editor, or Face AR (web) applications — applying templates and implementing features end-to-end.
+The build skills include starter kit templates for common platforms that let you autonomously create complete Banuba Video Editor, Photo Editor, or Face AR applications — applying templates and implementing features end-to-end.
 
 ### Supported Platforms
 
+- **Face AR SDK** — Web, Android, iOS, Desktop C++ (Claude Code only)
 - **Video & Photo Editor SDKs** — Android, iOS, Flutter, React Native
 
 ### SDK Versions
 
-- Face AR SDK
-  - Web: v1.18.1
+- Face AR SDK: 
+  - Web: v1.18.1 
+  - Android: v1.18.1
+  - iOS: v1.18.1
+  - Desktop C++: v1.18.1
 - Video Editor SDK
   - Android: v1.52.0
   - iOS: v1.52.1
@@ -59,7 +63,7 @@ Install using the [Vercel Skills CLI](https://github.com/vercel-labs/skills):
 npx skills add Banuba/ai-skills -a claude-code
 
 # Or install a specific skill only
-npx skills add Banuba/ai-skills --skill build-ve -a claude-code
+npx skills add Banuba/ai-skills --skill build-video-editor -a claude-code
 
 # List available skills first
 npx skills add Banuba/ai-skills --list
@@ -106,15 +110,15 @@ Once installed, invoke skills with slash commands in your AI coding assistant:
 ### Build a feature
 
 ```
-/far-general   Build a Snapchat-style face-filter camera for a Web Application
-/build-ve      Set up a Video Editor for Android with AI Clipping
-/build-pe      Add Photo Editor with AR filters to my iOS app
+/far-general   Build a Snapchat-style face-filter camera for Web, Android, iOS, or Desktop
+/build-video-editor      Set up a Video Editor for Android with AI Clipping
+/build-photo-editor      Add Photo Editor with AR filters to my iOS app
 ```
 
 ### Look up documentation
 
 ```
-/explain-ve-pe-docs How do I customize the export settings?
+/explain-video-editor-photo-editor-docs How do I customize the export settings?
 ```
 
 ### Get explanation

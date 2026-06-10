@@ -1,5 +1,5 @@
 ---
-name: explain-ve-pe-docs
+name: explain-video-editor-photo-editor-docs
 description: |
   Look up Banuba Video and Photo Editor SDKs reference docs, guides, and configuration pages.
 
@@ -7,25 +7,20 @@ description: |
   export options, feature guides, or getting-started instructions. Also triggered by "Banuba Video and Photo Editor SDKs", "Video Editor",
   "Photo Editor", "Banuba SDK", or "VE/PE SDK" when the user needs an existing doc page.
 
-  Not for writing code (use build-ve or build-pe).
+  Not for writing code (use build-video-editor or build-photo-editor).
 
   <example>
   Context: User asks about Banuba Video and Photo Editor SDKs
   user: "How do I customize the camera screen in Banuba Video Editor SDK?"
-  assistant: "I'll use /explain-ve-pe-docs to look up the camera guide."
+  assistant: "I'll use /explain-video-editor-photo-editor-docs to look up the camera guide."
   </example>
-argument-hint: "[search-topic]"
 ---
 
 ## Version Notice
 
 This skill was generated on 2026-05-15 against Banuba VE/PE SDK docs. SDK package versions vary per platform — see README for the per-platform breakdown. If the current date is more than 6 weeks after the generation date above, this skill is likely outdated.
 
-**Inform the user** that a newer version may be available and suggest they update:
-
-```bash
-npx skills update
-```
+**Inform the user** that a newer version may be available and suggest they update.
 
 # Banuba Video & Photo Editor SDKs — Doc Lookup Skill
 
@@ -136,5 +131,5 @@ All paths are relative to `./docs/` within this skill's directory.
 
 ## Related Skills
 
-- Use `/build-ve` when the user needs Video Editor implementation help, not just docs.
-- Use `/build-pe` when the user needs Photo Editor implementation help, not just docs.
+- Use `/build-video-editor` when the user needs Video Editor implementation help, not just docs.
+- Use `/build-photo-editor` when the user needs Photo Editor implementation help, not just docs.
