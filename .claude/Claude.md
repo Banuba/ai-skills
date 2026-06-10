@@ -24,7 +24,7 @@ Each skill is defined once in `.agents/` and replicated with platform-specific p
 
 ## SDK Versions
 
-- Face AR SDK: v1.18.1
+- Face AR SDK: v1.18.2
 - Video Editor SDK
   - Android: v1.52.0
   - iOS: v1.52.1

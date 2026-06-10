@@ -37,10 +37,10 @@ The build skills include starter kit templates for common platforms that let you
 ### SDK Versions
 
 - Face AR SDK: 
-  - Web: v1.18.1 
-  - Android: v1.18.1
-  - iOS: v1.18.1
-  - Desktop C++: v1.18.1
+  - Web: v1.18.2
+  - Android: v1.18.2
+  - iOS: v1.18.2
+  - Desktop C++: v1.18.2
 - Video Editor SDK
   - Android: v1.52.0
   - iOS: v1.52.1

@@ -195,10 +195,10 @@ dependencyResolutionManagement {
 
 #### 3. Add SDK dependencies (Edit tool)
 
-In `app/build.gradle.kts`, add dependencies. Use `bnbVersion = "1.18.1"`. Only include modules needed for active effects:
+In `app/build.gradle.kts`, add dependencies. Use `bnbVersion = "1.18.2"`. Only include modules needed for active effects:
 
 ```kotlin
-val bnbVersion = "1.18.1"
+val bnbVersion = "1.18.2"
 val bnbComSdk = "com.banuba.sdk"
 
 dependencies {
@@ -374,12 +374,12 @@ platform :ios, '15.0'
 use_frameworks!
 
 target 'YourTargetName' do
-  pod 'BNBEffectPlayer', '1.18.1'
-  pod 'BNBSdkApi',       '1.18.1'
-  pod 'BNBSdkCore',      '1.18.1'
-  pod 'BNBFaceTracker',  '1.18.1'
-  pod 'BNBBackground',   '1.18.1'   # required for background effects
-  pod 'BNBMakeup',       '1.18.1'   # required for makeup/beauty effects
+  pod 'BNBEffectPlayer', '1.18.2'
+  pod 'BNBSdkApi',       '1.18.2'
+  pod 'BNBSdkCore',      '1.18.2'
+  pod 'BNBFaceTracker',  '1.18.2'
+  pod 'BNBBackground',   '1.18.2'   # required for background effects
+  pod 'BNBMakeup',       '1.18.2'   # required for makeup/beauty effects
 end
 ```
 

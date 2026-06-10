@@ -1,5 +1,26 @@
 # Changelog
 
+
+## [1.18.2] - 2026-06-03
+
+**Added**
+
+* Acne detection algorithm
+
+**Fixed**
+
+* Other improvements and performance enhancements
+
+## [1.18.1] - 2026-04-30
+
+**Changed**
+
+* Improved makeup effects performance
+
+**Fixed**
+
+* Other improvements and performance enhancements
+
 ## \[1.18.0] - 2025-03-09[​](#1180---2025-03-09 "Direct link to \[1.18.0] - 2025-03-09")
 
 **Changed**
