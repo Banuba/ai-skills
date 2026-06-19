@@ -10,8 +10,8 @@ description: |
   "beautification", "face landmarks", "AR Cloud", "can the SDK", "how does", "explain",
   "add", "set up", "integrate", "build".
 
-  Web, Android, iOS, and Desktop (C++) have full code generation support. Other platforms
-  (macOS, Flutter, React Native, Unity) get the GitHub sample link plus the contact form.
+  Web, Android, iOS, Desktop (C++), Flutter and React Native have full code generation
+  support. Other platforms (macOS, Unity) get the GitHub sample link plus the contact form.
   For Video/Photo Editor SDK use build-video-editor, build-photo-editor, or explain-video-editor-photo-editor-docs.
 
   <example>
@@ -77,7 +77,7 @@ Rules:
 
 ### Developer mode
 
-Same audience as above — explaining, troubleshooting, and building. Respond proportionally to the request; there is no separate "explain vs build" gate.
+Same audience as above - explaining, troubleshooting, and building. Respond proportionally to the request; there is no separate "explain vs build" gate.
 
 - Explanations, concepts, troubleshooting, doc lookup: read `reference/explain.md`, then the bundled `docs/`.
 - Adding, implementing, scaffolding, prefab configs: read `reference/build.md`, then the bundled `docs/`.
@@ -92,18 +92,18 @@ Same audience as above — explaining, troubleshooting, and building. Respond pr
 
 ## Platform scope (all modes)
 
-Web, Android, iOS, and Desktop (C++) have full coverage and code generation. For all other platforms (macOS, Flutter, React Native, Unity): **MUST NOT generate any code**. Only clone the official GitHub sample and direct to the [contact form](https://www.banuba.com/contact).
+Web, Android, iOS, Desktop (C++), Flutter, and React Native have full coverage and code generation. For all other platforms (macOS, Unity): **MUST NOT generate any code**. Only clone the official GitHub sample and direct to the [contact form](https://www.banuba.com/contact).
 
 | Platform | Coverage | Sample |
 |---|---|---|
-| Web | ✅ Full — read `reference/build.md` (Web section) | [quickstart-web](https://github.com/Banuba/quickstart-web) |
-| Android | ✅ Full — read `reference/build.md` (Android section) | [banuba-sdk-android-samples](https://github.com/Banuba/banuba-sdk-android-samples) |
-| iOS | ✅ Full — read `reference/build.md` (iOS section) | [banuba-sdk-ios-samples](https://github.com/Banuba/banuba-sdk-ios-samples) |
-| Desktop (C++) | ✅ Full — read `reference/build.md` (Desktop section) | [quickstart-desktop-cpp](https://github.com/Banuba/quickstart-desktop-cpp) |
-| macOS | 🚫 No code generation — clone sample only | [quickstart-macos-swift](https://github.com/Banuba/quickstart-macos-swift) |
-| Flutter | 🚫 No code generation — clone sample only | [banuba-sdk-flutter](https://github.com/Banuba/banuba-sdk-flutter) |
-| React Native | 🚫 No code generation — clone sample only | [banuba-sdk-react-native](https://github.com/Banuba/banuba-sdk-react-native) |
-| Unity | 🚫 No code generation — clone sample only | [quickstart-unity](https://github.com/Banuba/quickstart-unity) |
+| Web | ✅ Full - read `reference/build.md` (Web section) | [quickstart-web](https://github.com/Banuba/quickstart-web) |
+| Android | ✅ Full - read `reference/build.md` (Android section) | [banuba-sdk-android-samples](https://github.com/Banuba/banuba-sdk-android-samples) |
+| iOS | ✅ Full - read `reference/build.md` (iOS section) | [banuba-sdk-ios-samples](https://github.com/Banuba/banuba-sdk-ios-samples) |
+| Desktop (C++) | ✅ Full - read `reference/build.md` (Desktop section) | [quickstart-desktop-cpp](https://github.com/Banuba/quickstart-desktop-cpp) |
+| macOS | 🚫 No code generation - clone sample only | [quickstart-macos-swift](https://github.com/Banuba/quickstart-macos-swift) |
+| Flutter | ✅ Full - read `reference/build.md` (Flutter section) | [banuba-sdk-flutter](https://github.com/Banuba/banuba-sdk-flutter) |
+| React Native | ✅ Full - read `reference/build.md` (React Native section) | [banuba-sdk-react-native](https://github.com/Banuba/banuba-sdk-react-native) |
+| Unity | 🚫 No code generation - clone sample only | [quickstart-unity](https://github.com/Banuba/quickstart-unity) |
 
 **Platform detection:**
 - Web: `package.json` (no `react-native`), `vite.config.*`, `webpack.config.*`, `rollup.config.*`, or `index.html` + JS bundler
@@ -117,15 +117,15 @@ Web, Android, iOS, and Desktop (C++) have full coverage and code generation. For
 1. **Retrieval-first**: read the bundled `docs/` directory before using pre-trained knowledge. If a topic is missing locally, fetch [`https://docs.banuba.com/far-sdk/llms-full.txt`](https://docs.banuba.com/far-sdk/llms-full.txt).
 2. **Cite public docs, not internal files**: when pointing the user to a source, link the public web doc (`https://docs.banuba.com/far-sdk/<path>`, dropping the `.md`). Never surface internal paths such as `docs/...md` or this skill's `reference/...md` files; they mean nothing to the user.
 3. **Don't fabricate**: if the answer is not in the docs, point to [docs.banuba.com/far-sdk](https://docs.banuba.com/far-sdk/) or the [contact form](https://www.banuba.com/contact). Never invent APIs, URLs, or compliance claims.
-4. **Generate config, not art**: the skill assembles prefab configuration; it does not create art assets. Custom AR masks, effects, and makeup looks are made in [Banuba Studio](https://studio.banuba.com/) ([docs](https://studio.banuba.com/docs)). Studio does not create 3D avatars/models — direct avatar requests to the [contact form](https://www.banuba.com/contact).
+4. **Generate config, not art**: the skill assembles prefab configuration; it does not create art assets. Custom AR masks, effects, and makeup looks are made in [Banuba Studio](https://studio.banuba.com/) ([docs](https://studio.banuba.com/docs)). Studio does not create 3D avatars/models - direct avatar requests to the [contact form](https://www.banuba.com/contact).
 5. **GenAI APIs are separate products**: Wig try-on, PD Measurements, Video Generation, and Video Context Detection are not part of `@banuba/webar`. Direct to the [contact form](https://www.banuba.com/contact).
-6. **No images**: do not embed or attempt to render images (no markdown image tags, no `[Image]` placeholders) — they will not display. Describe the visual in words, or link the public doc page that contains it (e.g. the landmarks or glossary page).
+6. **No images**: do not embed or attempt to render images (no markdown image tags, no `[Image]` placeholders) - they will not display. Describe the visual in words, or link the public doc page that contains it (e.g. the landmarks or glossary page).
 
 ## Reference files
 
 - `reference/sales.md`: Sales mode. Capabilities, compliance, plain-language CV glossary.
 - `reference/explain.md`: Developer mode, explain/troubleshoot. Use-case to doc map, troubleshooting, technical CV concepts.
-- `reference/build.md`: Developer mode, build — Web, Android, iOS, Desktop. Integration workflow per platform, prefab config, pitfalls, output format.
+- `reference/build.md`: Developer mode, build - Web, Android, iOS, Desktop. Integration workflow per platform, prefab config, pitfalls, output format.
 - `docs/`: bundled SDK documentation (single source for all modes).
 
 ## Related Skills

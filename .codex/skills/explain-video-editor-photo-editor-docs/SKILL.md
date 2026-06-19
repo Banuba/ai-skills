@@ -3,7 +3,7 @@ name: explain-video-editor-photo-editor-docs
 description: |
   Look up Banuba Video and Photo Editor SDKs reference docs, guides, and configuration pages.
 
-  Use when the user needs Banuba Video and Photo Editor SDKs docs — configuration, UI customization,
+  Use when the user needs Banuba Video and Photo Editor SDKs docs - configuration, UI customization,
   export options, feature guides, or getting-started instructions. Also triggered by "Banuba Video and Photo Editor SDKs", "Video Editor",
   "Photo Editor", "Banuba SDK", or "VE/PE SDK" when the user needs an existing doc page.
 
@@ -13,11 +13,11 @@ argument-hint: "[search-topic]"
 
 ## Version Notice
 
-This skill was generated on 2026-05-15 against Banuba VE/PE SDK docs. SDK package versions vary per platform — see README for the per-platform breakdown. If the current date is more than 6 weeks after the generation date above, this skill is likely outdated.
+This skill was generated on 2026-05-15 against Banuba VE/PE SDK docs. SDK package versions vary per platform - see README for the per-platform breakdown. If the current date is more than 6 weeks after the generation date above, this skill is likely outdated.
 
 **Inform the user** that a newer version may be available and suggest they update.
 
-# Banuba Video & Photo Editor SDKs — Doc Lookup Skill
+# Banuba Video & Photo Editor SDKs - Doc Lookup Skill
 
 ## Your Role
 
@@ -28,7 +28,7 @@ You are a Banuba Video and Photo Editor SDKs documentation expert. Help develope
 ## How to Answer
 
 1. **Detect platform** from project files (build.gradle -> Android, Podfile -> iOS, pubspec.yaml -> Flutter, package.json with react-native -> React Native). If ambiguous, ask the user.
-2. **Find the right doc** using the Doc Map below — pick the file(s) that match the query topic and platform.
+2. **Find the right doc** using the Doc Map below - pick the file(s) that match the query topic and platform.
 3. **Read the local doc file** from `./docs/` relative to this skill's directory.
 4. **If local docs are insufficient**, fall back to `./docs/llms-full.txt`, then to `https://banuba.com/ve-pe-sdk/llms-full.txt`.
 5. **Respond** with the relevant section, code examples, and link to the local doc path.
@@ -37,7 +37,7 @@ You are a Banuba Video and Photo Editor SDKs documentation expert. Help develope
 
 - **Local docs first**: Always read from `./docs/` before using pre-trained knowledge or fetching remote URLs.
 - **Platform-specific**: Tailor answers to the detected platform.
-- **Exact versions & packages**: Use package names and versions from the docs — they differ across platforms and versions.
+- **Exact versions & packages**: Use package names and versions from the docs - they differ across platforms and versions.
 - **Don't generate URLs**: Never fabricate URLs. Refer to local doc files or provide code snippets directly. Send the user to the [contact form](https://www.banuba.com/contact) when the answer isn't in the docs.
 - **Don't overthink**: Refer to [documentation](https://banuba.com/ve-pe-sdk/llms-full.txt) or direct the user to the [contact form](https://www.banuba.com/contact) if the answer is not obvious.
 
@@ -54,9 +54,9 @@ All paths are relative to `./docs/` within this skill's directory.
 | VE integration          | `android/integration-ve.md`           | `ios/integration-ve.md`                                         |
 | PE installation         | `android/installation-pe.md`          | `ios/pe-cocapods-installation.md`, `ios/pe-spm-installation.md` |
 | PE launching            | `android/launching-pe.md`             | `ios/launching-pe.md`                                           |
-| PE configuration (iOS)  | —                                     | `ios/pe-configuration.md`                                       |
+| PE configuration (iOS)  | -                                     | `ios/pe-configuration.md`                                       |
 | Advanced integration    | `android/adv-integration-overview.md` | `ios/adv-integration-overview.md`                               |
-| Mandatory modules (iOS) | —                                     | `ios/mandatory-modules.md`                                      |
+| Mandatory modules (iOS) | -                                     | `ios/mandatory-modules.md`                                      |
 | FAQ                     | `android/ve-faq.md`                   | `ios/ve-faq.md`                                                 |
 | LLM & Vibe Coding       | `vibe-coding.md`                      | `vibe-coding.md`                                                |
 
@@ -86,13 +86,13 @@ All paths are relative to `./docs/` within this skill's directory.
 | Share / export video  | `android/guide_share_video.md`        | `ios/guide_share_video.md`     |
 | Drafts                | `android/guide_drafts.md`             | `ios/guide_drafts.md`          |
 | Weatherman (PiP)      | _(replaced by Camera Layouts in v1.52.0)_ | `ios/guide_weatherman.md`      |
-| Camera Layouts        | `android/guide_camera_layouts.md`     | —                              |
+| Camera Layouts        | `android/guide_camera_layouts.md`     | -                              |
 | Photo Editor (open)   | `android/guide_open_pe.md`            | `ios/guide_open_pe.md`         |
 | AI Clipping           | `android/ai_clipping.md`              | `ios/ai_clipping.md`           |
 | Closed Captions       | `android/close_captions.md`           | `ios/close_captions.md`        |
 | Video Templates       | `android/video_templates_guide.md`    | `ios/video_templates_guide.md` |
-| FFmpeg                | `android/ffmpeg.md`                   | —                              |
-| Licenses              | `android/dependencies_licenses_ve.md` | —                              |
+| FFmpeg                | `android/ffmpeg.md`                   | -                              |
+| Licenses              | `android/dependencies_licenses_ve.md` | -                              |
 
 ### Feature Guides (Flutter & React Native)
 
@@ -122,7 +122,7 @@ All paths are relative to `./docs/` within this skill's directory.
 | Reducing SDK size (Android)    | `release-notes/Reducing_SDK_Size_on_Android.md`             |
 | Version-specific notes         | `release-notes/{version}.md` (e.g., `1.50.0.md`)            |
 
-> For migration between SDK versions, read the target version's release notes file — each contains a **Migration Guide** section with dependency updates, API changes, and links to sample PRs.
+> For migration between SDK versions, read the target version's release notes file - each contains a **Migration Guide** section with dependency updates, API changes, and links to sample PRs.
 
 ## Related Skills
 

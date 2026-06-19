@@ -29,7 +29,7 @@ Use this method if you have an agreement with Banuba for the delivery of additio
 :::
 
 Use `TemplatesConfig` to enable templates in your app.  
-Two options are available — add `TemplatesConfig` to your Video Editor Koin module.
+Two options are available - add `TemplatesConfig` to your Video Editor Koin module.
 
 ### By URL
 

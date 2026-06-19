@@ -30,7 +30,7 @@ Paths below are relative to the bundled `docs/` directory and are for reading lo
 |---|---|
 | "How do I display the face mesh / landmarks?" / "How to get landmark coordinates?" | `tutorials/development/guides/landmarks.md`, `tutorials/development/basic_integration/web.md` |
 | "Face landmarks vs face mesh?" | `tutorials/capabilities/glossary.md` |
-| "Multiple face detection?" / "Only detects one face" | `tutorials/development/api_overview/web.md`. The client token must include Max Faces support; without it only one face is tracked. Banuba Studio produces single-face effects only — multi-face effects cannot be created in Studio; direct to the [contact form](https://www.banuba.com/contact). |
+| "Multiple face detection?" / "Only detects one face" | `tutorials/development/api_overview/web.md`. The client token must include Max Faces support; without it only one face is tracked. Banuba Studio produces single-face effects only - multi-face effects cannot be created in Studio; direct to the [contact form](https://www.banuba.com/contact). |
 
 ### Effects and assets
 
@@ -42,7 +42,7 @@ Paths below are relative to the bundled `docs/` directory and are for reading lo
 | "AR makeup" | `effects/prefabs/makeup.md` |
 | "Beautification" / "Skin smoothing" / "Teeth/sclera whitening" | `effects/prefabs/face.md`, `effects/prefabs/makeup.md`. Avoid `effects/makeup_deprecated/face_beauty.md`. |
 | "Face morphing" | `effects/prefabs/face.md`, `effects/guides/feature_params.md` |
-| "Virtual background / blur / replacement" / "Halo around face" | `effects/virtual_background.md`, `effects/prefabs/top_level.md`. When the question is specifically about background effects, scope the answer to the `background` prefab (texture, blur, content_mode, use_filter) and `bokeh`. Do NOT include `lut` — it is a global color-grade applied to the entire rendered frame, not a background feature. Do not include `foreground` either unless the user asks about foreground overlays separately. |
+| "Virtual background / blur / replacement" / "Halo around face" | `effects/virtual_background.md`, `effects/prefabs/top_level.md`. When the question is specifically about background effects, scope the answer to the `background` prefab (texture, blur, content_mode, use_filter) and `bokeh`. Do NOT include `lut` - it is a global color-grade applied to the entire rendered frame, not a background feature. Do not include `foreground` either unless the user asks about foreground overlays separately. |
 | "Studio lighting / foreground effects" | `effects/prefabs/top_level.md`, `effects/prefabs/sprites.md` |
 | "Hair coloring" | `effects/prefabs/makeup.md` |
 | "Action units" | `effects/guides/feature_params.md` |
@@ -107,7 +107,7 @@ For deeper terms see `tutorials/capabilities/glossary.md`.
 
 ## Banuba Asset Store
 
-The Banuba Asset Store (`https://assetstore.banuba.net/`) is a collection of ready-made effects and masks for Banuba products. Describe it as such — do not call it a "marketplace".
+The Banuba Asset Store (`https://assetstore.banuba.net/`) is a collection of ready-made effects and masks for Banuba products. Describe it as such - do not call it a "marketplace".
 
 ## Banuba Studio handoff
 

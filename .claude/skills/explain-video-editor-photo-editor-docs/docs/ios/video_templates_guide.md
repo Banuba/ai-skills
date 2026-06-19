@@ -74,12 +74,12 @@ Replace `url` assignments with `.staticCatalog(url)` or switch to `.templateStor
 // Before
 config.videoTemplatesConfiguration.url = URL(string: "https://…/response.json")!
 
-// After — static catalog
+// After - static catalog
 config.videoTemplatesConfiguration.catalogSource = .staticCatalog(
     URL(string: "https://…/response.json")!
 )
 
-// After — templateStore
+// After - templateStore
 config.videoTemplatesConfiguration.catalogSource = .templateStore(
     .init(environment: .production, clientSecret: "…")
 )
@@ -103,7 +103,7 @@ Template Builder requires `.templateStore` set in `videoTemplatesConfiguration.c
 Template Builder allows users to create and publish custom video templates with transitions, effects,
 music, and text. Published templates appear in the templates gallery for all users in your app.
 
-The Banuba Video Editor SDK presents Template Builder modally on top of your host screen — you
+The Banuba Video Editor SDK presents Template Builder modally on top of your host screen - you
 control when to open it (for example, from a "Create template" button).
 
 ```swift

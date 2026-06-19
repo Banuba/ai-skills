@@ -15,8 +15,16 @@ These are general steps to integrate the sample code into your app:
 
 example/src/examples/basic/JoinChannelVideo/JoinChannelVideo.tsx
 
-```
-loading...
+```tsx
+const banubaClientToken = <#Place client token here#>
+
+const banubaExtprovider = 'Banuba';
+const banubaExtension = 'BanubaFilter';
+const loadEffect = 'load_effect';
+const unloadEffect = 'unload_effect';
+const setEffectsPath = 'set_effects_path';
+const setToken = 'set_banuba_license_token';
+const evelJs = 'eval_js';
 ```
 
 ![Icon](/img/icons/github.svg "GitHub")
@@ -25,8 +33,47 @@ loading...
 
 example/src/examples/basic/JoinChannelVideo/JoinChannelVideo.tsx
 
-```
-loading...
+```tsx
+/*
+   * Banuba integration
+   */
+
+  protected enableExtension() {
+    if (Platform.OS === 'android') {
+      this.engine?.loadExtensionProvider(`banuba`);
+      this.engine?.loadExtensionProvider(`banuba-plugin`);
+    }
+    const result =
+      this.engine?.enableExtension(banubaExtprovider, banubaExtension, true) ??
+      -1;
+    if (result < 0) {
+      throw new Error('Failed to load Banuba extention library');
+    }
+  }
+  
+  protected disableExtension() {
+    this.engine?.enableExtension(banubaExtprovider, banubaExtension, false);
+  }
+  
+  protected intiBanuba() {
+    this.enableExtension();
+    this.engine?.setExtensionProperty(
+      banubaExtprovider,
+      banubaExtension,
+      setToken,
+      banubaClientToken
+    );
+  }
+
+  protected loadEffect(name: string) {
+    this.engine?.setExtensionProperty(
+      banubaExtprovider,
+      banubaExtension,
+      loadEffect,
+      'effects/' + name
+    );
+  }
+}
 ```
 
 ![Icon](/img/icons/github.svg "GitHub")
@@ -35,8 +82,9 @@ loading...
 
 example/src/examples/basic/JoinChannelVideo/JoinChannelVideo.tsx
 
-```
-loading...
+```tsx
+this.intiBanuba();
+    this.loadEffect('Glasses');
 ```
 
 ![Icon](/img/icons/github.svg "GitHub")
@@ -51,8 +99,20 @@ warning
 
 example/android/build.gradle
 
-```
-loading...
+```groovy
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            url("$rootDir/../node_modules/detox/Detox-android")
+        }
+        maven {
+            name = "BanubaMaven"
+            url = uri("https://nexus.banuba.net/repository/maven-releases")
+        }
+    }
+}
 ```
 
 ![Icon](/img/icons/github.svg "GitHub")
@@ -61,8 +121,33 @@ loading...
 
 example/android/app/build.gradle
 
-```
-loading...
+```groovy
+dependencies {
+    androidTestImplementation('com.wix:detox:+')
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    // The version of react-native is set by the React Native Gradle Plugin
+    implementation("com.facebook.react:react-android")
+
+    debugImplementation("com.facebook.flipper:flipper:${FLIPPER_VERSION}")
+    debugImplementation("com.facebook.flipper:flipper-network-plugin:${FLIPPER_VERSION}") {
+        exclude group:'com.squareup.okhttp3', module:'okhttp'
+    }
+
+    debugImplementation("com.facebook.flipper:flipper-fresco-plugin:${FLIPPER_VERSION}")
+    if (hermesEnabled.toBoolean()) {
+        implementation("com.facebook.react:hermes-android")
+    } else {
+        implementation jscFlavor
+    }
+
+    implementation 'com.banuba.sdk:banuba_sdk:1.17.+'
+    implementation 'com.banuba.sdk.android:agora-extension:1.5.+'
+}
 ```
 
 ![Icon](/img/icons/github.svg "GitHub")
@@ -71,8 +156,16 @@ loading...
 
 example/src/examples/basic/JoinChannelVideo/JoinChannelVideo.tsx
 
-```
-loading...
+```tsx
+const banubaClientToken = <#Place client token here#>
+
+const banubaExtprovider = 'Banuba';
+const banubaExtension = 'BanubaFilter';
+const loadEffect = 'load_effect';
+const unloadEffect = 'unload_effect';
+const setEffectsPath = 'set_effects_path';
+const setToken = 'set_banuba_license_token';
+const evelJs = 'eval_js';
 ```
 
 ![Icon](/img/icons/github.svg "GitHub")
@@ -81,8 +174,42 @@ loading...
 
 example/src/examples/basic/JoinChannelVideo/JoinChannelVideo.tsx
 
-```
-loading...
+```tsx
+protected enableExtension() {
+    if (Platform.OS === 'android') {
+      this.engine?.loadExtensionProvider(`banuba`);
+      this.engine?.loadExtensionProvider(`banuba-plugin`);
+    }
+    const result =
+      this.engine?.enableExtension(banubaExtprovider, banubaExtension, true) ??
+      -1;
+    if (result < 0) {
+      throw new Error('Failed to load Banuba extention library');
+    }
+  }
+  
+  protected disableExtension() {
+    this.engine?.enableExtension(banubaExtprovider, banubaExtension, false);
+  }
+  
+  protected intiBanuba() {
+    this.enableExtension();
+    this.engine?.setExtensionProperty(
+      banubaExtprovider,
+      banubaExtension,
+      setToken,
+      banubaClientToken
+    );
+  }
+
+  protected loadEffect(name: string) {
+    this.engine?.setExtensionProperty(
+      banubaExtprovider,
+      banubaExtension,
+      loadEffect,
+      'effects/' + name
+    );
+  }
 ```
 
 ![Icon](/img/icons/github.svg "GitHub")
@@ -91,8 +218,9 @@ loading...
 
 example/src/examples/basic/JoinChannelVideo/JoinChannelVideo.tsx
 
-```
-loading...
+```tsx
+this.intiBanuba();
+    this.loadEffect('Glasses');
 ```
 
 ![Icon](/img/icons/github.svg "GitHub")
@@ -107,8 +235,9 @@ warning
 
 example/ios/Podfile
 
-```
-loading...
+```Podfile
+source 'https://github.com/CocoaPods/Specs.git'
+source 'https://github.com/sdk-banuba/banuba-sdk-podspecs.git'
 ```
 
 ![Icon](/img/icons/github.svg "GitHub")

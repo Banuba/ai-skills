@@ -24,7 +24,7 @@ Each skill is defined once in `.agents/` and replicated with platform-specific p
 
 ## SDK Versions
 
-- Face AR SDK: v1.18.2
+- Face AR SDK: v1.18.2 (native: Web/Android/iOS/Desktop), Flutter: v3.1.1, React Native: v2.0.1
 - Video Editor SDK
   - Android: v1.52.0
   - iOS: v1.52.1
@@ -39,7 +39,7 @@ Each skill is defined once in `.agents/` and replicated with platform-specific p
 ## Supported Platforms
 
 - **Video & Photo Editor SDKs**: Android, iOS, Flutter, React Native
-- **Face AR SDK** — Web, Android, iOS, Desktop C++ (Claude Code only)
+- **Face AR SDK** - Web, Android, iOS, Desktop C++, Flutter, React Native
 
 ## Key Conventions
 
@@ -53,4 +53,4 @@ Each skill is defined once in `.agents/` and replicated with platform-specific p
 
 - Keep SKILL.md frontmatter format consistent: `name`, `description`, `argument-hint`.
 - After changing a skill in one directory, replicate the change to all other assistant directories.
-- Do not modify generated API docs under `docs/generated/` — those are auto-generated from SDK source.
+- Do not modify generated API docs under `docs/generated/` - those are auto-generated from SDK source.

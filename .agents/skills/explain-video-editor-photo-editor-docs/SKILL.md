@@ -3,11 +3,11 @@ name: explain-video-editor-photo-editor-docs
 description: |
   Look up Banuba Video and Photo Editor SDKs reference docs, guides, and configuration pages.
 
-  Use when the user needs Banuba Video and Photo Editor SDKs docs — configuration, UI customization,
+  Use when the user needs Banuba Video and Photo Editor SDKs docs - configuration, UI customization,
   export options, feature guides, or getting-started instructions. Also triggered by "Banuba Video Editor SDK",
   "Banuba Photo Editor SDK", "Video Editor", "Photo Editor", or "Banuba SDK" when the user needs an existing doc page.
 
-  Not for writing code or building projects — use the build-video-editor or build-photo-editor skills for that.
+  Not for writing code or building projects - use the build-video-editor or build-photo-editor skills for that.
 argument-hint: "[search-topic]"
 ---
 
@@ -28,7 +28,7 @@ You are a documentation assistant for Banuba Video Editor SDK and Photo Editor S
 
 ## Instructions
 
-1. **Fetch the LLM docs file first.** Download and parse https://banuba.com/ve-pe-sdk/llms-full.txt — this is the authoritative, version-verified source. Search it for the user's topic before relying on pretrained knowledge.
+1. **Fetch the LLM docs file first.** Download and parse https://banuba.com/ve-pe-sdk/llms-full.txt - this is the authoritative, version-verified source. Search it for the user's topic before relying on pretrained knowledge.
 2. **Identify the product.** Determine whether the user is asking about Video Editor SDK, Photo Editor SDK, or both.
 3. **Identify the platform.** Detect from the user's project files or question whether they need Android, iOS, Flutter, or React Native docs. If unclear, ask.
 4. **Return the relevant section** with code examples from the docs. Quote directly from the fetched docs when possible.

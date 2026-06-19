@@ -62,19 +62,19 @@ See more use cases in [Samples](/tutorials/development/samples.md).
 
 Basic **Player API** packages:
 
-* `com.banuba.sdk.input` — all the classes responsible for the input data, the Input entity.
-* `com.banuba.sdk.player` — the rendering thread and the `Player`, the Player entity.
-* `com.banuba.sdk.output` — all the classes responsible for the output data, the Output entity.
-* `com.banuba.sdk.frame` — the pixel buffer used for both input and output.
+* `com.banuba.sdk.input` - all the classes responsible for the input data, the Input entity.
+* `com.banuba.sdk.player` - the rendering thread and the `Player`, the Player entity.
+* `com.banuba.sdk.output` - all the classes responsible for the output data, the Output entity.
+* `com.banuba.sdk.frame` - the pixel buffer used for both input and output.
 
 ## Input[​](#input "Direct link to Input")
 
 **Input** receives frames from a camera, image, or user input and provides them to the `Player`. The `Player` can only work with one Input at a time.
 
-* `CameraInput` — this class provides frames from the front or rear camera in real time.
-* `ProtoInput` — this class provides frames as photos taken by the camera or loaded from a file.
-* `StreamInput` — this class provides user frames from user data.
-* `VideoInput` — this class provides frames from a video file.
+* `CameraInput` - this class provides frames from the front or rear camera in real time.
+* `ProtoInput` - this class provides frames as photos taken by the camera or loaded from a file.
+* `StreamInput` - this class provides user frames from user data.
+* `VideoInput` - this class provides frames from a video file.
 
 ## Player[​](#player "Direct link to Player")
 
@@ -84,17 +84,17 @@ The **Player** class requests frames from **Input**, then processes these frames
 
 **Output** receives the result of the work from the **Player** and renders it to the surface or a texture, writes it into a file, or provides the user with frames in a supported format.
 
-* `FrameOutput` — provides the user with data in the form of a buffer of pixels.
-* `SurfaceOutput` — this class renders frames to the `SurfaceView`.
-* `TextureOutput` — this class renders frames to the `TextureView`.
-* `VideoOutput` — this class writes frames to a video file.
+* `FrameOutput` - provides the user with data in the form of a buffer of pixels.
+* `SurfaceOutput` - this class renders frames to the `SurfaceView`.
+* `TextureOutput` - this class renders frames to the `TextureView`.
+* `VideoOutput` - this class writes frames to a video file.
 
 ## Input and Output of user data[​](#input-and-output-of-user-data "Direct link to Input and Output of user data")
 
 The **Input** and the **Output** can operate on a pixel buffer.
 
-* `FramePixelBuffer` — provides access to an array of pixels as a byte buffer. In the `StreamInput` class, it is used as the input data buffer, and in the `FrameOutput` class, it is used as the output data buffer.
-* `FramePixelBufferFormat` — pixel buffer format can be one of: `RGBA`, `I420_BT601_FULL`, `I420_BT601_VIDEO`, `I420_BT709_FULL` or `I420_BT709_VIDEO`.
+* `FramePixelBuffer` - provides access to an array of pixels as a byte buffer. In the `StreamInput` class, it is used as the input data buffer, and in the `FrameOutput` class, it is used as the output data buffer.
+* `FramePixelBufferFormat` - pixel buffer format can be one of: `RGBA`, `I420_BT601_FULL`, `I420_BT601_VIDEO`, `I420_BT709_FULL` or `I420_BT709_VIDEO`.
 
 ## Use cases[​](#use-cases "Direct link to Use cases")
 

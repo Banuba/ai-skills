@@ -6,11 +6,11 @@ Please visit the [SDK Features](/tutorials/capabilities/sdk_features.md) page fo
 
 note
 
-* **FPS** — Frames per second of the face detection algorithm on a given device.
-* **Angles** — The maximum angle at which the technology was able to work during the measurement.
-* **Distance** — Maximum distance at which the technology was able to work during the measurement.
-* **Real-time (online)** — Technology performance in real-time.
-* **Photo (offline)** — The processing time needed to take a photo or process it from the gallery.
+* **FPS** - Frames per second of the face detection algorithm on a given device.
+* **Angles** - The maximum angle at which the technology was able to work during the measurement.
+* **Distance** - Maximum distance at which the technology was able to work during the measurement.
+* **Real-time (online)** - Technology performance in real-time.
+* **Photo (offline)** - The processing time needed to take a photo or process it from the gallery.
 
 ## SDK Features[​](#sdk-features "Direct link to SDK Features")
 
@@ -50,7 +50,7 @@ note
 | 4 Faces, FPS | 30      | 30       |
 | 5 Faces, FPS | 30      | 30       |
 
-Max Faces\* — the maximum number of faces that the SDK can track with acceptable quality and performance on most mobile devices. The actual peak number is limited only by the physical capabilities of the device and its screen proportions.
+Max Faces\* - the maximum number of faces that the SDK can track with acceptable quality and performance on most mobile devices. The actual peak number is limited only by the physical capabilities of the device and its screen proportions.
 
 ## Effect performance[​](#effect-performance "Direct link to Effect performance")
 
@@ -172,7 +172,7 @@ Used as a part of an animated background.
 
 \* MacOS is rather sensitive not only to containers (i.e. file extensions) but to video codecs itself. In case of problems observe application log to find corresponding error messages and test carefully before release.
 
-\*\* See more information about supported video formats on Android in the official Android developers guide — <https://developer.android.com/guide/topics/media/media-formats#video-codecs>.
+\*\* See more information about supported video formats on Android in the official Android developers guide - <https://developer.android.com/guide/topics/media/media-formats#video-codecs>.
 
 ## Hair segmentation[​](#hair-segmentation "Direct link to Hair segmentation")
 
@@ -238,7 +238,7 @@ Used as a part of an animated background.
   * Like 👍
   * Ok 👌
 
-* Maximum distance — 2.5m
+* Maximum distance - 2.5m
 
 **iOS**
 

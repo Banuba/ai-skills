@@ -15,8 +15,16 @@ These are the general steps to integrate the sample code into your app:
 
 example/lib/examples/basic/join\_channel\_video/join\_channel\_video.dart
 
-```
-loading...
+```dart
+const banubaClientToken = <#Place client tokwn here#>;
+
+const banubaExtprovider = 'Banuba';
+const banubaExtension = 'BanubaFilter';
+const loadEffect = 'load_effect';
+const unloadEffect = 'unload_effect';
+const setEffectsPath = 'set_effects_path';
+const setToken = 'set_banuba_license_token';
+const evalJs = 'eval_js';
 ```
 
 ![Icon](/img/icons/github.svg "GitHub")
@@ -25,8 +33,48 @@ loading...
 
 example/lib/examples/basic/join\_channel\_video/join\_channel\_video.dart
 
-```
-loading...
+```dart
+/*
+   * Banuba integration
+   */
+
+  Future<void> enableExtension() async {
+    if (Platform.isAndroid) {
+      _engine.loadExtensionProvider(path: "banuba");
+      _engine.loadExtensionProvider(path: "banuba-plugin");
+    }
+
+    await _engine.enableExtension(
+        provider: banubaExtprovider,
+        extension: banubaExtension,
+        type: MediaSourceType.unknownMediaSource,
+        enable: true);
+  }
+
+  Future<void> disableExtension() async {
+    await _engine.enableExtension(
+        provider: banubaExtprovider,
+        extension: banubaExtension,
+        type: MediaSourceType.unknownMediaSource,
+        enable: false);
+  }
+
+  Future<void> intiBanuba() async {
+    await enableExtension();
+    await _engine.setExtensionProperty(
+        provider: banubaExtprovider,
+        extension: banubaExtension,
+        key: setToken,
+        value: banubaClientToken);
+  }
+
+  Future<void> loadBanubaEffect(String name) async {
+    await _engine.setExtensionProperty(
+        provider: banubaExtprovider,
+        extension: banubaExtension,
+        key: loadEffect,
+        value: 'effects/' + name);
+  }
 ```
 
 ![Icon](/img/icons/github.svg "GitHub")
@@ -35,8 +83,13 @@ loading...
 
 example/lib/examples/basic/join\_channel\_video/join\_channel\_video.dart
 
-```
-loading...
+```dart
+await intiBanuba();
+
+    await _engine.enableVideo();
+    await _engine.startPreview();
+
+    await loadBanubaEffect('Glasses');
 ```
 
 ![Icon](/img/icons/github.svg "GitHub")
@@ -47,8 +100,17 @@ loading...
 
 example/android/build.gradle
 
-```
-loading...
+```groovy
+allprojects {
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            name = "BanubaMaven"
+            url = uri("https://nexus.banuba.net/repository/maven-releases")
+        }
+    }
+}
 ```
 
 ![Icon](/img/icons/github.svg "GitHub")
@@ -57,8 +119,28 @@ loading...
 
 example/android/app/build.gradle
 
-```
-loading...
+```groovy
+dependencies {
+    def devFile = project.file("${rootProject.projectDir.getParentFile().parentFile}/android/.plugin_dev")
+    if (devFile.exists()) {
+        implementation fileTree(dir: "${rootProject.projectDir.getParentFile().parentFile}/android/libs", include: ["*.aar"])
+    }
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    implementation "com.banuba.sdk:banuba_sdk:1.17.+"
+    implementation 'com.banuba.sdk.android:agora-extension:1.5.+'
+}
+
+// Add the lines below to copy effects into App:
+task copyEffects {
+    copy {
+        from '../../assets/effects'
+        into 'src/main/assets/bnb-resources/effects'
+    }
+}
+gradle.projectsEvaluated {
+    preBuild.dependsOn(copyEffects)
+}
 ```
 
 ![Icon](/img/icons/github.svg "GitHub")
@@ -67,8 +149,16 @@ loading...
 
 example/lib/examples/basic/join\_channel\_video/join\_channel\_video.dart
 
-```
-loading...
+```dart
+const banubaClientToken = <#Place client tokwn here#>;
+
+const banubaExtprovider = 'Banuba';
+const banubaExtension = 'BanubaFilter';
+const loadEffect = 'load_effect';
+const unloadEffect = 'unload_effect';
+const setEffectsPath = 'set_effects_path';
+const setToken = 'set_banuba_license_token';
+const evalJs = 'eval_js';
 ```
 
 ![Icon](/img/icons/github.svg "GitHub")
@@ -77,8 +167,48 @@ loading...
 
 example/lib/examples/basic/join\_channel\_video/join\_channel\_video.dart
 
-```
-loading...
+```dart
+/*
+   * Banuba integration
+   */
+
+  Future<void> enableExtension() async {
+    if (Platform.isAndroid) {
+      _engine.loadExtensionProvider(path: "banuba");
+      _engine.loadExtensionProvider(path: "banuba-plugin");
+    }
+
+    await _engine.enableExtension(
+        provider: banubaExtprovider,
+        extension: banubaExtension,
+        type: MediaSourceType.unknownMediaSource,
+        enable: true);
+  }
+
+  Future<void> disableExtension() async {
+    await _engine.enableExtension(
+        provider: banubaExtprovider,
+        extension: banubaExtension,
+        type: MediaSourceType.unknownMediaSource,
+        enable: false);
+  }
+
+  Future<void> intiBanuba() async {
+    await enableExtension();
+    await _engine.setExtensionProperty(
+        provider: banubaExtprovider,
+        extension: banubaExtension,
+        key: setToken,
+        value: banubaClientToken);
+  }
+
+  Future<void> loadBanubaEffect(String name) async {
+    await _engine.setExtensionProperty(
+        provider: banubaExtprovider,
+        extension: banubaExtension,
+        key: loadEffect,
+        value: 'effects/' + name);
+  }
 ```
 
 ![Icon](/img/icons/github.svg "GitHub")
@@ -87,8 +217,13 @@ loading...
 
 example/lib/examples/basic/join\_channel\_video/join\_channel\_video.dart
 
-```
-loading...
+```dart
+await intiBanuba();
+
+    await _engine.enableVideo();
+    await _engine.startPreview();
+
+    await loadBanubaEffect('Glasses');
 ```
 
 ![Icon](/img/icons/github.svg "GitHub")
@@ -99,8 +234,9 @@ loading...
 
 example/ios/Podfile
 
-```
-loading...
+```Podfile
+pod 'BanubaSdk', '1.17.4', :source => 'https://github.com/sdk-banuba/banuba-sdk-podspecs.git'
+  pod 'BanubaFiltersAgoraExtension', '2.5.0', :source => 'https://github.com/sdk-banuba/banuba-sdk-podspecs.git'
 ```
 
 ![Icon](/img/icons/github.svg "GitHub")
