@@ -2,7 +2,7 @@
 
 [![Version](https://img.shields.io/badge/version-0.8.0-blue.svg)](VERSION)
 
-Banuba Agent Skills are portable knowledge packs that install into Claude Code, Codex, and Qwen Code, giving the AI assistant offline access to Banuba Face AR, Video Editor and Photo Editor SDKs documentation plus autonomous scaffolding for new Face AR Web, VE and PE SDKs projects.
+Banuba Agent Skills are portable knowledge packs that install into Claude Code, Codex, and Qwen Code, giving the AI assistant offline access to Banuba Face AR, Video Editor and Photo Editor SDKs documentation plus autonomous scaffolding for Face AR (Web, Android, iOS, Desktop, Flutter, React Native), VE and PE SDKs projects.
 
 Give your AI coding assistant expert-level knowledge of Face AR SDK, Banuba Video Editor and Photo Editor SDKs. Build mobile and web apps by describing what you want.
 
@@ -22,7 +22,7 @@ Dropping a raw `llms.txt` dump into your assistant works once - but it bloats ev
 
 | Skill                | Description                                                                                                  |
 | -------------------- |--------------------------------------------------------------------------------------------------------------|
-| `far-general`        | Build Face AR apps on Web, Android, iOS, and Desktop (C++), get explanations, read documents, and more.      |
+| `far-general`        | Build Face AR apps on Web, Android, iOS, Desktop (C++), Flutter and React Native, get explanations, read documents, and more. |
 | `build-video-editor`           | Implement features, write code, and set up Banuba Video Editor SDK projects                                  |
 | `build-photo-editor`           | Implement features, write code, and set up Banuba Photo Editor SDK projects                                  |
 | `explain-video-editor-photo-editor-docs` | Look up Banuba Video and Photo Editor SDKs docs - configuration, UI customization, guides                    |
@@ -112,7 +112,7 @@ Once installed, invoke skills with slash commands in your AI coding assistant:
 ### Build a feature
 
 ```
-/far-general   Build a Snapchat-style face-filter camera for Web, Android, iOS, or Desktop
+/far-general   Build a Snapchat-style face-filter camera for Web, Android, iOS, Desktop, Flutter, or React Native
 /build-video-editor      Set up a Video Editor for Android with AI Clipping
 /build-photo-editor      Add Photo Editor with AR filters to my iOS app
 ```
