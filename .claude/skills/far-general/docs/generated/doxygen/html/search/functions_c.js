@@ -15,6 +15,7 @@ var searchData=
   ['on_5fresult_12',['on_result',['../classbnb_1_1interfaces_1_1js__callback.html#acd049acb3e0908f62fbcfd3ae4efdf2e',1,'bnb::interfaces::js_callback']]],
   ['on_5fvideo_5frecord_5fend_13',['on_video_record_end',['../classbnb_1_1interfaces_1_1effect__player.html#a4c0065fa84087f335309117131cecfc0',1,'bnb::interfaces::effect_player']]],
   ['on_5fvideo_5frecord_5fstart_14',['on_video_record_start',['../classbnb_1_1interfaces_1_1effect__player.html#a5d4c2841d7ee1744db28df6b17161f35',1,'bnb::interfaces::effect_player']]],
-  ['operator_2a_15',['operator*',['../classbnb_1_1transformation.html#a097dee8ede7046d0c2334199b298fcc0',1,'bnb::transformation']]],
-  ['operator_3e_3e_16',['operator&gt;&gt;',['../classbnb_1_1transformation.html#a80deb426a6f29ef272e140d475994e93',1,'bnb::transformation']]]
+  ['once_15',['once',['../classbnb_1_1player__api_1_1frame__output.html#a97b00163136da24df2e5a818ddc89efa',1,'bnb::player_api::frame_output']]],
+  ['operator_2a_16',['operator*',['../classbnb_1_1transformation.html#a097dee8ede7046d0c2334199b298fcc0',1,'bnb::transformation']]],
+  ['operator_3e_3e_17',['operator&gt;&gt;',['../classbnb_1_1transformation.html#a80deb426a6f29ef272e140d475994e93',1,'bnb::transformation']]]
 ];

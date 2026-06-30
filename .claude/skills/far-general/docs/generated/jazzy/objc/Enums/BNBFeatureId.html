@@ -1,15 +1,17 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
     <title>BNBFeatureId Enumeration Reference</title>
-    <link rel="stylesheet" type="text/css" href="../css/jazzy.css">
-    <link rel="stylesheet" type="text/css" href="../css/highlight.css">
-    <meta charset="utf-8">
-    <script src="../js/jquery.min.js" defer=""></script>
-    <script src="../js/jazzy.js" defer=""></script>
+    <link rel="stylesheet" type="text/css" href="../css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="../css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="../js/jquery.min.js" defer></script>
+    <script src="../js/jazzy.js" defer></script>
     
-    <script src="../js/lunr.min.js" defer=""></script>
-    <script src="../js/typeahead.jquery.js" defer=""></script>
-    <script src="../js/jazzy.search.js" defer=""></script>
-  <link rel="canonical" href="https://docs.banuba.com/far-sdk/generated/jazzy/objc/Enums/BNBFeatureId.html"></head>
+    <script src="../js/lunr.min.js" defer></script>
+    <script src="../js/typeahead.jquery.js" defer></script>
+    <script src="../js/jazzy.search.js" defer></script>
+  </head>
   <body>
     <a name="//apple_ref/objc/Enum/BNBFeatureId" class="dashAnchor"></a>
     <a title="BNBFeatureId Enumeration Reference"></a>
@@ -18,7 +20,7 @@
         <p><a href="../index.html"> Docs</a> (44% documented)</p>
         <div class="header-right">
           <form role="search" action="../search.json">
-            <input type="text" placeholder="Search documentation" data-typeahead="">
+            <input type="text" placeholder="Search documentation" data-typeahead>
           </form>
         </div>
       </div>
@@ -26,7 +28,7 @@
     <div class="content-wrapper">
       <p id="breadcrumbs">
         <a href="../index.html"> Reference</a>
-        <img id="carat" src="../img/carat.png" alt="carat">
+        <img id="carat" src="../img/carat.png" alt=""/>
         BNBFeatureId Enumeration Reference
       </p>
     </div>
@@ -36,9 +38,6 @@
           <li class="nav-group-name">
             <a href="../Classes.html">Classes</a>
             <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="../Classes/BNBAcneRegions.html">BNBAcneRegions</a>
-              </li>
               <li class="nav-group-task">
                 <a href="../Classes/BNBActionUnits.html">BNBActionUnits</a>
               </li>
@@ -245,6 +244,9 @@
                 <a href="../Enums/BNBFaceDataSource.html">BNBFaceDataSource</a>
               </li>
               <li class="nav-group-task">
+                <a href="../Enums/BNBFaceShapeType.html">BNBFaceShapeType</a>
+              </li>
+              <li class="nav-group-task">
                 <a href="../Enums/BNBFeatureId.html">BNBFeatureId</a>
               </li>
               <li class="nav-group-task">
@@ -383,27 +385,23 @@
     <span class="n">BNBFeatureIdLips</span><span class="p">,</span>
     <span class="n">BNBFeatureIdLipsShine</span><span class="p">,</span>
     <span class="n">BNBFeatureIdGlasses</span><span class="p">,</span>
-    <span class="n">BNBFeatureIdAcne</span><span class="p">,</span>
     <span class="n">BNBFeatureIdHandSkelet</span><span class="p">,</span>
-    <span class="n">BNBFeatureIdEyeBags</span><span class="p">,</span>
-    <span class="n">BNBFeatureIdFaceAcne</span><span class="p">,</span>
+    <span class="n">BNBFeatureIdAcneSegm</span><span class="p">,</span>
     <span class="n">BNBFeatureIdRuler</span><span class="p">,</span>
     <span class="n">BNBFeatureIdHairStrand</span><span class="p">,</span>
     <span class="n">BNBFeatureIdRing</span><span class="p">,</span>
     <span class="n">BNBFeatureIdNeck</span><span class="p">,</span>
     <span class="n">BNBFeatureIdPoseEstimation</span><span class="p">,</span>
-    <span class="cm">/** Body segmentation. I.e. bodies detection on the frame. */</span>
-    <span class="n">BNBFeatureIdBody</span><span class="p">,</span>
-    <span class="cm">/** Nails segmentation and recoloring  */</span>
+    <span class="cm">/** Nails segmentation and recoloring */</span>
     <span class="n">BNBFeatureIdNails</span><span class="p">,</span>
-    <span class="cm">/** Combined face acne and eyebags removal */</span>
-    <span class="n">BNBFeatureIdAcneEyebags</span><span class="p">,</span>
     <span class="n">BNBFeatureIdHandGestures</span><span class="p">,</span>
     <span class="n">BNBFeatureIdTexturedNails</span><span class="p">,</span>
     <span class="cm">/** Activates eyes corrector */</span>
     <span class="n">BNBFeatureIdEyesCorrection</span><span class="p">,</span>
     <span class="cm">/** Activates lips corrector */</span>
     <span class="n">BNBFeatureIdLipsCorrection</span><span class="p">,</span>
+    <span class="cm">/** Activates latents corrector */</span>
+    <span class="n">BNBFeatureIdLatentsCorrection</span><span class="p">,</span>
     <span class="cm">/** Computes coefficient for light correction */</span>
     <span class="n">BNBFeatureIdLightCorrection</span><span class="p">,</span>
     <span class="cm">/** Watch try-on */</span>
@@ -430,6 +428,7 @@
     <span class="n">BNBFeatureIdEyelidsChameleon</span><span class="p">,</span>
     <span class="n">BNBFeatureIdGlassesFrameColor</span><span class="p">,</span>
     <span class="n">BNBFeatureIdEyeLenses</span><span class="p">,</span>
+    <span class="n">BNBFeatureIdFaceSkinColor</span><span class="p">,</span>
 <span class="p">}</span></code></pre>
 
                 </div>
@@ -832,38 +831,6 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@E@BNBFeatureId@BNBFeatureIdAcne"></a>
-                    <a name="//apple_ref/objc/Case/BNBFeatureIdAcne" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@E@BNBFeatureId@BNBFeatureIdAcne">BNBFeatureIdAcne</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="n">BNBFeatureIdAcne</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">acne</span> <span class="o">=</span> <span class="mi">12</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
                     <a name="/c:@E@BNBFeatureId@BNBFeatureIdHandSkelet"></a>
                     <a name="//apple_ref/objc/Case/BNBFeatureIdHandSkelet" class="dashAnchor"></a>
                     <a class="token" href="#/c:@E@BNBFeatureId@BNBFeatureIdHandSkelet">BNBFeatureIdHandSkelet</a>
@@ -886,7 +853,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">handSkelet</span> <span class="o">=</span> <span class="mi">13</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">handSkelet</span> <span class="o">=</span> <span class="mi">12</span></code></pre>
 
                         </div>
                       </div>
@@ -896,9 +863,9 @@
                 <li class="item">
                   <div>
                     <code>
-                    <a name="/c:@E@BNBFeatureId@BNBFeatureIdEyeBags"></a>
-                    <a name="//apple_ref/objc/Case/BNBFeatureIdEyeBags" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@E@BNBFeatureId@BNBFeatureIdEyeBags">BNBFeatureIdEyeBags</a>
+                    <a name="/c:@E@BNBFeatureId@BNBFeatureIdAcneSegm"></a>
+                    <a name="//apple_ref/objc/Case/BNBFeatureIdAcneSegm" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@E@BNBFeatureId@BNBFeatureIdAcneSegm">BNBFeatureIdAcneSegm</a>
                     </code>
                   </div>
                   <div class="height-container">
@@ -913,44 +880,12 @@
                         <h4>Declaration</h4>
                         <div class="language">
                           <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="n">BNBFeatureIdEyeBags</span></code></pre>
+                          <pre class="highlight objective_c"><code><span class="n">BNBFeatureIdAcneSegm</span></code></pre>
 
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">eyeBags</span> <span class="o">=</span> <span class="mi">14</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@E@BNBFeatureId@BNBFeatureIdFaceAcne"></a>
-                    <a name="//apple_ref/objc/Case/BNBFeatureIdFaceAcne" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@E@BNBFeatureId@BNBFeatureIdFaceAcne">BNBFeatureIdFaceAcne</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Undocumented</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="n">BNBFeatureIdFaceAcne</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">faceAcne</span> <span class="o">=</span> <span class="mi">15</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">acneSegm</span> <span class="o">=</span> <span class="mi">13</span></code></pre>
 
                         </div>
                       </div>
@@ -982,7 +917,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">ruler</span> <span class="o">=</span> <span class="mi">16</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">ruler</span> <span class="o">=</span> <span class="mi">14</span></code></pre>
 
                         </div>
                       </div>
@@ -1014,7 +949,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">hairStrand</span> <span class="o">=</span> <span class="mi">17</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">hairStrand</span> <span class="o">=</span> <span class="mi">15</span></code></pre>
 
                         </div>
                       </div>
@@ -1046,7 +981,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">ring</span> <span class="o">=</span> <span class="mi">18</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">ring</span> <span class="o">=</span> <span class="mi">16</span></code></pre>
 
                         </div>
                       </div>
@@ -1078,7 +1013,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">neck</span> <span class="o">=</span> <span class="mi">19</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">neck</span> <span class="o">=</span> <span class="mi">17</span></code></pre>
 
                         </div>
                       </div>
@@ -1110,39 +1045,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">poseEstimation</span> <span class="o">=</span> <span class="mi">20</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@E@BNBFeatureId@BNBFeatureIdBody"></a>
-                    <a name="//apple_ref/objc/Case/BNBFeatureIdBody" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@E@BNBFeatureId@BNBFeatureIdBody">BNBFeatureIdBody</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Body segmentation. I.e. bodies detection on the frame.</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="n">BNBFeatureIdBody</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">body</span> <span class="o">=</span> <span class="mi">21</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">poseEstimation</span> <span class="o">=</span> <span class="mi">18</span></code></pre>
 
                         </div>
                       </div>
@@ -1174,39 +1077,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">nails</span> <span class="o">=</span> <span class="mi">22</span></code></pre>
-
-                        </div>
-                      </div>
-                    </section>
-                  </div>
-                </li>
-                <li class="item">
-                  <div>
-                    <code>
-                    <a name="/c:@E@BNBFeatureId@BNBFeatureIdAcneEyebags"></a>
-                    <a name="//apple_ref/objc/Case/BNBFeatureIdAcneEyebags" class="dashAnchor"></a>
-                    <a class="token" href="#/c:@E@BNBFeatureId@BNBFeatureIdAcneEyebags">BNBFeatureIdAcneEyebags</a>
-                    </code>
-                  </div>
-                  <div class="height-container">
-                    <div class="pointer-container"></div>
-                    <section class="section">
-                      <div class="pointer"></div>
-                      <div class="abstract">
-                        <p>Combined face acne and eyebags removal</p>
-
-                      </div>
-                      <div class="declaration">
-                        <h4>Declaration</h4>
-                        <div class="language">
-                          <p class="aside-title">Objective-C</p>
-                          <pre class="highlight objective_c"><code><span class="n">BNBFeatureIdAcneEyebags</span></code></pre>
-
-                        </div>
-                        <div class="language">
-                          <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">acneEyebags</span> <span class="o">=</span> <span class="mi">23</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">nails</span> <span class="o">=</span> <span class="mi">19</span></code></pre>
 
                         </div>
                       </div>
@@ -1226,7 +1097,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Combined face acne and eyebags removal</p>
+                        <p>Nails segmentation and recoloring</p>
 
                       </div>
                       <div class="declaration">
@@ -1238,7 +1109,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">handGestures</span> <span class="o">=</span> <span class="mi">24</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">handGestures</span> <span class="o">=</span> <span class="mi">20</span></code></pre>
 
                         </div>
                       </div>
@@ -1258,7 +1129,7 @@
                     <section class="section">
                       <div class="pointer"></div>
                       <div class="abstract">
-                        <p>Combined face acne and eyebags removal</p>
+                        <p>Nails segmentation and recoloring</p>
 
                       </div>
                       <div class="declaration">
@@ -1270,7 +1141,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">texturedNails</span> <span class="o">=</span> <span class="mi">25</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">texturedNails</span> <span class="o">=</span> <span class="mi">21</span></code></pre>
 
                         </div>
                       </div>
@@ -1302,7 +1173,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">eyesCorrection</span> <span class="o">=</span> <span class="mi">26</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">eyesCorrection</span> <span class="o">=</span> <span class="mi">22</span></code></pre>
 
                         </div>
                       </div>
@@ -1334,7 +1205,39 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">lipsCorrection</span> <span class="o">=</span> <span class="mi">27</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">lipsCorrection</span> <span class="o">=</span> <span class="mi">23</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@E@BNBFeatureId@BNBFeatureIdLatentsCorrection"></a>
+                    <a name="//apple_ref/objc/Case/BNBFeatureIdLatentsCorrection" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@E@BNBFeatureId@BNBFeatureIdLatentsCorrection">BNBFeatureIdLatentsCorrection</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Activates latents corrector</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="n">BNBFeatureIdLatentsCorrection</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">latentsCorrection</span> <span class="o">=</span> <span class="mi">24</span></code></pre>
 
                         </div>
                       </div>
@@ -1366,7 +1269,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">lightCorrection</span> <span class="o">=</span> <span class="mi">28</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">lightCorrection</span> <span class="o">=</span> <span class="mi">25</span></code></pre>
 
                         </div>
                       </div>
@@ -1398,7 +1301,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">watch</span> <span class="o">=</span> <span class="mi">29</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">watch</span> <span class="o">=</span> <span class="mi">26</span></code></pre>
 
                         </div>
                       </div>
@@ -1430,7 +1333,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">faceMatch</span> <span class="o">=</span> <span class="mi">30</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">faceMatch</span> <span class="o">=</span> <span class="mi">27</span></code></pre>
 
                         </div>
                       </div>
@@ -1462,7 +1365,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">ears</span> <span class="o">=</span> <span class="mi">31</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">ears</span> <span class="o">=</span> <span class="mi">28</span></code></pre>
 
                         </div>
                       </div>
@@ -1494,7 +1397,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">actionUnitsAntijitter</span> <span class="o">=</span> <span class="mi">32</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">actionUnitsAntijitter</span> <span class="o">=</span> <span class="mi">29</span></code></pre>
 
                         </div>
                       </div>
@@ -1526,7 +1429,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">faceSkin</span> <span class="o">=</span> <span class="mi">33</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">faceSkin</span> <span class="o">=</span> <span class="mi">30</span></code></pre>
 
                         </div>
                       </div>
@@ -1558,7 +1461,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">faceAttributes</span> <span class="o">=</span> <span class="mi">34</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">faceAttributes</span> <span class="o">=</span> <span class="mi">31</span></code></pre>
 
                         </div>
                       </div>
@@ -1590,7 +1493,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">faceShape</span> <span class="o">=</span> <span class="mi">35</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">faceShape</span> <span class="o">=</span> <span class="mi">32</span></code></pre>
 
                         </div>
                       </div>
@@ -1622,7 +1525,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">pupillaryDistance</span> <span class="o">=</span> <span class="mi">36</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">pupillaryDistance</span> <span class="o">=</span> <span class="mi">33</span></code></pre>
 
                         </div>
                       </div>
@@ -1654,7 +1557,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">frownDetection</span> <span class="o">=</span> <span class="mi">37</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">frownDetection</span> <span class="o">=</span> <span class="mi">34</span></code></pre>
 
                         </div>
                       </div>
@@ -1686,7 +1589,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">genderDetect</span> <span class="o">=</span> <span class="mi">38</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">genderDetect</span> <span class="o">=</span> <span class="mi">35</span></code></pre>
 
                         </div>
                       </div>
@@ -1718,7 +1621,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">teethTone</span> <span class="o">=</span> <span class="mi">39</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">teethTone</span> <span class="o">=</span> <span class="mi">36</span></code></pre>
 
                         </div>
                       </div>
@@ -1750,7 +1653,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">lightSource</span> <span class="o">=</span> <span class="mi">40</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">lightSource</span> <span class="o">=</span> <span class="mi">37</span></code></pre>
 
                         </div>
                       </div>
@@ -1782,7 +1685,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">chromakey</span> <span class="o">=</span> <span class="mi">41</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">chromakey</span> <span class="o">=</span> <span class="mi">38</span></code></pre>
 
                         </div>
                       </div>
@@ -1814,7 +1717,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">lipsGloss</span> <span class="o">=</span> <span class="mi">42</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">lipsGloss</span> <span class="o">=</span> <span class="mi">39</span></code></pre>
 
                         </div>
                       </div>
@@ -1846,7 +1749,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">lipsChameleon</span> <span class="o">=</span> <span class="mi">43</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">lipsChameleon</span> <span class="o">=</span> <span class="mi">40</span></code></pre>
 
                         </div>
                       </div>
@@ -1878,7 +1781,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">eyelids</span> <span class="o">=</span> <span class="mi">44</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">eyelids</span> <span class="o">=</span> <span class="mi">41</span></code></pre>
 
                         </div>
                       </div>
@@ -1910,7 +1813,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">eyelidsGloss</span> <span class="o">=</span> <span class="mi">45</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">eyelidsGloss</span> <span class="o">=</span> <span class="mi">42</span></code></pre>
 
                         </div>
                       </div>
@@ -1942,7 +1845,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">eyelidsChameleon</span> <span class="o">=</span> <span class="mi">46</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">eyelidsChameleon</span> <span class="o">=</span> <span class="mi">43</span></code></pre>
 
                         </div>
                       </div>
@@ -1974,7 +1877,7 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">glassesFrameColor</span> <span class="o">=</span> <span class="mi">47</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">glassesFrameColor</span> <span class="o">=</span> <span class="mi">44</span></code></pre>
 
                         </div>
                       </div>
@@ -2006,7 +1909,39 @@
                         </div>
                         <div class="language">
                           <p class="aside-title">Swift</p>
-                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">eyeLenses</span> <span class="o">=</span> <span class="mi">48</span></code></pre>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">eyeLenses</span> <span class="o">=</span> <span class="mi">45</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
+                    <a name="/c:@E@BNBFeatureId@BNBFeatureIdFaceSkinColor"></a>
+                    <a name="//apple_ref/objc/Case/BNBFeatureIdFaceSkinColor" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@E@BNBFeatureId@BNBFeatureIdFaceSkinColor">BNBFeatureIdFaceSkinColor</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Face skin segmentation</p>
+
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="n">BNBFeatureIdFaceSkinColor</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="k">case</span> <span class="n">faceSkinColor</span> <span class="o">=</span> <span class="mi">46</span></code></pre>
 
                         </div>
                       </div>
@@ -2018,11 +1953,10 @@
           </section>
         </section>
         <section id="footer">
-          <p>© 2026 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2026-01-13)</p>
+          <p>&copy; 2026 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2026-06-25)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>
     </div>
-  
-
-</body></html>
+  </body>
+</html>

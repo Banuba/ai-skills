@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['activate_0',['activate',['../classbnb_1_1interfaces_1_1effect.html#a595de1d65941221187aac727776deda4',1,'bnb::interfaces::effect']]],
+  ['activate_0',['activate',['../classbnb_1_1interfaces_1_1effect.html#a595de1d65941221187aac727776deda4',1,'bnb::interfaces::effect::activate()'],['../classbnb_1_1player__api_1_1interfaces_1_1render__delegate.html#ae4ffc4195a9e0c2c6cdbffc2e8af9b1e',1,'bnb::player_api::interfaces::render_delegate::activate()']]],
   ['add_5fcamera_5fpoi_5flistener_1',['add_camera_poi_listener',['../classbnb_1_1interfaces_1_1effect__player.html#ae4d92e762c6bc41ff29b234763bb4cd2',1,'bnb::interfaces::effect_player']]],
   ['add_5feffect_5factivated_5flistener_2',['add_effect_activated_listener',['../classbnb_1_1interfaces_1_1effect__manager.html#a2e40fbfaaa34038f8271bb476fc66518',1,'bnb::interfaces::effect_manager']]],
   ['add_5feffect_5factivation_5fcompletion_5flistener_3',['add_effect_activation_completion_listener',['../classbnb_1_1interfaces_1_1effect__player.html#a8fe65a41b3b5054f133be396f923fb20',1,'bnb::interfaces::effect_player']]],
@@ -16,5 +16,6 @@ var searchData=
   ['add_5fref_5fcount_13',['add_ref_count',['../classbnb_1_1interfaces_1_1image__releaser.html#a8983924dcbbd329edf50914c07936e26',1,'bnb::interfaces::image_releaser']]],
   ['add_5fresource_5fpath_14',['add_resource_path',['../classbnb_1_1interfaces_1_1utility__manager.html#ae485569737c68200b2c08fe828cee022',1,'bnb::interfaces::utility_manager']]],
   ['add_5ftimestamp_5fus_15',['add_timestamp_us',['../classbnb_1_1interfaces_1_1frame__data.html#a19ff2c4102ff5405f86d8492b2f851f4',1,'bnb::interfaces::frame_data']]],
-  ['android_5fgpu_5fimage_5ft_16',['android_gpu_image_t',['../classbnb_1_1android__gpu__image__t.html#a5d93fb20ee0420aa9357aae2de77d455',1,'bnb::android_gpu_image_t::android_gpu_image_t(android_gpu_image_t &amp;&amp;)=default'],['../classbnb_1_1android__gpu__image__t.html#af340b66c321c0b63a48c19266d786aa1',1,'bnb::android_gpu_image_t::android_gpu_image_t(const android_gpu_image_t &amp;)=default']]]
+  ['android_5fgpu_5fimage_5ft_16',['android_gpu_image_t',['../classbnb_1_1android__gpu__image__t.html#a5d93fb20ee0420aa9357aae2de77d455',1,'bnb::android_gpu_image_t::android_gpu_image_t(android_gpu_image_t &amp;&amp;)=default'],['../classbnb_1_1android__gpu__image__t.html#af340b66c321c0b63a48c19266d786aa1',1,'bnb::android_gpu_image_t::android_gpu_image_t(const android_gpu_image_t &amp;)=default']]],
+  ['attach_17',['attach',['../classbnb_1_1player__api_1_1interfaces_1_1output.html#a347d065199b60d380deb03241848765b',1,'bnb::player_api::interfaces::output::attach()'],['../classbnb_1_1player__api_1_1interfaces_1_1render__target.html#a235010da9dd525be146974b92c18928e',1,'bnb::player_api::interfaces::render_target::attach()']]]
 ];

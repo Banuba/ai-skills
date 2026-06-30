@@ -10,5 +10,7 @@ var searchData=
   ['image_5fformat_7',['image_format',['../structbnb_1_1image__format.html',1,'bnb']]],
   ['image_5freleaser_8',['image_releaser',['../classbnb_1_1interfaces_1_1image__releaser.html',1,'bnb::interfaces']]],
   ['informer_9',['informer',['../classbnb_1_1interfaces_1_1informer.html',1,'bnb::interfaces']]],
-  ['input_5fmanager_10',['input_manager',['../classbnb_1_1interfaces_1_1input__manager.html',1,'bnb::interfaces']]]
+  ['input_10',['input',['../classbnb_1_1player__api_1_1interfaces_1_1input.html',1,'bnb::player_api::interfaces']]],
+  ['input_5fmanager_11',['input_manager',['../classbnb_1_1interfaces_1_1input__manager.html',1,'bnb::interfaces']]],
+  ['input_5fpixels_5fbase_12',['input_pixels_base',['../classbnb_1_1player__api_1_1input__pixels__base.html',1,'bnb::player_api']]]
 ];

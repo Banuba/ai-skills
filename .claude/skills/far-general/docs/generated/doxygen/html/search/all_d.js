@@ -16,7 +16,16 @@ var searchData=
   ['on_5fresult_13',['on_result',['../classbnb_1_1interfaces_1_1js__callback.html#acd049acb3e0908f62fbcfd3ae4efdf2e',1,'bnb::interfaces::js_callback']]],
   ['on_5fvideo_5frecord_5fend_14',['on_video_record_end',['../classbnb_1_1interfaces_1_1effect__player.html#a4c0065fa84087f335309117131cecfc0',1,'bnb::interfaces::effect_player']]],
   ['on_5fvideo_5frecord_5fstart_15',['on_video_record_start',['../classbnb_1_1interfaces_1_1effect__player.html#a5d4c2841d7ee1744db28df6b17161f35',1,'bnb::interfaces::effect_player']]],
-  ['operator_2a_16',['operator*',['../classbnb_1_1transformation.html#a097dee8ede7046d0c2334199b298fcc0',1,'bnb::transformation']]],
-  ['operator_3e_3e_17',['operator&gt;&gt;',['../classbnb_1_1transformation.html#a80deb426a6f29ef272e140d475994e93',1,'bnb::transformation']]],
-  ['orientation_18',['orientation',['../structbnb_1_1image__format.html#ad5f1b4403051b5575764f90300868a02',1,'bnb::image_format']]]
+  ['once_16',['once',['../classbnb_1_1player__api_1_1frame__output.html#a97b00163136da24df2e5a818ddc89efa',1,'bnb::player_api::frame_output']]],
+  ['opengl_5fframe_5foutput_17',['opengl_frame_output',['../classbnb_1_1player__api_1_1opengl__frame__output.html',1,'bnb::player_api']]],
+  ['opengl_5fframe_5fsurface_5fhandler_18',['opengl_frame_surface_handler',['../classbnb_1_1player__api_1_1opengl__frame__surface__handler.html',1,'bnb::player_api']]],
+  ['opengl_5frender_5ftarget_19',['opengl_render_target',['../classbnb_1_1player__api_1_1opengl__render__target.html',1,'bnb::player_api']]],
+  ['opengl_5frenderbuffer_20',['opengl_renderbuffer',['../classbnb_1_1player__api_1_1opengl__renderbuffer.html',1,'bnb::player_api']]],
+  ['opengl_5fshader_5fprogram_21',['opengl_shader_program',['../classbnb_1_1player__api_1_1opengl__shader__program.html',1,'bnb::player_api']]],
+  ['operator_2a_22',['operator*',['../classbnb_1_1transformation.html#a097dee8ede7046d0c2334199b298fcc0',1,'bnb::transformation']]],
+  ['operator_3e_3e_23',['operator&gt;&gt;',['../classbnb_1_1transformation.html#a80deb426a6f29ef272e140d475994e93',1,'bnb::transformation']]],
+  ['orientable_24',['orientable',['../classbnb_1_1player__api_1_1orientable.html',1,'bnb::player_api']]],
+  ['orientable_5fscalable_5fbase_25',['orientable_scalable_base',['../classbnb_1_1player__api_1_1orientable__scalable__base.html',1,'bnb::player_api']]],
+  ['orientation_26',['orientation',['../structbnb_1_1image__format.html#ad5f1b4403051b5575764f90300868a02',1,'bnb::image_format']]],
+  ['output_27',['output',['../classbnb_1_1player__api_1_1interfaces_1_1output.html',1,'bnb::player_api::interfaces']]]
 ];

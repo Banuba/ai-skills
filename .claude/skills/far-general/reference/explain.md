@@ -6,6 +6,8 @@ Read this for the explain/troubleshoot side of Developer mode: documentation, co
 
 - Technical answers with package names and API signatures relevant to the question. Start with one short code example where useful.
 - Read the relevant doc file(s) from the bundled `docs/` directory. If a topic is missing locally, fall back to `docs/llms-full.txt`, then [`https://docs.banuba.com/far-sdk/llms-full.txt`](https://docs.banuba.com/far-sdk/llms-full.txt).
+- Prefer Markdown docs and `docs/llms-full.txt` for broad retrieval. Search `docs/generated/` only for exact API symbols, class names, or method signatures.
+- For package-version questions, separate native FAR SDK versions from wrapper package versions (`banuba_sdk`, `@banuba/react-native`) and verify current/latest values from the official registry before answering.
 - When citing a source to the user, link the public web doc (`https://docs.banuba.com/far-sdk/<path>`, drop the `.md`), not the local file path.
 - No deprecated APIs: use `effects/prefabs/*`, not `effects/makeup_deprecated/*`, unless the user is maintaining legacy code. Runtime prefab parameters are changed with `player._effectManager.reloadConfig(...)`, not `effect.evalJs("Module.method(...)")` (that is the deprecated Face Beauty API).
 - On "what are the integration options" questions, give the relevant GitHub sample link plus the matching doc: Web → [quickstart-web](https://github.com/Banuba/quickstart-web); other platforms → the sample table in the router (`SKILL.md`, Platform scope).

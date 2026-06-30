@@ -1,12 +1,11 @@
 var searchData=
 [
-  ['time_5fstamped_5fevent_0',['time_stamped_event',['../classbnb_1_1time__stamped__event.html',1,'bnb']]],
-  ['touch_1',['touch',['../structbnb_1_1interfaces_1_1touch.html',1,'bnb::interfaces']]],
-  ['transformable_5fevent_2',['transformable_event',['../structbnb_1_1interfaces_1_1transformable__event.html',1,'bnb::interfaces::transformable_event'],['../structbnb_1_1transformable__event.html',1,'bnb::transformable_event&lt; T &gt;']]],
-  ['transformable_5fevent_3c_20full_5fimage_5ft_20_3e_3',['transformable_event&lt; full_image_t &gt;',['../structbnb_1_1transformable__event.html',1,'bnb']]],
-  ['transformation_4',['transformation',['../classbnb_1_1interfaces_1_1transformation.html',1,'bnb::interfaces::transformation'],['../classbnb_1_1transformation.html',1,'bnb::transformation']]],
-  ['transformed_5fmask_5',['transformed_mask',['../structbnb_1_1interfaces_1_1transformed__mask.html',1,'bnb::interfaces']]],
-  ['transformed_5fmask_5fbyte_6',['transformed_mask_byte',['../structbnb_1_1interfaces_1_1transformed__mask__byte.html',1,'bnb::interfaces']]],
-  ['transformed_5fmask_5ffloat_7',['transformed_mask_float',['../structbnb_1_1interfaces_1_1transformed__mask__float.html',1,'bnb::interfaces']]],
-  ['transformed_5fmask_5fgpu_8',['transformed_mask_gpu',['../structbnb_1_1interfaces_1_1transformed__mask__gpu.html',1,'bnb::interfaces']]]
+  ['rebind_0',['rebind',['../structbnb_1_1static__pool__allocator_1_1rebind.html',1,'bnb::static_pool_allocator']]],
+  ['recognizer_1',['recognizer',['../classbnb_1_1interfaces_1_1recognizer.html',1,'bnb::interfaces']]],
+  ['reload_5fresult_2',['reload_result',['../classbnb_1_1interfaces_1_1reload__result.html',1,'bnb::interfaces']]],
+  ['render_5fdelegate_3',['render_delegate',['../classbnb_1_1player__api_1_1interfaces_1_1render__delegate.html',1,'bnb::player_api::interfaces']]],
+  ['render_5ftarget_4',['render_target',['../classbnb_1_1player__api_1_1interfaces_1_1render__target.html',1,'bnb::player_api::interfaces']]],
+  ['renderer_5fcommon_5',['renderer_common',['../classbnb_1_1interfaces_1_1renderer__common.html',1,'bnb::interfaces']]],
+  ['resource_5floading_5ferror_6',['resource_loading_error',['../classbnb_1_1resource__loading__error.html',1,'bnb']]],
+  ['runtime_5ferror_7',['runtime_error',['../classbnb_1_1runtime__error.html',1,'bnb']]]
 ];

@@ -1,14 +1,12 @@
 var searchData=
 [
-  ['simple_5fevent_0',['simple_event',['../classbnb_1_1simple__event.html',1,'bnb']]],
-  ['singleton_1',['singleton',['../classbnb_1_1singleton.html',1,'bnb']]],
-  ['size_2',['size',['../structbnb_1_1interfaces_1_1size.html',1,'bnb::interfaces::size'],['../structbnb_1_1size.html',1,'bnb::size']]],
-  ['spin_5flock_3',['spin_lock',['../classbnb_1_1spin__lock.html',1,'bnb']]],
-  ['spin_5fmutex_4',['spin_mutex',['../classbnb_1_1spin__mutex.html',1,'bnb']]],
-  ['static_5fpool_5fallocator_5',['static_pool_allocator',['../structbnb_1_1static__pool__allocator.html',1,'bnb']]],
-  ['static_5fpool_5fallocator_3c_20u_2c_20max_5felements_20_3e_6',['static_pool_allocator&lt; U, MAX_ELEMENTS &gt;',['../structbnb_1_1static__pool__allocator.html',1,'bnb']]],
-  ['static_5fpool_5fallocator_5ffallback_7',['static_pool_allocator_fallback',['../classbnb_1_1static__pool__allocator__fallback.html',1,'bnb']]],
-  ['static_5fpool_5fallocator_5ffallback_3c_20event_2c_20maxelements_20_3e_8',['static_pool_allocator_fallback&lt; Event, MaxElements &gt;',['../classbnb_1_1static__pool__allocator__fallback.html',1,'bnb']]],
-  ['subscription_5frequest_5ft_9',['subscription_request_t',['../structbnb_1_1subscription__request__t.html',1,'bnb']]],
-  ['surface_5fdata_10',['surface_data',['../structbnb_1_1interfaces_1_1surface__data.html',1,'bnb::interfaces']]]
+  ['photo_5finput_0',['photo_input',['../classbnb_1_1player__api_1_1photo__input.html',1,'bnb::player_api']]],
+  ['pixel_5fbuffer_1',['pixel_buffer',['../structbnb_1_1interfaces_1_1pixel__buffer.html',1,'bnb::interfaces']]],
+  ['pixel_5frect_2',['pixel_rect',['../structbnb_1_1interfaces_1_1pixel__rect.html',1,'bnb::interfaces::pixel_rect'],['../structbnb_1_1pixel__rect.html',1,'bnb::pixel_rect']]],
+  ['pixels_5fprovider_3',['pixels_provider',['../classbnb_1_1player__api_1_1pixels__provider.html',1,'bnb::player_api']]],
+  ['player_4',['player',['../classbnb_1_1player__api_1_1interfaces_1_1player.html',1,'bnb::player_api::interfaces::player'],['../classbnb_1_1player__api_1_1player.html',1,'bnb::player_api::player']]],
+  ['point2d_5',['point2d',['../structbnb_1_1interfaces_1_1point2d.html',1,'bnb::interfaces::point2d'],['../unionbnb_1_1point2d.html',1,'bnb::point2d']]],
+  ['point3d_6',['point3d',['../unionbnb_1_1point3d.html',1,'bnb']]],
+  ['processor_5fconfiguration_7',['processor_configuration',['../classbnb_1_1interfaces_1_1processor__configuration.html',1,'bnb::interfaces']]],
+  ['processor_5fresult_8',['processor_result',['../structbnb_1_1interfaces_1_1processor__result.html',1,'bnb::interfaces']]]
 ];

@@ -215,6 +215,9 @@
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/face__data__source_8hpp_source.html</loc>
   </url>
   <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/face__shape__type_8hpp_source.html</loc>
+  </url>
+  <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/feature__id_8hpp_source.html</loc>
   </url>
   <url>
@@ -366,6 +369,93 @@
   </url>
   <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/filesystem_8hpp_source.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/input__pixels__base_8hpp_source.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/input_8hpp_source.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/live__input_8hpp_source.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/photo__input_8hpp_source.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/pixels__provider_8hpp_source.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/stream__input_8hpp_source.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/output_8hpp_source.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/frame__output_8hpp_source.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/metal__frame__output_8hpp_source.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/opengl__frame__output_8hpp_source.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/orientable_8hpp_source.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/scalable_8hpp_source.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/texture__output_8hpp_source.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/window__output_8hpp_source.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/player_8hpp_source.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/player_2player_8hpp_source.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/render__delegate_8hpp_source.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/render__target_8hpp_source.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/metal__render__target_8hpp_source.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/opengl__render__target_8hpp_source.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/content__mode_8hpp_source.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/opengl_8hpp_source.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/opengl__frame__surface__handler_8hpp_source.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/opengl__renderbuffer_8hpp_source.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/opengl__shader__program_8hpp_source.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/orientable__scalable__base_8hpp_source.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/output__base_8hpp_source.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/common_8hpp_source.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/yuv__conversion_8hpp_source.html</loc>
   </url>
   <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/camera__orientation_8hpp.html</loc>
@@ -539,6 +629,9 @@
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/face__data__source_8hpp.html</loc>
   </url>
   <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/face__shape__type_8hpp.html</loc>
+  </url>
+  <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/feature__id_8hpp.html</loc>
   </url>
   <url>
@@ -617,6 +710,9 @@
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/severity__level_8hpp.html</loc>
   </url>
   <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/deprecated.html</loc>
+  </url>
+  <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/group___utils.html</loc>
   </url>
   <url>
@@ -635,40 +731,22 @@
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/group___license_utils.html</loc>
   </url>
   <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1camera__device__description.html</loc>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1android__gpu__image__t.html</loc>
   </url>
   <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1camera__device__description-members.html</loc>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1android__gpu__image__t-members.html</loc>
   </url>
   <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1camera__base.html</loc>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1base__event.html</loc>
   </url>
   <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1camera__base-members.html</loc>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1base__event-members.html</loc>
   </url>
   <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1camera__base__mocker.html</loc>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1base__event__iface.html</loc>
   </url>
   <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1camera__base__mocker-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1camera__ocv.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1camera__ocv-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1camera__video__mocker.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1camera__video__mocker-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1image__format.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1image__format-members.html</loc>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1base__event__iface-members.html</loc>
   </url>
   <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1base__image__t.html</loc>
@@ -683,28 +761,76 @@
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1bpc8__image__t-members.html</loc>
   </url>
   <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1android__gpu__image__t.html</loc>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1camera__base.html</loc>
   </url>
   <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1android__gpu__image__t-members.html</loc>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1camera__base-members.html</loc>
   </url>
   <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1yuv__format__t.html</loc>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1camera__base__mocker.html</loc>
   </url>
   <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1yuv__format__t-members.html</loc>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1camera__base__mocker-members.html</loc>
   </url>
   <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1yuv__image__t.html</loc>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1camera__device__description.html</loc>
   </url>
   <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1yuv__image__t-members.html</loc>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1camera__device__description-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1data__t.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1data__t-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1domain__specific__data.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1domain__specific__data-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1effect__event.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1effect__event-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1empty__event.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1empty__event-members.html</loc>
   </url>
   <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1full__image__t.html</loc>
   </url>
   <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1full__image__t-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1identified__class.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1identified__class-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1image__format.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1image__format-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1logic__error.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1logic__error-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1pixel__rect.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1pixel__rect-members.html</loc>
   </url>
   <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/unionbnb_1_1point2d.html</loc>
@@ -719,88 +845,10 @@
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/unionbnb_1_1point3d-members.html</loc>
   </url>
   <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1size.html</loc>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1resource__loading__error.html</loc>
   </url>
   <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1size-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1data__t.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1data__t-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1transformation.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1transformation-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1transformation_1_1affine__coeffs__t.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1transformation_1_1affine__coeffs__t-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1transformable__event.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1transformable__event-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1pixel__rect.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1pixel__rect-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1subscription__request__t.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1subscription__request__t-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1base__event__iface.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1base__event__iface-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1base__event.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1base__event-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1time__stamped__event.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1time__stamped__event-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1simple__event.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1simple__event-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1empty__event.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1empty__event-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1effect__event.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1effect__event-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1domain__specific__data.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1domain__specific__data-members.html</loc>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1resource__loading__error-members.html</loc>
   </url>
   <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1runtime__error.html</loc>
@@ -809,22 +857,22 @@
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1runtime__error-members.html</loc>
   </url>
   <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1logic__error.html</loc>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1simple__event.html</loc>
   </url>
   <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1logic__error-members.html</loc>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1simple__event-members.html</loc>
   </url>
   <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1resource__loading__error.html</loc>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1singleton.html</loc>
   </url>
   <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1resource__loading__error-members.html</loc>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1singleton-members.html</loc>
   </url>
   <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1identified__class.html</loc>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1size.html</loc>
   </url>
   <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1identified__class-members.html</loc>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1size-members.html</loc>
   </url>
   <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1spin__lock.html</loc>
@@ -857,10 +905,34 @@
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1static__pool__allocator__fallback-members.html</loc>
   </url>
   <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1singleton.html</loc>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1subscription__request__t.html</loc>
   </url>
   <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1singleton-members.html</loc>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1subscription__request__t-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1time__stamped__event.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1time__stamped__event-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1transformable__event.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1transformable__event-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1transformation.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1transformation-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1transformation_1_1affine__coeffs__t.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1transformation_1_1affine__coeffs__t-members.html</loc>
   </url>
   <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1utility.html</loc>
@@ -869,22 +941,16 @@
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1utility-members.html</loc>
   </url>
   <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1egl__context.html</loc>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1yuv__format__t.html</loc>
   </url>
   <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1egl__context-members.html</loc>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1yuv__format__t-members.html</loc>
   </url>
   <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1image__releaser.html</loc>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1yuv__image__t.html</loc>
   </url>
   <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1image__releaser-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1log__record__callback.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1log__record__callback-members.html</loc>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1yuv__image__t-members.html</loc>
   </url>
   <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1action__units.html</loc>
@@ -899,10 +965,28 @@
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1action__units__data-members.html</loc>
   </url>
   <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1android__hardware__buffer.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1android__hardware__buffer-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1bnb__morph__result.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1bnb__morph__result-members.html</loc>
+  </url>
+  <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1brows__mask.html</loc>
   </url>
   <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1brows__mask-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1camera__poi__listener.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1camera__poi__listener-members.html</loc>
   </url>
   <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1camera__position.html</loc>
@@ -921,186 +1005,6 @@
   </url>
   <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1detected__face-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1external__face__data.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1external__face__data-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1eyes__corneosclera__mask.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1eyes__corneosclera__mask-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1eyes__iris__mask.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1eyes__iris__mask-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1eyes__mask.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1eyes__mask-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1eyes__pupil__mask.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1eyes__pupil__mask-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1eyes__state.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1eyes__state-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1face__data.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1face__data-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1feature__parameter.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1feature__parameter-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1frame__data.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1frame__data-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1frx__recognition__result.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1frx__recognition__result-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1full__image__format.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1full__image__format-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1lips__shine__mask.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1lips__shine__mask-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1pixel__buffer.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1pixel__buffer-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1pixel__rect.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1pixel__rect-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1point2d.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1point2d-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1size.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1size-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1touch.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1touch-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1transformable__event.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1transformable__event-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1transformation.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1transformation-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1transformed__mask.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1transformed__mask-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1transformed__mask__byte.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1transformed__mask__byte-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1transformed__mask__float.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1transformed__mask__float-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1transformed__mask__gpu.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1transformed__mask__gpu-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1android__hardware__buffer.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1android__hardware__buffer-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1bnb__morph__result.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1bnb__morph__result-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1renderer__common.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1renderer__common-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1feature.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1feature-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1recognizer.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1recognizer-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1utility__manager.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1utility__manager-members.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1camera__poi__listener.html</loc>
-  </url>
-  <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1camera__poi__listener-members.html</loc>
   </url>
   <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1effect.html</loc>
@@ -1157,16 +1061,82 @@
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1effect__player__configuration-members.html</loc>
   </url>
   <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1egl__context.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1egl__context-members.html</loc>
+  </url>
+  <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1error__listener.html</loc>
   </url>
   <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1error__listener-members.html</loc>
   </url>
   <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1external__face__data.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1external__face__data-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1eyes__corneosclera__mask.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1eyes__corneosclera__mask-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1eyes__iris__mask.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1eyes__iris__mask-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1eyes__mask.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1eyes__mask-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1eyes__pupil__mask.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1eyes__pupil__mask-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1eyes__state.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1eyes__state-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1face__data.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1face__data-members.html</loc>
+  </url>
+  <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1face__number__listener.html</loc>
   </url>
   <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1face__number__listener-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1feature.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1feature-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1feature__parameter.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1feature__parameter-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1frame__data.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1frame__data-members.html</loc>
   </url>
   <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1frame__data__listener.html</loc>
@@ -1187,10 +1157,34 @@
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1frame__processor-members.html</loc>
   </url>
   <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1frx__recognition__result.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1frx__recognition__result-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1full__image__format.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1full__image__format-members.html</loc>
+  </url>
+  <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1hint__listener.html</loc>
   </url>
   <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1hint__listener-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1image__releaser.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1image__releaser-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1informer.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1informer-members.html</loc>
   </url>
   <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1input__manager.html</loc>
@@ -1205,6 +1199,42 @@
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1js__callback-members.html</loc>
   </url>
   <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1license__manager.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1license__manager-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1lips__shine__mask.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1lips__shine__mask-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1log__record__callback.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1log__record__callback-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1pixel__buffer.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1pixel__buffer-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1pixel__rect.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1pixel__rect-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1point2d.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1point2d-members.html</loc>
+  </url>
+  <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1processor__configuration.html</loc>
   </url>
   <url>
@@ -1217,10 +1247,28 @@
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1processor__result-members.html</loc>
   </url>
   <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1recognizer.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1recognizer-members.html</loc>
+  </url>
+  <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1reload__result.html</loc>
   </url>
   <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1reload__result-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1renderer__common.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1renderer__common-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1size.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1size-members.html</loc>
   </url>
   <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1surface__data.html</loc>
@@ -1229,16 +1277,196 @@
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1surface__data-members.html</loc>
   </url>
   <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1informer.html</loc>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1touch.html</loc>
   </url>
   <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1informer-members.html</loc>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1touch-members.html</loc>
   </url>
   <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1license__manager.html</loc>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1transformable__event.html</loc>
   </url>
   <url>
-    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1license__manager-members.html</loc>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1transformable__event-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1transformation.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1transformation-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1transformed__mask.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1transformed__mask-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1transformed__mask__byte.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1transformed__mask__byte-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1transformed__mask__float.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1transformed__mask__float-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1transformed__mask__gpu.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/structbnb_1_1interfaces_1_1transformed__mask__gpu-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1utility__manager.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1interfaces_1_1utility__manager-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1frame__output.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1frame__output-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1input__pixels__base.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1input__pixels__base-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1live__input.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1live__input-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1metal__frame__output.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1metal__frame__output-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1metal__render__target.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1metal__render__target-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1opengl__frame__output.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1opengl__frame__output-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1opengl__frame__surface__handler.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1opengl__frame__surface__handler-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1opengl__render__target.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1opengl__render__target-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1opengl__renderbuffer.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1opengl__renderbuffer-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1opengl__shader__program.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1opengl__shader__program-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1orientable.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1orientable-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1orientable__scalable__base.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1orientable__scalable__base-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1photo__input.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1photo__input-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1pixels__provider.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1pixels__provider-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1player.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1player-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1scalable.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1scalable-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1stream__input.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1stream__input-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1texture__output.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1texture__output-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1window__output.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1window__output-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1interfaces_1_1input.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1interfaces_1_1input-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1interfaces_1_1output.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1interfaces_1_1output-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1interfaces_1_1player.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1interfaces_1_1player-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1interfaces_1_1render__delegate.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1interfaces_1_1render__delegate-members.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1interfaces_1_1render__target.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/classbnb_1_1player__api_1_1interfaces_1_1render__target-members.html</loc>
   </url>
   <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/dir_73a4b43cd0fd33811f5aebaab30438cc.html</loc>
@@ -1262,13 +1490,25 @@
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/dir_c7b078d8bdb08343b6103ac670fe6c46.html</loc>
   </url>
   <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/dir_151e00ff46e374b9f04fad9d5faf36b0.html</loc>
+  </url>
+  <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/dir_5609a4d9486c11eaf24b484970dc16ef.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/dir_e955ec250310abb2222bcfec7307eba4.html</loc>
   </url>
   <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/dir_270bce0c67b373d9a2dabbc63f1b4b73.html</loc>
   </url>
   <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/dir_45eed6819a20a845b144d9d4aa93cfd6.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/dir_c10701ba43db544c7c0695ca10ae530b.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/dir_758ede5fd61bbd1e3d92ec20bef35ee5.html</loc>
   </url>
   <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/dir_00c67a42c98f932354966567b2a1fb84.html</loc>
@@ -1289,6 +1529,9 @@
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/dir_e563e0d52bd0dccd4bdd039602e33df7.html</loc>
   </url>
   <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/dir_672f493427a690742d703fdf8b422899.html</loc>
+  </url>
+  <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/dir_6719ab1f1f7655efc2fa43f7eb574fd1.html</loc>
   </url>
   <url>
@@ -1298,16 +1541,40 @@
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/dir_eeba3e77c4118da1e3bdc13296dd700d.html</loc>
   </url>
   <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/dir_a8d55fcb87578e78de3bed9d7a1494f1.html</loc>
+  </url>
+  <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/dir_048914782aa204076d4212f6ad670dd8.html</loc>
   </url>
   <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/dir_46f2602e104f7c5819496e374f2dc0ef.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/dir_6a3aa842258264e4e23acade51bcafdf.html</loc>
+  </url>
+  <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/dir_2ffe9ee4262d3a08fff972504a968712.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/dir_c5a52a81292cf9a5167198f4f346d6d9.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/dir_10b313460f149e0aac34d94aaaa41a08.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/dir_681c5806bea8904958f687cc412b38cb.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/dir_8e5ddc3ff027e084c08c24b49d601b5e.html</loc>
   </url>
   <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/dir_e826b304c336f7aa448ed380b60cc97d.html</loc>
   </url>
   <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/dir_ff58d72c7629ccb2b7241bba5121e862.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/dir_8a40008d3532cac904e16f20ba25dc5a.html</loc>
   </url>
   <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/dir_f5f65ff681a9c4842f5608c6fd2dd30c.html</loc>
@@ -1331,10 +1598,16 @@
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/dir_66318ef38a6ad89ba7b87193290aa074.html</loc>
   </url>
   <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/dir_f655960101fc4e1948c09323597d988d.html</loc>
+  </url>
+  <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/dir_536c271ae5a55ac6615492af81b56ab0.html</loc>
   </url>
   <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/dir_1faf0fdb5604b5aeb567fcc36548e89c.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/dir_2f8c3238633c5dc5db885a8ebf9b73d9.html</loc>
   </url>
   <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/dir_e0be377149b6e0d96b8df7a38186a6f3.html</loc>
@@ -1344,6 +1617,9 @@
   </url>
   <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/doxygen_crawl.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/pages.html</loc>
   </url>
   <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/topics.html</loc>
@@ -1421,6 +1697,9 @@
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/functions_y.html</loc>
   </url>
   <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/functions_~.html</loc>
+  </url>
+  <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/functions_func.html</loc>
   </url>
   <url>
@@ -1482,6 +1761,9 @@
   </url>
   <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/functions_func_y.html</loc>
+  </url>
+  <url>
+    <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/functions_func_~.html</loc>
   </url>
   <url>
     <loc>https://docs.banuba.com/far-sdk/generated/doxygen/html/functions_vars.html</loc>

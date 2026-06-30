@@ -35,7 +35,7 @@ var searchData=
   ['error_32',['error',['../processor__status_8hpp.html#a53dc3039c8993525e831b1ccbc8abe36acb5e100e5a9a3e7f6d1fd97512215282',1,'bnb::interfaces']]],
   ['error_5flistener_33',['error_listener',['../classbnb_1_1interfaces_1_1error__listener.html',1,'bnb::interfaces']]],
   ['error_5flistener_2ehpp_34',['error_listener.hpp',['../error__listener_8hpp.html',1,'']]],
-  ['eval_5fjs_35',['eval_js',['../classbnb_1_1interfaces_1_1effect.html#a519f92182f080d2dc493878b14a4e545',1,'bnb::interfaces::effect']]],
+  ['eval_5fjs_35',['eval_js',['../classbnb_1_1interfaces_1_1effect.html#a519f92182f080d2dc493878b14a4e545',1,'bnb::interfaces::effect::eval_js()'],['../classbnb_1_1player__api_1_1interfaces_1_1player.html#a5fd29fc750ad51ea5ce39acbf93b6ccf',1,'bnb::player_api::interfaces::player::eval_js()']]],
   ['eval_5fjs_5fsync_36',['eval_js_sync',['../classbnb_1_1interfaces_1_1effect.html#ab559bd5edcc850f22c8b16d81901c0e2',1,'bnb::interfaces::effect']]],
   ['external_5fface_5fdata_37',['external_face_data',['../structbnb_1_1interfaces_1_1external__face__data.html',1,'bnb::interfaces']]],
   ['external_5fface_5fdata_2ehpp_38',['external_face_data.hpp',['../external__face__data_8hpp.html',1,'']]],

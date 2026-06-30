@@ -1,34 +1,6 @@
 {
   "warnings": [
     {
-      "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBAcneRegions.h",
-      "line": 13,
-      "symbol": "BNBAcneRegions",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBAcneRegions.h",
-      "line": 14,
-      "symbol": "BNBAcneRegions.-initWithRegions:basisTransform:",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBAcneRegions.h",
-      "line": 16,
-      "symbol": "BNBAcneRegions.+acneRegionsWithRegions:basisTransform:",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBAcneRegions.h",
-      "line": 19,
-      "symbol": "BNBAcneRegions.regions",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.property",
-      "warning": "undocumented"
-    },
-    {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBActionUnits.h",
       "line": 13,
       "symbol": "BNBActionUnits",
@@ -968,169 +940,204 @@
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFaceData.h",
-      "line": 18,
+      "line": 19,
       "symbol": "BNBFaceData",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFaceData.h",
-      "line": 20,
+      "line": 21,
       "symbol": "BNBFaceData.+create",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.class",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFaceData.h",
-      "line": 22,
+      "line": 23,
       "symbol": "BNBFaceData.-getLandmarks",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFaceData.h",
-      "line": 24,
+      "line": 25,
       "symbol": "BNBFaceData.-setLandmarks:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFaceData.h",
-      "line": 26,
+      "line": 27,
       "symbol": "BNBFaceData.-getLatents",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFaceData.h",
-      "line": 28,
+      "line": 29,
       "symbol": "BNBFaceData.-setLatents:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFaceData.h",
-      "line": 30,
+      "line": 31,
       "symbol": "BNBFaceData.-getVertices",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFaceData.h",
-      "line": 32,
+      "line": 33,
       "symbol": "BNBFaceData.-setVertices:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFaceData.h",
-      "line": 34,
+      "line": 35,
       "symbol": "BNBFaceData.-getEarsLandmarks",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFaceData.h",
-      "line": 36,
+      "line": 37,
       "symbol": "BNBFaceData.-setEarsLandmarks:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFaceData.h",
-      "line": 38,
+      "line": 39,
       "symbol": "BNBFaceData.-getEarsLatents",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFaceData.h",
-      "line": 40,
+      "line": 41,
       "symbol": "BNBFaceData.-setEarsLatents:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFaceData.h",
-      "line": 42,
+      "line": 43,
       "symbol": "BNBFaceData.-getBrowsLms",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFaceData.h",
-      "line": 44,
+      "line": 45,
       "symbol": "BNBFaceData.-setBrowsLms:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFaceData.h",
-      "line": 46,
+      "line": 47,
       "symbol": "BNBFaceData.-getCameraPosition",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFaceData.h",
-      "line": 48,
+      "line": 49,
       "symbol": "BNBFaceData.-setCameraPosition:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFaceData.h",
-      "line": 53,
+      "line": 54,
       "symbol": "BNBFaceData.-hasLipsDetected",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFaceData.h",
-      "line": 55,
+      "line": 56,
       "symbol": "BNBFaceData.-hasFace",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFaceData.h",
-      "line": 57,
+      "line": 58,
       "symbol": "BNBFaceData.-getFaceRect",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFaceData.h",
-      "line": 59,
+      "line": 60,
       "symbol": "BNBFaceData.-setFaceRect:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFaceData.h",
-      "line": 61,
+      "line": 62,
       "symbol": "BNBFaceData.-getGender",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFaceData.h",
-      "line": 63,
+      "line": 64,
       "symbol": "BNBFaceData.-setGender:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFaceData.h",
-      "line": 65,
+      "line": 66,
       "symbol": "BNBFaceData.-getEyewear",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFaceData.h",
-      "line": 67,
+      "line": 68,
       "symbol": "BNBFaceData.-setEyewear:",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFaceData.h",
+      "line": 70,
+      "symbol": "BNBFaceData.-getIsSmile",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFaceData.h",
+      "line": 72,
+      "symbol": "BNBFaceData.-getIsMouthOpen",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFaceData.h",
+      "line": 74,
+      "symbol": "BNBFaceData.-getAreBrowsRaised",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFaceData.h",
+      "line": 76,
+      "symbol": "BNBFaceData.-getAreBrowsShifted",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFaceData.h",
+      "line": 78,
+      "symbol": "BNBFaceData.-getEyesState",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
@@ -1152,6 +1159,62 @@
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFaceDataSource.h",
       "line": 8,
       "symbol": "BNBFaceDataSource.BNBFaceDataSourceRnd",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFaceShapeType.h",
+      "line": 6,
+      "symbol": "BNBFaceShapeType",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enum",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFaceShapeType.h",
+      "line": 6,
+      "symbol": "BNBFaceShapeType",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.typedef",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFaceShapeType.h",
+      "line": 8,
+      "symbol": "BNBFaceShapeType.BNBFaceShapeTypeUndefined",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFaceShapeType.h",
+      "line": 9,
+      "symbol": "BNBFaceShapeType.BNBFaceShapeTypeHeart",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFaceShapeType.h",
+      "line": 10,
+      "symbol": "BNBFaceShapeType.BNBFaceShapeTypeOblong",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFaceShapeType.h",
+      "line": 11,
+      "symbol": "BNBFaceShapeType.BNBFaceShapeTypeOval",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFaceShapeType.h",
+      "line": 12,
+      "symbol": "BNBFaceShapeType.BNBFaceShapeTypeRound",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFaceShapeType.h",
+      "line": 13,
+      "symbol": "BNBFaceShapeType.BNBFaceShapeTypeSquare",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
       "warning": "undocumented"
     },
@@ -1298,62 +1361,48 @@
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFeatureId.h",
       "line": 20,
-      "symbol": "BNBFeatureId.BNBFeatureIdAcne",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFeatureId.h",
-      "line": 21,
       "symbol": "BNBFeatureId.BNBFeatureIdHandSkelet",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFeatureId.h",
+      "line": 21,
+      "symbol": "BNBFeatureId.BNBFeatureIdAcneSegm",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFeatureId.h",
       "line": 22,
-      "symbol": "BNBFeatureId.BNBFeatureIdEyeBags",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFeatureId.h",
-      "line": 23,
-      "symbol": "BNBFeatureId.BNBFeatureIdFaceAcne",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFeatureId.h",
-      "line": 24,
       "symbol": "BNBFeatureId.BNBFeatureIdRuler",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFeatureId.h",
-      "line": 25,
+      "line": 23,
       "symbol": "BNBFeatureId.BNBFeatureIdHairStrand",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFeatureId.h",
-      "line": 26,
+      "line": 24,
       "symbol": "BNBFeatureId.BNBFeatureIdRing",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFeatureId.h",
-      "line": 27,
+      "line": 25,
       "symbol": "BNBFeatureId.BNBFeatureIdNeck",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFeatureId.h",
-      "line": 28,
+      "line": 26,
       "symbol": "BNBFeatureId.BNBFeatureIdPoseEstimation",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.enumcase",
       "warning": "undocumented"
@@ -1444,231 +1493,189 @@
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFrameData.h",
-      "line": 58,
-      "symbol": "BNBFrameData.-getAcneRegions",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFrameData.h",
-      "line": 60,
-      "symbol": "BNBFrameData.-getIsSmile",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFrameData.h",
-      "line": 62,
-      "symbol": "BNBFrameData.-getIsMouthOpen",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFrameData.h",
-      "line": 64,
-      "symbol": "BNBFrameData.-getAreBrowsRaised",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFrameData.h",
-      "line": 66,
-      "symbol": "BNBFrameData.-getAreBrowsShifted",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFrameData.h",
-      "line": 68,
-      "symbol": "BNBFrameData.-getIsWearGlasses",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFrameData.h",
-      "line": 70,
+      "line": 73,
       "symbol": "BNBFrameData.-getRuler",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFrameData.h",
-      "line": 72,
-      "symbol": "BNBFrameData.-getEyesState",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFrameData.h",
-      "line": 74,
+      "line": 78,
       "symbol": "BNBFrameData.-getLightCorrection",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFrameData.h",
-      "line": 76,
+      "line": 80,
       "symbol": "BNBFrameData.-getBackground",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFrameData.h",
-      "line": 78,
+      "line": 82,
       "symbol": "BNBFrameData.-getBackgroundGpu",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFrameData.h",
-      "line": 80,
+      "line": 84,
       "symbol": "BNBFrameData.-getHair",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFrameData.h",
-      "line": 82,
+      "line": 86,
       "symbol": "BNBFrameData.-getHairGpu",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFrameData.h",
-      "line": 84,
+      "line": 88,
       "symbol": "BNBFrameData.-getSkin",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFrameData.h",
-      "line": 86,
+      "line": 90,
       "symbol": "BNBFrameData.-getSkinGpu",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFrameData.h",
-      "line": 88,
+      "line": 92,
       "symbol": "BNBFrameData.-getLips",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFrameData.h",
-      "line": 90,
+      "line": 94,
       "symbol": "BNBFrameData.-getLipsGpu",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFrameData.h",
-      "line": 92,
+      "line": 96,
       "symbol": "BNBFrameData.-getTeeth",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFrameData.h",
-      "line": 94,
-      "symbol": "BNBFrameData.-getBody",
-      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
-      "warning": "undocumented"
-    },
-    {
-      "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFrameData.h",
-      "line": 96,
+      "line": 98,
       "symbol": "BNBFrameData.-getLipsShine",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFrameData.h",
-      "line": 98,
+      "line": 100,
       "symbol": "BNBFrameData.-getBrows",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFrameData.h",
-      "line": 100,
+      "line": 102,
       "symbol": "BNBFrameData.-getEyes",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFrameData.h",
-      "line": 102,
+      "line": 104,
       "symbol": "BNBFrameData.-getFace",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFrameData.h",
-      "line": 104,
+      "line": 106,
       "symbol": "BNBFrameData.-getFaceSkin",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFrameData.h",
-      "line": 106,
+      "line": 108,
       "symbol": "BNBFrameData.-getFaceAttributes",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFrameData.h",
-      "line": 135,
+      "line": 110,
+      "symbol": "BNBFrameData.-getFaceShape",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFrameData.h",
+      "line": 130,
       "symbol": "BNBFrameData.-addFullImg:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFrameData.h",
-      "line": 137,
+      "line": 132,
       "symbol": "BNBFrameData.-replaceFullImg:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFrameData.h",
-      "line": 139,
+      "line": 134,
+      "symbol": "BNBFrameData.-getFullImg",
+      "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
+      "warning": "undocumented"
+    },
+    {
+      "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFrameData.h",
+      "line": 136,
       "symbol": "BNBFrameData.-addBackground:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFrameData.h",
-      "line": 141,
+      "line": 138,
       "symbol": "BNBFrameData.-addExternalFaceData:data:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFrameData.h",
-      "line": 144,
+      "line": 141,
       "symbol": "BNBFrameData.-addDepthMap:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFrameData.h",
-      "line": 146,
+      "line": 143,
       "symbol": "BNBFrameData.-addFrameNumber:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFrameData.h",
-      "line": 148,
+      "line": 145,
       "symbol": "BNBFrameData.-addActionUnitsData:",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"
     },
     {
       "file": "/Users/itumashyk/Workspace/banuba_sdk/libs/djinni/BanubaEffectPlayer/BNBFrameData.h",
-      "line": 159,
+      "line": 156,
       "symbol": "BNBFrameData.-getChromakeyColor",
       "symbol_kind": "sourcekitten.source.lang.objc.decl.method.instance",
       "warning": "undocumented"

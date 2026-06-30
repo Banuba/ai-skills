@@ -1,10 +1,10 @@
 # Developer mode: build reference
 
-Read this when the Developer-mode request is to add, implement, set up, integrate, or build something with Banuba Face AR SDK. Platform detection and shared principles are in the router (`SKILL.md`); this file covers the full build workflow for Web, Android, iOS, and Desktop platforms.
+Read this when the Developer-mode request is to add, implement, set up, integrate, or build something with Banuba Face AR SDK. Platform detection and shared principles are in the router (`SKILL.md`); this file covers the full build workflow for Web, Android, iOS, Desktop, Flutter, and React Native platforms.
 
 ## Your role
 
-Banuba Face AR SDK implementation expert. Build working applications on Web, Android, iOS, and Desktop (C++). Lead with working code, then explain.
+Banuba Face AR SDK implementation expert. Build working applications on Web, Android, iOS, Desktop (C++), Flutter, and React Native. Lead with working code, then explain.
 
 ## Platform detection
 
@@ -12,12 +12,28 @@ Detect from workspace files, or ask one question if unclear.
 
 | Signal | Platform |
 |---|---|
+| `pubspec.yaml`, `lib/main.dart`, dependency `banuba_sdk`, or user says "Flutter" | Flutter |
+| `package.json` with `react-native`, `metro.config.*`, dependency `@banuba/react-native`, or user says "React Native" / "RN" | React Native |
 | `package.json` (no `react-native`), `vite.config.*`, `webpack.config.*`, `index.html` + JS bundler | Web |
 | `build.gradle`, `build.gradle.kts`, `AndroidManifest.xml`, `*.kt`, `*.java` | Android |
 | `*.xcodeproj`, `*.xcworkspace`, `Podfile`, `*.swift`, `*.m` | iOS |
 | `CMakeLists.txt`, `*.cpp`, `*.hpp`, or user says "desktop" / "C++" | Desktop |
 
 ---
+
+## Version and package discipline
+
+- Native Face AR SDK modules use the FAR SDK line in this skill (`1.18.2` in exact native snippets, `1.18.+` / `~> 1.18.0` in wrapper integration snippets where the docs use ranges).
+- Flutter `banuba_sdk` and React Native `@banuba/react-native` are wrapper packages with independent public versions. Do not reuse native `1.18.x` as the Flutter or RN package version.
+- Video Editor / Photo Editor SDK package versions are separate from Face AR SDK package versions. Do not answer FAR wrapper-version questions with VE/PE versions.
+- When the user asks for "latest", "current", "what version should I install today", or similar, verify against the official registry first (`pub.dev` for Flutter, npm for React Native, official docs/releases for native SDKs).
+- If a project already has a lockfile or explicit version constraint, preserve the project's package manager style and avoid changing unrelated dependency policy.
+
+## Docs search hygiene
+
+- Search bundled Markdown docs and `docs/llms-full.txt` first.
+- Avoid broad `rg` over `docs/generated/` unless looking for an exact API symbol. Generated HTML produces large noisy matches and can drown out the guide pages.
+- Do not edit bundled `docs/` to correct upstream inconsistencies. Add corrective agent behavior in this `reference/` file instead.
 
 ## Web
 
@@ -1003,8 +1019,8 @@ Replace the contents of `ios/Podfile` with (Edit tool):
 ```ruby
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
 
-source 'https://github.com/CocoaPods/Specs.git'
 source 'https://github.com/sdk-banuba/banuba-sdk-podspecs.git'
+source 'https://github.com/CocoaPods/Specs.git'
 $bnb_sdk_version = '~> 1.18.0'
 
 platform :ios, '14.0'
@@ -1243,6 +1259,8 @@ buildscript {
 
 allprojects {
     repositories {
+        google()
+        mavenCentral()
         maven { url "https://nexus.banuba.net/repository/maven-releases" }
     }
 }
@@ -1382,6 +1400,9 @@ yarn android   # or yarn ios
 - `minSdkVersion` must be 26+ - lower values cause build failure.
 - Missing `NSCameraUsageDescription` in Info.plist causes a crash on iOS 14+.
 - Banuba pod source must be in `Podfile` - without it `pod install` fails.
+- Put Banuba podspec source before CocoaPods specs source in generated snippets, even if a bundled upstream page shows the lines in the opposite order.
+- `use_frameworks!` is not required by the Banuba React Native guide. If it already exists in a project, do not remove it automatically because other pods may need it.
+- `@banuba/react-native` version is independent from native FAR SDK version - do not install `@banuba/react-native@1.18.x` unless npm actually publishes it.
 - On iOS, effects must be added as a **folder reference** in Xcode (blue folder icon), not as a group.
 - Effects folder must be at the project root - Gradle copies from `../../effects` relative to `android/app/`.
 - If more SDK capabilities are needed than the package exposes, go with native Android/iOS integration.

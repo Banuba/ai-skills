@@ -1,7 +1,7 @@
 ---
 name: far-general
 description: |
-  Banuba Face AR SDK skill for three audiences: sales, developers, and integration.
+  Banuba Face AR SDK skill for three use cases: sales, developer documentation, and integration workflows.
 
   Use for anything Face AR: capability and compliance questions (sales), documentation
   lookup, CV concepts, and troubleshooting (dev), and building Web integrations such as
@@ -11,7 +11,7 @@ description: |
   "add", "set up", "integrate", "build".
 
   Web, Android, iOS, Desktop (C++), Flutter and React Native have full code generation
-  support. Other platforms (macOS, Unity) get the GitHub sample link plus the contact form.
+  support. macOS gets the GitHub sample + code assistance. Unity gets the sample link only.
   For Video/Photo Editor SDK use build-video-editor, build-photo-editor, or explain-video-editor-photo-editor-docs.
 
   <example>
@@ -29,14 +29,14 @@ description: |
   <example>
   Context: Web integration request.
   user: "Add background blur to my Face AR web app"
-  assistant: "I'll use /far-general in integration mode to wire up the virtual background."
+  assistant: "I'll use /far-general in Developer mode and follow the build workflow for virtual background."
   </example>
 argument-hint: "[question or task]"
 ---
 
 ## Version Notice
 
-Generated for Banuba Face AR SDK v1.18.1 on 2026-05-19. If the current date is more than 6 weeks after this, inform the user the skill may be outdated and suggest running `npx skills update` or `claude plugin install @banuba`.
+Generated for Banuba Face AR SDK v1.18.2 on 2026-06-24. If the current date is more than 6 weeks after this, inform the user the skill may be outdated and suggest running `npx skills update` or `claude plugin install @banuba`.
 
 # Banuba Face AR SDK Skill
 
@@ -79,8 +79,8 @@ Rules:
 
 Same audience as above - explaining, troubleshooting, and building. Respond proportionally to the request; there is no separate "explain vs build" gate.
 
-- Explanations, concepts, troubleshooting, doc lookup: read `reference/explain.md`, then the bundled `docs/`.
-- Adding, implementing, scaffolding, prefab configs: read `reference/build.md`, then the bundled `docs/`.
+- Explanations, concepts, troubleshooting, doc lookup: read `reference/explain.md`, then search/read the relevant bundled Markdown docs.
+- Adding, implementing, scaffolding, prefab configs: read `reference/build.md`, then search/read the relevant bundled Markdown docs.
 - Hybrid requests ("explain X and add it"): read both files and answer in one flow.
 - When citing a source, link the public web doc (see shared principle 2), not an internal path. Lead with working code when the user asks to build; lead with the explanation when they ask how or why.
 
@@ -92,7 +92,7 @@ Same audience as above - explaining, troubleshooting, and building. Respond prop
 
 ## Platform scope (all modes)
 
-Web, Android, iOS, Desktop (C++), Flutter, and React Native have full coverage and code generation. For all other platforms (macOS, Unity): **MUST NOT generate any code**. Only clone the official GitHub sample and direct to the [contact form](https://www.banuba.com/contact).
+Web, Android, iOS, Desktop (C++), Flutter, and React Native have full coverage and code generation. For **macOS**: clone the official GitHub sample, then assist with code questions based on that sample — do not scaffold from scratch. For **Unity**: clone the sample only and direct to the [contact form](https://www.banuba.com/contact) — no code generation.
 
 | Platform | Coverage | Sample |
 |---|---|---|
@@ -100,7 +100,7 @@ Web, Android, iOS, Desktop (C++), Flutter, and React Native have full coverage a
 | Android | ✅ Full - read `reference/build.md` (Android section) | [banuba-sdk-android-samples](https://github.com/Banuba/banuba-sdk-android-samples) |
 | iOS | ✅ Full - read `reference/build.md` (iOS section) | [banuba-sdk-ios-samples](https://github.com/Banuba/banuba-sdk-ios-samples) |
 | Desktop (C++) | ✅ Full - read `reference/build.md` (Desktop section) | [quickstart-desktop-cpp](https://github.com/Banuba/quickstart-desktop-cpp) |
-| macOS | 🚫 No code generation - clone sample only | [quickstart-macos-swift](https://github.com/Banuba/quickstart-macos-swift) |
+| macOS | ⚠️ Clone sample + code help - clone sample, then assist with code questions | [quickstart-macos-swift](https://github.com/Banuba/quickstart-macos-swift) |
 | Flutter | ✅ Full - read `reference/build.md` (Flutter section) | [banuba-sdk-flutter](https://github.com/Banuba/banuba-sdk-flutter) |
 | React Native | ✅ Full - read `reference/build.md` (React Native section) | [banuba-sdk-react-native](https://github.com/Banuba/banuba-sdk-react-native) |
 | Unity | 🚫 No code generation - clone sample only | [quickstart-unity](https://github.com/Banuba/quickstart-unity) |
@@ -110,11 +110,13 @@ Web, Android, iOS, Desktop (C++), Flutter, and React Native have full coverage a
 - Android: `build.gradle`, `build.gradle.kts`, `AndroidManifest.xml`, or `*.kt` / `*.java` files
 - iOS: `*.xcodeproj`, `*.xcworkspace`, `Podfile`, or `*.swift` / `*.m` files
 - Desktop (C++): `CMakeLists.txt`, `*.cpp`, `*.hpp` files, or user explicitly says "desktop" / "C++"
+- Flutter: `pubspec.yaml`, `lib/main.dart`, or user explicitly says "flutter"
+- React Native: `package.json` with `react-native` dependency, `metro.config.*`, or user explicitly says "react native"
 - If unclear, ask one question: "Which platform are you targeting?"
 
 ## Shared principles (all modes)
 
-1. **Retrieval-first**: read the bundled `docs/` directory before using pre-trained knowledge. If a topic is missing locally, fetch [`https://docs.banuba.com/far-sdk/llms-full.txt`](https://docs.banuba.com/far-sdk/llms-full.txt).
+1. **Retrieval-first**: search the bundled Markdown docs and read only the relevant files before using pre-trained knowledge. Use `docs/llms-full.txt` as fallback. If a topic is missing locally, fetch [`https://docs.banuba.com/far-sdk/llms-full.txt`](https://docs.banuba.com/far-sdk/llms-full.txt).
 2. **Cite public docs, not internal files**: when pointing the user to a source, link the public web doc (`https://docs.banuba.com/far-sdk/<path>`, dropping the `.md`). Never surface internal paths such as `docs/...md` or this skill's `reference/...md` files; they mean nothing to the user.
 3. **Don't fabricate**: if the answer is not in the docs, point to [docs.banuba.com/far-sdk](https://docs.banuba.com/far-sdk/) or the [contact form](https://www.banuba.com/contact). Never invent APIs, URLs, or compliance claims.
 4. **Generate config, not art**: the skill assembles prefab configuration; it does not create art assets. Custom AR masks, effects, and makeup looks are made in [Banuba Studio](https://studio.banuba.com/) ([docs](https://studio.banuba.com/docs)). Studio does not create 3D avatars/models - direct avatar requests to the [contact form](https://www.banuba.com/contact).

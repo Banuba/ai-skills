@@ -1,15 +1,17 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
     <title>Enumerations  Reference</title>
-    <link rel="stylesheet" type="text/css" href="css/jazzy.css">
-    <link rel="stylesheet" type="text/css" href="css/highlight.css">
-    <meta charset="utf-8">
-    <script src="js/jquery.min.js" defer=""></script>
-    <script src="js/jazzy.js" defer=""></script>
+    <link rel="stylesheet" type="text/css" href="css/jazzy.css" />
+    <link rel="stylesheet" type="text/css" href="css/highlight.css" />
+    <meta charset='utf-8'>
+    <script src="js/jquery.min.js" defer></script>
+    <script src="js/jazzy.js" defer></script>
     
-    <script src="js/lunr.min.js" defer=""></script>
-    <script src="js/typeahead.jquery.js" defer=""></script>
-    <script src="js/jazzy.search.js" defer=""></script>
-  <link rel="canonical" href="https://docs.banuba.com/far-sdk/generated/jazzy/objc/docsets/.docset/Contents/Resources/Documents/Enums.html"></head>
+    <script src="js/lunr.min.js" defer></script>
+    <script src="js/typeahead.jquery.js" defer></script>
+    <script src="js/jazzy.search.js" defer></script>
+  </head>
   <body>
     <a name="//apple_ref/objc/Section/Enumerations" class="dashAnchor"></a>
     <a title="Enumerations  Reference"></a>
@@ -18,7 +20,7 @@
         <p><a href="index.html"> Docs</a> (44% documented)</p>
         <div class="header-right">
           <form role="search" action="search.json">
-            <input type="text" placeholder="Search documentation" data-typeahead="">
+            <input type="text" placeholder="Search documentation" data-typeahead>
           </form>
         </div>
       </div>
@@ -26,7 +28,7 @@
     <div class="content-wrapper">
       <p id="breadcrumbs">
         <a href="index.html"> Reference</a>
-        <img id="carat" src="img/carat.png" alt="carat">
+        <img id="carat" src="img/carat.png" alt=""/>
         Enumerations  Reference
       </p>
     </div>
@@ -36,9 +38,6 @@
           <li class="nav-group-name">
             <a href="Classes.html">Classes</a>
             <ul class="nav-group-tasks">
-              <li class="nav-group-task">
-                <a href="Classes/BNBAcneRegions.html">BNBAcneRegions</a>
-              </li>
               <li class="nav-group-task">
                 <a href="Classes/BNBActionUnits.html">BNBActionUnits</a>
               </li>
@@ -243,6 +242,9 @@
               </li>
               <li class="nav-group-task">
                 <a href="Enums/BNBFaceDataSource.html">BNBFaceDataSource</a>
+              </li>
+              <li class="nav-group-task">
+                <a href="Enums/BNBFaceShapeType.html">BNBFaceShapeType</a>
               </li>
               <li class="nav-group-task">
                 <a href="Enums/BNBFeatureId.html">BNBFeatureId</a>
@@ -594,22 +596,22 @@
                       <div class="abstract">
                         <p>These modes describe the relationship between processing loop and render loop frames</p>
 
-<p></p><h3> Synchronous - Asynchronous:</h3>
- <br> - Synchronous means to output (render) a frame only once after a new frame was fully processed
- <br> - Asynchronous may render multiple (not waiting for frx), further divided into Consistent and
-    Inconsistent sub-modes. (note: Synchronous mode by definition is always Consistent.)<p></p>
+<p><h3> Synchronous - Asynchronous:</h3>
+ <br/> - Synchronous means to output (render) a frame only once after a new frame was fully processed
+ <br/> - Asynchronous may render multiple (not waiting for frx), further divided into Consistent and
+    Inconsistent sub-modes. (note: Synchronous mode by definition is always Consistent.)</p>
 
-<p></p><h3>Consistent - Inconsistent:</h3>
- <br> - Consistent renders the processed frames as-is, the only change being in the advancement of time
+<p><h3>Consistent - Inconsistent:</h3>
+ <br/> - Consistent renders the processed frames as-is, the only change being in the advancement of time
     (e.g. animations, videos), while
- <br> - Inconsistent changes the camera image for that frame to the latest available (not yet processed),
-    resulting in smoother rendering in case frx is slow or unsteady.<p></p>
+ <br/> - Inconsistent changes the camera image for that frame to the latest available (not yet processed),
+    resulting in smoother rendering in case frx is slow or unsteady.</p>
 
-<p></p><h3>“Smart” modes:</h3>
- <br> There are modes with the “when effect loaded” suffix. These modes behave exactly the same as
+<p><h3>&ldquo;Smart&rdquo; modes:</h3>
+ <br/> There are modes with the &ldquo;when effect loaded&rdquo; suffix. These modes behave exactly the same as
     corresponding modes without such suffix, but only with one difference - they are activated only
     when the effect was completely loaded.
- <br> These modes can be used to avoid image freeze during effect activation.<p></p>
+ <br/> These modes can be used to avoid image freeze during effect activation.</p>
 
                         <a href="Enums/BNBConsistencyMode.html" class="slightly-smaller">See more</a>
                       </div>
@@ -778,6 +780,47 @@
                 <li class="item">
                   <div>
                     <code>
+                    <a name="/c:@E@BNBFaceShapeType"></a>
+                    <a name="//apple_ref/objc/Enum/BNBFaceShapeType" class="dashAnchor"></a>
+                    <a class="token" href="#/c:@E@BNBFaceShapeType">BNBFaceShapeType</a>
+                    </code>
+                  </div>
+                  <div class="height-container">
+                    <div class="pointer-container"></div>
+                    <section class="section">
+                      <div class="pointer"></div>
+                      <div class="abstract">
+                        <p>Undocumented</p>
+
+                        <a href="Enums/BNBFaceShapeType.html" class="slightly-smaller">See more</a>
+                      </div>
+                      <div class="declaration">
+                        <h4>Declaration</h4>
+                        <div class="language">
+                          <p class="aside-title">Objective-C</p>
+                          <pre class="highlight objective_c"><code><span class="n">NS_ENUM</span><span class="p">(</span><span class="n">NSInteger</span><span class="p">,</span> <span class="n">BNBFaceShapeType</span><span class="p">)</span>
+<span class="p">{</span>
+    <span class="n">BNBFaceShapeTypeUndefined</span><span class="p">,</span>
+    <span class="n">BNBFaceShapeTypeHeart</span><span class="p">,</span>
+    <span class="n">BNBFaceShapeTypeOblong</span><span class="p">,</span>
+    <span class="n">BNBFaceShapeTypeOval</span><span class="p">,</span>
+    <span class="n">BNBFaceShapeTypeRound</span><span class="p">,</span>
+    <span class="n">BNBFaceShapeTypeSquare</span><span class="p">,</span>
+<span class="p">}</span></code></pre>
+
+                        </div>
+                        <div class="language">
+                          <p class="aside-title">Swift</p>
+                          <pre class="highlight swift"><code><span class="kd">enum</span> <span class="kt">BNBFaceShapeType</span> <span class="p">:</span> <span class="kt">Int</span><span class="p">,</span> <span class="kd">@unchecked</span> <span class="kt">Sendable</span></code></pre>
+
+                        </div>
+                      </div>
+                    </section>
+                  </div>
+                </li>
+                <li class="item">
+                  <div>
+                    <code>
                     <a name="/c:@E@BNBFeatureId"></a>
                     <a name="//apple_ref/objc/Enum/BNBFeatureId" class="dashAnchor"></a>
                     <a class="token" href="#/c:@E@BNBFeatureId">BNBFeatureId</a>
@@ -810,27 +853,23 @@
     <span class="n">BNBFeatureIdLips</span><span class="p">,</span>
     <span class="n">BNBFeatureIdLipsShine</span><span class="p">,</span>
     <span class="n">BNBFeatureIdGlasses</span><span class="p">,</span>
-    <span class="n">BNBFeatureIdAcne</span><span class="p">,</span>
     <span class="n">BNBFeatureIdHandSkelet</span><span class="p">,</span>
-    <span class="n">BNBFeatureIdEyeBags</span><span class="p">,</span>
-    <span class="n">BNBFeatureIdFaceAcne</span><span class="p">,</span>
+    <span class="n">BNBFeatureIdAcneSegm</span><span class="p">,</span>
     <span class="n">BNBFeatureIdRuler</span><span class="p">,</span>
     <span class="n">BNBFeatureIdHairStrand</span><span class="p">,</span>
     <span class="n">BNBFeatureIdRing</span><span class="p">,</span>
     <span class="n">BNBFeatureIdNeck</span><span class="p">,</span>
     <span class="n">BNBFeatureIdPoseEstimation</span><span class="p">,</span>
-    <span class="cm">/** Body segmentation. I.e. bodies detection on the frame. */</span>
-    <span class="n">BNBFeatureIdBody</span><span class="p">,</span>
-    <span class="cm">/** Nails segmentation and recoloring  */</span>
+    <span class="cm">/** Nails segmentation and recoloring */</span>
     <span class="n">BNBFeatureIdNails</span><span class="p">,</span>
-    <span class="cm">/** Combined face acne and eyebags removal */</span>
-    <span class="n">BNBFeatureIdAcneEyebags</span><span class="p">,</span>
     <span class="n">BNBFeatureIdHandGestures</span><span class="p">,</span>
     <span class="n">BNBFeatureIdTexturedNails</span><span class="p">,</span>
     <span class="cm">/** Activates eyes corrector */</span>
     <span class="n">BNBFeatureIdEyesCorrection</span><span class="p">,</span>
     <span class="cm">/** Activates lips corrector */</span>
     <span class="n">BNBFeatureIdLipsCorrection</span><span class="p">,</span>
+    <span class="cm">/** Activates latents corrector */</span>
+    <span class="n">BNBFeatureIdLatentsCorrection</span><span class="p">,</span>
     <span class="cm">/** Computes coefficient for light correction */</span>
     <span class="n">BNBFeatureIdLightCorrection</span><span class="p">,</span>
     <span class="cm">/** Watch try-on */</span>
@@ -857,6 +896,7 @@
     <span class="n">BNBFeatureIdEyelidsChameleon</span><span class="p">,</span>
     <span class="n">BNBFeatureIdGlassesFrameColor</span><span class="p">,</span>
     <span class="n">BNBFeatureIdEyeLenses</span><span class="p">,</span>
+    <span class="n">BNBFeatureIdFaceSkinColor</span><span class="p">,</span>
 <span class="p">}</span></code></pre>
 
                         </div>
@@ -1372,11 +1412,10 @@
           </section>
         </section>
         <section id="footer">
-          <p>© 2026 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2026-01-13)</p>
+          <p>&copy; 2026 <a class="link" href="" target="_blank" rel="external noopener"></a>. All rights reserved. (Last updated: 2026-06-25)</p>
           <p>Generated by <a class="link" href="https://github.com/realm/jazzy" target="_blank" rel="external noopener">jazzy ♪♫ v0.14.4</a>, a <a class="link" href="https://realm.io" target="_blank" rel="external noopener">Realm</a> project.</p>
         </section>
       </article>
     </div>
-  
-
-</body></html>
+  </body>
+</html>
