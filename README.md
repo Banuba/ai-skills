@@ -2,7 +2,9 @@
 
 [![Version](https://img.shields.io/badge/version-0.8.0-blue.svg)](VERSION)
 
-Banuba Agent Skills are portable knowledge packs that install into Claude Code, Codex, and Qwen Code, giving the AI assistant offline access to Banuba Face AR, Video Editor and Photo Editor SDKs documentation plus autonomous scaffolding for Face AR (Web, Android, iOS, Desktop, Flutter, React Native), VE and PE SDKs projects.
+Banuba Agent Skills are portable knowledge packs for Claude Code, Codex, and Qwen Code, giving the AI assistant offline access to Banuba Face AR, Video Editor and Photo Editor SDKs documentation plus autonomous scaffolding for Face AR, VE and PE SDK projects.
+
+Face AR SDK support is currently packaged for Claude Code and Codex. Video Editor and Photo Editor SDK skills are packaged for Claude Code, Codex, and Qwen Code.
 
 Give your AI coding assistant expert-level knowledge of Face AR SDK, Banuba Video Editor and Photo Editor SDKs. Build mobile and web apps by describing what you want.
 
@@ -12,31 +14,31 @@ Give your AI coding assistant expert-level knowledge of Face AR SDK, Banuba Vide
 
 - **Documentation lookup skills are local-first** and can answer from bundled docs. **Builder skills may access the network** to fetch versioned LLM docs, clone official samples, and install platform dependencies.
 - **Guided code generation** - a step-by-step walkthrough and explanation of SDK implementation
-- **Autonomous scaffolding** - a builder agent that creates complete Video Editor or Photo Editor projects from scratch
+- **Autonomous scaffolding** - a builder agent that creates complete Face AR, Video Editor, or Photo Editor projects from scratch
 
-## Why Agent Skills??
+## Why Agent Skills?
 
 Dropping a raw `llms.txt` dump into your assistant works once - but it bloats every prompt with the entire SDK surface, goes stale the moment Banuba ships a new release, and leaves the assistant to guess at structure. Agent skills are loaded **on demand** via slash commands, so context stays focused on the file you're actually editing. They're **versioned and pinned** to a specific SDK release, so generated code matches the API you're integrating against. And unlike a passive doc dump, skills carry **executable behavior** - the build skills can apply starter-kit templates, wire up dependencies, and scaffold an entire project, not just answer questions about one.
 
 ## Available Skills
 
-| Skill                | Description                                                                                                  |
-| -------------------- |--------------------------------------------------------------------------------------------------------------|
-| `far-general`        | Build Face AR apps on Web, Android, iOS, Desktop (C++), Flutter and React Native, get explanations, read documents, and more. |
-| `build-video-editor`           | Implement features, write code, and set up Banuba Video Editor SDK projects                                  |
-| `build-photo-editor`           | Implement features, write code, and set up Banuba Photo Editor SDK projects                                  |
-| `explain-video-editor-photo-editor-docs` | Look up Banuba Video and Photo Editor SDKs docs - configuration, UI customization, guides                    |
+| Skill                                    | Assistants                    | Description                                                                                                                   |
+|------------------------------------------|-------------------------------|-------------------------------------------------------------------------------------------------------------------------------|
+| `far-general`                            | Claude Code, Codex            | Build Face AR apps on Web, Android, iOS, Desktop (C++), Flutter and React Native, get explanations, read documents, and more. |
+| `build-video-editor`                     | Claude Code, Codex, Qwen Code | Implement features, write code, and set up Banuba Video Editor SDK projects                                                   |
+| `build-photo-editor`                     | Claude Code, Codex, Qwen Code | Implement features, write code, and set up Banuba Photo Editor SDK projects                                                   |
+| `explain-video-editor-photo-editor-docs` | Claude Code, Codex, Qwen Code | Look up Banuba Video and Photo Editor SDKs docs - configuration, UI customization, guides                                     |
 
 The build skills include starter kit templates for common platforms that let you autonomously create complete Banuba Video Editor, Photo Editor, or Face AR applications - applying templates and implementing features end-to-end.
 
 ### Supported Platforms
 
-- **Face AR SDK** - Web, Android, iOS, Desktop C++, Flutter, React Native (Claude Code only)
+- **Face AR SDK** - Web, Android, iOS, Desktop C++, Flutter, React Native (Claude Code and Codex)
 - **Video & Photo Editor SDKs** - Android, iOS, Flutter, React Native
 
 ### SDK Versions
 
-- Face AR SDK: 
+- Face AR SDK:
   - Web: v1.18.2
   - Android: v1.18.2
   - iOS: v1.18.2
@@ -133,15 +135,15 @@ Once installed, invoke skills with slash commands in your AI coding assistant:
 
 Each documentation skill bundles the complete SDK guides and API references locally. Skills read directly from these bundled files - no external services or MCP servers are required.
 
-The build skills include starter kit templates for common use cases like video editors or photo editors. They detect your project's platform and generate code accordingly.
+The build skills include starter kit templates for common use cases like Face AR apps, video editors or photo editors. They detect your project's platform and generate code accordingly.
 
 ## Project Structure
 
 ```
-.agents/skills/       Portable skill definitions (SKILL.md per skill)
+.agents/skills/       Portable skill definitions for VE/PE skills
 .claude/skills/       Claude Code skills + bundled documentation
 .codex/skills/        Codex skills + bundled documentation
-.qwen/skills/         Qwen Code skills + bundled documentation
+.qwen/skills/         Qwen Code VE/PE skills + bundled documentation
 ```
 
 The `.agents/` directory contains tool-agnostic skill definitions. The `.claude/`, `.codex/`, and `.qwen/` directories each contain the same skills and documentation packaged for their respective AI coding assistant.
