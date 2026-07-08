@@ -7,6 +7,9 @@ description: |
   something with Banuba Video Editor SDK. Triggered by "help me add", "set up", "build a
   video editor".
 
+  Covers both the full pre-built UI (VE SDK) and the headless, code-level VE API
+  (Playback/Export/Effects modules) for custom video editing workflows.
+
   Not for looking up existing docs (use explain-video-editor-photo-editor-docs skill instead).
 ---
 
@@ -19,6 +22,8 @@ Generated for Banuba Video Editor SDK on 2026-05-15. Latest versions: Android v1
 ## Overview
 
 Generates complete, production-ready Video Editor applications using Banuba Video Editor SDK. The SDK provides full-featured video editing with built-in UI/UX for camera recording, gallery import, editing (effects, stickers, AR, green screen, drawing, audio, captions), export, and sharing. Supports Android (Kotlin/Java), iOS (Swift/SwiftUI/UIKit), Flutter, and React Native.
+
+Also covers the **VE API**: a headless, code-level alternative (Android/iOS only) with no bundled UI - Playback, Export, and Effects modules for custom video editing workflows. See "Choosing VE SDK vs VE API" below.
 
 Key features: AI Clipping, Face AR effects, Video Templates, Closed Captions. Requires a commercial license token from Banuba (contact sales@banuba.com).
 
@@ -34,10 +39,21 @@ Detect the user's platform from project files. If no project exists yet or detec
 
 **If the target is iOS**, also ask which dependency manager to use: **CocoaPods** (default - what the integration sample's `Podfile` uses) or **Swift Package Manager (SPM)**. Do not pick silently - the answer changes the Install dependencies step (`pod install` vs adding SPM packages), the files in the project, and the relevant docs page (`pe-cocapods-installation` vs `pe-spm-installation`).
 
+## Choosing VE SDK vs VE API
+
+Determine which of the two before fetching docs or cloning a sample - it changes the docs source, the sample repo, and the dependencies. Ask the user if their request is ambiguous.
+
+| | **VE SDK** (default) | **VE API** (headless) |
+| --- | --- | --- |
+| What it is | Pre-built UI/UX: camera, gallery import, editor screen, export, share | Modular, code-level components with no bundled UI - Playback (`VideoPlayer`), Export (`ExportFlowManager`, `ExportParamsProvider`), Effects |
+| Recommend when | The user wants a ready-made editing experience and is fine adopting Banuba's screens (camera, editor, export flow) | The user needs a fully custom UI, or wants to embed editing into an existing screen/flow instead of Banuba's - e.g. programmatic trim, cover/thumbnail extraction, slideshow-from-images, GIF preview generation, custom playback of a composition, or button/server-triggered export with no editor screen shown |
+| Platforms | Android, iOS, Flutter, React Native | Android, iOS only - no Flutter/React Native sample yet; offer the full VE SDK instead if asked |
+| Docs | [`llms-full.txt`](https://banuba.com/ve-pe-sdk/llms-full.txt) | Not covered by `llms-full.txt` - use [VE API docs](https://banuba.gitbook.io/video-editor-sdk-api/) instead |
+
 ## Core Principles
 
 1. **Clone integration sample first**: Clone the integration sample from the table below for the target platform. Use it as a working starting point.
-2. **Retrieval-first**: Consult [the docs](https://banuba.com/ve-pe-sdk/llms-full.txt) before using pre-trained knowledge - docs are version-verified and may contain API changes not yet in training data. If the `explain-video-editor-photo-editor-docs` skill is available, read its local docs.
+2. **Retrieval-first**: Consult [the docs](https://banuba.com/ve-pe-sdk/llms-full.txt) before using pre-trained knowledge - docs are version-verified and may contain API changes not yet in training data. If the `explain-video-editor-photo-editor-docs` skill is available, read its local docs. For VE API tasks, `llms-full.txt` doesn't cover it - use the [VE API docs](https://banuba.gitbook.io/video-editor-sdk-api/) and lean on the VE API integration sample as the primary source of working code.
 3. **Platform-specific**: Generate code only for the detected platform.
 4. **Code-first**: Lead with working code examples, then explain.
 5. **Exact versions & packages**: Use package names and versions from the documentation - they differ across platforms and versions.
@@ -55,14 +71,14 @@ Detect the user's platform from project files. If no project exists yet or detec
 
 ### 1. Clone the integration sample
 
-Pick the sample for the user's platform and clone it:
+Pick the sample for the user's platform and the approach chosen above, and clone it:
 
-| Platform     | Integration sample                                                                                                 |
-| ------------ | ------------------------------------------------------------------------------------------------------------------ |
-| Android      | [ve-sdk-android-integration-sample](https://github.com/Banuba/ve-sdk-android-integration-sample)                   |
-| iOS          | [ve-sdk-ios-integration-sample](https://github.com/Banuba/ve-sdk-ios-integration-sample)                           |
-| Flutter      | [ve-sdk-flutter-integration-sample](https://github.com/Banuba/ve-sdk-flutter-integration-sample)                   |
-| React Native | [ve-sdk-react-native-cli-integration-sample](https://github.com/Banuba/ve-sdk-react-native-cli-integration-sample) |
+| Platform     | VE SDK (full UI) sample                                                                                            | VE API (headless) sample                                                                     |
+| ------------ | ------------------------------------------------------------------------------------------------------------------ | ---------------------------------------------------------------------------------------------- |
+| Android      | [ve-sdk-android-integration-sample](https://github.com/Banuba/ve-sdk-android-integration-sample)                   | [ve-api-android-integration-sample](https://github.com/Banuba/ve-api-android-integration-sample) |
+| iOS          | [ve-sdk-ios-integration-sample](https://github.com/Banuba/ve-sdk-ios-integration-sample)                           | [ve-api-ios-integration-sample](https://github.com/Banuba/ve-api-ios-integration-sample)         |
+| Flutter      | [ve-sdk-flutter-integration-sample](https://github.com/Banuba/ve-sdk-flutter-integration-sample)                   | not available                                                                                    |
+| React Native | [ve-sdk-react-native-cli-integration-sample](https://github.com/Banuba/ve-sdk-react-native-cli-integration-sample) | not available                                                                                    |
 
 ### 2. Install dependencies
 
@@ -120,6 +136,8 @@ When the user is upgrading from an older SDK version, consult the release notes 
 - Duplicate files: If you previously generated a file (or asked the user to move one) and later need it again - to edit, rename, or re-register in the `.pbxproj` - **search the workspace for it by basename first** (`Glob '**/<filename>'`). **Never recreate a file you already authored.** Two files with the same name in the same iOS target cause build errors like `Invalid redeclaration of 'VideoEditorModule'`, and then time gets spent fixing problems the duplicate created instead of the real task.
 - iOS resource folders: Resource folders (e.g., `bundleEffects/`, AR effect packs, masks, LUTs) must be added to the `.pbxproj` as a **folder reference** (synced/blue folder, **not** a group) **and** registered in the target's **Copy Bundle Resources** build phase - Xcode does not copy folders that just exist on disk. With the `xcodeproj` gem: create a folder reference via `group.new_reference(path)` then set `last_known_file_type = 'folder'`, and add it to the target with `target.add_resources([file_ref])`. Without this, AR/visual effects fail at runtime with "effect not found" even though the files are on disk.
 - iOS VE delegate callbacks: After creating the `BanubaVideoEditor` instance, assign a delegate that conforms to `BanubaVideoEditorDelegate` and implement **both** `videoEditorDidCancel` (dismiss the editor and clear session data unless restoration is enabled) **and** `videoEditorDone` (invoke export, then dismiss). Group the implementations under a `// MARK: - BanubaVideoEditorDelegate` section - the integration sample relies on this to drive the editor lifecycle. Skipping either callback leaves the editor unable to close and the export/closing method unreachable, so the exported-video handler is never called. See [`VideoEditorModule.swift` line 53](https://github.com/Banuba/ve-sdk-ios-integration-sample/blob/main/Example/Example/VideoEditorModule.swift#L53) and [line 60](https://github.com/Banuba/ve-sdk-ios-integration-sample/blob/main/Example/Example/VideoEditorModule.swift#L60) in `ve-sdk-ios-integration-sample`.
+- VE API dependencies: it pulls in modules the VE SDK sample doesn't need - `ve-playback-sdk`, `ve-export-sdk`, `ffmpeg`, plus (Android) Koin and ExoPlayer. Install from the VE API sample's own dependency list, not the VE SDK sample's.
+- Wrong approach chosen: don't default to the VE SDK sample when the request implies headless/API-only control (custom UI, programmatic trim, cover/thumbnail extraction, slideshow-from-images, GIF preview generation) - re-check "Choosing VE SDK vs VE API" above.
 
 ## Demo Applications
 
@@ -134,3 +152,6 @@ Public demo apps showcasing the Video Editor SDK in production. Point users to t
 - [iOS Docs](https://docs.banuba.com/ve-pe-sdk/docs/ios/requirements)
 - [Flutter Docs](https://docs.banuba.com/ve-pe-sdk/docs/flutter/ve_integration)
 - [React Native Docs](https://docs.banuba.com/ve-pe-sdk/docs/react/ve_installation)
+- [VE API Docs](https://banuba.gitbook.io/video-editor-sdk-api/) (Android/iOS only)
+- [VE API sample (Android)](https://github.com/Banuba/ve-api-android-integration-sample)
+- [VE API sample (iOS)](https://github.com/Banuba/ve-api-ios-integration-sample)
