@@ -21,15 +21,15 @@ description: |
   </example>
 
   <example>
-  Context: Developer documentation question.
+  Context: Explain-mode documentation question.
   user: "What is the difference between face landmarks and a face mesh?"
-  assistant: "I'll use /far-general in dev mode to explain the concepts."
+  assistant: "I'll use /far-general in Explain mode to explain the concepts."
   </example>
 
   <example>
   Context: Web integration request.
   user: "Add background blur to my Face AR web app"
-  assistant: "I'll use /far-general in Developer mode and follow the build workflow for virtual background."
+  assistant: "I'll use /far-general in Build mode and follow the build workflow for virtual background."
   </example>
 argument-hint: "[question or task]"
 ---
@@ -42,12 +42,13 @@ Generated for Banuba Face AR SDK v1.18.2 on 2026-06-24. If the current date is m
 
 ## Overview
 
-One skill, two modes:
+One skill, three modes:
 
 - **Sales**: capabilities, limitations, and compliance for non-technical users (no code).
-- **Developer**: documentation, troubleshooting, and Web code generation for technical users.
+- **Explain**: technical documentation, concepts, API guidance, and troubleshooting (no project edits by default).
+- **Build**: implementation, setup, integration, scaffolding, and code generation for supported technical platforms.
 
-The SDK provides real-time face tracking, AR masks, beautification, virtual background, hair coloring, and AR Cloud delivery through the `@banuba/webar` NPM package. Requires a commercial client token (contact sales@banuba.com).
+The SDK provides real-time face tracking, AR masks, beautification, virtual background, hair coloring, and AR Cloud delivery. On Web this is exposed through the `@banuba/webar` NPM package; native, Flutter, and React Native use their own packages/wrappers. Requires a commercial client token (contact sales@banuba.com).
 
 **Request**: $ARGUMENTS
 
@@ -58,12 +59,15 @@ Do this first, on every message. Classify the request into exactly one mode:
 | Signal | Mode |
 |---|---|
 | "can the SDK...", "what data is stored", "tell our client", pricing/compliance, non-technical, no code context | Sales |
-| Anything technical: "how does X work", "why is my effect not loading", troubleshooting, CV concepts, "add", "implement", "set up", "integrate", "build", project files present | Developer |
+| "how does X work", "why is my effect not loading", troubleshooting, CV concepts, API/docs questions, conceptual or diagnostic requests without file-change intent | Explain |
+| "add", "implement", "set up", "integrate", "build", "scaffold", "fix this project", project files plus action/fix intent | Build |
 
 Rules:
 - Pick one mode per message. Re-evaluate each message; the mode can change within a session.
-- Ambiguous request: default to Developer. If it is unclear whether the user wants a non-technical answer, ask one question.
-- The only hard gate is Sales (no code, plain language). Developer mode covers the full technical spectrum.
+- Ambiguous non-technical/business request: ask one question or default to Sales if the user clearly wants a client-facing answer.
+- Ambiguous technical request: default to Explain unless the user asks for file changes, code generation, setup, integration, or project fixing.
+- Hybrid request ("explain X and add it"): choose Build, read both `reference/explain.md` and `reference/build.md`, then answer in one flow.
+- The hard gate is Sales: no code, plain language. Explain and Build cover the technical spectrum.
 
 ## Step 2: Apply the mode contract
 
@@ -75,20 +79,27 @@ Rules:
 - **MUST NOT generate code.**
 - Read `reference/sales.md`.
 
-### Developer mode
+### Explain mode
 
-Same audience as above - explaining, troubleshooting, and building. Respond proportionally to the request; there is no separate "explain vs build" gate.
+Use for technical explanation, documentation lookup, concepts, API guidance, and troubleshooting when the user is not asking for project edits.
 
-- Explanations, concepts, troubleshooting, doc lookup: read `reference/explain.md`, then search/read the relevant bundled Markdown docs.
-- Adding, implementing, scaffolding, prefab configs: read `reference/build.md`, then search/read the relevant bundled Markdown docs.
-- Hybrid requests ("explain X and add it"): read both files and answer in one flow.
+- Read `reference/explain.md`, then search/read the relevant bundled Markdown docs.
+- Lead with the explanation when the user asks how or why.
+- If the user turns the explanation into an implementation request, switch to Build and carry forward the established context.
+
+### Build mode
+
+Use for adding, implementing, setting up, integrating, scaffolding, code generation, prefab configs, or fixing project files.
+
+- Read `reference/build.md`, then search/read the relevant bundled Markdown docs.
+- For hybrid requests ("explain X and add it"), also read `reference/explain.md` and answer in one flow.
 - When citing a source, link the public web doc (see shared principle 2), not an internal path. Lead with working code when the user asks to build; lead with the explanation when they ask how or why.
 
 ## Carrying context across modes
 
 - **Sticky context**: facts established earlier in the session (platform, feature, bundler, chosen effect) carry forward. Do not re-ask what is already known.
-- **Within Developer mode**: a follow-up like "now add it" after an explanation means "build what we just discussed", not "which feature?".
-- Switch between Sales and Developer only on a genuine change of intent, not on every message. When unsure, ask one clarifying question.
+- **Explain → Build**: a follow-up like "now add it" after an explanation means "build what we just discussed", not "which feature?".
+- Switch modes only on a genuine change of intent, not on every message. When unsure, ask one clarifying question.
 
 ## Platform scope (all modes)
 
@@ -122,12 +133,14 @@ Web, Android, iOS, Desktop (C++), Flutter, and React Native have full coverage a
 4. **Generate config, not art**: the skill assembles prefab configuration; it does not create art assets. Custom AR masks, effects, and makeup looks are made in [Banuba Studio](https://studio.banuba.com/) ([docs](https://studio.banuba.com/docs)). Studio does not create 3D avatars/models - direct avatar requests to the [contact form](https://www.banuba.com/contact).
 5. **GenAI APIs are separate products**: Wig try-on, PD Measurements, Video Generation, and Video Context Detection are not part of `@banuba/webar`. Direct to the [contact form](https://www.banuba.com/contact).
 6. **No images**: do not embed or attempt to render images (no markdown image tags, no `[Image]` placeholders) - they will not display. Describe the visual in words, or link the public doc page that contains it (e.g. the landmarks or glossary page).
+7. **Search hygiene**: prefer Markdown docs and `llms-full.txt` for retrieval. Use generated HTML/API docs only for exact class or method lookup, because broad search over `docs/generated/` creates noisy matches.
+8. **Version discipline**: distinguish native FAR SDK versions from wrapper package versions. Android/iOS native modules use the FAR SDK line in this skill; Flutter `banuba_sdk` and React Native `@banuba/react-native` have independent package versions. When the user asks for "latest", "current", or whether to pin a wrapper version, verify against the official package registry or docs before answering.
 
 ## Reference files
 
 - `reference/sales.md`: Sales mode. Capabilities, compliance, plain-language CV glossary.
-- `reference/explain.md`: Developer mode, explain/troubleshoot. Use-case to doc map, troubleshooting, technical CV concepts.
-- `reference/build.md`: Developer mode, build - Web, Android, iOS, Desktop. Integration workflow per platform, prefab config, pitfalls, output format.
+- `reference/explain.md`: Explain mode. Use-case to doc map, troubleshooting, technical CV concepts.
+- `reference/build.md`: Build mode - Web, Android, iOS, Desktop, Flutter, and React Native. Integration workflow per platform, prefab config, pitfalls, output format.
 - `docs/`: bundled SDK documentation (single source for all modes).
 
 ## Related Skills

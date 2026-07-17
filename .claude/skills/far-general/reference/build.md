@@ -1,6 +1,6 @@
-# Developer mode: build reference
+# Build mode: build reference
 
-Read this when the Developer-mode request is to add, implement, set up, integrate, or build something with Banuba Face AR SDK. Platform detection and shared principles are in the router (`SKILL.md`); this file covers the full build workflow for Web, Android, iOS, Desktop, Flutter, and React Native platforms.
+Read this when the request is in Build mode: add, implement, set up, integrate, scaffold, generate code, or fix project files with Banuba Face AR SDK. Platform detection and shared principles are in the router (`SKILL.md`); this file covers the full build workflow for Web, Android, iOS, Desktop, Flutter, and React Native platforms.
 
 ## Your role
 
@@ -35,6 +35,108 @@ Detect from workspace files, or ask one question if unclear.
 - Avoid broad `rg` over `docs/generated/` unless looking for an exact API symbol. Generated HTML produces large noisy matches and can drown out the guide pages.
 - Do not edit bundled `docs/` to correct upstream inconsistencies. Add corrective agent behavior in this `reference/` file instead.
 
+## Shared principles
+
+### Demo effects
+
+When building a project from scratch, or when the user asks to add effects without naming a specific subset, download and install all available demo ZIP effects from:
+
+> https://docs.banuba.com/far-sdk/tutorials/capabilities/demo_face_filters
+
+Use bundled Markdown first (`docs/tutorials/capabilities/demo_face_filters.md` inside this skill's docs, when available); fetch the live URL if the bundled file is missing or seems outdated. Do not state or rely on a fixed number of demo effects — the table is the source of truth.
+
+Default selection means every downloadable effect from the table except:
+- `Makeup.zip` / Virtual Makeup API effect: exclude on every platform.
+- `test_Nails.zip` / Virtual nails effect: exclude on every platform except native iOS. Include it only for native iOS projects.
+
+Each effect entry provides:
+- **Download URL**: `https://docs.banuba.com/far-sdk/generated/effects/<filename>.zip`
+- **Icon URL**: `https://docs.banuba.com/far-sdk/generated/effects/icons/<icon_filename>.png`
+- **Description** (Technologies represented column)
+- **Required modules** (Required packages column)
+
+Physically download and install the selected ZIP effects into the platform-specific effects folder (see each platform section for the exact path). For new projects where no platform path is specified yet, place `effects/` at the project root. Use the installed set for generated code and UI; do not emit a representative sample. If a single demo effect URL returns `404` or another transient download error, log that effect name, continue downloading the rest, and report the skipped effect in the final response.
+
+After unzipping each effect, verify there is no double-nesting:
+
+```bash
+ls <effects_path>/Afro/
+# Must show: config.json  images/  shaders/  ...
+# Must NOT show a subfolder named "Afro"
+```
+
+If you see `effects/Afro/Afro/`, fix it:
+
+```bash
+mv <effects_path>/Afro/Afro/* <effects_path>/Afro/ && rmdir <effects_path>/Afro/Afro
+```
+
+Always reference effects by their local path (e.g. `effects/TrollGrandma`). Never pass the download URL directly to the player or Effect constructor — download first, then use the local path.
+
+### Multi-face
+
+Always confirm the client token includes Max Faces support before implementing multi-face UI. Without it, the SDK silently tracks only one face — no runtime workaround exists on any platform. Banuba Studio produces single-face effects only. For multi-face effects, direct to the [contact form](https://www.banuba.com/contact).
+
+### AR Cloud
+
+For remote effect delivery on any platform, read `docs/tutorials/development/guides/ar_cloud.md`.
+
+### Custom effects
+
+The agent configures prefab parameters at runtime — it cannot author effect bundles. Custom AR masks, makeup looks, and 3D assets are created in [Banuba Studio](https://studio.banuba.com/). 3D avatars/models are not supported in Studio — direct to the [contact form](https://www.banuba.com/contact).
+
+### Mobile permissions
+
+Add the following permissions to every mobile project (Android, iOS, Flutter, React Native).
+
+**Android** — add inside `<manifest>` in `AndroidManifest.xml`:
+
+```xml
+<uses-permission android:name="android.permission.CAMERA" />
+<uses-permission android:name="android.permission.RECORD_AUDIO" />
+```
+
+Flutter additionally requires (via `permission_handler`):
+
+```xml
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+```
+
+React Native: `@banuba/react-native` declares CAMERA and RECORD_AUDIO in its own merged manifest — add only `INTERNET`:
+
+```xml
+<uses-permission android:name="android.permission.INTERNET" />
+```
+
+**iOS** — add to `Info.plist`:
+
+```xml
+<key>NSCameraUsageDescription</key>
+<string>Camera access required to render AR effects</string>
+<key>NSMicrophoneUsageDescription</key>
+<string>Micro access required to record video</string>
+```
+
+Flutter additionally requires:
+
+```xml
+<key>NSPhotoLibraryUsageDescription</key>
+<string>Gallery access required to pick image for processing</string>
+```
+
+Missing `NSCameraUsageDescription` causes a crash on iOS 14+.
+
+### Token security
+
+Never check the client token into source control on any platform.
+
+### Output format
+
+Complete files or diffs, numbered steps, working code first then explanation.
+
+---
+
 ## Web
 
 ### Prerequisites
@@ -44,23 +146,13 @@ Detect from workspace files, or ask one question if unclear.
 3. Browser with [WebGL 2.0](https://caniuse.com/#feat=webgl2) support.
 4. A bundler (Vite, Rollup, Webpack) or plain `<script type="module">` via jsDelivr CDN for prototyping.
 
-### Default effects policy
+### Effects
 
-**When the user creates a new project OR asks to add effects without listing specific ones**, include the full set of publicly available demo effects. The canonical source is:
+Effects path: `public/effects/`. Download icons into `public/effects/icons/` and use local icon URLs in the UI.
 
-> https://docs.banuba.com/far-sdk/tutorials/capabilities/demo_face_filters
+See **Shared principles → Demo effects** for the full download and installation procedure.
 
-That page is also bundled locally at `docs/tutorials/capabilities/demo_face_filters.md`. It contains the complete list (40+ effects). Use the bundled file first; if it seems outdated, fetch the live URL.
-
-Each effect entry provides:
-- **Download URL**: `https://docs.banuba.com/far-sdk/generated/effects/<filename>.zip`
-- **Icon URL**: `https://docs.banuba.com/far-sdk/generated/effects/icons/<icon_filename>.png`
-- **Description** (Technologies represented column)
-- **Required modules** (Required packages column)
-
-When generating the effect list in code, emit every row from the table - not a representative sample. Build the UI so each effect shows its **icon**, **name**, and **description**. Load only the union of required modules for the active effect on swap; do not preload all modules at once.
-
-If the user specifies a subset of effects explicitly, use only that subset. Otherwise, default to the full list.
+Load only the union of required modules for the active effect on swap; do not preload all modules at once.
 
 ### Workflow
 
@@ -84,10 +176,10 @@ npm install @banuba/webar
 Treat [quickstart-web](https://github.com/Banuba/quickstart-web) as a reference for patterns. Files worth mirroring:
 
 - `BanubaPlayer.js`: the Player lifecycle (Player.create, Module.preload, applyEffect, Webcam, Dom.render). Adapt to the user's structure and drop unused modules.
-- `range-requests.sw.js`: only include this if the project loads video textures via external HTTP URLs. Do **not** copy it for projects using zip-packed effects (all demo effects) - combining it with `proxyVideoRequestsTo` breaks blob-URL video textures on Safari.
+- `range-requests.sw.js`: only include this if the project loads video textures via external HTTP URLs. Do **not** copy it for projects using standard zip-packed demo effects - combining it with `proxyVideoRequestsTo` breaks blob-URL video textures on Safari.
 - Token-in-separate-file pattern (`BanubaClientToken.js` exporting the token).
 
-To inspect a quickstart file without polluting the workspace, read raw GitHub URLs via WebFetch (`https://raw.githubusercontent.com/Banuba/quickstart-web/master/<file>`) or clone into a temp directory outside the user's project. Never clone `Banuba/quickstart-web` into the user's project root.
+To inspect a quickstart file without polluting the workspace, read raw GitHub URLs via web browsing or raw URL fetch (`https://raw.githubusercontent.com/Banuba/quickstart-web/master/<file>`) or clone into a temp directory outside the user's project. Never clone `Banuba/quickstart-web` into the user's project root.
 
 #### 2. Fetch and search docs
 
@@ -166,7 +258,7 @@ Morphing:
 1. Banuba client token (mandatory).
 2. Android Studio installed.
 3. Android API level 26+ (Android 8.0 minimum). See `docs/tutorials/capabilities/system_requirements.md`.
-4. `local.properties` must exist in the project root with the Android SDK path. Check with Bash - create if missing:
+4. `local.properties` must exist in the project root with the Android SDK path. Check with shell - create if missing:
 
 ```bash
 test -f local.properties || echo "sdk.dir=$ANDROID_HOME" > local.properties
@@ -176,13 +268,13 @@ If `$ANDROID_HOME` is not set, ask the user for the path (e.g. `/Users/<name>/Li
 
 ### Agent action checklist
 
-Execute these steps in order. Each step specifies which tool to use.
+Execute these steps in order. Each step specifies whether to run a shell command or edit files.
 
 > **Never modify or generate `res/mipmap/ic_launcher*` files.** Touching launcher icons causes resource merge crashes. Leave them as-is.
 
 #### 1. Pick the integration path
 
-**Path A - new project** (Bash):
+**Path A - new project** (shell):
 
 ```bash
 git clone https://github.com/Banuba/banuba-sdk-android-samples
@@ -192,98 +284,25 @@ Open the `camera` sample in Android Studio. Replace the client token, then click
 
 **Path B - existing project**: do not clone over it. Continue with steps 2–6 below.
 
-#### 2. Add the Banuba Maven repository (Edit tool)
+#### 2. Add Maven repository and SDK dependencies (file edit)
 
-In `settings.gradle.kts`, add the Banuba Maven repository inside `dependencyResolutionManagement`:
+See `docs/tutorials/development/basic_integration/android.md` — Installation section for `settings.gradle.kts` and `build.gradle.kts` snippets.
 
-```kotlin
-dependencyResolutionManagement {
-    repositories {
-        google()
-        mavenCentral()
-        maven {
-            name = "BanubaMaven"
-            url = uri("https://nexus.banuba.net/repository/maven-releases")
-        }
-    }
-}
-```
+Use `bnbVersion = "1.18.2"`. Only include modules needed for active effects — check the Required packages column from the demo effects table.
 
-#### 3. Add SDK dependencies (Edit tool)
-
-In `app/build.gradle.kts`, add dependencies. Use `bnbVersion = "1.18.2"`. Only include modules needed for active effects:
-
-```kotlin
-val bnbVersion = "1.18.2"
-val bnbComSdk = "com.banuba.sdk"
-
-dependencies {
-    api("$bnbComSdk:sdk_api:$bnbVersion")
-    api("$bnbComSdk:face_tracker:$bnbVersion")   // required for face effects
-    api("$bnbComSdk:background:$bnbVersion")      // required for background effects
-    api("$bnbComSdk:makeup:$bnbVersion")          // required for makeup/beauty
-    api("$bnbComSdk:eyes:$bnbVersion")
-}
-```
-
-Then trigger Gradle sync (Bash):
+Then trigger Gradle sync (shell):
 
 ```bash
 ./gradlew dependencies --configuration releaseRuntimeClasspath
 ```
 
-#### 4. Download effects (Bash)
+#### 4. Download effects (shell)
 
-**Always do this step - do not skip it even if the project already has some effects in `assets/`.**
+Effects path: `app/src/main/assets/effects/`. Each selected entry's Required packages column lists the modules to add to dependencies in step 3.
 
-Effect bundles are platform-agnostic: the same zip files work on Web, Android, iOS, and Desktop. The canonical source is `docs/tutorials/capabilities/demo_face_filters.md` (40+ effects). Each entry provides:
-- **Download URL**: `https://docs.banuba.com/far-sdk/generated/effects/<filename>.zip`
-- **Required modules** (Required packages column) - add to dependencies in step 3
+See **Shared principles → Demo effects** for the full download and installation procedure.
 
-**When the user does not specify effects explicitly**, download the full list. Read `docs/tutorials/capabilities/demo_face_filters.md`, then for each effect (Bash):
-
-```bash
-mkdir -p app/src/main/assets/effects
-cd app/src/main/assets/effects
-
-# repeat for each effect from demo_face_filters.md:
-curl -L "https://docs.banuba.com/far-sdk/generated/effects/<filename>.zip" -o <filename>.zip
-unzip -q <filename>.zip
-rm <filename>.zip
-
-cd -
-```
-
-> After unzipping, verify immediately (Bash):
-> ```bash
-> ls app/src/main/assets/effects/Afro/
-> # Must show: config.json  images/  shaders/  ...
-> # Must NOT show a subfolder named "Afro"
-> ```
-> If you see `effects/Afro/Afro/`, fix with: `mv effects/Afro/Afro/* effects/Afro/ && rmdir effects/Afro/Afro`
-
-**Required folder structure** - one flat level only, no nesting:
-```
-assets/effects/
-  Afro/          ← effect folder directly here
-    config.json
-    ...
-  TrollGrandma/
-    config.json
-    ...
-```
-
-Never create `assets/effects/effects/` or any intermediate folder - the SDK resolves effect names directly against the `effects/` directory. Verify after unzip (Bash):
-
-```bash
-ls app/src/main/assets/effects/
-```
-
-Each entry must be a folder (one level), not a zip or a nested subdirectory.
-
-If the user specifies a subset, download only that subset. Effects must live in `assets/effects/` - wrong path causes silent no-load.
-
-#### 5. Configure the client token (Write tool)
+#### 5. Configure the client token (file creation or edit)
 
 Write the token to `BanubaClientToken.kt`:
 
@@ -291,48 +310,15 @@ Write the token to `BanubaClientToken.kt`:
 <#Place your token here#>
 ```
 
-Then initialize in `Application.onCreate()` (Edit tool):
+Then initialize in `Application.onCreate()` (file edit):
 
 ```kotlin
 BanubaSdkManager.initialize(this, banubaClientToken)
 ```
 
-#### 6. Core integration pattern (Write tool)
+#### 6. Core integration pattern (file creation or edit)
 
-Write `MainActivity.kt`:
-
-```kotlin
-class MainActivity : BaseActivity(R.layout.main) {
-
-    private val surfaceView by lazy(LazyThreadSafetyMode.NONE) {
-        findViewById<SurfaceView>(R.id.surfaceView)
-    }
-
-    private val player by lazy(LazyThreadSafetyMode.NONE) { Player() }
-    private val cameraDevice by lazy(LazyThreadSafetyMode.NONE) {
-        CameraDevice(requireNotNull(this.applicationContext), this@MainActivity)
-    }
-    private val surfaceOutput by lazy(LazyThreadSafetyMode.NONE) {
-        SurfaceOutput(surfaceView.holder)
-    }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        player.use(CameraInput(cameraDevice), surfaceOutput)
-        surfaceView.setOnTouchListener(PlayerTouchListener(this, player))
-    }
-
-    override fun onStart() { super.onStart(); cameraDevice.start() }
-    override fun onResume() { super.onResume(); player.play() }
-    override fun onPause() { super.onPause(); player.pause() }
-    override fun onStop() { cameraDevice.stop(); super.onStop() }
-
-    override fun onDestroy() {
-        cameraDevice.close(); surfaceOutput.close(); player.close()
-        super.onDestroy()
-    }
-}
-```
+See `docs/tutorials/development/basic_integration/android.md` for the full `MainActivity.kt` implementation and dependency setup.
 
 Loading / clearing effects:
 
@@ -364,11 +350,11 @@ sudo gem install cocoapods
 
 ### Agent action checklist
 
-Execute these steps in order. Each step specifies which tool to use.
+Execute these steps in order. Each step specifies whether to run a shell command or edit files.
 
 #### 1. Pick the integration path
 
-**Path A - new project** (Bash):
+**Path A - new project** (shell):
 
 ```bash
 git clone https://github.com/Banuba/banuba-sdk-ios-samples
@@ -378,7 +364,7 @@ Open the `camera` sample workspace in Xcode. Insert the token in `common/common/
 
 **Path B - existing project or from scratch**: do not clone over it. Continue with steps 2–6 below.
 
-#### 2. Create the Podfile (Write tool → then Bash)
+#### 2. Create the Podfile (file creation or edit → then shell)
 
 Detect the Xcode target name from `*.xcodeproj` or ask the user. Then **write** `Podfile` to the project root:
 
@@ -401,7 +387,7 @@ end
 
 > **Critical**: correct pod names are `BNBEffectPlayer`, `BNBSdkApi`, `BNBSdkCore`, `BNBFaceTracker`, `BNBBackground`, `BNBMakeup`. Names like `BanubaEffectPlayer` or `BanubaSdk` do not exist - `pod install` will fail.
 
-Then run (Bash):
+Then run (shell):
 
 ```bash
 pod install
@@ -411,7 +397,21 @@ Always open `.xcworkspace` (not `.xcodeproj`) afterward.
 
 > **SPM alternative**: `https://github.com/Banuba/BNBSdkApi-iOS-spm` and `https://github.com/Banuba/BNBSdkCore-iOS-spm`. Do **not** mix SPM and CocoaPods for Banuba packages in the same target.
 
-#### 3. Create the client token file (Write tool)
+#### 3. Disable app-target user script sandboxing (file edit)
+
+For CocoaPods projects, ensure the **app target** has `ENABLE_USER_SCRIPT_SANDBOXING = NO`. CocoaPods uses shell scripts and `rsync` in `[CP] Embed Pods Frameworks`; Xcode's user script sandbox can block Banuba framework resources such as `BNBBackground.framework/bnb-resources`.
+
+For XcodeGen projects, add this setting to the app target:
+
+```yaml
+settings:
+  base:
+    ENABLE_USER_SCRIPT_SANDBOXING: NO
+```
+
+For existing `.xcodeproj` projects, set **Build Settings → Build Options → User Script Sandboxing → No** on the app target, or patch both Debug and Release build configurations in `project.pbxproj`.
+
+#### 4. Create the client token file (file creation or edit)
 
 Write `BanubaClientToken.swift` to the Swift sources folder:
 
@@ -419,29 +419,13 @@ Write `BanubaClientToken.swift` to the Swift sources folder:
 let banubaClientToken = "<#Place your token here#>"
 ```
 
-#### 4. Download effects (Bash)
+#### 5. Download effects (shell)
 
-Clone the samples repo into a temp directory and copy the effects folder to the project root as a sibling of the Swift sources folder - **not inside it**:
+Effects path: `effects/` — sibling of `MyApp/`, NOT inside the Swift sources folder (causes "Multiple commands produce … config.json" build errors).
 
-```bash
-git clone --depth 1 https://github.com/Banuba/banuba-sdk-ios-samples /tmp/banuba-ios-samples
-cp -r /tmp/banuba-ios-samples/camera/effects ./effects
-rm -rf /tmp/banuba-ios-samples
-```
+See **Shared principles → Demo effects** for the full download and installation procedure.
 
-The resulting layout must be:
-
-```
-MyApp.xcodeproj
-MyApp/               ← Swift sources: *.swift, *.storyboard, Info.plist
-effects/             ← sibling of MyApp/, NOT inside it
-  Afro/
-  blur_bg/
-```
-
-Placing effects inside the sources folder causes "Multiple commands produce … config.json" build errors.
-
-#### 5. Register effects folder in the Xcode project (Bash)
+#### 6. Register effects folder in the Xcode project (shell)
 
 The `effects/` folder must be added as a **folder reference** (blue folder, `lastKnownFileType = folder`) - not a group. Do this automatically via the `xcodeproj` Ruby gem:
 
@@ -449,7 +433,7 @@ The `effects/` folder must be added as a **folder reference** (blue folder, `las
 gem install xcodeproj 2>/dev/null || true
 ```
 
-Then write and run a Ruby script (Write tool → Bash):
+Then write and run a Ruby script (file creation or edit → shell):
 
 ```ruby
 # add_effects_ref.rb
@@ -482,7 +466,7 @@ puts "Done - effects folder reference added to #{proj_path}"
 ruby add_effects_ref.rb
 ```
 
-After running, verify (Bash):
+After running, verify (shell):
 
 ```bash
 grep -r "lastKnownFileType = folder" *.xcodeproj/project.pbxproj | grep effects
@@ -502,200 +486,19 @@ If the grep returns a line, the reference is correct.
 >         buildPhase: resources
 > ```
 
-#### 6. Initialize the SDK in AppDelegate (Write tool)
+#### 7. Initialize the SDK and implement the view controller (file creation or edit)
 
-Write or update `AppDelegate.swift`:
+See `docs/tutorials/development/basic_integration/ios.md` for the full `AppDelegate.swift` and `ViewController.swift` implementation.
 
-```swift
-import UIKit
-import BNBSdkApi
+**Critical**: `EffectPlayerView` **must** be the root view in the storyboard, connected as an `@IBOutlet`. Do **not** instantiate it with `EffectPlayerView()` in code — that produces `frame = .zero` and effects are never rendered (camera shows, AR is invisible).
 
-@main
-class AppDelegate: UIResponder, UIApplicationDelegate {
-    var window: UIWindow?
+In `Main.storyboard`, set `customClass="EffectPlayerView"` and `customModule="BNBSdkApi"` on the root view. Do **not** add `customModuleProvider="target"` — that attribute is only for app-target classes.
 
-    func application(
-        _ application: UIApplication,
-        didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?
-    ) -> Bool {
-        BanubaSdkManager.initialize(
-            resourcePath: [
-                Bundle.main.bundlePath + "/effects",
-                Bundle.main.bundlePath
-            ],
-            clientTokenString: banubaClientToken
-        )
-        return true
-    }
+Add `NSCameraUsageDescription` to `Info.plist` (see **Shared principles → Mobile permissions**).
 
-    func applicationWillTerminate(_ application: UIApplication) {
-        BanubaSdkManager.deinitialize()
-    }
-}
-```
+Always generate the `effects` array from the actual folder names present in `effects/` (via `ls`). Include `("", "None")` as the first entry so the user can clear the active effect.
 
-#### 7. Wire up EffectPlayerView and implement the view controller (Write tool)
-
-**Critical**: `EffectPlayerView` **must** be the root view in the storyboard, connected as an `@IBOutlet`. Do **not** instantiate it with `EffectPlayerView()` in code - that produces `frame = .zero` and effects are never rendered (camera shows, AR is invisible).
-
-Write `Main.storyboard` (or patch the existing one) so the view controller's root view has `customClass="EffectPlayerView"` and `customModule="BNBSdkApi"`:
-
-```xml
-<viewController customClass="ViewController" customModule="MyApp" customModuleProvider="target">
-    <view key="view"
-          customClass="EffectPlayerView"
-          customModule="BNBSdkApi">
-        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-    </view>
-    <connections>
-        <outlet property="effectView" destination="<view-id>" id="<outlet-id>"/>
-    </connections>
-</viewController>
-```
-
-Add `NSCameraUsageDescription` to `Info.plist` (Write or Edit tool).
-
-Write `ViewController.swift` - includes camera setup **and** an interactive effect picker (horizontal scroll at the bottom). Populate `effects` from the actual folder names copied in step 4; always include a `("", "None")` entry first so the user can clear the effect.
-
-```swift
-import UIKit
-import BNBSdkApi
-import BNBSdkCore
-
-class ViewController: UIViewController {
-
-    @IBOutlet weak var effectView: EffectPlayerView!
-
-    // Populate from the effects/ folder copied in step 4.
-    // First entry ("", "None") clears the active effect.
-    private let effects: [(name: String, label: String)] = [
-        ("", "None"),
-        ("CartoonOctopus", "Octopus"),
-        ("Clubs", "Clubs"),
-        ("TrollGrandma", "Troll"),
-        ("RainbowBeauty", "Rainbow"),
-        ("RegularBlur", "Blur"),
-        ("Sunset", "Sunset"),
-        // add remaining effect folder names here
-    ]
-
-    private var selectedIndex = 0
-
-    private let cameraDevice = CameraDevice(
-        cameraMode: .FrontCameraSession,
-        captureSessionPreset: .hd1280x720
-    )
-    private var player: Player?
-
-    private lazy var collectionView: UICollectionView = {
-        let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: 72, height: 72)
-        layout.minimumLineSpacing = 8
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 16, bottom: 0, right: 16)
-        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.backgroundColor = UIColor.black.withAlphaComponent(0.45)
-        cv.layer.cornerRadius = 16
-        cv.showsHorizontalScrollIndicator = false
-        cv.register(EffectCell.self, forCellWithReuseIdentifier: EffectCell.id)
-        cv.dataSource = self
-        cv.delegate = self
-        cv.translatesAutoresizingMaskIntoConstraints = false
-        return cv
-    }()
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupPlayer()
-        setupCollectionView()
-    }
-
-    private func setupPlayer() {
-        player = Player()
-        player?.use(input: Camera(cameraDevice: cameraDevice))
-        player?.use(outputs: [effectView])
-        player?.play()
-        cameraDevice.start()
-    }
-
-    private func setupCollectionView() {
-        view.addSubview(collectionView)
-        NSLayoutConstraint.activate([
-            collectionView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 12),
-            collectionView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -12),
-            collectionView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -12),
-            collectionView.heightAnchor.constraint(equalToConstant: 88),
-        ])
-    }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        player?.pause()
-        cameraDevice.stop()
-    }
-}
-
-extension ViewController: UICollectionViewDataSource, UICollectionViewDelegate {
-
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        effects.count
-    }
-
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: EffectCell.id, for: indexPath) as! EffectCell
-        cell.configure(label: effects[indexPath.item].label, selected: indexPath.item == selectedIndex)
-        return cell
-    }
-
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        guard indexPath.item != selectedIndex else { return }
-        selectedIndex = indexPath.item
-        collectionView.reloadData()
-        player?.load(effect: effects[indexPath.item].name)
-    }
-}
-
-// MARK: - Cell
-
-private final class EffectCell: UICollectionViewCell {
-    static let id = "EffectCell"
-
-    private let label: UILabel = {
-        let l = UILabel()
-        l.textAlignment = .center
-        l.font = .systemFont(ofSize: 11, weight: .medium)
-        l.textColor = .white
-        l.numberOfLines = 2
-        l.translatesAutoresizingMaskIntoConstraints = false
-        return l
-    }()
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        contentView.layer.cornerRadius = 10
-        contentView.clipsToBounds = true
-        contentView.addSubview(label)
-        NSLayoutConstraint.activate([
-            label.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 4),
-            label.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -4),
-            label.centerYAnchor.constraint(equalTo: contentView.centerYAnchor),
-        ])
-    }
-
-    required init?(coder: NSCoder) { fatalError() }
-
-    func configure(label text: String, selected: Bool) {
-        label.text = text
-        contentView.backgroundColor = selected
-            ? UIColor.systemBlue
-            : UIColor.white.withAlphaComponent(0.15)
-    }
-}
-```
-
-> **Effect picker rule**: always generate the `effects` array from the actual folder names present in `effects/` (discovered in step 4 via `ls`). Never hardcode a partial list. Include `("", "None")` as the first entry.
-
-#### 8. Verify the build (Bash)
+#### 9. Verify the build (shell)
 
 After building in Xcode, check the effects folder is present in the app bundle:
 
@@ -716,6 +519,7 @@ If nothing is found, the folder reference was not registered correctly - re-run 
 | Wrong xcodegen syntax for folder reference | Effects folder absent from bundle, all effects silently fail | Use `type: folder` + `buildPhase: resources` under `sources:`, not `resources:` with `type: folder-reference` |
 | Effects folder not in bundle | SDK initializes, camera shows, `player.load(effect:)` returns `nil` silently | Verify `<App>.app/effects/` exists in DerivedData after build; if absent, fix the Copy Bundle Resources phase |
 | Opening `.xcodeproj` instead of `.xcworkspace` after `pod install` | Linker errors, missing Banuba frameworks | Always open `.xcworkspace` |
+| App target user script sandboxing enabled | `Sandbox: rsync deny file-read-data` / `file-write-create` in `[CP] Embed Pods Frameworks`, often on `BNBBackground.framework/bnb-resources` | Set `ENABLE_USER_SCRIPT_SANDBOXING = NO` on the app target, then clean and rebuild |
 | Mixing SPM and CocoaPods for Banuba pods | Duplicate symbol errors | Pick one package manager for all Banuba pods |
 | Resource paths missing from `BanubaSdkManager.initialize` | Effects silently fail to load | Include both `Bundle.main.bundlePath + "/effects"` and `Bundle.main.bundlePath` |
 | Multi-face without token support | Only one face tracked, no error | Confirm token includes Max Faces before implementing multi-face UI |
@@ -734,9 +538,9 @@ If nothing is found, the folder reference was not registered correctly - re-run 
 
 ### Workflow
 
-**Path A - new project (recommended)**: clone the quickstart — it is the fastest path to a running C++ app and is the recommended scaffold (a minimal working app, not a large template). Proceed with steps 1–7 below.
+**Path A - new project (recommended)**: clone the quickstart — it is the fastest path to a running C++ app and is the recommended scaffold (a minimal working app, not a large template). Proceed with steps 1–7 below, including step 3a.
 
-**Path B - new project from scratch**: if the user explicitly wants an empty project without the quickstart scaffold, you may set one up using the quickstart as a structural reference (CMakeLists.txt layout, SDK include/link pattern, main loop structure). Use WebFetch to read `https://raw.githubusercontent.com/Banuba/quickstart-desktop-cpp/master/CMakeLists.txt` and `main.cpp` before generating. Still execute steps 3–4 (SDK download and token) as written.
+**Path B - new project from scratch**: if the user explicitly wants an empty project without the quickstart scaffold, you may set one up using the quickstart as a structural reference (CMakeLists.txt layout, SDK include/link pattern, main loop structure). Use web browsing or raw URL fetch to read `https://raw.githubusercontent.com/Banuba/quickstart-desktop-cpp/master/CMakeLists.txt` and `main.cpp` before generating. Still execute steps 3, 3a, and 4 (SDK download, demo effects, and token) as written.
 
 For all other cases ("integrate into existing C++ project", user already has a project): skip the clone step and start from step 3.
 
@@ -751,7 +555,7 @@ The target OS is what the app will run on, not necessarily the machine you're wo
 
 > "Don't download the Windows SDK" means Microsoft's Visual C++ toolchain - not the Banuba SDK. Always download the Banuba Face AR SDK binaries (step 3) regardless.
 
-#### 2. Clone the quickstart (Bash)
+#### 2. Clone the quickstart (shell)
 
 ```bash
 git clone --recursive https://github.com/Banuba/quickstart-desktop-cpp "<project_dir>"
@@ -759,7 +563,7 @@ git clone --recursive https://github.com/Banuba/quickstart-desktop-cpp "<project
 
 If the folder already exists and isn't empty, clone into `<project_dir>/quickstart-desktop-cpp` instead.
 
-#### 3. Download Banuba Face AR SDK binaries (Bash)
+#### 3. Download Banuba Face AR SDK binaries (shell)
 
 **Execute this step immediately after cloning - do not describe it, do not ask the user to do it manually.** The project will not build without these binaries.
 
@@ -800,7 +604,13 @@ ls "<project_dir>/bnb_sdk"
 
 If the page scrape returns nothing, ask the user to open https://github.com/Banuba/FaceAR-SDK-desktop-releases/releases and paste the direct download URL - then run the curl yourself.
 
-#### 4. Insert the client token (Edit tool)
+#### 3. Download demo effects (shell)
+
+Effects path: `<project_dir>/resources/effects/`. Runtime paths use `effects/<EffectName>`.
+
+See **Shared principles → Demo effects** for the full download and installation procedure.
+
+#### 4. Insert the client token (file edit)
 
 Edit `<project_dir>/helpers/src/BanubaClientToken.hpp` - replace the placeholder with the token the user provided in step 1:
 
@@ -808,12 +618,12 @@ Edit `<project_dir>/helpers/src/BanubaClientToken.hpp` - replace the placeholder
 #define BNB_CLIENT_TOKEN "<user_token>"
 ```
 
-Never check this file into source control. Add it to `.gitignore` (Edit tool):
+Never check this file into source control. Add it to `.gitignore` (file edit):
 ```
 helpers/src/BanubaClientToken.hpp
 ```
 
-#### 5. Generate the Xcode / VS project (Bash)
+#### 5. Generate the Xcode / VS project (shell)
 
 **macOS**:
 ```bash
@@ -829,7 +639,7 @@ mkdir build && cd build
 cmake -A x64 ..
 ```
 
-Verify (Bash):
+Verify (shell):
 ```bash
 # macOS
 ls "<project_dir>/build" | grep xcodeproj
@@ -837,7 +647,7 @@ ls "<project_dir>/build" | grep xcodeproj
 ls "<project_dir>/build" | grep sln
 ```
 
-#### 6. Copy SDK DLLs next to the executable - Windows only (Bash)
+#### 6. Copy SDK DLLs next to the executable - Windows only (shell)
 
 On Windows, the app crashes at launch if the SDK DLLs are not next to the `.exe`. Copy them now - before the user tries to run:
 
@@ -859,7 +669,7 @@ find "<project_dir>/build" -name "*.exe" -exec dirname {} \; 2>/dev/null | sort 
 ```
 Then copy to each found directory.
 
-#### 7. Open the project for the user (Bash)
+#### 7. Open the project for the user (shell)
 
 **macOS** - open the generated Xcode project:
 ```bash
@@ -874,52 +684,9 @@ start "<project_dir>/build/quickstart-desktop-cpp.sln"
 Then tell the user:
 > "Project is ready. On Windows, open the solution in Visual Studio, select the `realtime-camera-preview` project, set it as startup project, and run. SDK DLLs are already copied next to the executable. Your token is already inserted."
 
-#### 7. Core integration pattern (reference only - quickstart already contains this)
+#### 8. Core integration pattern (reference only - quickstart already contains this)
 
-```cpp
-#include <bnb/player_api/interfaces/render_target/metal_render_target.hpp>
-using namespace bnb::interfaces;
-
-namespace {
-    render_backend_type render_backend = BNB_APPLE
-        ? render_backend_type::metal
-        : render_backend_type::opengl;
-}
-
-int main() {
-    // Initialize SDK - must be first
-    bnb::utility utility({bnb::sdk_resources_path(), BNB_RESOURCES_FOLDER}, BNB_CLIENT_TOKEN);
-
-    auto renderer = std::make_shared<GLFWRenderer>(render_backend);
-
-    bnb::player_api::render_target_sptr render_target;
-    if (render_backend == render_backend_type::opengl)
-        render_target = bnb::player_api::opengl_render_target::create();
-    else
-        render_target = bnb::player_api::metal_render_target::create();
-
-    auto player = bnb::player_api::player::create(30, render_target, renderer);
-    auto input  = bnb::player_api::live_input::create();
-    auto output = bnb::player_api::window_output::create(renderer->get_native_surface());
-
-    player->use(input).use(output);
-    player->load_async("effects/TrollGrandma");
-
-    auto camera = bnb::create_camera_device([input](bnb::full_image_t image) {
-        auto now_us = std::chrono::duration_cast<std::chrono::microseconds>(
-            std::chrono::high_resolution_clock::now().time_since_epoch()).count();
-        input->push(image, now_us);
-    }, 0);
-
-    renderer->get_window()->set_callbacks(
-        [output](uint32_t w, uint32_t h) { output->set_frame_layout(0, 0, w, h); },
-        nullptr
-    );
-
-    renderer->get_window()->show_window_and_run_events_loop();
-    return 0;
-}
-```
+See `docs/tutorials/development/basic_integration/desktop.md` — section "5. Initialize Banuba SDK..." for the full `main.cpp` implementation.
 
 Loading / clearing effects:
 
@@ -951,13 +718,13 @@ player->load_async("");                       // clear
 
 #### 1. Pick the integration path
 
-**Path A - new project** (Bash):
+**Path A - new project** (shell):
 ```bash
 git clone https://github.com/Banuba/banuba-sdk-flutter
 ```
 Open `example/` in your IDE. Insert the token in `example/lib/main.dart`, run `flutter pub get && flutter run`.
 
-**Path B - new project from scratch** (Bash):
+**Path B - new project from scratch** (shell):
 ```bash
 flutter create <appname>
 cd <appname>
@@ -966,55 +733,22 @@ Then continue with steps 2–8 below.
 
 **Path C - existing project**: continue with steps 2–8 below.
 
-#### 2. Add SDK packages (Bash)
+#### 2. Add SDK packages (shell)
 
 ```bash
 flutter pub add banuba_sdk
 flutter pub add permission_handler
 ```
 
-#### 3. Configure Android (Edit tool)
+#### 3. Configure Android (file edit)
 
-In `android/build.gradle`, add `bnb_sdk_version` to the `ext` block:
-
-```groovy
-ext {
-    bnb_sdk_version = '1.18.+'
-}
-```
-
-In `android/app/build.gradle`:
-
-```groovy
-android {
-    defaultConfig {
-        minSdkVersion 26
-        ndk { abiFilters 'armeabi-v7a', 'arm64-v8a' }
-    }
-}
-
-dependencies {
-    implementation "com.banuba.sdk:face_tracker:$project.bnb_sdk_version"
-    implementation "com.banuba.sdk:background:$project.bnb_sdk_version"
-}
-
-task copyEffects {
-    copy {
-        from flutter.source + '/effects'
-        into 'src/main/assets/bnb-resources/effects'
-    }
-}
-
-gradle.projectsEvaluated {
-    preBuild.dependsOn(copyEffects)
-}
-```
+See `docs/tutorials/development/basic_integration/flutter.md` — section "2. Android" for `android/build.gradle` and `android/app/build.gradle` snippets including the `copyEffects` task.
 
 > Note: `flutter.source` resolves correctly only after the `flutter { source '../..' }` block is present in `android/app/build.gradle`. The Flutter Gradle plugin adds it automatically when you run `flutter pub add banuba_sdk`.
 
-#### 4. Configure iOS (Edit tool → Bash)
+#### 4. Configure iOS (file edit → shell)
 
-Replace the contents of `ios/Podfile` with (Edit tool):
+Replace the contents of `ios/Podfile` with (file edit):
 
 ```ruby
 ENV['COCOAPODS_DISABLE_STATS'] = 'true'
@@ -1053,126 +787,26 @@ end
 
 > `GCC_PREPROCESSOR_DEFINITIONS` with `PERMISSION_CAMERA=1` and `PERMISSION_MICROPHONE=1` is required for `permission_handler` to work on iOS - without it the plugin compiles but permission requests silently fail.
 
-Then run (Bash):
+Then run (shell):
 ```bash
 cd ios && pod install && cd ..
 ```
 
-#### 5. Add permissions (Edit tool)
+#### 5. Add permissions (file edit)
 
-**Android** - add to `android/app/src/main/AndroidManifest.xml` inside `<manifest>`:
+See **Shared principles → Mobile permissions**. For Flutter, include the extra `WRITE_EXTERNAL_STORAGE`, `READ_EXTERNAL_STORAGE` (Android) and `NSPhotoLibraryUsageDescription` (iOS) entries noted there.
 
-```xml
-<uses-permission android:name="android.permission.CAMERA" />
-<uses-permission android:name="android.permission.RECORD_AUDIO" />
-<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-```
+#### 6. Download effects (shell)
 
-**iOS** - add to `ios/Runner/Info.plist`:
+Effects path: `effects/` at the Flutter project root (sibling of `lib/`). The Gradle `copyEffects` task copies it into Android assets automatically. For iOS, add via Xcode (`File → Add Files to 'Runner'...`) as a folder reference.
 
-```xml
-<key>NSCameraUsageDescription</key>
-<string>Camera access required to render AR effects</string>
-<key>NSMicrophoneUsageDescription</key>
-<string>Micro access required to record video</string>
-<key>NSPhotoLibraryUsageDescription</key>
-<string>Gallery access required to pick image for processing</string>
-```
+See **Shared principles → Demo effects** for the full download and installation procedure.
 
-#### 6. Download effects (Bash)
+#### 7. Write lib/main.dart (file creation or edit)
 
-```bash
-mkdir -p effects
-# repeat for each effect from docs/tutorials/capabilities/demo_face_filters.md:
-curl -L "https://docs.banuba.com/far-sdk/generated/effects/<filename>.zip" -o /tmp/<filename>.zip
-unzip -q /tmp/<filename>.zip -d effects/<filename>
-rm /tmp/<filename>.zip
-```
+See `docs/tutorials/development/basic_integration/flutter.md` — section "4. lib/main.dart" for the full implementation.
 
-Place `effects/` at the Flutter project root (sibling of `lib/`). The Gradle `copyEffects` task copies it into Android assets automatically. For iOS, add via Xcode (`File → Add Files to 'Runner'...`) as a folder reference.
-
-#### 7. Write lib/main.dart (Write tool)
-
-```dart
-import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'dart:async';
-import 'dart:io';
-import 'package:permission_handler/permission_handler.dart';
-import 'package:banuba_sdk/banuba_sdk.dart';
-
-void main() {
-  runApp(const MyApp());
-}
-
-class MyApp extends StatefulWidget {
-  const MyApp({super.key});
-
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
-  final _banubaSdkManager = BanubaSdkManager();
-  final _epWidget = EffectPlayerWidget(key: null);
-
-  @override
-  void initState() {
-    super.initState();
-    initPlatformState();
-  }
-
-  Future<void> initPlatformState() async {
-    await _banubaSdkManager.initialize(
-        [], '<#Place your token here#>', SeverityLevel.info);
-
-    if (!mounted) return;
-    setState(() {});
-
-    requestPermissions().then((granted) {
-      if (granted) {
-        openCamera();
-      } else {
-        SystemNavigator.pop();
-      }
-    });
-  }
-
-  Future<void> openCamera() async {
-    await _banubaSdkManager.openCamera();
-    await _banubaSdkManager.attachWidget(_epWidget.banubaId);
-    await _banubaSdkManager.startPlayer();
-    await _banubaSdkManager.loadEffect('effects/TrollGrandma', false);
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(home: _epWidget);
-  }
-
-  @override
-  void didChangeAppLifecycleState(AppLifecycleState state) {
-    if (state == AppLifecycleState.resumed) {
-      _banubaSdkManager.startPlayer();
-    } else {
-      _banubaSdkManager.stopPlayer();
-    }
-  }
-}
-
-Future<bool> requestPermissions() async {
-  final perms = [Permission.camera, Permission.microphone];
-  for (final p in perms) {
-    if (!await p.isGranted && !await p.request().isGranted) return false;
-  }
-  return true;
-}
-```
-
-Replace `'<#Place your token here#>'` with the actual client token.
-
-#### 8. Verify build and run (Bash)
+#### 8. Verify build and run (shell)
 
 First verify the project compiles without errors:
 
@@ -1216,13 +850,13 @@ cd ios && pod install && cd .. && flutter run
 
 #### 1. Pick the integration path
 
-**Path A - clone sample** (Bash):
+**Path A - clone sample** (shell):
 ```bash
 git clone https://github.com/Banuba/banuba-sdk-react-native
 ```
 Open `example/` in your IDE. Insert the token in `example/src/App.tsx`, run `yarn install && yarn android` or `yarn ios`.
 
-**Path B - new project from scratch** (Bash):
+**Path B - new project from scratch** (shell):
 ```bash
 npx react-native init <AppName>
 cd <AppName>
@@ -1231,7 +865,7 @@ Then continue with steps 2–9 below.
 
 **Path C - existing project**: continue with steps 2–9 below.
 
-#### 2. Add the SDK package (Bash)
+#### 2. Add the SDK package (shell)
 
 ```bash
 yarn add @banuba/react-native
@@ -1239,64 +873,21 @@ yarn add @banuba/react-native
 
 > Do not pin a version number — `@banuba/react-native` versioning is independent from the Video Editor SDK (`0.50.0` is VE, not FAR). Let yarn resolve the latest.
 
-#### 3. Configure Android root build.gradle (Edit tool)
+#### 3. Configure Android root build.gradle (file edit)
 
-In `android/build.gradle`, add `bnb_sdk_version` to the `ext` block and the Banuba Maven repo to `allprojects`:
+See `docs/tutorials/development/basic_integration/react_native.md` — sections "2. Android - android/build.gradle" and "3. Android - android/app/build.gradle" for Maven repo setup, dependencies, and the `copyEffects` Gradle task.
 
-```groovy
-buildscript {
-    ext {
-        minSdkVersion = 26
-        compileSdkVersion = 35
-        targetSdkVersion = 35
-        bnb_sdk_version = '1.18.+'
-    }
-    repositories {
-        google()
-        mavenCentral()
-    }
-}
+#### 4. Configure Android app build.gradle (file edit)
 
-allprojects {
-    repositories {
-        google()
-        mavenCentral()
-        maven { url "https://nexus.banuba.net/repository/maven-releases" }
-    }
-}
-```
+Covered in the doc reference above (section "3").
 
-> The `allprojects` block is required — without it Gradle cannot resolve `com.banuba.sdk` dependencies in a freshly created RN project.
-
-#### 4. Configure Android app build.gradle (Edit tool)
-
-In `android/app/build.gradle`, add dependencies and effects copy task:
-
-```groovy
-dependencies {
-    implementation "com.banuba.sdk:face_tracker:$project.bnb_sdk_version"
-    implementation "com.banuba.sdk:background:$project.bnb_sdk_version"
-}
-
-task copyEffects {
-    copy {
-        from '../../effects'
-        into 'src/main/assets/bnb-resources/effects'
-    }
-}
-
-gradle.projectsEvaluated {
-    preBuild.dependsOn(copyEffects)
-}
-```
-
-#### 5. Configure iOS (Edit tool → Bash)
+#### 5. Configure iOS (file edit → shell)
 
 Add the Banuba source and pod declarations to `ios/Podfile`. The sources go before the `target` block; the pods go inside it alongside `use_react_native!`:
 
 ```ruby
-source 'https://github.com/CocoaPods/Specs.git'
 source 'https://github.com/sdk-banuba/banuba-sdk-podspecs.git'
+source 'https://github.com/CocoaPods/Specs.git'
 $bnb_sdk_version = '~> 1.18.0'
 
 target 'YourApp' do
@@ -1312,84 +903,26 @@ target 'YourApp' do
 end
 ```
 
-Then run (Bash):
+Then run (shell):
 ```bash
 cd ios && pod install && cd ..
 ```
 
-#### 6. Add permissions (Edit tool)
+#### 6. Add permissions (file edit)
 
-**Android** - add to `android/app/src/main/AndroidManifest.xml` inside `<manifest>`:
+See **Shared principles → Mobile permissions** for the exact XML blocks. For React Native, note the Android-specific rule: add only `INTERNET`; CAMERA and RECORD_AUDIO are declared by the package.
 
-```xml
-<uses-permission android:name="android.permission.INTERNET" />
-```
+#### 7. Download effects (shell)
 
-> `@banuba/react-native` declares CAMERA and RECORD_AUDIO in its own merged manifest - no need to add them manually.
+Effects path: `effects/` at the project root (sibling of `src/`). Gradle copies from `../../effects` into Android assets automatically. For iOS, add `effects/` via Xcode (`File → Add Files to '<Your project>'...`) as a **folder reference**.
 
-**iOS** - add to `ios/<AppName>/Info.plist`:
+See **Shared principles → Demo effects** for the full download and installation procedure.
 
-```xml
-<key>NSCameraUsageDescription</key>
-<string>We use camera to render AR effects</string>
-<key>NSMicrophoneUsageDescription</key>
-<string>We use microphone to capture audio during video recording</string>
-```
+#### 8. Write src/App.tsx (file creation or edit)
 
-#### 7. Download effects (Bash)
+See `docs/tutorials/development/basic_integration/react_native.md` — section "5. src/App.tsx" for the full implementation. Replace `'<#Place your token here#>'` with the actual client token.
 
-```bash
-mkdir -p effects
-# repeat for each effect from docs/tutorials/capabilities/demo_face_filters.md:
-curl -L "https://docs.banuba.com/far-sdk/generated/effects/<filename>.zip" -o /tmp/<filename>.zip
-unzip -q /tmp/<filename>.zip -d effects/<filename>
-rm /tmp/<filename>.zip
-```
-
-Place `effects/` at the project root (sibling of `src/`). Gradle copies from `../../effects` into Android assets automatically. For iOS, add `effects/` via Xcode (`File → Add Files to '<Your project>'...`) as a **folder reference**.
-
-#### 8. Write src/App.tsx (Write tool)
-
-```tsx
-import React, {useEffect, useRef} from 'react';
-import {View} from 'react-native';
-import BanubaSdkManager, {EffectPlayerView} from '@banuba/react-native';
-
-const BANUBA_TOKEN = '<#Place your token here#>';
-const EFFECT_PATH = 'effects/TrollGrandma';
-
-export default function App() {
-  const initializedRef = useRef(false);
-
-  useEffect(() => {
-    if (!initializedRef.current) {
-      BanubaSdkManager.initialize([], BANUBA_TOKEN);
-      initializedRef.current = true;
-    }
-  }, []);
-
-  useEffect(() => {
-    BanubaSdkManager.attachView();
-    BanubaSdkManager.openCamera();
-    BanubaSdkManager.startPlayer();
-    BanubaSdkManager.loadEffect(EFFECT_PATH);
-
-    return () => {
-      BanubaSdkManager.stopPlayer();
-    };
-  }, []);
-
-  return (
-    <View style={{flex: 1}}>
-      <EffectPlayerView style={{flex: 1}} />
-    </View>
-  );
-}
-```
-
-Replace `'<#Place your token here#>'` with the actual client token.
-
-#### 9. Run (Bash)
+#### 9. Run (shell)
 
 ```bash
 yarn android   # or yarn ios
@@ -1408,14 +941,6 @@ yarn android   # or yarn ios
 - If more SDK capabilities are needed than the package exposes, go with native Android/iOS integration.
 
 ---
-
-## Shared principles (all platforms)
-
-- **Multi-face**: always confirm the client token includes Max Faces support before implementing multi-face UI. Without it, the SDK silently tracks only one face - no runtime workaround exists on any platform. Banuba Studio produces single-face effects only. For multi-face effects, direct to the [contact form](https://www.banuba.com/contact).
-- **AR Cloud**: for remote effect delivery on any platform, read `docs/tutorials/development/guides/ar_cloud.md`.
-- **Custom effects**: the agent configures prefab parameters at runtime - it cannot author effect bundles. Custom AR masks, makeup looks, and 3D assets are created in [Banuba Studio](https://studio.banuba.com/). 3D avatars/models are not supported in Studio - direct to the [contact form](https://www.banuba.com/contact).
-- **Token security**: never check the client token into source control on any platform.
-- **Output format**: complete files or diffs, numbered steps, working code first then explanation.
 
 ## Further reading
 

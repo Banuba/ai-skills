@@ -15,7 +15,15 @@ To start using **Banuba SDK** with [**CocoaPods**](https://guides.cocoapods.org/
 Podfile
 
 ```
-loading...
+platform :ios, '13.0'
+
+source 'https://github.com/CocoaPods/Specs.git'
+source 'https://github.com/sdk-banuba/banuba-sdk-podspecs.git'
+
+target 'quickstart-ios-objc' do
+  use_frameworks!
+  pod 'BanubaSdk', '> 1'
+end
 ```
 
 ![Icon](/img/icons/github.svg "GitHub")
@@ -98,7 +106,16 @@ To start using **Banuba SDK** , add a custom maven repo to your `build.gradle.kt
 build.gradle.kts
 
 ```
-loading...
+dependencyResolutionManagement {
+    repositories {
+        google()
+        mavenCentral()
+        maven {
+            name = "BanubaMaven"
+            url = uri("https://nexus.banuba.net/repository/maven-releases")
+        }
+    }
+}
 ```
 
 ![Icon](/img/icons/github.svg "GitHub")
