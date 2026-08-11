@@ -34,11 +34,12 @@ source 'https://cdn.cocoapods.org/'
 source 'https://github.com/Banuba/specs.git'
 source 'https://github.com/sdk-banuba/banuba-sdk-podspecs.git'
 
-banuba_sdk_version = '1.52.1'
+banuba_sdk_version = '1.53.2'
+banuba_face_ar_sdk_version = '1.53.1'
 
 pod 'BanubaVideoEditorSDK', banuba_sdk_version
-pod 'BanubaSDKSimple', banuba_sdk_version
-pod 'BanubaSDK', banuba_sdk_version
+pod 'BanubaSDKSimple', banuba_face_ar_sdk_version
+pod 'BanubaSDK', banuba_face_ar_sdk_version
 pod 'BanubaARCloudSDK', banuba_sdk_version      # optional
 pod 'BanubaAudioBrowserSDK', banuba_sdk_version # optional
 ```

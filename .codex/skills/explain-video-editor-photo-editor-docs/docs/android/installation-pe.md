@@ -26,10 +26,10 @@ allprojects {
 Specify dependencies in the app [gradle](https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/app/build.gradle#L83) file.
 
 ```groovy
-    def banubaPESdkVersion = '1.3.8'
+    def banubaPESdkVersion = '1.4.1'
     implementation "com.banuba.sdk:pe-sdk:${banubaPESdkVersion}"
 
-    def banubaSdkVersion = '1.52.0'
+    def banubaSdkVersion = '1.53.2'
 
     implementation "com.banuba.sdk:core-sdk:${banubaSdkVersion}"
     implementation "com.banuba.sdk:core-ui-sdk:${banubaSdkVersion}"

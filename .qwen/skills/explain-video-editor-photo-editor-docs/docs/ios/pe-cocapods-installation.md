@@ -25,7 +25,7 @@ Complete the following steps to get the Photo Editor SDK dependencies using Coco
    source 'https://github.com/Banuba/specs.git'
    source 'https://github.com/sdk-banuba/banuba-sdk-podspecs.git'
 
-   pod 'BanubaPhotoEditorSDK', '1.3.6'
+   pod 'BanubaPhotoEditorSDK', '1.4.1'
    ```
 4. install the Video Editor SDK pods:
    ```sh

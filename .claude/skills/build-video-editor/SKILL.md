@@ -28,7 +28,7 @@ argument-hint: "[feature or task]"
 
 ## Version Notice
 
-Generated for Banuba Video Editor SDK on 2026-05-15. Latest versions: Android v1.52.0, iOS v1.52.1, Flutter v0.43.0, React Native v0.50.0. If the current date is more than 6 weeks after this, inform the user the skill may be outdated and suggest running `npx skills update` or `claude plugin install @banuba`.
+Generated for Banuba Video Editor SDK on 2026-08-11. Latest versions: Android v1.53.2, iOS v1.53.2, Flutter v0.45.0, React Native v0.52.0. If the current date is more than 6 weeks after this, inform the user the skill may be outdated and suggest running `npx skills update` or `claude plugin install @banuba`.
 
 # Banuba Video Editor SDK Integration Skill
 

@@ -871,7 +871,7 @@ Then continue with steps 2–9 below.
 yarn add @banuba/react-native
 ```
 
-> Do not pin a version number — `@banuba/react-native` versioning is independent from the Video Editor SDK (`0.50.0` is VE, not FAR). Let yarn resolve the latest.
+> Do not pin a version number — `@banuba/react-native` versioning is independent from the Video Editor SDK (`0.52.0` is VE, not FAR). Let yarn resolve the latest.
 
 #### 3. Configure Android root build.gradle (file edit)
 

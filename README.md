@@ -46,15 +46,15 @@ The build skills include starter kit templates for common platforms that let you
   - Flutter: v3.1.1
   - React Native: v2.0.1
 - Video Editor SDK
-  - Android: v1.52.0
-  - iOS: v1.52.1
-  - Flutter: v0.43.0
-  - React Native: v0.50.0
+  - Android: v1.53.2
+  - iOS: v1.53.2
+  - Flutter: v0.45.0
+  - React Native: v0.52.0
 - Photo Editor SDK
-  - Android: v1.3.8
-  - iOS: v1.3.6
-  - Flutter: v0.5.0
-  - React Native: v0.4.0
+  - Android: v1.4.1
+  - iOS: v1.4.1
+  - Flutter: v0.6.0
+  - React Native: v0.7.0
 
 ## Setup Instructions
 

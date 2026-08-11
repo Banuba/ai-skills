@@ -54,7 +54,7 @@ android {
 Specify dependencies in the app [gradle](https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/app/build.gradle#L63) file.
 
 ```groovy
-    def banubaSdkVersion = '1.52.0'
+    def banubaSdkVersion = '1.53.2'
 
     implementation "com.banuba.sdk:ffmpeg:5.3.0"
     implementation "com.banuba.sdk:camera-sdk:${banubaSdkVersion}"

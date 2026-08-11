@@ -115,7 +115,7 @@ All paths are relative to `./docs/` within this skill's directory.
 
 | Topic                          | File                                                        |
 |--------------------------------|-------------------------------------------------------------|
-| Latest major release (v1.52.0) | `release-notes/1.52.0.md`                                   |
+| Latest major release (v1.53.0) | `release-notes/1.53.0.md`                                   |
 | VE patch series (1.51.x)       | `release-notes/1.51.x_patches.md` (Android/iOS native only) |
 | Full Android changelog         | `release-notes/Android.md`                                  |
 | Known issues                   | `release-notes/Known_issues.md`                             |
