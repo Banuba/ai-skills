@@ -1,6 +1,37 @@
 # Changelog
 
 
+## [1.18.5] - 2026-08-10
+
+**Changed**
+
+* General improvements and performance enhancements
+
+## [1.18.4] - 2026-07-17
+
+**Added**
+
+* Acne severity detection algorithm
+
+**Changed**
+
+* Improved eyeshadow colors rendering
+* Improved makeup highlighter products application
+
+## [1.18.3] - 2026-07-02
+
+**Added**
+
+* Facial skin smoothing algorithm
+
+**Changed**
+
+* Improved lipstick colors rendering
+
+**Fixed**
+
+* Other improvements and performance enhancements
+
 ## [1.18.2] - 2026-06-03
 
 **Added**

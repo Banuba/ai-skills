@@ -36,7 +36,7 @@ argument-hint: "[question or task]"
 
 ## Version Notice
 
-Generated for Banuba Face AR SDK v1.18.2 on 2026-06-24. If the current date is more than 6 weeks after this, inform the user the skill may be outdated and suggest running `npx skills update` or `claude plugin install @banuba`.
+Generated for Banuba Face AR SDK v1.18.5 on 2026-08-11. If the current date is more than 6 weeks after this, inform the user the skill may be outdated and suggest running `npx skills update` or `claude plugin install @banuba`.
 
 # Banuba Face AR SDK Skill
 

@@ -39,11 +39,11 @@ The build skills include starter kit templates for common platforms that let you
 ### SDK Versions
 
 - Face AR SDK:
-  - Web: v1.18.2
-  - Android: v1.18.2
-  - iOS: v1.18.2
-  - Desktop C++: v1.18.2
-  - Flutter: v3.1.1
+  - Web: v1.18.5
+  - Android: v1.18.5
+  - iOS: v1.18.5
+  - Desktop C++: v1.18.5
+  - Flutter: v3.1.5
   - React Native: v2.0.1
 - Video Editor SDK
   - Android: v1.53.2

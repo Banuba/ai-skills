@@ -24,7 +24,7 @@ Each skill is defined once in `.agents/` and replicated with platform-specific p
 
 ## SDK Versions
 
-- Face AR SDK: v1.18.2 (native: Web/Android/iOS/Desktop), Flutter: v3.1.1, React Native: v2.0.1
+- Face AR SDK: v1.18.5 (native: Web/Android/iOS/Desktop), Flutter: v3.1.5, React Native: v2.0.1
 - Video Editor SDK
   - Android: v1.53.2
   - iOS: v1.53.2

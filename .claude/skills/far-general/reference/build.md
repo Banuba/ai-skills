@@ -23,7 +23,7 @@ Detect from workspace files, or ask one question if unclear.
 
 ## Version and package discipline
 
-- Native Face AR SDK modules use the FAR SDK line in this skill (`1.18.2` in exact native snippets, `1.18.+` / `~> 1.18.0` in wrapper integration snippets where the docs use ranges).
+- Native Face AR SDK modules use the FAR SDK line in this skill (`1.18.5` in exact native snippets, `1.18.+` / `~> 1.18.0` in wrapper integration snippets where the docs use ranges).
 - Flutter `banuba_sdk` and React Native `@banuba/react-native` are wrapper packages with independent public versions. Do not reuse native `1.18.x` as the Flutter or RN package version.
 - Video Editor / Photo Editor SDK package versions are separate from Face AR SDK package versions. Do not answer FAR wrapper-version questions with VE/PE versions.
 - When the user asks for "latest", "current", "what version should I install today", or similar, verify against the official registry first (`pub.dev` for Flutter, npm for React Native, official docs/releases for native SDKs).
@@ -288,7 +288,7 @@ Open the `camera` sample in Android Studio. Replace the client token, then click
 
 See `docs/tutorials/development/basic_integration/android.md` — Installation section for `settings.gradle.kts` and `build.gradle.kts` snippets.
 
-Use `bnbVersion = "1.18.2"`. Only include modules needed for active effects — check the Required packages column from the demo effects table.
+Use `bnbVersion = "1.18.5"`. Only include modules needed for active effects — check the Required packages column from the demo effects table.
 
 Then trigger Gradle sync (shell):
 
@@ -376,12 +376,12 @@ platform :ios, '15.0'
 use_frameworks!
 
 target 'YourTargetName' do
-  pod 'BNBEffectPlayer', '1.18.2'
-  pod 'BNBSdkApi',       '1.18.2'
-  pod 'BNBSdkCore',      '1.18.2'
-  pod 'BNBFaceTracker',  '1.18.2'
-  pod 'BNBBackground',   '1.18.2'   # required for background effects
-  pod 'BNBMakeup',       '1.18.2'   # required for makeup/beauty effects
+  pod 'BNBEffectPlayer', '1.18.5'
+  pod 'BNBSdkApi',       '1.18.5'
+  pod 'BNBSdkCore',      '1.18.5'
+  pod 'BNBFaceTracker',  '1.18.5'
+  pod 'BNBBackground',   '1.18.5'   # required for background effects
+  pod 'BNBMakeup',       '1.18.5'   # required for makeup/beauty effects
 end
 ```
 

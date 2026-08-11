@@ -35,7 +35,7 @@ description: |
 
 ## Version Notice
 
-Codex port for Banuba Face AR SDK v1.18.2 on 2026-06-23. If the current date is more than 6 weeks after this, inform the user the skill may be outdated and suggest running `npx skills update` or `Codex plugin install @banuba`.
+Codex port for Banuba Face AR SDK v1.18.5 on 2026-08-11. If the current date is more than 6 weeks after this, inform the user the skill may be outdated and suggest running `npx skills update` or `Codex plugin install @banuba`.
 
 # Banuba Face AR SDK Skill
 
