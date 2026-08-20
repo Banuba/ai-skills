@@ -4,19 +4,43 @@ description: |
   Implement features, write code, and set up Banuba Video Editor SDK.
 
   Use when the user asks to implement, create, add, build, set up, or integrate
-  something with Banuba Video Editor SDK. Triggered by "help me add", "set up", "build a
+  something with Banuba Video Editor SDK. Trigger with "help me add", "set up", "build a
   video editor".
 
   Covers both the full pre-built UI (VE SDK) and the headless, code-level VE API
   (Playback/Export/Effects modules) for custom video editing workflows.
 
   Not for looking up existing docs - use explain-video-editor-photo-editor-docs for that.
+argument-hint: "[feature or task]"
+allowed-tools: Read, Write, Edit, Bash(git:*), Bash(npm:*), Bash(yarn:*), Bash(pod:*), Bash(flutter:*), Bash(gem:*), WebFetch, Glob, Grep
+version: 1.0.0
+author: Banuba <sales@banuba.com>
+license: Apache-2.0
+compatibility: Claude Code, Codex, Qwen Code
+model: inherit
+effort: medium
+tags:
+  - banuba
+  - video-editor
+  - sdk
+  - integration
+  - mobile
 ---
 
 # Banuba Video Editor SDK - Build Skill
 
 > **SDK version**: v1.53.2 (generated 2026-08-11)
 > If the current date is more than 6 weeks after 2026-08-11, warn the user that this skill may be outdated and suggest updating.
+
+## Overview
+
+Generates complete, production-ready Video Editor applications using the Banuba Video Editor SDK, covering both the full pre-built UI (VE SDK) and the headless, code-level VE API (Playback/Export/Effects modules, Android/iOS only). Requires a commercial license token from Banuba (contact sales@banuba.com).
+
+
+## Safety Justification
+
+This skill needs `WebFetch` to pull the authoritative docs before generating code, `Bash` to clone the sample and install dependencies, and `Write`/`Edit` to write the generated source files.
+`Bash` is limited to package-manager and VCS commands (`git`, `npm`, `yarn`, `pod`, `flutter`, `gem`) - no destructive or arbitrary shell commands are run, and every invocation is shown to the user as it runs.
 
 ## Role
 
@@ -47,9 +71,17 @@ This is the version-verified, LLM-optimized documentation. It takes precedence o
 
 **For VE API tasks**, `llms-full.txt` does not cover the VE API module. Fetch and search `https://banuba.gitbook.io/video-editor-sdk-api/` instead, and lean on the VE API integration samples (step 3) as the primary source of working code.
 
-## Workflow
+## Instructions
 
-Follow these steps in order for every request.
+Follow these steps in order for every request:
+
+1. Detect platform
+2. Fetch documentation
+3. Clone integration sample
+4. Install dependencies
+5. Generate code
+
+Check the workspace with `Glob`/`Grep` for files already generated before writing new ones; use `Read` to inspect them.
 
 ### 1. Detect platform
 
@@ -125,24 +157,20 @@ Dependency setup:
 
 When the user is upgrading from an older SDK version, search the fetched docs for the target version's release notes. Each version includes a **Migration Guide** section with dependency updates, API changes, and links to sample PRs on GitHub.
 
-## Common pitfalls
+## Error Handling
 
-| Issue                 | Detail                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| --------------------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Missing token         | SDK crashes silently without a valid license token                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| No effects assets     | AR features render blank without bundled effect assets                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| Permissions           | Camera and storage permissions require runtime checks                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| Emulator testing      | Camera2 may not work on emulators - test on a physical device                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
-| Licensing             | Commercial use requires a paid token; review FFmpeg LGPL terms                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| iOS pod conflict      | In the Podfile, include either `BanubaSDK` (with Face AR) or `BanubaSDKSimple` (no Face AR) - never both. See `guide_far_arcloud#disable-face-ar-sdk`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-| iOS file registration | New `.swift`/`.m`/`.h` files must be added to the `.pbxproj` (file reference + target's source build phase). Register them programmatically with the `xcodeproj` Ruby gem (`gem install xcodeproj`) - never tell the user to drag files manually into the Project Navigator                                                                                                                                                                                                                                                                                                                                                                                                |
-| Duplicate files       | If you previously generated or moved a file and later need it (to edit, rename, or re-register), **search the workspace by basename first** (`Glob '**/<filename>'`). Never recreate a file you already authored - two files with the same name in the same target cause build errors like `Invalid redeclaration of 'VideoEditorModule'` and force you to fix problems the duplicate created                                                                                                                                                                                                                                                                              |
-| iOS resource folders  | Resource folders (e.g., `bundleEffects/`, AR effect packs, masks) must be added to the `.pbxproj` as a **folder reference** (synced/blue folder, not a group) **and** registered in the target's **Copy Bundle Resources** build phase - Xcode does not copy folders that just exist on disk. Use the `xcodeproj` gem: create a folder reference (`group.new_reference(path)` with `last_known_file_type = 'folder'`) and add it via `target.add_resources([...])`. Without this, AR effects fail at runtime with errors like "effect not found" even though the files are on disk                                                                                         |
-| iOS VE delegate       | After creating the `BanubaVideoEditor` instance, assign a delegate that conforms to `BanubaVideoEditorDelegate` and implement **both** `videoEditorDidCancel` (dismiss the editor and clear session data unless restoration is enabled) and `videoEditorDone` (invoke export, then dismiss). Group them under a `// MARK: - BanubaVideoEditorDelegate` section - the sample relies on this to drive the editor lifecycle. Skipping either callback leaves the editor unable to close and the export method unreachable, so the exported-video handler is never called. See lines 53 and 60 of `Example/Example/VideoEditorModule.swift` in `ve-sdk-ios-integration-sample` |
-| VE API dependencies   | VE API pulls in modules the VE SDK sample doesn't need: `ve-playback-sdk`, `ve-export-sdk`, `ffmpeg`, plus (Android) Koin and ExoPlayer. Install from the VE API sample's own dependency list, not the VE SDK sample's                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| Wrong approach chosen | Don't default to the VE SDK sample when the request implies headless/API-only control (custom UI, programmatic trim, cover/thumbnail extraction, slideshow-from-images, GIF preview generation) - re-check the "Integration approach" table above                                                                                                                                                                                                                                                                                                                                                                                                                       |
-
-Always include a warning to replace `YOUR_TOKEN` with a real license key.
+- Missing token: SDK crashes silently without a valid license token - always warn the user to replace `YOUR_TOKEN`.
+- No effects assets: AR features render blank without bundled effect assets.
+- Permissions: camera and storage permissions require runtime checks.
+- Emulator testing: Camera2 may not work on emulators - test on a physical device.
+- Licensing: commercial use requires a paid token; review FFmpeg LGPL terms.
+- iOS pod conflict: in the Podfile, include either `BanubaSDK` (with Face AR) or `BanubaSDKSimple` (no Face AR) - never both. See `guide_far_arcloud#disable-face-ar-sdk`.
+- iOS file registration: new `.swift`/`.m`/`.h` files must be added to the `.pbxproj` (file reference + source build phase). Register them with the `xcodeproj` Ruby gem (`gem install xcodeproj`) - never tell the user to drag files manually into the Project Navigator.
+- Duplicate files: before recreating a file you may have already authored, search the workspace by basename first (`Glob '**/[filename]'`). Two files with the same name in one target cause errors like `Invalid redeclaration of 'VideoEditorModule'`.
+- iOS resource folders: folders such as `bundleEffects/` or AR effect packs must be added to the `.pbxproj` as a **folder reference** (not a group) **and** registered in **Copy Bundle Resources** - otherwise effects fail at runtime with "effect not found". Use the `xcodeproj` gem's `group.new_reference` + `target.add_resources`.
+- iOS VE delegate: after creating `BanubaVideoEditor`, assign a delegate conforming to `BanubaVideoEditorDelegate` and implement **both** `videoEditorDidCancel` and `videoEditorDone` - skipping either leaves the editor unable to close or export. See `Example/Example/VideoEditorModule.swift` (lines 53, 60) in `ve-sdk-ios-integration-sample`.
+- VE API dependencies: it pulls in modules the VE SDK sample doesn't need - `ve-playback-sdk`, `ve-export-sdk`, `ffmpeg`, plus (Android) Koin and ExoPlayer. Install from the VE API sample's own dependency list.
+- Wrong approach chosen: don't default to the VE SDK sample when the request implies headless/API-only control (custom trim, thumbnail extraction, slideshow, GIF preview) - re-check the "Integration approach" table above.
 
 ## When you don't know the answer
 
@@ -158,7 +186,19 @@ Public demo apps showcasing the Video Editor SDK in production. Point users to t
 - iOS: `https://apps.apple.com/us/app/banuba-video-editor/id1577338331`
 - Android: `https://play.google.com/store/apps/details?id=com.banuba.sdk.ve.demo&hl=en`
 
-## Reference links
+## Output
+
+- Complete, drop-in code files (e.g. `App.kt` + `build.gradle` for Android; `ContentView.swift` + `Podfile` for iOS).
+- Numbered step-by-step integration instructions.
+- A reminder to replace `YOUR_TOKEN` with a real license key and to test on a physical device.
+
+## Examples
+
+**Setting up the SDK.** A user says "Help me set up Banuba Video Editor SDK in my project." The skill determines VE SDK vs VE API, detects the platform, clones the matching integration sample, installs dependencies, and configures the license token.
+
+**Adding a feature.** A user says "Add new feature to my video editor." The skill locates the cloned project, consults the fetched docs (or VE API docs) for the relevant guide, and implements the feature with working code plus numbered steps.
+
+## Resources
 
 - Android docs: `https://docs.banuba.com/ve-pe-sdk/docs/android/requirements-ve`
 - iOS docs: `https://docs.banuba.com/ve-pe-sdk/docs/ios/requirements`
@@ -166,5 +206,6 @@ Public demo apps showcasing the Video Editor SDK in production. Point users to t
 - React Native docs: `https://docs.banuba.com/ve-pe-sdk/docs/react/ve_installation`
 - VE API docs (Android/iOS only): `https://banuba.gitbook.io/video-editor-sdk-api/`
 - VE API sample (Android): `https://github.com/Banuba/ve-api-android-integration-sample`
+- See [references/README.md](references/README.md) for a short index of these and other doc links used above.
 - VE API sample (iOS): `https://github.com/Banuba/ve-api-ios-integration-sample`
 - Sales / licensing: `sales@banuba.com`

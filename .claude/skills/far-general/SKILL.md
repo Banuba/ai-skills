@@ -3,35 +3,31 @@ name: far-general
 description: |
   Banuba Face AR SDK skill for three use cases: sales, developer documentation, and integration workflows.
 
-  Use for anything Face AR: capability and compliance questions (sales), documentation
+  Use when working on anything Face AR: capability and compliance questions (sales), documentation
   lookup, CV concepts, and troubleshooting (dev), and building Web integrations such as
   AR masks, face filters, beautification, virtual background, and AR Cloud (integration).
-  Triggered by "Face AR", "AR mask", "face filter", "virtual background", "AR makeup",
+  Trigger with "Face AR", "AR mask", "face filter", "virtual background", "AR makeup",
   "beautification", "face landmarks", "AR Cloud", "can the SDK", "how does", "explain",
   "add", "set up", "integrate", "build".
 
   Web, Android, iOS, Desktop (C++), Flutter and React Native have full code generation
   support. macOS gets the GitHub sample + code assistance. Unity gets the sample link only.
   For Video/Photo Editor SDK use build-video-editor, build-photo-editor, or explain-video-editor-photo-editor-docs.
-
-  <example>
-  Context: Sales-team capability question.
-  user: "Can our Face AR SDK detect skin tone, and what data does it store?"
-  assistant: "I'll use /far-general in sales mode to check capabilities and compliance."
-  </example>
-
-  <example>
-  Context: Explain-mode documentation question.
-  user: "What is the difference between face landmarks and a face mesh?"
-  assistant: "I'll use /far-general in Explain mode to explain the concepts."
-  </example>
-
-  <example>
-  Context: Web integration request.
-  user: "Add background blur to my Face AR web app"
-  assistant: "I'll use /far-general in Build mode and follow the build workflow for virtual background."
-  </example>
 argument-hint: "[question or task]"
+allowed-tools: Read, Write, Edit, Glob, Grep, WebFetch, Bash(git:*), Bash(npm:*), Bash(yarn:*), Bash(pod:*), Bash(flutter:*), Bash(gem:*)
+version: 1.0.0
+author: Banuba <sales@banuba.com>
+license: Apache-2.0
+compatibility: Claude Code
+model: inherit
+effort: medium
+tags:
+  - banuba
+  - face-ar
+  - sdk
+  - sales
+  - integration
+  - documentation
 ---
 
 ## Version Notice
@@ -52,7 +48,21 @@ The SDK provides real-time face tracking, AR masks, beautification, virtual back
 
 **Request**: $ARGUMENTS
 
-## Step 1: Detect the mode
+
+## Safety Justification
+
+This skill needs `WebFetch` to pull the authoritative docs before generating code, `Bash` to clone the sample and install dependencies, and `Write`/`Edit` to write the generated source files.
+`Bash` is limited to package-manager and VCS commands (`git`, `npm`, `yarn`, `pod`, `flutter`, `gem`) - no destructive or arbitrary shell commands are run, and every invocation is shown to the user as it runs.
+
+## Prerequisites
+
+- **Authentication**: a commercial Banuba client token (credentials) is required for Build mode integrations (contact sales@banuba.com); Sales and Explain modes need no token.
+- For Build mode, detect the target platform from the user's project files (see the platform table below) before generating code. Use `Glob`/`Grep` to check the workspace for files you may have already generated before writing new ones.
+- For Web/Android/iOS/Flutter/React Native Build tasks, network access to fetch `docs/llms-full.txt` or the public docs site is assumed; if unavailable, fall back to the bundled `docs/` folder.
+
+## Instructions
+
+### Step 1: Detect the mode
 
 Do this first, on every message. Classify the request into exactly one mode:
 
@@ -69,7 +79,7 @@ Rules:
 - Hybrid request ("explain X and add it"): choose Build, read both `reference/explain.md` and `reference/build.md`, then answer in one flow.
 - The hard gate is Sales: no code, plain language. Explain and Build cover the technical spectrum.
 
-## Step 2: Apply the mode contract
+### Step 2: Apply the mode contract
 
 ### Sales mode
 
@@ -146,6 +156,28 @@ Web, Android, iOS, Desktop (C++), Flutter, and React Native have full coverage a
 ## Related Skills
 
 - For Video Editor / Photo Editor SDK: `/build-video-editor`, `/build-photo-editor`, `/explain-video-editor-photo-editor-docs`.
+- These sibling skills are separate SDKs (Video Editor SDK, Photo Editor SDK) - do not mix their APIs, docs, or licensing with the Face AR SDK covered here.
+
+## Output
+
+- **Sales mode**: plain-language answer, capability plus limitation, no code, no invented compliance claims.
+- **Explain mode**: an explanation grounded in the bundled docs, with a link to the public doc page when citing a source.
+- **Build mode**: working code first, then numbered integration steps, with a reminder to replace any stand-in license value with the real one.
+
+## Error Handling
+
+- If the answer is not in the bundled docs or `llms-full.txt`, do not guess or fabricate APIs, URLs, or compliance claims - point to [docs.banuba.com/far-sdk](https://docs.banuba.com/far-sdk/) or the [contact form](https://www.banuba.com/contact).
+- If the platform cannot be detected from project files, ask the user one clarifying question rather than guessing.
+- If the mode is ambiguous, default to Explain for technical requests and Sales for non-technical, client-facing requests; ask instead when genuinely unclear.
+- For unsupported platforms (Unity: no code generation; macOS: sample + code help only, no scaffolding), say so explicitly instead of attempting full code generation.
+
+## Examples
+
+**Sales-team capability question.** A user asks "Can our Face AR SDK detect skin tone, and what data does it store?" The skill responds in Sales mode, checking capabilities and compliance in plain language with no code.
+
+**Explain-mode documentation question.** A user asks "What is the difference between face landmarks and a face mesh?" The skill responds in Explain mode, explaining the concepts using the bundled CV documentation.
+
+**Web integration request.** A user asks to "Add background blur to my Face AR web app." The skill responds in Build mode, following the Web build workflow for virtual background.
 
 ## Resources
 

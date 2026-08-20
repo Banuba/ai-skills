@@ -18,7 +18,7 @@ allowed-tools: Read, Write, Edit, Glob, Grep, WebFetch, Bash(git:*), Bash(npm:*)
 version: 1.0.0
 author: Banuba <sales@banuba.com>
 license: Apache-2.0
-compatibility: Qwen Code
+compatibility: Claude Code, Codex, Qwen Code
 model: inherit
 effort: medium
 tags:
@@ -32,7 +32,7 @@ tags:
 
 ## Version Notice
 
-Generated for Banuba Face AR SDK v1.18.5 on 2026-08-11. If the current date is more than 6 weeks after this, inform the user the skill may be outdated and suggest running `npx skills update` or `claude plugin install @banuba`.
+Generated for Banuba Face AR SDK v1.18.5 on 2026-08-11. If the current date is more than 6 weeks after this, inform the user the skill may be outdated and suggest updating this skill pack.
 
 # Banuba Face AR SDK Skill
 
@@ -155,8 +155,7 @@ Web, Android, iOS, Desktop (C++), Flutter, and React Native have full coverage a
 
 ## Related Skills
 
-- For Video Editor / Photo Editor SDK: `/build-video-editor`, `/build-photo-editor`, `/explain-video-editor-photo-editor-docs`.
-- These sibling skills are separate SDKs (Video Editor SDK, Photo Editor SDK) - do not mix their APIs, docs, or licensing with the Face AR SDK covered here.
+- For Video Editor / Photo Editor SDK: use the `build-video-editor`, `build-photo-editor`, or `explain-video-editor-photo-editor-docs` skills.
 
 ## Output
 

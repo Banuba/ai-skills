@@ -4,10 +4,24 @@ description: |
   Implement features, write code, and set up Banuba Photo Editor SDK.
 
   Use when the user asks to implement, create, add, build, set up, or integrate
-  something with Banuba Photo Editor SDK. Triggered by "help me add", "set up", "build a
+  something with Banuba Photo Editor SDK. Trigger with "help me add", "set up", "build a
   photo editor".
 
   Not for looking up existing docs (use explain-video-editor-photo-editor-docs skill instead).
+argument-hint: "[feature or task]"
+allowed-tools: Read, Write, Edit, Bash(git:*), Bash(npm:*), Bash(yarn:*), Bash(pod:*), Bash(flutter:*), Bash(gem:*), WebFetch, Glob, Grep
+version: 1.0.0
+author: Banuba <sales@banuba.com>
+license: Apache-2.0
+compatibility: Codex
+model: inherit
+effort: medium
+tags:
+  - banuba
+  - photo-editor
+  - sdk
+  - integration
+  - mobile
 ---
 
 ## Version Notice
@@ -18,11 +32,15 @@ Generated for Banuba Photo Editor SDK on 2026-08-11. Latest versions: Android v1
 
 ## Overview
 
-Generates complete, production-ready Photo Editor applications using Banuba Photo Editor SDK. The SDK provides full-featured photo editing with built-in UI/UX for filters, effects, adjustments, and export. Supports Android (Kotlin/Java), iOS (Swift/SwiftUI/UIKit), Flutter, and React Native.
-
-Key features: AR filters, Face AR effects, photo adjustments. Requires a commercial license token from Banuba (contact sales@banuba.com).
+Generates complete, production-ready Photo Editor applications using Banuba Photo Editor SDK, with built-in UI/UX for filters, effects, adjustments, and export on Android (Kotlin/Java), iOS (Swift/SwiftUI/UIKit), Flutter, and React Native. Key features include AR filters and Face AR effects; requires a commercial license token from Banuba (contact sales@banuba.com).
 
 **Task**: $ARGUMENTS
+
+
+## Safety Justification
+
+This skill needs `WebFetch` to pull the authoritative docs before generating code, `Bash` to clone the sample and install dependencies, and `Write`/`Edit` to write the generated source files.
+`Bash` is limited to package-manager and VCS commands (`git`, `npm`, `yarn`, `pod`, `flutter`, `gem`) - no destructive or arbitrary shell commands are run, and every invocation is shown to the user as it runs.
 
 ## Your Role
 
@@ -45,14 +63,14 @@ Detect the user's platform from project files. If no project exists yet or detec
 7. **Don't generate URLs**: Never fabricate documentation URLs. Only use URLs explicitly listed in this skill file or found in the fetched docs.
 8. **No custom effects**: Never create or add custom AR/visual effects. Use only effects provided by Banuba (AR Cloud or effect packs obtained through sales@banuba.com).
 
-## Integration Prerequisites
+## Prerequisites
 
-1. Obtain Banuba license token (mandatory; SDK won't run without it).
+1. **Authentication**: obtain a Banuba license token (credentials) - mandatory, SDK won't run without it.
 2. Android: min SDK 26+, Camera2 API, OpenGL ES 3.0+, arm64-v8a/armv7.
 3. iOS: iOS 15+, ARC, Swift 5+, Xcode 26.0+.
 4. Add Banuba Maven repo (Android) or CocoaPods/SPM (iOS).
 
-## Core Workflow
+## Instructions
 
 ### 1. Clone the integration sample
 
@@ -80,7 +98,7 @@ If `pod install` cannot run in the current environment (non-macOS, CocoaPods mis
 
 ### 3. Configure the license token
 
-Replace `YOUR_LICENSE_TOKEN` placeholder in the cloned sample with the user's token.
+Replace `YOUR_LICENSE_TOKEN` in the cloned sample with the user's real token.
 
 ### 4. Customize for the user's requirements
 
@@ -98,7 +116,7 @@ Modify the cloned sample based on the user's needs. Consult the platform-specifi
 - Implement export callbacks (`onExportDone`, `onError`).
 - Test on a physical device (emulator may lack Camera2 support).
 
-## Output Format
+## Output
 
 - **Complete code**: Working files ready to drop in (e.g., App.kt + build.gradle for Android; ContentView.swift + App.swift for iOS).
 - **Steps**: Numbered integration instructions.
@@ -106,18 +124,18 @@ Modify the cloned sample based on the user's needs. Consult the platform-specifi
 
 ## Upgrading Between SDK Versions
 
-When the user is upgrading from an older SDK version, consult the release notes for the target version. If the `explain-video-editor-photo-editor-docs` skill is available, read its local docs at `release-notes/{version}.md` - each file contains a **Migration Guide** with dependency updates, API changes, and links to sample PRs. For the full Android changelog, see `release-notes/Android.md`.
+When the user is upgrading from an older SDK version, consult the release notes for the target version. If the `explain-video-editor-photo-editor-docs` skill is available, read its local docs at the release-notes file matching the target version (e.g. `release-notes/1.50.0.md`) - each file contains a **Migration Guide** with dependency updates, API changes, and links to sample PRs. For the full Android changelog, see `release-notes/Android.md`.
 
-## Common Pitfalls
+## Error Handling
 
 - Missing token: SDK crashes silently.
 - No effects assets: Blank AR.
 - Permissions: Runtime checks required.
 - Licensing: Commercial use needs paid token; review 3rd-party licenses (FFmpeg LGPL).
-- iOS pod conflict: In the Podfile, include **either** `BanubaSDK` (full, with Face AR SDK) **or** `BanubaSDKSimple` (no Face AR) - never both. The integration sample's Podfile may list both as examples; remove the one that does not match the user's license. See [guide_far_arcloud#disable-face-ar-sdk](https://docs.banuba.com/ve-pe-sdk/docs/ios/guide_far_arcloud#disable-face-ar-sdk).
-- iOS file registration: New `.swift` / `.m` / `.h` files must be added to the Xcode project's `.pbxproj` (file reference **and** the target's source build phase) - Xcode does not pick up files placed only on disk. Register them programmatically using the [`xcodeproj`](https://github.com/CocoaPods/Xcodeproj) Ruby gem (`gem install xcodeproj`, then run a short Ruby script that opens the `.xcodeproj`, adds the file reference under the correct group, and appends it to the target's `source_build_phase`). **Never instruct the user to drag files manually in the Project Navigator** - do it yourself as part of the integration step.
-- Duplicate files: If you previously generated a file (or asked the user to move one) and later need it again - to edit, rename, or re-register in the `.pbxproj` - **search the workspace for it by basename first** (`Glob '**/<filename>'`). **Never recreate a file you already authored.** Two files with the same name in the same iOS target cause build errors like `Invalid redeclaration of 'VideoEditorModule'`, and then time gets spent fixing problems the duplicate created instead of the real task.
-- iOS resource folders: Resource folders (e.g., `bundleEffects/`, AR effect packs, masks, LUTs) must be added to the `.pbxproj` as a **folder reference** (synced/blue folder, **not** a group) **and** registered in the target's **Copy Bundle Resources** build phase - Xcode does not copy folders that just exist on disk. With the `xcodeproj` gem: create a folder reference via `group.new_reference(path)` then set `last_known_file_type = 'folder'`, and add it to the target with `target.add_resources([file_ref])`. Without this, AR/visual effects fail at runtime with "effect not found" even though the files are on disk.
+- iOS pod conflict: In the Podfile, include **either** `BanubaSDK` (full, with Face AR SDK) **or** `BanubaSDKSimple` (no Face AR) - never both. Remove whichever doesn't match the user's license. See [guide_far_arcloud#disable-face-ar-sdk](https://docs.banuba.com/ve-pe-sdk/docs/ios/guide_far_arcloud#disable-face-ar-sdk).
+- iOS file registration: new `.swift`/`.m`/`.h` files must be added to the `.pbxproj` (file reference **and** the target's source build phase) - Xcode ignores files that only exist on disk. Register them with the [`xcodeproj`](https://github.com/CocoaPods/Xcodeproj) Ruby gem (`gem install xcodeproj`). Never tell the user to drag files manually in the Project Navigator.
+- Duplicate files: before recreating a possibly already-authored file, search the workspace by basename first (`Glob '**/[filename]'`). Two files with the same name in one iOS target cause errors like `Invalid redeclaration of 'VideoEditorModule'`.
+- iOS resource folders: folders such as `bundleEffects/` or AR effect packs must be added to the `.pbxproj` as a **folder reference** (not a group) **and** registered in **Copy Bundle Resources** - otherwise effects fail at runtime with "effect not found" even though the files are on disk. Use the `xcodeproj` gem's `group.new_reference` + `target.add_resources`.
 
 ## Demo Applications
 
@@ -126,8 +144,15 @@ Public demo apps that showcase both the Video Editor and Photo Editor SDKs in pr
 - [iOS demo (App Store)](https://apps.apple.com/us/app/banuba-video-editor/id1577338331)
 - [Android demo (Google Play)](https://play.google.com/store/apps/details?id=com.banuba.sdk.ve.demo&hl=en)
 
+## Examples
+
+**Setting up the SDK.** A user says "Help me set up Banuba Photo Editor SDK in my project." The skill detects the platform, clones the matching integration sample, installs dependencies, and walks through configuring the license token.
+
+**Adding a feature.** A user says "Add new feature to my photo editor." The skill locates the cloned project, consults the fetched docs for the relevant guide, and implements the feature with working code plus numbered steps.
+
 ## Resources
 
 - [Android Docs](https://docs.banuba.com/ve-pe-sdk/docs/android/requirements-pe)
 - [iOS Docs](https://docs.banuba.com/ve-pe-sdk/docs/ios/pe-requirements)
 - [React Native Docs](https://docs.banuba.com/ve-pe-sdk/docs/react/pe_integration)
+- See [references/README.md](references/README.md) for a short index of these and other doc links used above.

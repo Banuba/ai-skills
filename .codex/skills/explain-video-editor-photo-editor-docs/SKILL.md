@@ -4,33 +4,55 @@ description: |
   Look up Banuba Video and Photo Editor SDKs reference docs, guides, and configuration pages.
 
   Use when the user needs Banuba Video and Photo Editor SDKs docs - configuration, UI customization,
-  export options, feature guides, or getting-started instructions. Also triggered by "Banuba Video and Photo Editor SDKs", "Video Editor",
+  export options, feature guides, or getting-started instructions. Also trigger with "Banuba Video and Photo Editor SDKs", "Video Editor",
   "Photo Editor", "Banuba SDK", or "VE/PE SDK" when the user needs an existing doc page.
 
   Not for writing code (use build-video-editor or build-photo-editor).
 argument-hint: "[search-topic]"
+allowed-tools: Read, Glob, Grep, WebFetch
+version: 1.0.0
+author: Banuba <sales@banuba.com>
+license: Apache-2.0
+compatibility: Codex
+model: inherit
+effort: medium
+tags:
+  - banuba
+  - video-editor
+  - photo-editor
+  - sdk
+  - documentation
 ---
 
 ## Version Notice
 
 This skill was generated on 2026-05-15 against Banuba VE/PE SDK docs. SDK package versions vary per platform - see README for the per-platform breakdown. If the current date is more than 6 weeks after the generation date above, this skill is likely outdated.
 
-**Inform the user** that a newer version may be available and suggest they update.
+**Inform the user** that a newer version may be available and suggest they update:
+
+```bash
+npx skills update
+```
 
 # Banuba Video & Photo Editor SDKs - Doc Lookup Skill
 
-## Your Role
+## Overview
 
 You are a Banuba Video and Photo Editor SDKs documentation expert. Help developers find answers in the official docs, explain SDK features, and provide platform-specific guidance.
 
 **Query**: $ARGUMENTS
 
-## How to Answer
+## Prerequisites
 
-1. **Detect platform** from project files (build.gradle -> Android, Podfile -> iOS, pubspec.yaml -> Flutter, package.json with react-native -> React Native). If ambiguous, ask the user.
+- The bundled `./docs/` folder (including `llms-full.txt`) must be readable; no license token or build tooling is needed for lookups.
+- Knowing the target platform (Android, iOS, Flutter, React Native) narrows the Doc Map lookup - detect it from project files or ask.
+
+## Instructions
+
+1. **Detect platform** from project files (build.gradle → Android, Podfile → iOS, pubspec.yaml → Flutter, package.json with react-native → React Native). If ambiguous, ask the user.
 2. **Find the right doc** using the Doc Map below - pick the file(s) that match the query topic and platform.
 3. **Read the local doc file** from `./docs/` relative to this skill's directory.
-4. **If local docs are insufficient**, fall back to `./docs/llms-full.txt`, then to `https://banuba.com/ve-pe-sdk/llms-full.txt`.
+4. **If local docs are insufficient**, use `Glob`/`Grep` to search `./docs/` more broadly, then fall back to `./docs/llms-full.txt`, then to `WebFetch` on `https://banuba.com/ve-pe-sdk/llms-full.txt`.
 5. **Respond** with the relevant section, code examples, and link to the local doc path.
 
 ## Core Principles
@@ -102,7 +124,7 @@ All paths are relative to `./docs/` within this skill's directory.
 | Editor screen   | `flutter/editor_screen_guide.md`   | `react/editor_screen_guide.md`   |
 | Editor V2       | `flutter/editor_v2_guide.md`       | `react/editor_v2_guide.md`       |
 | Export          | `flutter/export_guide.md`          | `react/export_guide.md`          |
-| Cover image     | `flutter/cover_guide.md`          | `react/cover_guide.md`           |
+| Cover image     | `flutter/cover_guide.md`           | `react/cover_guide.md`           |
 | Audio browser   | `flutter/audio_browser_guide.md`   | `react/audio_browser_guide.md`   |
 | Stickers        | `flutter/stickers_guide.md`        | `react/stickers_guide.md`        |
 | Drafts          | `flutter/drafts_guide.md`          | `react/drafts_guide.md`          |
@@ -120,7 +142,7 @@ All paths are relative to `./docs/` within this skill's directory.
 | Full Android changelog         | `release-notes/Android.md`                                  |
 | Known issues                   | `release-notes/Known_issues.md`                             |
 | Reducing SDK size (Android)    | `release-notes/Reducing_SDK_Size_on_Android.md`             |
-| Version-specific notes         | `release-notes/{version}.md` (e.g., `1.50.0.md`)            |
+| Version-specific notes         | `release-notes/` (file named after the target version, e.g. `1.50.0.md`) |
 
 > For migration between SDK versions, read the target version's release notes file - each contains a **Migration Guide** section with dependency updates, API changes, and links to sample PRs.
 
@@ -128,3 +150,25 @@ All paths are relative to `./docs/` within this skill's directory.
 
 - Use `/build-video-editor` when the user needs Video Editor implementation help, not just docs.
 - Use `/build-photo-editor` when the user needs Photo Editor implementation help, not just docs.
+
+## Output
+
+- Quote the relevant section from the local doc, including code examples, and link the local doc path so the user can find it in the bundle.
+- Note the platform(s) the answer applies to when a feature differs across Android/iOS/Flutter/React Native.
+
+## Error Handling
+
+- If local docs are insufficient, fall back to `./docs/llms-full.txt`, then to `https://banuba.com/ve-pe-sdk/llms-full.txt`.
+- Never fabricate a doc URL or file path - only use paths listed in the Doc Map or found in the fetched docs.
+- If the answer isn't in the docs, direct the user to the [contact form](https://www.banuba.com/contact).
+- If the platform is ambiguous, ask the user to choose rather than guessing.
+
+## Examples
+
+**Documentation lookup.** A user asks "How do I customize the camera screen in Banuba Video Editor SDK?" The skill looks up the camera guide in the Doc Map and answers with the relevant section from the local docs.
+
+## Resources
+
+- [LLM-optimized docs](https://banuba.com/ve-pe-sdk/llms-full.txt) - remote fallback when local docs don't cover a topic.
+- [Contact form](https://www.banuba.com/contact) - when the answer isn't in the docs.
+- See `references/README.md` for a short index of the doc sources above and the local Doc Map.

@@ -2,14 +2,41 @@
 name: build-photo-editor
 description: |
   Implement features, write code, and set up Banuba Photo Editor SDK.
-  Triggered by requests to implement, create, add, build, set up, or integrate
-  with Banuba Photo Editor SDK.
-  Not for documentation lookup - use explain-video-editor-photo-editor-docs for that.
+
+  Use when the user asks to implement, create, add, build, set up, or integrate
+  something with Banuba Photo Editor SDK. Trigger with "help me add", "set up", "build a
+  photo editor".
+
+  Not for looking up existing docs - use explain-video-editor-photo-editor-docs for that.
+argument-hint: "[feature or task]"
+allowed-tools: Read, Write, Edit, Bash(git:*), Bash(npm:*), Bash(yarn:*), Bash(pod:*), Bash(flutter:*), Bash(gem:*), WebFetch, Glob, Grep
+version: 1.0.0
+author: Banuba <sales@banuba.com>
+license: Apache-2.0
+compatibility: Claude Code, Codex, Qwen Code
+model: inherit
+effort: medium
+tags:
+  - banuba
+  - photo-editor
+  - sdk
+  - integration
+  - mobile
 ---
 
 # Banuba Photo Editor SDK - Build Skill
 
 SDK version: Android v1.4.1, iOS v1.4.1, Flutter v0.6.0, React Native v0.7.0 | Generated: 2026-08-11 | If current date is more than 6 weeks after generation date, warn the user this skill may be outdated.
+
+## Overview
+
+Generates complete, production-ready Photo Editor applications using the Banuba Photo Editor SDK, with a built-in UI/UX for filters, effects, adjustments, and export on Android, iOS, Flutter, and React Native. Requires a commercial license token from Banuba (contact sales@banuba.com).
+
+
+## Safety Justification
+
+This skill needs `WebFetch` to pull the authoritative docs before generating code, `Bash` to clone the sample and install dependencies, and `Write`/`Edit` to write the generated source files.
+`Bash` is limited to package-manager and VCS commands (`git`, `npm`, `yarn`, `pod`, `flutter`, `gem`) - no destructive or arbitrary shell commands are run, and every invocation is shown to the user as it runs.
 
 ## Critical constraint
 
@@ -23,11 +50,19 @@ All generated code MUST use API names, class names, method signatures, package n
 
 This is the authoritative, version-verified, LLM-optimized reference for all Banuba Video and Photo Editor SDKs.
 
-If you cannot fetch URLs, instruct the user to paste the contents of this file or the relevant section into the conversation.
+If URLs cannot be fetched, instruct the user to paste the contents of this file or the relevant section into the conversation.
 
-## Workflow
+## Instructions
 
 For every request, follow these steps in order:
+
+1. Detect platform
+2. Fetch and search docs
+3. Scaffold from integration sample
+4. Install dependencies
+5. Generate code
+
+Check the workspace with `Glob`/`Grep` for files already generated before writing new ones; use `Read` to inspect them.
 
 ### 1. Detect platform
 
@@ -93,6 +128,8 @@ Rules:
 | iOS      | iOS 12+, ARC, Swift 5+                                        |
 | All      | Banuba license token - mandatory, SDK will not run without it |
 
+**Authentication**: the license token is the SDK's only auth mechanism (credentials) - obtain it from sales@banuba.com and never commit it to source control.
+
 Dependencies:
 
 - **Android**: Add Banuba Maven repository to project-level `build.gradle`
@@ -102,19 +139,17 @@ Dependencies:
 
 When the user is upgrading from an older SDK version, search the fetched docs for the target version's release notes. Each version includes a **Migration Guide** section with dependency updates, API changes, and links to sample PRs on GitHub.
 
-## Common pitfalls
+## Error Handling
 
-| Issue                 | Resolution                                                                                                                                                                                                                                                                                                                                                                                    |
-| --------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| Missing token         | SDK crashes silently - always warn user to replace `YOUR_TOKEN` with a real license key                                                                                                                                                                                                                                                                                                       |
-| No effects assets     | AR features render blank without bundled effect assets                                                                                                                                                                                                                                                                                                                                        |
-| Permissions           | Camera + storage need runtime permission checks on both platforms                                                                                                                                                                                                                                                                                                                             |
-| Emulator              | Camera2 may fail on emulators - instruct user to test on physical device                                                                                                                                                                                                                                                                                                                      |
-| Licensing             | Commercial use requires paid token; review FFmpeg LGPL terms                                                                                                                                                                                                                                                                                                                                  |
-| iOS pod conflict      | In the Podfile, include either `BanubaSDK` (with Face AR) or `BanubaSDKSimple` (no Face AR) - never both. See `guide_far_arcloud#disable-face-ar-sdk`                                                                                                                                                                                                                                         |
-| iOS file registration | New `.swift`/`.m`/`.h` files must be added to the `.pbxproj` (file reference + target's source build phase). Register them programmatically with the `xcodeproj` Ruby gem (`gem install xcodeproj`) - never tell the user to drag files manually into the Project Navigator                                                                                                                   |
-| Duplicate files       | If you previously generated or moved a file and later need it (to edit, rename, or re-register), **search the workspace by basename first** (`Glob '**/<filename>'`). Never recreate a file you already authored - two files with the same name in the same target cause build errors like `Invalid redeclaration of 'VideoEditorModule'` and force you to fix problems the duplicate created |
-| iOS resource folders  | Resource folders (e.g., `bundleEffects/`, AR effect packs, masks) must be added to the `.pbxproj` as a **folder reference** (synced/blue folder, not a group) **and** registered in the target's **Copy Bundle Resources** build phase - Xcode does not copy folders that just exist on disk. Use the `xcodeproj` gem: create a folder reference (`group.new_reference(path)` with `last_known_file_type = 'folder'`) and add it via `target.add_resources([...])`. Without this, AR effects fail at runtime with errors like "effect not found" even though the files are on disk |
+- Missing token: SDK crashes silently - always warn the user to replace `YOUR_TOKEN` with a real license key (credentials).
+- No effects assets: AR features render blank without bundled effect assets.
+- Permissions: camera + storage need runtime permission checks on both platforms.
+- Emulator: Camera2 may fail on emulators - instruct the user to test on a physical device.
+- Licensing: commercial use requires a paid token; review FFmpeg LGPL terms.
+- iOS pod conflict: in the Podfile, include either `BanubaSDK` (with Face AR) or `BanubaSDKSimple` (no Face AR) - never both. See `guide_far_arcloud#disable-face-ar-sdk`.
+- iOS file registration: new `.swift`/`.m`/`.h` files must be added to the `.pbxproj` (file reference + source build phase). Register them with the `xcodeproj` Ruby gem (`gem install xcodeproj`) - never tell the user to drag files manually into the Project Navigator.
+- Duplicate files: before recreating a possibly already-authored file, search the workspace by basename first (`Glob '**/[filename]'`). Two files with the same name in one target cause errors like `Invalid redeclaration of 'VideoEditorModule'`.
+- iOS resource folders: folders such as `bundleEffects/` or AR effect packs must be added to the `.pbxproj` as a **folder reference** (not a group) **and** registered in **Copy Bundle Resources** - otherwise Xcode won't copy them and effects fail at runtime with "effect not found". Use the `xcodeproj` gem's `group.new_reference` + `target.add_resources`.
 
 ## When the answer is not in the docs
 
@@ -130,9 +165,22 @@ Public demo apps that showcase both the Video Editor and Photo Editor SDKs in pr
 - iOS: `https://apps.apple.com/us/app/banuba-video-editor/id1577338331`
 - Android: `https://play.google.com/store/apps/details?id=com.banuba.sdk.ve.demo&hl=en`
 
-## Reference links
+## Output
+
+- Complete, drop-in code files (e.g. `App.kt` + `build.gradle` for Android; `ContentView.swift` + `Podfile` for iOS).
+- Numbered step-by-step integration instructions.
+- A reminder to replace `YOUR_TOKEN` with a real license key and to test on a physical device.
+
+## Examples
+
+**Setting up the SDK.** A user says "Help me set up Banuba Photo Editor SDK in my project." The skill detects the platform, clones the matching integration sample, installs dependencies, and configures the license token.
+
+**Adding a feature.** A user says "Add new feature to my photo editor." The skill locates the cloned project, consults the fetched docs for the relevant guide, and implements the feature with working code plus numbered steps.
+
+## Resources
 
 - Android docs: https://docs.banuba.com/ve-pe-sdk/docs/android/requirements-pe
 - iOS docs: https://docs.banuba.com/ve-pe-sdk/docs/ios/pe-requirements
 - React Native docs: https://docs.banuba.com/ve-pe-sdk/docs/react/pe_integration
 - Sales / licensing: sales@banuba.com
+- See [references/README.md](references/README.md) for a short index of these and other doc links used above.
