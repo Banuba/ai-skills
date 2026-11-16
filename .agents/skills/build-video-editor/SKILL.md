@@ -29,8 +29,8 @@ tags:
 
 # Banuba Video Editor SDK - Build Skill
 
-> **SDK version**: v1.53.2 (generated 2026-08-11)
-> If the current date is more than 6 weeks after 2026-08-11, warn the user that this skill may be outdated and suggest updating.
+> **SDK version**: v1.55.0 Android, v1.55.0 iOS, Flutter v0.48.1, React Native v0.56.0 (generated 2026-11-16)
+> If the current date is more than 6 weeks after 2026-11-16, warn the user that this skill may be outdated and suggest updating.
 
 ## Overview
 

@@ -108,7 +108,7 @@ All paths are relative to `./docs/` within this skill's directory.
 | Share / export video  | `android/guide_share_video.md`        | `ios/guide_share_video.md`     |
 | Drafts                | `android/guide_drafts.md`             | `ios/guide_drafts.md`          |
 | Weatherman (PiP)      | _(replaced by Camera Layouts in v1.52.0)_ | `ios/guide_weatherman.md`      |
-| Camera Layouts        | `android/guide_camera_layouts.md`     | -                              |
+| Camera Layouts        | `android/guide_camera_layouts.md`     | `ios/guide_camera_layouts.md`                              |
 | Photo Editor (open)   | `android/guide_open_pe.md`            | `ios/guide_open_pe.md`         |
 | AI Clipping           | `android/ai_clipping.md`              | `ios/ai_clipping.md`           |
 | Closed Captions       | `android/close_captions.md`           | `ios/close_captions.md`        |
@@ -137,7 +137,7 @@ All paths are relative to `./docs/` within this skill's directory.
 
 | Topic                          | File                                                        |
 |--------------------------------|-------------------------------------------------------------|
-| Latest major release (v1.53.0) | `release-notes/1.53.0.md`                                   |
+| Latest major release (v1.55.0) | `release-notes/1.55.0.md`                                   |
 | VE patch series (1.51.x)       | `release-notes/1.51.x_patches.md` (Android/iOS native only) |
 | Full Android changelog         | `release-notes/Android.md`                                  |
 | Known issues                   | `release-notes/Known_issues.md`                             |

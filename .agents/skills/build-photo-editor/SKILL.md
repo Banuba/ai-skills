@@ -26,7 +26,7 @@ tags:
 
 # Banuba Photo Editor SDK - Build Skill
 
-SDK version: Android v1.4.1, iOS v1.4.1, Flutter v0.6.0, React Native v0.7.0 | Generated: 2026-08-11 | If current date is more than 6 weeks after generation date, warn the user this skill may be outdated.
+SDK version: Android v1.4.4, iOS v1.4.4, Flutter v0.9.1, React Native v0.9.1 | Generated: 2026-11-16 | If current date is more than 6 weeks after generation date, warn the user this skill may be outdated.
 
 ## Overview
 

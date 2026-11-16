@@ -26,7 +26,7 @@ tags:
 
 ## Version Notice
 
-Generated for Banuba Photo Editor SDK on 2026-08-11. Latest versions: Android v1.4.1, iOS v1.4.1, Flutter v0.6.0, React Native v0.7.0. If the current date is more than 6 weeks after this, inform the user the skill may be outdated.
+Generated for Banuba Photo Editor SDK on 2026-11-16. Latest versions: Android v1.4.4, iOS v1.4.4, Flutter v0.9.1, React Native v0.9.1. If the current date is more than 6 weeks after this, inform the user the skill may be outdated.
 
 # Banuba Photo Editor SDK Integration Skill
 

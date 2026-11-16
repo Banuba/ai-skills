@@ -119,78 +119,9 @@ Set the new implementation of `RecordButtonProvider` to `RecorderConfiguration.r
 var config = VideoEditorConfig()
 config.recorderConfiguration.recordButtonProvider = ...
 ```
+## Camera Layout
 
-## Picture in Picture
+Camera Layout is a set of camera recording layouts that combine the camera feed with additional media in a single video: background replacement, `weatherman` overlays and the classic `Picture in Picture` split screens.
+It replaces the standalone `PIP` screen used before `1.54.2`.
 
-Picture in Picture, or `PIP`, is a video editing technique that lets you overlay two videos in the same video.
-The multi-layer editing effect is perfect for reaction videos, slideshows, product demos, and more. This feature is similar to the TikTok duet feature.
-
-&nbsp;
-
-:::warning
-
-The feature is disabled by default and can be enabled if the license supports it. Please, ask Banuba business representatives to include this feature into your license.
-
-:::
-
-The subsequent guide explains how to start and customize `PIP`.
-
-First, create `VideoEditorLaunchConfig` in [ViewController](https://github.com/Banuba/ve-sdk-ios-integration-sample/blob/main/Example/Example/ViewController.swift#L65) 
-and provide video content for the feature:
-
-```swift
-let launchConfig = VideoEditorLaunchConfig(
-        entryPoint: entryPoint,
-        hostController: self,
-        videoItems: resultUrls,
-        // highlight-add-next-line
-        pipVideoItem: resultUrls[.zero],
-        animated: true
-)
-self.presentVideoEditor(with: launchConfig)
-```
-
-`PIP` supports 4 modes that you can use:
-- `Floating`,
-- `TopBottom`,
-- `React`,
-- `LeftRight`.
-
-Use `PIPSettingsConfiguration` to customize the PIP implementation:
-
-| Property |          Values           | Description |
-| ------------- |:-------------------------:| :------------- |
-| backgroundConfiguration | BackgroundConfiguration | BackgroundConfiguration sets up the background view style
-| dragIndicatorConfiguration | RoundedButtonConfiguration | the cursor color
-| titleConfiguration | TextConfiguration | the title font for the controls
-| layoutSettingsButtonsConfiguration | [PIPSelectableCellConfiguration] | the array of the pip cell configurations
-
-In this example, 4 supported PIP modes are set:
-```swift
-var config = VideoEditorConfig()
-config.pipSettingsConfiguration?.layoutSettingsButtonsConfiguration = [
-  PIPSelectableCellConfiguration(identifier: .floating),
-  PIPSelectableCellConfiguration(identifier: .react),
-  PIPSelectableCellConfiguration(identifier: .topBottom),
-  PIPSelectableCellConfiguration(identifier: .leftRight)
-]
-``` 
-
-You can also change the position of the music button.
-Use `additionalEffectsButtons` and provide custom `AdditionalEffectsButtonConfiguration` with the `.sound` identifier:
-```swift
-let config = VideoEditorConfig()
-
-config.recorderConfiguration.additionalEffectsButtons = [
-  AdditionalEffectsButtonConfiguration(
-    identifier: .sound,
-    imageConfiguration: ImageConfiguration(imageName: ""),
-    selectedImageConfiguration: ImageConfiguration(imageName: ""),
-    titlePosition: .bottom,
-    position: .top
-  ),
-  ...
-] 
-```
-
-The Video Editor supports 3 options for positioning the music button: `bottom`, `center`, `top`.
+See [Camera Layouts](guide_camera_layouts.md) for the full guide, the list of supported layouts and the migration steps from `PIP`.
