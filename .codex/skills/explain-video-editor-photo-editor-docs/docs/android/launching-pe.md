@@ -11,9 +11,9 @@ Guide to launching Photo Editor SDK.
 Please check [Requirements](requirements-pe.md#license-token) out guide if the license token is not set.
 
 ## Initialize SDK
-Create an instance of ```BanubaPhotoEditor```  by using the license token
+Create an instance of ```EditorSdk``` by using the license token
 ``` kotlin
-val photoEditorSDK = BanubaPhotoEditor.initialize(LICENSE_TOKEN)
+val photoEditorSDK = EditorSdk.initialize(LICENSE_TOKEN)
 ```
 ```photoEditorSDK``` is ```null``` when the license token is incorrect i.e. empty, truncated.
 If ```photoEditorSDK``` is not ```null``` you can proceed and start video editor.
@@ -38,7 +38,7 @@ Photo editing content unavailable screen will appear if the user starts Photo Ed
 
 Import classes
 ```kotlin
-import com.banuba.sdk.pe.BanubaPhotoEditor
+import com.banuba.sdk.core.license.EditorSdk
 import com.banuba.sdk.pe.PhotoCreationActivity
 import com.banuba.sdk.pe.PhotoExportResultContract
 ```
