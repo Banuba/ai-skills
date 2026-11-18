@@ -89,7 +89,9 @@ single<CameraConfig>{
 Picture in Picture or ```PIP``` is video editing technique that lets you overlay two videos in the same video.
 The multi-layer editing effect is perfect for reaction videos, slideshows, product demos, and more. This feature is similar to TikTok duet feature.  
 
-&nbsp;
+<p align="center">
+<img src={require('../img/camera_pip.gif').default} alt="Screenshot" width="30%" height="auto" class="docs-screenshot"/>&nbsp;
+</p>
 
 :::info
 The feature is disabled by default and can be enabled if the license supports it. Please ask Banuba business representatives to include the feature in your license.  

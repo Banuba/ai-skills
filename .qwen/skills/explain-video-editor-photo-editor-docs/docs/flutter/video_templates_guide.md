@@ -7,7 +7,11 @@
 Templates let users create stunning videos quickly and easily using predefined sets of effects, transitions, and music. 
 All it takes to make a shareable piece is changing the placeholders. With templates, even people who are new to video editing or just lack time can make impressive content in minutes.
 
-:::note
+&nbsp;
+&nbsp;
+&nbsp;
+
+:::important
 The ```Video Templates``` is not enabled by default. Contact Banuba representatives to know more.
 :::
 
@@ -33,7 +37,7 @@ Future<void> _startVideoEditorInCameraMode() async {
 
 ## Setup Custom Templates
 
-:::note
+:::important
 Use this method if you have an agreement with Banuba for the delivery of additional templates and have received the corresponding URL. By default, the SDK is delivered with predefined configuration to load Banuba templates.
 :::
 
@@ -63,6 +67,10 @@ final config = FeaturesConfigBuilder()
 
 ## Template Builder
 
+&nbsp;
+&nbsp;
+&nbsp;
+
 :::important
 This feature is currently available on iOS only (starting from version 1.51.3).
 ***
@@ -82,7 +90,6 @@ text. Others can use these as starting points by replacing the media placeholder
   videos.
 
 ### Launch Template Builder
-
 
 ```dart
 final config = FeaturesConfigBuilder()

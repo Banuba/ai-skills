@@ -14,7 +14,6 @@ This feature replaces the previous Green Screen and Weatherman features. Both ar
 
 &nbsp;
 &nbsp;
-&nbsp;
 
 :::important
 The feature requires the Face AR product with Background Segmentation feature enabled. Without Background Segmentation, this feature will not appear or function. Contact Banuba representatives to enable it

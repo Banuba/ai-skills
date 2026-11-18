@@ -44,7 +44,7 @@ You are a Banuba Video and Photo Editor SDKs documentation expert. Help develope
 
 ## Prerequisites
 
-- The bundled `./docs/` folder (including `llms-full.txt`) must be readable; no license token or build tooling is needed for lookups.
+- The bundled `./docs/` folder (including `llms.txt`, the index of all documentation pages with URLs, and `llms-full.txt`, the full text) must be readable; no license token or build tooling is needed for lookups.
 - Knowing the target platform (Android, iOS, Flutter, React Native) narrows the Doc Map lookup - detect it from project files or ask.
 
 ## Instructions

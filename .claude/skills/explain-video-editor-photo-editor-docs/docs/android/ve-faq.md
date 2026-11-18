@@ -136,34 +136,34 @@ Effects identifiers are presented in the table below:
 
 | Effect      | Type | String identifier | Default icon |
 | :---------- | :---:| :--------------:  | :----------: |
-| Acid-whip | visual | acid_whip|  
-| Cathode | visual | cathode |  
-| Flash | visual | flash |  
-| Glitch | visual | glitch |  
-| Glitch 2 | visual | glitch2 |  
-| Glitch 3 | visual | glitch3 |  
-| Heat map | visual | heat_map |  
-| DSLR Kaleidoscope | visual | dslr_kaleidoscope |  
-| Kaleidoscope | visual | kaleidoscope |  
-| Lumiere | visual | lumiere |  
-| Pixel dynamic | visual | pixel_dynamic |  
-| Pixel static | visual | pixel_static |  
-| Polaroid | visual | polaroid |  
-| Rave | visual | rave |  
-| Soul | visual | soul |  
-| Stars | visual | stars |  
-| Transition 1 | visual | transition1 |  
-| Transition 2 | visual | transition2 |  
-| Transition 3 | visual | transition3 |  
-| Transition 4 | visual | transition4 |  
-| TV Foam | visual | tv_foam |  
-| DV Cam | visual | dv_cam |  
-| VHS | visual | vhs |  
-| VHS 2 | visual | vhs2 |  
-| Zoom | visual | zoom |  
-| Zoom 2 | visual | zoom2 |  
-| Slow mo | time | slow_motion |  
-| Rapid | time | rapid |  
+| Acid-whip | visual | acid_whip| <img src="https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/mddocs/icons/ic_visual_effect_acid_whip.png?raw=true" width="50" alt="ic_visual_effect_acid_whip"/> 
+| Cathode | visual | cathode | <img src="https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/mddocs/icons/ic_visual_effect_cathode.png?raw=true" width="50" alt="ic_visual_effect_cathode"/> 
+| Flash | visual | flash | <img src="https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/mddocs/icons/ic_visual_effect_flash.png?raw=true" width="50" alt="ic_visual_effect_flash"/> 
+| Glitch | visual | glitch | <img src="https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/mddocs/icons/ic_visual_effect_glitch.png?raw=true" width="50" alt="ic_visual_effect_glitch"/> 
+| Glitch 2 | visual | glitch2 | <img src="https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/mddocs/icons/ic_visual_effect_glitch2.png?raw=true" width="50" alt="ic_visual_effect_glitch2"/> 
+| Glitch 3 | visual | glitch3 | <img src="https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/mddocs/icons/ic_visual_effect_glitch3.png?raw=true" width="50" alt="ic_visual_effect_glitch3"/> 
+| Heat map | visual | heat_map | <img src="https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/mddocs/icons/ic_visual_effect_heat_map.png?raw=true" width="50" alt="ic_visual_effect_heat_map"/> 
+| DSLR Kaleidoscope | visual | dslr_kaleidoscope | <img src="https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/mddocs/icons/ic_visual_effect_dslr_kaleidoscope.png?raw=true" width="50" alt="ic_visual_effect_dslr_kaleidoscope"/> 
+| Kaleidoscope | visual | kaleidoscope | <img src="https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/mddocs/icons/ic_visual_effect_kaleidoscope.png?raw=true" width="50" alt="ic_visual_effect_kaleidoscope"/> 
+| Lumiere | visual | lumiere | <img src="https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/mddocs/icons/ic_visual_effect_lumiere.png?raw=true" width="50" alt="ic_visual_effect_lumiere"/> 
+| Pixel dynamic | visual | pixel_dynamic | <img src="https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/mddocs/icons/ic_visual_effect_pixel_dynamic.png?raw=true" width="50" alt="ic_visual_effect_pixel_dynamic"/> 
+| Pixel static | visual | pixel_static | <img src="https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/mddocs/icons/ic_visual_effect_pixel_static.png?raw=true" width="50" alt="ic_visual_effect_pixel_static"/> 
+| Polaroid | visual | polaroid | <img src="https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/mddocs/icons/ic_visual_effect_polaroid.png?raw=true" width="50" alt="ic_visual_effect_polaroid"/> 
+| Rave | visual | rave | <img src="https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/mddocs/icons/ic_visual_effect_rave.png?raw=true" width="50" alt="ic_visual_effect_rave"/> 
+| Soul | visual | soul | <img src="https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/mddocs/icons/ic_visual_effect_soul.png?raw=true" width="50" alt="ic_visual_effect_soul"/> 
+| Stars | visual | stars | <img src="https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/mddocs/icons/ic_visual_effect_stars.png?raw=true" width="50" alt="ic_visual_effect_stars"/> 
+| Transition 1 | visual | transition1 | <img src="https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/mddocs/icons/ic_visual_effect_transition1.png?raw=true" width="50" alt="ic_visual_effect_transition1"/> 
+| Transition 2 | visual | transition2 | <img src="https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/mddocs/icons/ic_visual_effect_transition2.png?raw=true" width="50" alt="ic_visual_effect_transition2"/> 
+| Transition 3 | visual | transition3 | <img src="https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/mddocs/icons/ic_visual_effect_transition3.png?raw=true" width="50" alt="ic_visual_effect_transition3"/> 
+| Transition 4 | visual | transition4 | <img src="https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/mddocs/icons/ic_visual_effect_transition4.png?raw=true" width="50" alt="ic_visual_effect_transition4"/> 
+| TV Foam | visual | tv_foam | <img src="https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/mddocs/icons/ic_visual_effect_tv_foam.png?raw=true" width="50" alt="ic_visual_effect_tv_foam"/> 
+| DV Cam | visual | dv_cam | <img src="https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/mddocs/icons/ic_visual_effect_dv_cam.png?raw=true" width="50" alt="ic_visual_effect_dv_cam"/> 
+| VHS | visual | vhs | <img src="https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/mddocs/icons/ic_visual_effect_vhs.png?raw=true" width="50" alt="ic_visual_effect_vhs"/> 
+| VHS 2 | visual | vhs2 | <img src="https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/mddocs/icons/ic_visual_effect_vhs2.png?raw=true" width="50" alt="ic_visual_effect_vhs2"/> 
+| Zoom | visual | zoom | <img src="https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/mddocs/icons/ic_visual_effect_zoom.png?raw=true" width="50" alt="ic_visual_effect_zoom"/> 
+| Zoom 2 | visual | zoom2 | <img src="https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/mddocs/icons/ic_visual_effect_zoom2.png?raw=true" width="50" alt="ic_visual_effect_zoom2"/> 
+| Slow mo | time | slow_motion | <img src="https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/mddocs/icons/ic_time_effect_slow_motion.png?raw=true" width="50" alt="ic_time_effect_slow_motion"/> 
+| Rapid | time | rapid | <img src="https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/mddocs/icons/ic_time_effect_rapid.png?raw=true" width="50" alt="ic_time_effect_rapid"/> 
 
 For example, to change the title of ```Flash``` visual effect to ```SuperFlash``` add it in  ```strings.xml``` in your app.
 ```xml

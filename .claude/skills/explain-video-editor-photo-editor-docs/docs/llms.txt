@@ -1,0 +1,98 @@
+# Banuba Video and Photo Editor SDKs Documentation
+
+> Docs provides full information about Banuba Video and Photo Editor SDKs, integration and customization guides.
+
+This file contains links to documentation sections following the llmstxt.org standard.
+
+## Table of Contents
+
+- [Customization Options Video Editor SDK on Android](https://docs.banuba.com/ve-pe-sdk/docs/android/adv-integration-overview.md): Banuba Video Editor SDK has built in UI/UX experience and provides a number of customizations you can use to meet your requirements.
+- [AI Clipping on Android](https://docs.banuba.com/ve-pe-sdk/docs/android/ai_clipping.md): The [AI Clipping](https://www.banuba.com/ai-sdk) feature automates the video creation process by leveraging the power of artificial intelligence. T...
+- [Closed Captions on Android](https://docs.banuba.com/ve-pe-sdk/docs/android/close_captions.md): Closed captions(CC) are a textual representation of the audio within a media file.
+- [Dependencies and Licenses on Android](https://docs.banuba.com/ve-pe-sdk/docs/android/dependencies_licenses_ve.md): Lists used dependencies and licenses in the SDK.
+- [Use of FFmpeg](https://docs.banuba.com/ve-pe-sdk/docs/android/ffmpeg.md): Banuba Video Editor SDK uses FFmpeg version ```5.3.0 ```
+- [Audio content on Android](https://docs.banuba.com/ve-pe-sdk/docs/android/guide_audio_content.md): Guide to integrating and customizing audio providers in Video Editor SDK.
+- [Camera screen on Android](https://docs.banuba.com/ve-pe-sdk/docs/android/guide_camera.md): Guide to modifying camera UI elements and screen configuration.
+- [Camera Layouts on Android](https://docs.banuba.com/ve-pe-sdk/docs/android/guide_camera_layouts.md): Camera Layouts lets you replace the background of your camera view in real time. Users can choose from three options:
+- [Cover image on Android](https://docs.banuba.com/ve-pe-sdk/docs/android/guide_cover.md): Cover image screen allows users to pick any frame of video as image or choose an image from gallery.
+- [Drafts screen on Android](https://docs.banuba.com/ve-pe-sdk/docs/android/guide_drafts.md): Guide to integrating and customizing drafts screen on Video Editor SDK.
+- [Editor screen on Android](https://docs.banuba.com/ve-pe-sdk/docs/android/guide_editor.md): Guide to integrating and customizing Editor screen.
+- [NEW Editor screen on Android](https://docs.banuba.com/ve-pe-sdk/docs/android/guide_editor_v2.md): Guide to integrating and customizing New Editor screen.
+- [Export media on Android](https://docs.banuba.com/ve-pe-sdk/docs/android/guide_export.md): Video Editor SDK allows to export a number of media files i.e. video and audio with various resolutions and other configurations. 
+- [Face AR and AR Cloud products on Android](https://docs.banuba.com/ve-pe-sdk/docs/android/guide_far_arcloud.md): [Banuba Face AR SDK](https://www.banuba.com/facear-sdk/face-filters) product is used on camera and editor screens for applying various AR effects w...
+- [Drawing on Android](https://docs.banuba.com/ve-pe-sdk/docs/android/guide_finger_drawing.md): Lets your users draw freely on screen. It is a convenient tool for highlighting important objects in the video or spicing up the frame with funny d...
+- [Gallery screen on Android](https://docs.banuba.com/ve-pe-sdk/docs/android/guide_gallery.md): Video Editor SDK includes built in gallery functionality where the user can pick any video or image and use it while making video.
+- [Open Photo Editor SDK from Camera screen on Android](https://docs.banuba.com/ve-pe-sdk/docs/android/guide_open_pe.md): This guide demonstrates how to open [Photo Editor SDK](https://www.banuba.com/photo-editor-sdk) just after taking a photo on Video Editor Camera sc...
+- [Share video screen on Android](https://docs.banuba.com/ve-pe-sdk/docs/android/guide_share_video.md): Share video screen allows users to easily share an exported video using popular social media services and OS specific components.
+- [Stickers on Android](https://docs.banuba.com/ve-pe-sdk/docs/android/guide_stickers.md): Guide to using stickers in Video Editor SDK on Android.
+- [Video recording integration guide on Android](https://docs.banuba.com/ve-pe-sdk/docs/android/guide_video_recording.md): Guide to modifying video recording feature in Video Editor SDK.
+- [Install Photo Editor on Android](https://docs.banuba.com/ve-pe-sdk/docs/android/installation-pe.md): Guide to installing Photo Editor SDK on Android.
+- [Integration Video Editor on Android](https://docs.banuba.com/ve-pe-sdk/docs/android/integration-ve.md): **Groovy** (in project's [build.gradle](https://github.com/Banuba/ve-sdk-android-integration-sample/blob/main/build.gradle#L21))
+- [Launching Photo Editor on Android](https://docs.banuba.com/ve-pe-sdk/docs/android/launching-pe.md): Guide to launching Photo Editor SDK.
+- [Banuba Photo Editor SDK Requirements on Android](https://docs.banuba.com/ve-pe-sdk/docs/android/requirements-pe.md): Guide contains general requirements for using Photo Editor SDK on Android.
+- [Requirements](https://docs.banuba.com/ve-pe-sdk/docs/android/requirements-ve.md): Learn about the Android requirements and features for the Banuba Video Editor SDK. See supported versions, compatible devices, & other details.
+- [FAQ on Android](https://docs.banuba.com/ve-pe-sdk/docs/android/ve-faq.md): These are the answers to the most common questions asked about our SDK.
+- [Video Templates on Android](https://docs.banuba.com/ve-pe-sdk/docs/android/video_templates_guide.md): Templates let users create stunning videos quickly and easily using predefined sets of effects, transitions, and music. All it takes to make a shar...
+- [AI Clipping on Flutter](https://docs.banuba.com/ve-pe-sdk/docs/flutter/ai_clipping_guide.md): The ```AI Clipping``` feature automates the video creation process by leveraging the power of artificial intelligence. The neural network transform...
+- [Audio Browser on Flutter](https://docs.banuba.com/ve-pe-sdk/docs/flutter/audio_browser_guide.md): ```Audio Browser``` - a specific module and set of screens that include the built-in support of browsing and applying audio content within the Vide...
+- [Camera screen on Flutter](https://docs.banuba.com/ve-pe-sdk/docs/flutter/camera_screen_guide.md): Specify instance of ```CameraConfig``` in ```FeaturesConfig``` builder:
+- [Closed Captions on Flutter](https://docs.banuba.com/ve-pe-sdk/docs/flutter/captions_guide.md): AI Captions are a textual representation of the audio within a media file.
+- [Cover Screen on Flutter](https://docs.banuba.com/ve-pe-sdk/docs/flutter/cover_guide.md): Cover image screen allows users to pick any frame of video as image or choose an image from gallery.
+- [Draft Configuration on Flutter](https://docs.banuba.com/ve-pe-sdk/docs/flutter/drafts_guide.md): Drafts are enabled by default, asks the user to save a draft before leave any VideoEditor screen.
+- [Editor screen on Flutter](https://docs.banuba.com/ve-pe-sdk/docs/flutter/editor_screen_guide.md): Specify instance of ```EditorConfig``` in ```FeaturesConfig``` builder:
+- [Editor V2 on Flutter](https://docs.banuba.com/ve-pe-sdk/docs/flutter/editor_v2_guide.md): How to enable and use the redesigned Editor V2 interface in the Banuba Video Editor SDK for Flutter.
+- [Export Media on Flutter](https://docs.banuba.com/ve-pe-sdk/docs/flutter/export_guide.md): How to implement video export flow in the Banuba Video Editor SDK for Flutter, including resolution and quality configuration.
+- [Banuba Photo Editor Flutter on Flutter](https://docs.banuba.com/ve-pe-sdk/docs/flutter/pe_installation.md): How to install and set up the Banuba Photo Editor SDK for Flutter apps, including license setup and running the sample project.
+- [Integration Guide on Flutter](https://docs.banuba.com/ve-pe-sdk/docs/flutter/pe_integration.md): This guide helps to complete full Photo Editor SDK integration.
+- [Stickers on Flutter](https://docs.banuba.com/ve-pe-sdk/docs/flutter/stickers_guide.md): Stickers are interactive objects (gif images) that can be added to the video recording.
+- [Banuba Video Editor Flutter](https://docs.banuba.com/ve-pe-sdk/docs/flutter/ve_installation.md): How to install and set up the Banuba Video Editor SDK for Flutter apps, including license setup and running the sample project.
+- [Integration Guide on Flutter](https://docs.banuba.com/ve-pe-sdk/docs/flutter/ve_integration.md): This guide helps to complete full Video Editor SDK integration.
+- [Video Duration on Flutter](https://docs.banuba.com/ve-pe-sdk/docs/flutter/video_duration_guide.md): ```VideoDurationConfig``` is responsible for customizing video recording durations.
+- [Video Templates on Flutter](https://docs.banuba.com/ve-pe-sdk/docs/flutter/video_templates_guide.md): Templates let users create stunning videos quickly and easily using predefined sets of effects, transitions, and music. 
+- [Customization Options Video Editor SDK on iOS](https://docs.banuba.com/ve-pe-sdk/docs/ios/adv-integration-overview.md): Banuba Video Editor SDK has built in UI/UX experience and provides a number of customizations you can use to meet your requirements.
+- [AI Clipping on iOS](https://docs.banuba.com/ve-pe-sdk/docs/ios/ai_clipping.md): The [AI Clipping](https://www.banuba.com/ai-sdk) feature automates the video creation process by leveraging the power of artificial intelligence. T...
+- [Closed Captions on iOS](https://docs.banuba.com/ve-pe-sdk/docs/ios/close_captions.md): Closed captions(CC) are a textual representation of the audio within a media file.
+- [Audio content on iOS](https://docs.banuba.com/ve-pe-sdk/docs/ios/guide_audio_content.md): Guide to integrating and customizing audio providers in Video Editor SDK.
+- [Camera screen on iOS](https://docs.banuba.com/ve-pe-sdk/docs/ios/guide_camera.md): Guide to modifying camera UI elements and screen configuration.
+- [Camera Layouts on iOS](https://docs.banuba.com/ve-pe-sdk/docs/ios/guide_camera_layouts.md): Camera Layouts is a set of camera recording layouts that combine the camera feed with additional content in a single video.
+- [Cover image on iOS](https://docs.banuba.com/ve-pe-sdk/docs/ios/guide_cover.md): Cover image screen allows users to pick any frame of video as image or choose an image from gallery.
+- [Drafts screen on iOS](https://docs.banuba.com/ve-pe-sdk/docs/ios/guide_drafts.md): Guide to integrating and customizing drafts screen on Video Editor SDK.
+- [Editor screen on iOS](https://docs.banuba.com/ve-pe-sdk/docs/ios/guide_editor.md): Guide to integrating and customizing Editor screen.
+- [NEW Editor screen on iOS](https://docs.banuba.com/ve-pe-sdk/docs/ios/guide_editor_v2.md): Guide to integrating and customizing New Editor screen.
+- [Export media on iOS](https://docs.banuba.com/ve-pe-sdk/docs/ios/guide_export.md): Video Editor SDK allows to export a number of media files i.e. video and audio with various resolutions and other configurations.
+- [Face AR and AR Cloud products on iOS](https://docs.banuba.com/ve-pe-sdk/docs/ios/guide_far_arcloud.md): [Banuba Face AR SDK](https://www.banuba.com/facear-sdk/face-filters) product is used on camera and editor screens for applying various AR effects w...
+- [Drawing on iOS](https://docs.banuba.com/ve-pe-sdk/docs/ios/guide_finger_drawing.md): Lets your users draw freely on screen. It is a convenient tool for highlighting important objects in the video or spicing up the frame with funny d...
+- [Gallery screen on iOS](https://docs.banuba.com/ve-pe-sdk/docs/ios/guide_gallery.md): Video Editor SDK includes built in gallery functionality where the user can pick any video or image and use it while making video.
+- [Green Screen on iOS](https://docs.banuba.com/ve-pe-sdk/docs/ios/guide_green_screen.md): Video Editor SDK brings you real-time background subtraction technology for you to empower your users with the best quality virtual background serv...
+- [Open Photo Editor SDK from Camera screen on iOS](https://docs.banuba.com/ve-pe-sdk/docs/ios/guide_open_pe.md): This guide demonstrates how to open [Photo Editor SDK](https://www.banuba.com/photo-editor-sdk) just after taking a photo on Video Editor Camera sc...
+- [Share video screen on iOS](https://docs.banuba.com/ve-pe-sdk/docs/ios/guide_share_video.md): Share video screen allows users to easily share an exported video using popular social media services and OS specific components.
+- [Stickers on iOS](https://docs.banuba.com/ve-pe-sdk/docs/ios/guide_stickers.md): Guide to using stickers in Video Editor SDK on Android.
+- [Video recording integration guide on iOS](https://docs.banuba.com/ve-pe-sdk/docs/ios/guide_video_recording.md): Guide to modifying video recording feature in Video Editor SDK.
+- [Weatherman on iOS](https://docs.banuba.com/ve-pe-sdk/docs/ios/guide_weatherman.md): Weatherman mode is an improvement on top of Banuba's cutting-edge background replacement. It allows users to drag and drop themselves on any place ...
+- [Integration Video Editor on iOS](https://docs.banuba.com/ve-pe-sdk/docs/ios/integration-ve.md): To integrate the Video Editor SDK via CocoaPods:
+- [Launching Photo Editor on iOS](https://docs.banuba.com/ve-pe-sdk/docs/ios/launching-pe.md): Guide to launching Photo Editor SDK.
+- [SPM Mandatory modules](https://docs.banuba.com/ve-pe-sdk/docs/ios/mandatory-modules.md): The following modules must be installed in all cases:
+- [Installation with CocoaPods](https://docs.banuba.com/ve-pe-sdk/docs/ios/pe-cocapods-installation.md): Learn the [CocoaPods Getting Started Guide](https://guides.cocoapods.org/using/getting-started.html) if you are new to CocoaPods.
+- [Configure Photo Editor on iOS](https://docs.banuba.com/ve-pe-sdk/docs/ios/pe-configuration.md): Guide to modifying Photo Editor SDK.
+- [Banuba Photo Editor SDK Requirements on iOS](https://docs.banuba.com/ve-pe-sdk/docs/ios/pe-requirements.md): Guide contains general requirements for using Photo Editor SDK on iOS.
+- [Installation with Swift Package Manager on iOS](https://docs.banuba.com/ve-pe-sdk/docs/ios/pe-spm-installation.md): Learn the [SPM Getting Started Guide](https://developer.apple.com/documentation/swift_packages/adding_package_dependencies_to_your_app) if you are ...
+- [Requirements](https://docs.banuba.com/ve-pe-sdk/docs/ios/requirements.md): Learn about the iOS requirements and features for the Banuba Video Editor SDK. See supported versions, compatible devices, & other details.
+- [FAQ on iOS](https://docs.banuba.com/ve-pe-sdk/docs/ios/ve-faq.md): These are the answers to the most common questions asked about our SDK.
+- [Video Templates on iOS](https://docs.banuba.com/ve-pe-sdk/docs/ios/video_templates_guide.md): Templates let users create stunning videos quickly and easily using predefined sets of effects,
+- [AI Clipping on React Native](https://docs.banuba.com/ve-pe-sdk/docs/react/ai_clipping_guide.md): The ```AI Clipping``` feature automates the video creation process by leveraging the power of artificial intelligence. The neural network transform...
+- [Audio Browser on React Native](https://docs.banuba.com/ve-pe-sdk/docs/react/audio_browser_guide.md): ```Audio Browser``` - a specific module and set of screens that include the built-in support of browsing and applying audio content within the Vide...
+- [Camera screen on React Native](https://docs.banuba.com/ve-pe-sdk/docs/react/camera_screen_guide.md): Specify instance of ```CameraConfig``` in ```FeaturesConfig``` builder:
+- [Closed Captions on React Native](https://docs.banuba.com/ve-pe-sdk/docs/react/captions_guide.md): AI Captions are a textual representation of the audio within a media file.
+- [Cover Screen on React Native](https://docs.banuba.com/ve-pe-sdk/docs/react/cover_guide.md): Cover image screen allows users to pick any frame of video as image or choose an image from gallery.
+- [Draft Configuration on React Native](https://docs.banuba.com/ve-pe-sdk/docs/react/drafts_guide.md): Drafts are enabled by default, asks the user to save a draft before leave any VideoEditor screen.
+- [Editor screen on React Native](https://docs.banuba.com/ve-pe-sdk/docs/react/editor_screen_guide.md): Specify instance of ```EditorConfig``` in ```FeaturesConfig``` builder:
+- [Editor V2 on React Native](https://docs.banuba.com/ve-pe-sdk/docs/react/editor_v2_guide.md): How to enable and use the redesigned Editor V2 interface in the Banuba Video Editor SDK for React Native.
+- [Export media on React Native](https://docs.banuba.com/ve-pe-sdk/docs/react/export_guide.md): How to implement video export flow in the Banuba Video Editor SDK for React Native, including resolution and quality configuration.
+- [Banuba Photo Editor React Native](https://docs.banuba.com/ve-pe-sdk/docs/react/pe_installation.md): How to install and set up the Banuba Photo Editor SDK for React Native apps, including license setup and running the sample project.
+- [Integration Guide on React Native](https://docs.banuba.com/ve-pe-sdk/docs/react/pe_integration.md): This guide helps to complete full Photo Editor SDK integration.
+- [Stickers on React Native](https://docs.banuba.com/ve-pe-sdk/docs/react/stickers_guide.md): Stickers are interactive objects (gif images) that can be added to the video recording.
+- [Banuba Video Editor React Native](https://docs.banuba.com/ve-pe-sdk/docs/react/ve_installation.md): How to install and set up the Banuba Video Editor SDK for React Native apps, including license setup and running the sample project.
+- [Integration Guide on react Native](https://docs.banuba.com/ve-pe-sdk/docs/react/ve_integration.md): This guide helps to complete full Video Editor SDK integration.
+- [Video Duration on React Native](https://docs.banuba.com/ve-pe-sdk/docs/react/video_duration_guide.md): ```VideoDurationConfig``` is responsible for customizing video recording durations.
+- [Video Templates on React Native](https://docs.banuba.com/ve-pe-sdk/docs/react/video_templates_guide.md): Templates let users create stunning videos quickly and easily using predefined sets of effects, transitions, and music.
+- [Build a Banuba Video Editor with AI](https://docs.banuba.com/ve-pe-sdk/docs/vibe-coding.md): **In about an hour, you'll have a working Banuba Video or Photo Editor running in a local demo app on your laptop.**

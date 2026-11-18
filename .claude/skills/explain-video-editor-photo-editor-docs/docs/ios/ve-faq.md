@@ -680,6 +680,23 @@ config.recorderConfiguration.previewScalingMode = .aspectFit
 
 By default the `aspectFill` option is used. It provides the same preview scaling behaviour as in previous releases of the SDK.
 
+## How can I handle media recorded or selected on the Camera screen?
+
+Implement `videoEditor(_:shouldProcessRecorderOutputAt:)` in `BanubaVideoEditorDelegate`:
+
+This callback is optional. If it is not implemented, the default delegate implementation returns `true` and the SDK continues its standard media processing flow.
+
+```swift
+func videoEditor(_ videoEditor: BanubaVideoEditor, shouldProcessRecorderOutputAt urls: [URL]) -> Bool {
+  return true
+}
+```
+
+- `videoEditor` is the active Video Editor SDK instance.
+- `urls` contains local URLs of the photos and videos captured with the camera or selected from the gallery.
+- Return `true` to let the SDK process the media and continue its standard flow. This is the default behavior.
+- Return `false` to handle the media in your own flow. In this case, your app is responsible for closing Video Editor SDK.
+
 ## How to collect logs when I encounter an issue?
 
 If you encounter a crash or other issue and are unsure how to provide logs to the support team, follow steps provided below:

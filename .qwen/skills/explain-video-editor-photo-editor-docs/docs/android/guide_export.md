@@ -24,6 +24,9 @@ Export supports 2 modes:
 ```ForegroundExportFlowManager``` and ```BackgroundExportFlowManager``` are corresponding implementations.
 
 Here is a screen that is shown in ```Foreground``` mode.
+<p align="center">
+<img  src={require('../img/screen_export_media.png').default} width="33%" height="33%" alt="screen export media"/>
+</p>
 
 ## Video quality
 

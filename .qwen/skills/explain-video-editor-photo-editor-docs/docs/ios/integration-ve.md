@@ -34,12 +34,11 @@ source 'https://cdn.cocoapods.org/'
 source 'https://github.com/Banuba/specs.git'
 source 'https://github.com/sdk-banuba/banuba-sdk-podspecs.git'
 
-banuba_sdk_version = '1.53.2'
-banuba_face_ar_sdk_version = '1.53.1'
+banuba_sdk_version = '1.55.0'
 
 pod 'BanubaVideoEditorSDK', banuba_sdk_version
-pod 'BanubaSDKSimple', banuba_face_ar_sdk_version
-pod 'BanubaSDK', banuba_face_ar_sdk_version
+pod 'BanubaSDKSimple', banuba_sdk_version
+pod 'BanubaSDK', banuba_sdk_version
 pod 'BanubaARCloudSDK', banuba_sdk_version      # optional
 pod 'BanubaAudioBrowserSDK', banuba_sdk_version # optional
 ```
@@ -138,15 +137,24 @@ Video content unavailable screen will appear if you start Video Editor SDK with 
 
 The [implementation](https://github.com/Banuba/ve-sdk-ios-integration-sample/blob/main/Example/Example/ViewController.swift#L45) below starts Video Editor from camera screen.
 ```swift
- let cameraLaunchConfig = VideoEditorLaunchConfig(
-        entryPoint: .camera,
-        hostController: self,
-        musicTrack: nil, // Paste a music track as a track preset at the camera screen to record video with music
-        animated: true
+let cameraLaunchConfig = VideoEditorLaunchConfig(
+  entryPoint: .camera,
+  hostController: self,
+  shouldCopyVideo: false,
+  musicTrack: nil,
+  animated: true
 )
 
 videoEditorModule.presentVideoEditor(with: cameraLaunchConfig)
 ```
+
+| Parameter | Description |
+| --- | --- |
+| `entryPoint` | The first screen in the Video Editor flow. `.camera` opens the Camera screen. |
+| `hostController` | The view controller used to present Video Editor SDK. |
+| `shouldCopyVideo` | Determines whether videos passed in `videoItems` are copied before use. Applies to `.trimmer` and `.editor`; the default is `false`. |
+| `musicTrack` | An optional music preset played during camera recording. Pass `nil` to start without a preset. |
+| `animated` | Determines whether presenting Video Editor SDK is animated. The default is `true`. |
 
 ## Implement export
 

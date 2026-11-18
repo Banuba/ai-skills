@@ -4,6 +4,8 @@
 
 # Banuba Video Editor SDK Requirements on Android
 
+# Banuba Video Editor SDK Requirements on Android
+
 ## License Token
 
 Before you commit to a license, you are free to test all the features of the SDK for free. The trial period lasts 14 days.
