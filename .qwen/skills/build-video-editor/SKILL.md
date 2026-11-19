@@ -68,16 +68,16 @@ Determine which of the two before fetching docs or cloning a sample - it changes
 | What it is | Pre-built UI/UX: camera, gallery import, editor screen, export, share | Modular, code-level components with no bundled UI - Playback (`VideoPlayer`), Export (`ExportFlowManager`, `ExportParamsProvider`), Effects |
 | Recommend when | The user wants a ready-made editing experience and is fine adopting Banuba's screens (camera, editor, export flow) | The user needs a fully custom UI, or wants to embed editing into an existing screen/flow instead of Banuba's - e.g. programmatic trim, cover/thumbnail extraction, slideshow-from-images, GIF preview generation, custom playback of a composition, or button/server-triggered export with no editor screen shown |
 | Platforms | Android, iOS, Flutter, React Native | Android, iOS only - no Flutter/React Native sample yet; offer the full VE SDK instead if asked |
-| Docs | [`llms-full.txt`](https://banuba.com/ve-pe-sdk/llms-full.txt) | Not covered by `llms-full.txt` - use [VE API docs](https://banuba.gitbook.io/video-editor-sdk-api/) instead |
+| Docs | [`llms-full.txt`](https://docs.banuba.com/ve-pe-sdk/llms-full.txt) | Not covered by `llms-full.txt` - use [VE API docs](https://banuba.gitbook.io/video-editor-sdk-api/) instead |
 
 ## Core Principles
 
 1. **Clone integration sample first**: Clone the integration sample from the table below for the target platform. Use it as a working starting point.
-2. **Retrieval-first**: Consult [the docs](https://banuba.com/ve-pe-sdk/llms-full.txt) before using pre-trained knowledge - docs are version-verified and may contain API changes not yet in training data. If the `explain-video-editor-photo-editor-docs` skill is available, read its local docs. For VE API tasks, `llms-full.txt` doesn't cover it - use the [VE API docs](https://banuba.gitbook.io/video-editor-sdk-api/) and lean on the VE API integration sample as the primary source of working code.
+2. **Retrieval-first**: Consult [the docs](https://docs.banuba.com/ve-pe-sdk/llms-full.txt) before using pre-trained knowledge - docs are version-verified and may contain API changes not yet in training data. If the `explain-video-editor-photo-editor-docs` skill is available, read its local docs. For VE API tasks, `llms-full.txt` doesn't cover it - use the [VE API docs](https://banuba.gitbook.io/video-editor-sdk-api/) and lean on the VE API integration sample as the primary source of working code.
 3. **Platform-specific**: Generate code only for the detected platform.
 4. **Code-first**: Lead with working code examples, then explain.
 5. **Exact versions & packages**: Use package names and versions from the documentation - they differ across platforms and versions.
-6. **Don't overthink**: Refer to [documentation](https://banuba.com/ve-pe-sdk/llms-full.txt) or direct the user to the [contact form](https://www.banuba.com/contact) if the answer is not obvious.
+6. **Don't overthink**: Refer to [documentation](https://docs.banuba.com/ve-pe-sdk/llms-full.txt) or direct the user to the [contact form](https://www.banuba.com/contact) if the answer is not obvious.
 7. **Don't generate URLs**: Never fabricate documentation URLs. Only use URLs explicitly listed in this skill file or found in the fetched docs.
 
 ## Prerequisites

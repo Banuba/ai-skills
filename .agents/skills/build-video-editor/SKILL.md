@@ -55,7 +55,7 @@ Banuba ships two ways to add video editing. Determine which one the user needs b
 | What it is | Pre-built UI/UX: camera, gallery import, editor screen, export, share | Modular, code-level components with no bundled UI - Playback (`VideoPlayer`), Export (`ExportFlowManager`, `ExportParamsProvider`), Effects |
 | Recommend when | The user wants a ready-made editing experience and is fine adopting Banuba's screens (camera, editor, export flow) | The user needs a fully custom UI, or wants to embed editing into an existing screen/flow instead of Banuba's - e.g. programmatic trim, cover/thumbnail extraction, slideshow-from-images, GIF preview generation, custom playback of a composition, or button/server-triggered export with no editor screen shown |
 | Platforms | Android, iOS, Flutter, React Native | Android, iOS only. If asked for Flutter/React Native, say no VE API sample exists yet and offer the full VE SDK instead |
-| Docs | `https://banuba.com/ve-pe-sdk/llms-full.txt` | Not covered by `llms-full.txt` - use `https://banuba.gitbook.io/video-editor-sdk-api/` instead |
+| Docs | `https://docs.banuba.com/ve-pe-sdk/llms-full.txt` | Not covered by `llms-full.txt` - use `https://banuba.gitbook.io/video-editor-sdk-api/` instead |
 
 If the request is ambiguous (e.g. "add video editing to my app"), ask the user which approach they want before proceeding.
 
@@ -64,7 +64,7 @@ If the request is ambiguous (e.g. "add video editing to my app"), ask the user w
 **Before writing any code or answering any question**, fetch and search this file:
 
 ```
-https://banuba.com/ve-pe-sdk/llms-full.txt
+https://docs.banuba.com/ve-pe-sdk/llms-full.txt
 ```
 
 This is the version-verified, LLM-optimized documentation. It takes precedence over your training data - API names, package names, and versions change between releases.
@@ -100,7 +100,7 @@ If no project exists or detection is ambiguous, ask the user to choose: **Androi
 
 ### 2. Fetch documentation
 
-Retrieve `https://banuba.com/ve-pe-sdk/llms-full.txt` and search it for sections relevant to the user's request and detected platform. Base all generated code on this source. For VE API tasks, also fetch `https://banuba.gitbook.io/video-editor-sdk-api/` - it is not covered by `llms-full.txt`.
+Retrieve `https://docs.banuba.com/ve-pe-sdk/llms-full.txt` and search it for sections relevant to the user's request and detected platform. Base all generated code on this source. For VE API tasks, also fetch `https://banuba.gitbook.io/video-editor-sdk-api/` - it is not covered by `llms-full.txt`.
 
 ### 3. Clone integration sample
 

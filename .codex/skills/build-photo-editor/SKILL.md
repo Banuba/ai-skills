@@ -55,11 +55,11 @@ Detect the user's platform from project files. If no project exists yet or detec
 ## Core Principles
 
 1. **Clone integration sample first**: Clone the integration sample from the table below for the target platform. Use it as a working starting point.
-2. **Retrieval-first**: Consult [the docs](https://banuba.com/ve-pe-sdk/llms-full.txt) before using pre-trained knowledge - docs are version-verified and may contain API changes not yet in training data. If the `explain-video-editor-photo-editor-docs` skill is available, read its local docs.
+2. **Retrieval-first**: Consult [the docs](https://docs.banuba.com/ve-pe-sdk/llms-full.txt) before using pre-trained knowledge - docs are version-verified and may contain API changes not yet in training data. If the `explain-video-editor-photo-editor-docs` skill is available, read its local docs.
 3. **Platform-specific**: Generate code only for the detected platform.
 4. **Code-first**: Lead with working code examples, then explain.
 5. **Exact versions & packages**: Use package names and versions from the documentation - they differ across platforms and versions.
-6. **Don't overthink**: Refer to [documentation](https://banuba.com/ve-pe-sdk/llms-full.txt) or direct the user to the [contact form](https://www.banuba.com/contact) if the answer is not obvious.
+6. **Don't overthink**: Refer to [documentation](https://docs.banuba.com/ve-pe-sdk/llms-full.txt) or direct the user to the [contact form](https://www.banuba.com/contact) if the answer is not obvious.
 7. **Don't generate URLs**: Never fabricate documentation URLs. Only use URLs explicitly listed in this skill file or found in the fetched docs.
 8. **No custom effects**: Never create or add custom AR/visual effects. Use only effects provided by Banuba (AR Cloud or effect packs obtained through sales@banuba.com).
 

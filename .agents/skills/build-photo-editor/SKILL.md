@@ -46,7 +46,7 @@ All generated code MUST use API names, class names, method signatures, package n
 
 **Before generating any code**, fetch and search this file:
 
-    https://banuba.com/ve-pe-sdk/llms-full.txt
+    https://docs.banuba.com/ve-pe-sdk/llms-full.txt
 
 This is the authoritative, version-verified, LLM-optimized reference for all Banuba Video and Photo Editor SDKs.
 
@@ -81,7 +81,7 @@ If ambiguous or no project exists, ask the user to choose: Android, iOS, Flutter
 
 ### 2. Fetch and search docs
 
-Retrieve `https://banuba.com/ve-pe-sdk/llms-full.txt` and find sections matching the user's platform and request. All generated code must be grounded in this source.
+Retrieve `https://docs.banuba.com/ve-pe-sdk/llms-full.txt` and find sections matching the user's platform and request. All generated code must be grounded in this source.
 
 ### 3. Scaffold from integration sample (new projects only)
 

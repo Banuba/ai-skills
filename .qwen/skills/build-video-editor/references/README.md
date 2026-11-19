@@ -2,7 +2,7 @@
 
 Key external docs referenced by `SKILL.md`:
 
-- [LLM-optimized docs](https://banuba.com/ve-pe-sdk/llms-full.txt) - authoritative, version-verified source for the full-UI VE SDK.
+- [LLM-optimized docs](https://docs.banuba.com/ve-pe-sdk/llms-full.txt) - authoritative, version-verified source for the full-UI VE SDK.
 - [VE API docs](https://banuba.gitbook.io/video-editor-sdk-api/) - headless Playback/Export/Effects modules (Android/iOS only), not covered by `llms-full.txt`.
 - [Android requirements/guides](https://docs.banuba.com/ve-pe-sdk/docs/android/requirements-ve) - Video Editor SDK requirements for Android.
 - [iOS requirements/guides](https://docs.banuba.com/ve-pe-sdk/docs/ios/requirements) - Video Editor SDK requirements for iOS.

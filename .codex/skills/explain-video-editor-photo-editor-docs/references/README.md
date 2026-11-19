@@ -2,7 +2,7 @@
 
 Key external docs referenced by `SKILL.md`:
 
-- [LLM-optimized docs](https://banuba.com/ve-pe-sdk/llms-full.txt) - authoritative source, checked first; local `./docs/llms-full.txt` mirrors it.
+- [LLM-optimized docs](https://docs.banuba.com/ve-pe-sdk/llms-full.txt) - authoritative source, checked first; local `./docs/llms-full.txt` mirrors it.
 - [Android VE docs](https://docs.banuba.com/ve-pe-sdk/docs/android/requirements-ve) - Video Editor SDK requirements for Android.
 - [Android PE docs](https://docs.banuba.com/ve-pe-sdk/docs/android/requirements-pe) - Photo Editor SDK requirements for Android.
 - [iOS VE docs](https://docs.banuba.com/ve-pe-sdk/docs/ios/requirements) - Video Editor SDK requirements for iOS.
