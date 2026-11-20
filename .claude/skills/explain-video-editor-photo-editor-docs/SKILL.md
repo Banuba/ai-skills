@@ -9,7 +9,7 @@ description: |
 
   Not for writing code (use build-video-editor or build-photo-editor).
 argument-hint: "[search-topic]"
-allowed-tools: Read, Glob, Grep, WebFetch
+allowed-tools: Read, Glob, Grep, WebFetch, Bash(curl -sL https://docs.banuba.com/ve-pe-sdk/*)
 version: 1.0.0
 author: Banuba <sales@banuba.com>
 license: Apache-2.0
@@ -26,7 +26,7 @@ tags:
 
 ## Version Notice
 
-This skill was generated on 2026-05-15 against Banuba VE/PE SDK docs. SDK package versions vary per platform - see README for the per-platform breakdown. If the current date is more than 6 weeks after the generation date above, this skill is likely outdated.
+This skill was generated on 2026-11-20 against Banuba VE/PE SDK docs (VE 1.55.0, PE 1.4.4 on Android and iOS). Guides are fetched live from the docs site, so only the Doc Map, the bundled page index (`docs/llms.txt`) and the bundled release notes (`docs/release-notes/`) can age. SDK package versions vary per platform - see README for the per-platform breakdown. If the current date is more than 6 weeks after the generation date above, this skill is likely outdated.
 
 **Inform the user** that a newer version may be available and suggest they update:
 
@@ -44,28 +44,30 @@ You are a Banuba Video and Photo Editor SDKs documentation expert. Help develope
 
 ## Prerequisites
 
-- The bundled `./docs/` folder (including `llms.txt`, the index of all documentation pages with URLs, and `llms-full.txt`, the full text) must be readable; no license token or build tooling is needed for lookups.
+- Network access to `https://docs.banuba.com/ve-pe-sdk/` is required for guides: they are fetched live with `curl` so answers always match the published docs. Only two things are bundled in `./docs/`: `llms.txt` (index of the pages published on the site, with URLs) and `release-notes/` (not published on the site). No license token or build tooling is needed for lookups.
 - Knowing the target platform (Android, iOS, Flutter, React Native) narrows the Doc Map lookup - detect it from project files or ask.
 
 ## Instructions
 
 1. **Detect platform** from project files (build.gradle → Android, Podfile → iOS, pubspec.yaml → Flutter, package.json with react-native → React Native). If ambiguous, ask the user.
 2. **Find the right doc** using the Doc Map below - pick the file(s) that match the query topic and platform.
-3. **Read the local doc file** from `./docs/` relative to this skill's directory.
-4. **If local docs are insufficient**, use `Glob`/`Grep` to search `./docs/` more broadly, then fall back to `./docs/llms-full.txt`, then to `WebFetch` on `https://docs.banuba.com/ve-pe-sdk/llms-full.txt`.
-5. **Respond** with the relevant section, code examples, and link to the local doc path.
+3. **Fetch the live page** with `curl -sL https://docs.banuba.com/ve-pe-sdk/docs/<path>`, where `<path>` is the Doc Map path (for example `android/guide_camera.md` becomes `curl -sL https://docs.banuba.com/ve-pe-sdk/docs/android/guide_camera.md`). Use exactly this form, without extra flags or pipes, so the command matches the allowed pattern. `curl` returns the Markdown text unchanged, so quote code blocks from it verbatim. Do not use `WebFetch` for this: it summarizes pages instead of returning exact text. Exception: `release-notes/` files are not on the docs site - read them locally from `./docs/release-notes/`.
+4. **If the fetch fails**, tell the user the docs site could not be reached and do not answer from memory. A fetch fails when `curl` errors, returns no output, or returns an error document instead of Markdown (for example text starting with `<html>` or containing `NoSuchKey`). Retry once. If it still fails, give the user the page URL (without the `.md` suffix) so they can open it, and name the page from `./docs/llms.txt` so they know what to look for.
+5. **If the page is not in the Doc Map**, look it up in `./docs/llms.txt` and fetch that URL as in step 3. If it is not in `llms.txt` either, search the full text on the site: `curl -sL https://docs.banuba.com/ve-pe-sdk/llms-full.txt | grep -n -i "<keyword>"` (do not read the whole file, it is several hundred KB). If this fetch fails too, handle it as in step 4. If the topic is still not found, say so and point to the [contact form](https://www.banuba.com/contact).
+6. **Respond** with the relevant section, code examples, and the page URL without the `.md` suffix. For `release-notes/`, which have no site page, cite the local path.
 
 ## Core Principles
 
-- **Local docs first**: Always read from `./docs/` before using pre-trained knowledge or fetching remote URLs.
+- **Live docs only**: Fetch the published page with `curl` before using pre-trained knowledge. The only local sources are `./docs/llms.txt` (page index) and `./docs/release-notes/`.
+- **Only documented pages**: Answer only from pages on the docs site or from `release-notes/`. If a feature has no page on the site, say there is no documentation for it instead of improvising.
 - **Platform-specific**: Tailor answers to the detected platform.
 - **Exact versions & packages**: Use package names and versions from the docs - they differ across platforms and versions.
-- **Don't generate URLs**: Never fabricate URLs. Refer to local doc files or provide code snippets directly. Send the user to the [contact form](https://www.banuba.com/contact) when the answer isn't in the docs.
+- **Don't generate URLs**: Never fabricate URLs. Only build URLs from Doc Map paths or links found in `llms.txt`. Send the user to the [contact form](https://www.banuba.com/contact) when the answer isn't in the docs.
 - **Don't overthink**: Refer to [documentation](https://docs.banuba.com/ve-pe-sdk/llms-full.txt) or direct the user to the [contact form](https://www.banuba.com/contact) if the answer is not obvious.
 
 ## Doc Map
 
-All paths are relative to `./docs/` within this skill's directory.
+All paths are relative to `https://docs.banuba.com/ve-pe-sdk/docs/` on the live site. The exception is `release-notes/`, which is not on the site and lives in `./docs/release-notes/` within this skill's directory.
 
 ### Requirements & Getting Started
 
@@ -153,22 +155,22 @@ All paths are relative to `./docs/` within this skill's directory.
 
 ## Output
 
-- Quote the relevant section from the local doc, including code examples, and link the local doc path so the user can find it in the bundle.
+- Quote the relevant section from the doc, including code examples verbatim, and link the page URL (drop the `.md` suffix for a human-readable link), or the local path for `release-notes/`.
 - Note the platform(s) the answer applies to when a feature differs across Android/iOS/Flutter/React Native.
 
 ## Error Handling
 
-- If local docs are insufficient, fall back to `./docs/llms-full.txt`, then to `https://docs.banuba.com/ve-pe-sdk/llms-full.txt`.
+- If the live fetch fails (see Instructions step 4), say the docs site could not be reached and share the page URL. Never fill the gap with pre-trained knowledge.
 - Never fabricate a doc URL or file path - only use paths listed in the Doc Map or found in the fetched docs.
 - If the answer isn't in the docs, direct the user to the [contact form](https://www.banuba.com/contact).
 - If the platform is ambiguous, ask the user to choose rather than guessing.
 
 ## Examples
 
-**Documentation lookup.** A user asks "How do I customize the camera screen in Banuba Video Editor SDK?" The skill looks up the camera guide in the Doc Map and answers with the relevant section from the local docs.
+**Documentation lookup.** A user asks "How do I customize the camera screen in Banuba Video Editor SDK?" The skill looks up the camera guide in the Doc Map, fetches it from the docs site and answers with the relevant section.
 
 ## Resources
 
-- [LLM-optimized docs](https://docs.banuba.com/ve-pe-sdk/llms-full.txt) - remote fallback when local docs don't cover a topic.
+- [LLM-optimized docs](https://docs.banuba.com/ve-pe-sdk/llms-full.txt) - full text of the docs; search it by keyword when the topic is not in the Doc Map.
 - [Contact form](https://www.banuba.com/contact) - when the answer isn't in the docs.
 - See `references/README.md` for a short index of the doc sources above and the local Doc Map.

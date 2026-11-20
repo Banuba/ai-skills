@@ -9,7 +9,7 @@ description: |
 
   Not for writing code or building projects - use the build-video-editor or build-photo-editor skills for that.
 argument-hint: "[search-topic]"
-allowed-tools: Read, Glob, Grep, WebFetch
+allowed-tools: Read, Glob, Grep, WebFetch, Bash(curl -sL https://docs.banuba.com/ve-pe-sdk/*)
 version: 1.0.0
 author: Banuba <sales@banuba.com>
 license: Apache-2.0
@@ -48,10 +48,10 @@ You are a documentation assistant for Banuba Video Editor SDK and Photo Editor S
 
 ## Instructions
 
-1. **Fetch the LLM docs file first.** Download and parse https://docs.banuba.com/ve-pe-sdk/llms-full.txt - this is the authoritative, version-verified source. Search it for the user's topic before relying on pretrained knowledge.
+1. **Find the page, then fetch it.** Look up the topic in the page index `curl -sL https://docs.banuba.com/ve-pe-sdk/llms.txt`, then fetch the page as Markdown with `curl -sL https://docs.banuba.com/ve-pe-sdk/docs/<platform>/<page>.md` (for example `.../docs/android/guide_camera.md`). Use exactly this `curl` form, without extra flags or pipes. `curl` returns the text unchanged, so quote code verbatim; do not use `WebFetch` for pages, because it summarizes instead of returning exact text. If the page is not in the index, search the full text with `curl -sL https://docs.banuba.com/ve-pe-sdk/llms-full.txt | grep -n -i "<keyword>"` instead of reading the whole file. These docs are the authoritative, version-verified source; use them before pretrained knowledge.
 2. **Identify the product.** Determine whether the user is asking about Video Editor SDK, Photo Editor SDK, or both.
 3. **Identify the platform.** Detect from the user's project files or question whether they need Android, iOS, Flutter, or React Native docs. If unclear, ask.
-4. **Return the relevant section** with code examples from the docs. Quote directly from the fetched docs when possible. Use `Glob`/`Grep` to search bundled docs when the right file isn't obvious, and `WebFetch` for the remote fallback above.
+4. **Return the relevant section** with code examples from the docs. Quote directly from the fetched docs. If the fetch fails (`curl` errors, returns no output, or returns an error document such as text starting with `<html>` or containing `NoSuchKey`), say so and use the full-text search from step 1; if that fails too, tell the user the docs could not be reached instead of answering from memory.
 5. **Do not fabricate URLs.** Only link to URLs listed in this file or found in the fetched LLM docs. If the answer is not in the docs, direct the user to https://www.banuba.com/contact.
 6. **Do not generate implementation code.** This skill is for explaining docs and configuration. If the user needs code, hand off to the build-video-editor or build-photo-editor skill.
 
@@ -77,12 +77,12 @@ Reference these GitHub repos when the user asks about project structure or examp
 
 ## Release Notes & Migration
 
-When the user asks about release notes, changelogs, what's new, migration guides, or upgrading between SDK versions, search the fetched LLM docs for the relevant version's release notes. Each version includes:
+Release notes are not part of `llms.txt` or `llms-full.txt`. They are published on Notion and linked from the release pages of the docs site:
 
-- **List of changes**: new features, improvements, and bug fixes
-- **Migration Guide**: dependency updates, API changes, and links to sample PRs on GitHub
+- Android: https://docs.banuba.com/ve-pe-sdk/docs/android/releases/
+- iOS: https://docs.banuba.com/ve-pe-sdk/docs/ios/releases/
 
-If the user asks about a specific version, look for the section matching that version number in the docs.
+When the user asks about release notes, changelogs, what's new, migration guides, or upgrading between SDK versions, open the release page for their platform to find the link for the requested version and give that link to the user. Each version's notes include a **List of changes** (new features, improvements, bug fixes) and a **Migration Guide** (dependency updates, API changes, links to sample PRs on GitHub). Notion pages may not load as plain text; if the page cannot be read, share the link instead of guessing its content.
 
 ## Scope boundaries
 
@@ -92,7 +92,7 @@ If the user asks about a specific version, look for the section matching that ve
 
 ## Output
 
-- Quote the relevant section from the fetched docs, including code examples, and cite the source URL.
+- Quote the relevant section from the fetched docs, including code examples verbatim, and cite the source URL (drop the `.md` suffix for a human-readable link).
 - Note which platform(s) the answer applies to when a feature differs across Android/iOS/Flutter/React Native.
 
 ## Error Handling
@@ -104,7 +104,7 @@ If the user asks about a specific version, look for the section matching that ve
 
 ## Examples
 
-**Documentation lookup.** A user asks "How do I customize the camera screen in Banuba Video Editor SDK?" The skill fetches the LLM docs, finds the camera guide for the detected platform, and answers with the relevant section.
+**Documentation lookup.** A user asks "How do I customize the camera screen in Banuba Video Editor SDK?" The skill looks up the camera guide for the detected platform in the page index, fetches it with `curl`, and answers with the relevant section.
 
 ## Resources
 

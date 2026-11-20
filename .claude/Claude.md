@@ -46,7 +46,7 @@ Each skill is defined once in `.agents/` and replicated with platform-specific p
 - Skills are installed via `npx skills add Banuba/ai-skills -a <assistant>`.
 - Each SKILL.md file contains a YAML frontmatter block (`name`, `description`, `argument-hint`) followed by the skill prompt.
 - Builder skills (`build-video-editor`, `build-photo-editor`) fetch live docs from `https://docs.banuba.com/ve-pe-sdk/llms-full.txt` and clone integration samples from GitHub.
-- Docs lookup skill (`explain-video-editor-photo-editor-docs`) read from bundled `./docs/` directories within each skill folder.
+- Docs lookup skill (`explain-video-editor-photo-editor-docs`) fetches guides live from `https://docs.banuba.com/ve-pe-sdk/docs/` with `curl`; only `docs/llms.txt` (page index) and `docs/release-notes/` are bundled in each skill folder.
 - All four skills must stay in sync across `.agents/`, `.claude/`, `.codex/`, and `.qwen/` directories.
 
 ## When Editing Skills

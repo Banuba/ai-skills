@@ -12,7 +12,7 @@ Give your AI coding assistant expert-level knowledge of Face AR SDK, Banuba Vide
 
 [Agent Skills](https://agentskills.io) are portable knowledge packs that plug into AI coding assistants. By installing the Banuba agent skills, you get:
 
-- **Documentation lookup skills are local-first** and can answer from bundled docs. **Builder skills may access the network** to fetch versioned LLM docs, clone official samples, and install platform dependencies.
+- **The Face AR documentation skill is local-first** and answers from bundled docs. **The Video/Photo Editor documentation skill fetches pages live from docs.banuba.com** (only the page index and release notes are bundled). **Builder skills may access the network** to fetch versioned LLM docs, clone official samples, and install platform dependencies.
 - **Guided code generation** - a step-by-step walkthrough and explanation of SDK implementation
 - **Autonomous scaffolding** - a builder agent that creates complete Face AR, Video Editor, or Photo Editor projects from scratch
 
@@ -133,7 +133,7 @@ Once installed, invoke skills with slash commands in your AI coding assistant:
 
 ## How It Works
 
-Each documentation skill bundles the complete SDK guides and API references locally. Skills read directly from these bundled files - no external services or MCP servers are required.
+The Face AR documentation skill bundles the complete SDK guides and API references locally and reads them directly - no external services or MCP servers are required. The Video/Photo Editor documentation skill fetches guides from `docs.banuba.com` with `curl` so answers always match the published docs; only the page index (`llms.txt`) and the release notes are bundled.
 
 The build skills include starter kit templates for common use cases like Face AR apps, video editors or photo editors. They detect your project's platform and generate code accordingly.
 

@@ -2,7 +2,7 @@
 
 Key external docs referenced by `SKILL.md`:
 
-- [LLM-optimized docs](https://docs.banuba.com/ve-pe-sdk/llms-full.txt) - authoritative source, checked first; local `./docs/llms-full.txt` mirrors it.
+- [LLM-optimized docs](https://docs.banuba.com/ve-pe-sdk/llms-full.txt) - full text of the docs on the site; search it by keyword with `curl | grep` instead of reading it whole.
 - [Android VE docs](https://docs.banuba.com/ve-pe-sdk/docs/android/requirements-ve) - Video Editor SDK requirements for Android.
 - [Android PE docs](https://docs.banuba.com/ve-pe-sdk/docs/android/requirements-pe) - Photo Editor SDK requirements for Android.
 - [iOS VE docs](https://docs.banuba.com/ve-pe-sdk/docs/ios/requirements) - Video Editor SDK requirements for iOS.
@@ -11,4 +11,4 @@ Key external docs referenced by `SKILL.md`:
 - [React Native VE docs](https://docs.banuba.com/ve-pe-sdk/docs/react/ve_installation) - Video Editor SDK installation for React Native.
 - [React Native PE docs](https://docs.banuba.com/ve-pe-sdk/docs/react/pe_integration) - Photo Editor SDK integration for React Native.
 - [Contact form](https://www.banuba.com/contact) - when the answer isn't in the docs.
-- The full per-platform Doc Map lives in `SKILL.md`; the actual doc files live in `../docs/`.
+- The full per-platform Doc Map lives in `SKILL.md`; guides are fetched live from the docs site; only `../docs/llms.txt` (page index) and `../docs/release-notes/` are bundled.
